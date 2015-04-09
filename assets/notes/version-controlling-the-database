@@ -1,0 +1,59 @@
+VERSION CONTROLLING THE DATABASE
+
+TYPES OF DATA
+
+1. Schema (Structure of tables in the database, Tables, columns and such)
+	Tools we will use
+	Mysqldump
+
+2. Exportable config. (Content types, Fields.  Data that can be exported via features and like modules)
+	Tools we will use
+	Features Modules
+
+3. Non-Exportable config. ()
+	Tools we will use
+	Selenium IDE
+
+4. Content (Nodes, users, terms.  Usually want to keep these out of the database)
+	Tools we will use
+	None stable yet, but UUID and UUID features integration for the future.
+
+WHERE DO WE PUT STUFF?
+
+1. Create a new repository for assets like database backups, images, tools, etc.
+	All of these will be quite bigger than code.  Takes up a lot of space.
+
+2. Put Drupal in a subfolder of our repository and create an assets folder.
+
+3. Create an assets folder inside our Drupal folder and hide it from the world.
+	 (All steps should be performed on production server)
+	A. Create .htaccess file inside assets folder and add text "Deny from all" in order to hide the folder from the world.
+
+	B. To get the schema use the command (make sure to be one level up from the drupal sites directory to avoid allowing access to the world).
+		>>> mysqldump --no-data --tables -u clifton -p rlcproduction > rlcproduction-schema.sql <<<
+
+	C. Export the data without the schema into a different file. (make sure to be one level up from the drupal sites directory to avoid allowing access to the world)
+		>>> mysqldump -u clifton -p --skip-extended-insert rlcproduction > rlcproduction-data.sql <<<
+
+	D. Export content data. (make sure to be one level up from the drupal sites directory to avoid allowing access to the world)
+		>>> mysqldump -u clifton -p --skip-extended-insert --ignore-table=rlcproduction.watchdog --ignore-table=rlcproduction.cache% --ignore-table=rlcproduction.sessions --ignore-table=rlcproduction.search% rlcproduction > rlcproduction-data.sql <<<
+
+HOW OFTEN SHOULD YOU UPDATE VERSION CONTROLLED DATABASE DUMPS AND WHY?
+
+	When do we update the database export?
+		1. Whenever we make a new release (and mention tag in comment).
+
+		2. Whenever you'd like to sync up the code base with configuration and content.
+
+		3. Use non-version-controlled dumps as often as makes sense.
+
+TYPICAL PUSH CYCLE (When we take any changes made to development site and we push it to the production site to make it live).
+
+	1. Put site in maintenance mode if possible
+	2. Export the database.
+	3. 'git pull' the latest release.
+	4. Run update script (update.php).
+	5. Apply any configuration changes. (manually apply changes or use features module)
+	6. Import any Importable content. (uuid features integration, not stable for production yet).
+
+	
