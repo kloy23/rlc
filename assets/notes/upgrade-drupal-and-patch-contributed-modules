@@ -1,0 +1,100 @@
+
+HOW TO PATCH A CONTRIBUTED MODULE
+
+	1. Download patch file
+	2. Move patch file to the directory of module that needs patched
+	3. In terminal cd to directory of module
+	4. Apply patch: patch -p1 < [file-name-of-patch.patch]
+
+	- Store patches into a folder named patches within the module folder
+	- When updating a module, download the updated version repalce existing module files, leaving the patches folder.
+
+HOW TO UPGRADE A MODULE SUSTAINABLY
+
+	UPGRADE A MODULE WITHOUT LOSING THE PATCH
+
+	1. Download the most recent .tar version of the module (save file)
+	2. Copy the .tar
+	3. Paste the .tar into the same directory as the module. (ie sites/all/modules/contrib)
+	4. In terminal, cd to directory that contains .tar
+	5. Extract the tar into current directory: tar -xvf [file-name.tar]
+	6. Review patches and re-apply any that are needed.
+	7. check reports > status report > database updates and perform any database updates that are needed.
+
+HOW TO PREPARE FOR A MINOR DRUPAL UPGRADE
+
+	1. Check what changes were made (view revision info)
+	2. Prepare for upgrade
+		1. Backup the entire site
+		2. Backup the database
+
+HOW TO USE A PATCH TO UPGRADE THE DRUPAL CODEBASE
+
+	THE PATCH METHOD (simplest way).  Saves any changes you've made to core modules. (not officially supported by drupal)
+
+	1. Go to buildamodule.com/core-patches (redirect to site)
+	2. Download and save the patch file
+	3. Put the patch in site root folder
+	4. Make sure working directory is clean, make any commits that may need to be made.
+	5. Create a new branch "git checkout -b feature_upgrade"
+	6. cd to site root
+	7. Dry run patch to check for errors. patch -p1 --dry-run < [patch-file.patch]
+	8. Run patch. patch -p1 < [patch-file.patch]
+		- Can run diff to see what was changed
+	9. git add modules/*
+	10. git add themes/*
+	11. git commit -a -m "Upgraded Drupal from drupal from 7.7 to 7.8"
+	12. rm patch file from root
+
+HOW TO UPGRADE DRUPAL THE TRADITIONAL WAY
+
+	1. Download latest version of Drupal. (expand tar and copy it one level above root)
+	2. cp -R drupal-7.8/* (the latest version) drupal-7.8/.htaccess [site file (ie /rlcdev)]
+	3. Review and commit changes.
+
+HOW TO COMPLETE A MINOR UPGRADE
+
+	1. Reports > Status Report
+	2. Run database update script
+	3. Apply updates
+	4. Test the site for changes.
+	5. Update manual-updates.txt file "Run the update script (drupal was updated from drupal [version] to [version]"
+	6. git commit -a -m "MANUAL UPDATE. Added note to manual-updates.txt file"
+	7. Checkout develop
+	8. Merge feature branch with develop: git merge --no-ff feature-upgrade-[version]
+	9. Delete feature branch: git branch -d feature-upgrade-[version]
+	10. git push
+
+
+	From Production
+	1. git pull
+	2. view manual-updates.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

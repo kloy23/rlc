@@ -56,4 +56,12 @@ TYPICAL PUSH CYCLE (When we take any changes made to development site and we pus
 	5. Apply any configuration changes. (manually apply changes or use features module)
 	6. Import any Importable content. (uuid features integration, not stable for production yet).
 
-	
+	OVERRIDING SHARED FEATURES
+
+		1. Paste new feature over old version
+		2. Any changes we made with a traditional export disappear during revert.
+		3. Manually apply our changes again - or - we find out what the updates  were and apply those manually.
+
+		ALTERNATIVE SOLUTION
+
+		Use code based overrides like hook functions to modify a feature outside of the feature module code base.
