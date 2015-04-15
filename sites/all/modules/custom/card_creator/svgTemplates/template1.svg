@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg3119" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 180" height="100%" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3123">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <text id="companyName" style="text-anchor:middle;" font-size="18px" y="96.446289" x="157.54395" font-family="Helvetica" fill="#000000">COMPANY NAME</text>
+ <text id="name" style="text-anchor:start;" font-size="12px" y="31.547852" x="22.777929" font-family="Helvetica">NAME</text>
+ <text id="title" style="text-anchor:start;" font-size="10px" y="40.213867" x="22.787695" font-family="Helvetica">Title</text>
+ <text id="address" style="text-anchor:start;" font-size="10px" y="147.26953" x="22.777929" font-family="Helvetica">Street Address</text>
+ <text id="cityStateZip" style="text-anchor:start;" font-size="10px" y="156.93652" x="22.777929" font-family="Helvetica">City, State, Zip</text>
+ <text id="line1" style="text-anchor:end;" font-size="10px" y="122.26953" x="292.84708" font-family="Helvetica">Phone:</text>
+ <text id="line2" style="text-anchor:end;" font-size="10px" y="133.27148" x="292.84708" font-family="Helvetica">Toll Free:</text>
+ <text id="line3" style="text-anchor:end;" font-size="10px" y="145.26953" x="292.84708" font-family="Helvetica">Fax:</text>
+ <text id="line4" style="text-anchor:end;" font-size="10px" y="156.93652" x="292.84708" font-family="Helvetica">Mobile:</text>
+ <rect id="logo" height="45" width="90" y="21.817" x="202.08" fill="none"/>
+</svg>

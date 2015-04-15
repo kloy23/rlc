@@ -1,0 +1,3 @@
+Bugs to fix
+
+If user selects a new template after selecting two color options, The color selection is not right
