@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Business Card Creator</title>
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="libraries/jquery-1.11.0.min.js"></script>
+		<script src="libraries/snap.svg.js"></script>
+		<script src="libraries/svg_todataurl.js"></script>
+	</head>
+	<body>
+		
+		<div id="container">
+		
+			<h1 id="header" style="text-align:center">BUSINESS CARD CREATOR</h1></h1>
+			
+			<div id="leftColumn">
+					
+					<form id="cardInfo">
+						<input id="companyName" type="text" placeholder="Company Name"></input>
+						<input id="name" type="text" placeholder="Name"></input>
+						<input id ="title" type="text" placeholder="Title"></input>
+						<input id ="address" type="text" placeholder="Address"></input>
+						<input id ="cityStateZip" type="text" placeholder="City, State, Zip"></input>
+						<input id ="line1" type="text" placeholder="Line 1"></input>
+						<input id ="line2" type="text" placeholder="Line 2"></input>
+						<input id ="line3" type="text" placeholder="Line 3"></input>
+						<input id ="line4" type="text" placeholder="Line 4"></input>
+						<div>
+							<label id="clipartColor">Clipart Color</label>
+						</div>
+					</form>
+					<div>
+					<label>Font Family:</label>
+					<select id="docFontFamily" title="Change Font of the entire template" label="Font Family:">
+						<option value="helvetica">Helvetica</option>
+						<option value="futura">Futura</option>
+						<option value="garamond">Garamond</option>
+						<option value="frutiger">Frutiger</option>
+					</select>
+					</div>
+			</div>			
+			
+			<div id="rightColumn">
+				<svg id="preview"></svg>			
+			</div>
+			
+			<div id="bottom">
+
+				<div id="bottomLeftCol">
+					
+					<div id="bottomLeftColUpper">
+						<h4>Select Clipart</h4>
+					</div>
+					
+					<div id="bottomLeftColLower">
+
+						<div id="bottomLeftColLowerLeft">
+							<button id="vehicles">Vehicles</button>
+							<button id ="manufacturer">Manufacture Logo's</button>
+							<button id="animals">Animals</button>
+							<button>Category 4</button>
+							<button>Category 5</button>
+							<button>Category 6</button>
+						</div>
+
+						<div id="bottomLeftColLowerRight">						
+							<svg id="clipart"></svg>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id="bottomRightCol">
+
+					<div id="bottomRightMid">
+
+						<div id="bottomRightMidUpper">
+							<h4>Select Ink Color</h4>
+						</div>
+
+						<div id="bottomRightMidLower">
+
+							<div id="oneColor">
+								<p align="center"><strong>1 Color</strong></p>
+								<button>Black</button>
+								<button>Red</button>
+								<button>Blue</button>
+								<button>Maroon</button>
+								<button>Green</button>
+								<button>Brown</button>
+							</div>
+
+							<div id="twoColors">
+								<p align="center"><strong>2 Color</strong></p>
+								<button>Red/Blue</button>
+								<button>Red/Black</button>
+								<button>Blue/Black</button>
+								<button>Maroon/Black</button>
+								<button>Green/Black</button>
+								<button>Brown/Black</button>
+							</div>
+						</div>
+					</div>
+
+					<div id="bottomRightSide">
+
+						<div id="bottomRightSideUpper">
+							<h4>Select A Template</h4>
+						</div>
+
+						<div id="bottomRightSideLower">
+							<svg id="templates"></svg>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<h1 id="footer" style="text-align:center">BUSINESS CARD CREATOR</h1>
+			<image id="testImage"></image>
+			<button id="saveSvg">Save SVG</button>
+
+		</div>
+		<script src="scripts/script.js"></script>
+	</body>
+</html>
