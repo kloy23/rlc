@@ -2,4 +2,3 @@ name = Business Card Creator
 description = Provides a way for customers to create a print ready business card.
 core = 7.x
 package = Custom
-files[] = card_creator.module
