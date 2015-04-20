@@ -37,13 +37,7 @@ function card_creator_form($form, &$form_state) {
 
 	// Attach css, js, and library files
 	$form['#attached']['css'] = array(
-  drupal_get_path('module', 'card_creator') . '/css/styles.css',
-	);
-
-	$form['#attached']['js'] = array(
-  drupal_get_path('module', 'card_creator') . '/libraries/jquery-1.11.0.min.js',
-  drupal_get_path('module', 'card_creator') . '/libraries/snap.svg.js',
-  drupal_get_path('module', 'card_creator') . '/libraries/svg_todataurl.js',
+  	drupal_get_path('module', 'card_creator') . '/css/styles.css',
 	);
 
 	// Input Fields
@@ -256,9 +250,10 @@ function card_creator_form($form, &$form_state) {
 		'#suffix' => '</div></div></div></div>',
 	);
 
-	$form['#attached']['js'] = array(
-  drupal_get_path('module', 'card_creator') . '/scripts/script.js',
-	);
+	$form['#attached']['js'][] = array(
+    'data' => drupal_get_path('module', 'card_creator') . '/js/card_creator.js',
+    'type' => 'file',
+  );
 
 	return $form;
 }
