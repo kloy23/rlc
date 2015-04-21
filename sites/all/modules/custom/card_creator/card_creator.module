@@ -118,20 +118,12 @@ function card_creator_form($form, &$form_state) {
 
 	// Clipart Color Label
 	$form['clipart_color'] = array(
-		'#id' => 'clipartColor',
-		'#markup' => '<label>' . t('Clipart Color') . '</label>',
+		'#markup' => '<div><label id="clipartColor">' . t('Clipart Color') . '</label></div>',
 	);
 
 	// Font Family Select List
 	$form['font_family'] = array(
-		'#type' => 'select',
-		'#id' => 'docFontFamily',
-		'#options' => array(
-			0 => t('Helvetica'),
-			1 => t('Futura'),
-			2 => t('Garamond'),
-			3 => t('Frutiger'),
-		),
+		'#markup' => '<select id="docFontFamily" title="Change the font for ALL fields."><option value="helvetica">Helvetica</option><option value="futura">Futura</option><option value="garamond">Garamond</option><option value="frutiger">Frutiger</option></select>',
 		'#suffix' => '</div>',
 	);
 

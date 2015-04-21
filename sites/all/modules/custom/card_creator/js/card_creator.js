@@ -5,6 +5,8 @@
     var $inputFields = $('#cardInfo :input[type="text"]');
     var selectedLogo;
 
+    $('#clipartColor').hide();
+
     // *** FUNCTIONS ***
 
     var addClipartFunctionality = function(category) {
@@ -42,7 +44,7 @@
         if (category == 'vehicles') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '935px',
+            'height': '680px',
             'width': '100%'
           });
         } else if (category == 'manufacturer') {
@@ -269,14 +271,14 @@
     // remove .selected from all color options
     var clearColorSelection = function() {
       var oneColor = $('#oneColor').children();
-      for (i=1; i<oneColor.length; i++) {
+      for (i=0; i<oneColor.length; i++) {
         var el = oneColor[i];
         if ($(el).hasClass('selected')) {
           $(el).removeClass('selected');
         }
       }
       var twoColors = $('#twoColors').children();
-      for (i=1; i<twoColors.length; i++) {
+      for (i=0; i<twoColors.length; i++) {
         var el = twoColors[i];
         if ($(el).hasClass('selected')) {
           $(el).removeClass('selected');
@@ -388,9 +390,9 @@
       var colors = $(tar).text().split('/');
       var color1 = colors[0].toLowerCase();
       var color2 = colors[1].toLowerCase();
-      // create new paragraph element to act as first colorBox
+      // create new button to act as first colorBox
       var colorBox1 = document.createElement('button');
-      // create new paragraph element to act as second colorBox
+      // create new button to act as second colorBox
       var colorBox2 = document.createElement('button');
       // set the class of colorBox1 and colorBox2 to colorBox
       // give colorboxes an id
@@ -432,7 +434,7 @@
       // if a color options has not been selected, the input field will have 2 siblings  
       if (siblings.length == 0) {
         // add colorBox1 and colorBox2 before the current element
-        $(el).after(colorBox1, colorBox2);
+        $(el).before(colorBox1, colorBox2);
       } else { // a color option has been selected
         // get the siblings (colorBoxes) of the input field
         var colorBoxes = $(el).siblings();
@@ -814,7 +816,7 @@
       }
       // Add .selected to the first color in #oneColor ('Black')
       var styledOptions = $('#oneColor').children();
-      var firstStyledColor = styledOptions[1];
+      var firstStyledColor = styledOptions[0];
       $(firstStyledColor).addClass('selected');
 
       // Two Colors
@@ -855,7 +857,7 @@
     // When cardInfo is changed, update svg 
     $('#cardInfo').keyup(changeText);
     // When a new font is selected for the entire doc, change text.
-    $('#docFontFamily').click(changeAllFonts);
+    $('#docFontFamily').change(changeAllFonts);
     // When a one color option is clicked, call loadOneColor
     $(function() {
       $('.selectOneColor').click(loadOneColor);
