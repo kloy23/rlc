@@ -2,7 +2,7 @@
 
   $(document).ready(function() { // Begin $(document).ready()
 
-    var $inputFields = $('input[type="text"]');
+    var $inputFields = $('#cardInfo :input[type="text"]');
     var selectedLogo;
 
     // *** FUNCTIONS ***
@@ -36,7 +36,7 @@
     var loadClipartCategory = function() {
       var category = this.id;
       clipart.clear();
-      var fileName = 'sites/all/modules/custom/card_creator/logos/' + category + '/' + category + '.svg';
+      var fileName = '../sites/all/modules/custom/card_creator/logos/' + category + '/' + category + '.svg';
       Snap.load(fileName, function(f){
         clipart.append(f);
         if (category == 'vehicles') {
@@ -102,7 +102,7 @@
       // get the id of clicked logo
       var selectedLogoId = el.id;
       // dynamicly create the file name based on the id of selected logo
-      var fileName = 'sites/all/modules/custom/card_creator/logos/' + category + '/' + el.id + '.svg';
+      var fileName = '../sites/all/modules/custom/card_creator/logos/' + category + '/' + el.id + '.svg';
       // load the logo that was selected, and give it the x and y values of placeholder
       var logo = Snap.load(fileName, function(f) {
         var el = f.select('svg');
@@ -144,7 +144,7 @@
       // fetch the color that is selected
       var color = fetchSelectedColor();
       preview.clear(); // removes display of old template
-      var fileName = 'sites/all/modules/custom/card_creator/svgTemplates/' + templateId + '.svg'; // dynamicly creates url to template
+      var fileName = '../sites/all/modules/custom/card_creator/svgTemplates/' + templateId + '.svg'; // dynamicly creates url to template
       Snap.load(fileName, function(f) {
         preview.append(f);
         // target the loaded svg document
@@ -507,7 +507,7 @@
     // Use Snap.svg to load the 'preview' svg document
     // Add the classes primaryColor and secondaryColor to text fields within the SVG
     var preview = Snap('#preview');
-    Snap.load('sites/all/modules/custom/card_creator/svgTemplates/template1.svg', function(f) {
+    Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/template1.svg', function(f) {
       preview.append(f);
       // this allows the color options loaded by loadTwoColors to take effect automagically.
       // select all text fields in the svg element
@@ -530,7 +530,7 @@
     });
     // Use Snap.svg to load the 'templates' svg document  
     var allTemplates = Snap('#templates');
-    Snap.load('sites/all/modules/custom/card_creator/svgTemplates/selectTemplate.svg', function(f) {
+    Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/selectTemplate.svg', function(f) {
       allTemplates.append(f);
       // get all rect within loaded svg.  Each template has a rect that has an id to identify it.
       var svgElements = allTemplates.selectAll('rect');
@@ -564,7 +564,7 @@
     // use Snap.svg to load logos in the 'clipart' svg
     var clipart = Snap('#clipart');
     // load the svg document that acts as a selection for logos
-    Snap.load('sites/all/modules/custom/card_creator/logos/vehicles/vehicles.svg', function(f) {
+    Snap.load('../sites/all/modules/custom/card_creator/logos/vehicles/vehicles.svg', function(f) {
       clipart.append(f);
       var category = 'vehicles';
       $('#clipart').css({

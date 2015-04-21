@@ -16,7 +16,7 @@
 }
 #container #leftColumn {
     float: left;
-    width: 40%;
+    width: 45%;
 }
 #container #rightColumn {
     float: left;
@@ -34,6 +34,7 @@
 }
 .button {
     font-size: 10px;
+    height: 25px;
     margin: 2px;
 }
 .colorBox {
