@@ -44,7 +44,7 @@ function card_creator_form($form, &$form_state) {
 	$form['company_name'] = array(
 		'#type' => 'textfield',
 		'#id' => 'companyName',
-		'#size' => 30,
+		'#size' => 25,
 		'#attributes' => array(
 			'placeholder' => t('Company Name'),
 		),
@@ -53,7 +53,7 @@ function card_creator_form($form, &$form_state) {
 	$form['name'] = array(
 		'#type' => 'textfield',
 		'#id' => 'name',
-		'#size' => 30,
+		'#size' => 25,
 		'#attributes' => array(
 			'placeholder' => t('Name'),
 		),
@@ -61,7 +61,7 @@ function card_creator_form($form, &$form_state) {
 	$form['title'] = array(
 		'#type' => 'textfield',
 		'#id' => 'title',
-		'#size' => 30,
+		'#size' => 25,
 		'#attributes' => array(
 			'placeholder' => t('Title'),
 		),
@@ -69,7 +69,7 @@ function card_creator_form($form, &$form_state) {
 	$form['address'] = array(
 		'#type' => 'textfield',
 		'#id' => 'address',
-		'#size' => 30,
+		'#size' => 25,
 		'#attributes' => array(
 			'placeholder' => t('Address'),
 		),
@@ -77,15 +77,15 @@ function card_creator_form($form, &$form_state) {
 	$form['city_state_zip'] = array(
 		'#type' => 'textfield',
 		'#id' => 'cityStateZip',
-		'#size' => 30,
+		'#size' => 25,
 		'#attributes' => array(
-			'placeholder' => t('Company Name'),
+			'placeholder' => t('City, State Zip'),
 		),
 	);
 	$form['line1'] = array(
 		'#type' => 'textfield',
 		'#id' => 'line1',
-		'#size' => 30,
+		'#size' => 25,
 		'#attributes' => array(
 			'placeholder' => t('Line 1'),
 		),
@@ -93,7 +93,7 @@ function card_creator_form($form, &$form_state) {
 	$form['line2'] = array(
 		'#type' => 'textfield',
 		'#id' => 'line2',
-		'#size' => 30,
+		'#size' => 25,
 		'#attributes' => array(
 			'placeholder' => t('Line 2'),
 		),
@@ -101,7 +101,7 @@ function card_creator_form($form, &$form_state) {
 	$form['line3'] = array(
 		'#type' => 'textfield',
 		'#id' => 'line3',
-		'#size' => 30,
+		'#size' => 25,
 		'#attributes' => array(
 			'placeholder' => ('Line 3'),
 		),
@@ -109,7 +109,7 @@ function card_creator_form($form, &$form_state) {
 	$form['line4'] = array(
 		'#type' => 'textfield',
 		'#id' => 'line4',
-		'#size' => 30,
+		'#size' => 25,
 		'#attributes' => array(
 			'placeholder' => ('Line 4'),
 		),
@@ -149,20 +149,14 @@ function card_creator_form($form, &$form_state) {
 		'#suffix' => '</div>',
 	);
 	$form['vehicles'] = array(
-		'#type' => 'button',
-		'#id' => 'vehicles',
-		'#value' => t('Vehicles'),
-		'#prefix' => '<div id="bottomLeftColLowerLeft">',
+		'#markup' => '<button type="button" id="vehicles">Vehicles</button>',
+		'#prefix' => '<div id="bottomLeftColLower"><div id="bottomLeftColLowerLeft">',
 	);
 	$form['manufacturer'] = array(
-		'#type' => 'button',
-		'#id' => 'manufacturer',
-		'#value' => t('Manufacture Logo\'s'),
+		'#markup' => '<button type="button" id="manufacturer">Manufactuer Logo\'s</button>',
 	);
 	$form['animals'] = array(
-		'#type' => 'button',
-		'#id' => 'animals',
-		'#value' => t('Animals'),
+		'#markup' => '<button type="button" id="animals">Animals</button>',
 		'#suffix' => '</div>',
 	);
 
@@ -170,7 +164,7 @@ function card_creator_form($form, &$form_state) {
 	$form['clipart'] = array(
 		'#markup' => '<svg id="clipart"></svg>',
 		'#prefix' => '<div id="bottomLeftColLowerRight">',
-		'#suffix' => '</div></div>',
+		'#suffix' => '</div></div></div>',
 	);
 
 	// Ink Color Selection
@@ -182,57 +176,45 @@ function card_creator_form($form, &$form_state) {
 
 	// One Color Options
 	$form['black'] = array(
-		'#type' => 'button',
-		'#value' => t('Black'),
+		'#markup' => '<button type="button">Black</button>',
 		'#prefix' => '<div id="bottomRightMidLower"><div id="oneColor">',
 	);
 	$form['red'] = array(
-		'#type' => 'button',
-		'#value' => t('Red'),
+		'#markup' => '<button type="button">Red</button>',
 	);
 	$form['blue'] = array(
-		'#type' => 'button',
-		'#value' => t('Blue'),
+		'#markup' => '<button type="button">Blue</button>',
 	);
 	$form['maroon'] = array(
-		'#type' => 'button',
-		'#value' => t('Maroon'),
+		'#markup' => '<button type="button">Maroon</button>',
 	);
 	$form['green'] = array(
-		'#type' => 'button',
-		'#value' => t('Green'),
+		'#markup' => '<button type="button">Green</button>',
 	);
 	$form['brown'] = array(
-		'#type' => 'button',
-		'#value' => t('Brown'),
+		'#markup' => '<button type="button">Brown</button>',
 		'#suffix' => '</div>',
 	);
 
 	// Two Color Options
 	$form['red_blue'] = array(
-		'#type' => 'button',
-		'#value' => t('Red/Blue'),
+		'#markup' => '<button type="button">Red/Blue</button>',
 		'#prefix' => '<div id="twoColors">',
 	);
 	$form['red_black'] = array(
-		'#type' => 'button',
-		'#value' => t('Red/Black'),
+		'#markup' => '<button type="button">Red/Black</button>',
 	);
 	$form['blue_black'] = array(
-		'#type' => 'button',
-		'#value' => t('Blue/Black'),
+		'#markup' => '<button type="button">Blue/Black</button>',
 	);
 	$form['maroon_black'] = array(
-		'#type' => 'button',
-		'#value' => t('Maroon/Black'),
+		'#markup' => '<button type="button">Maroon/Black</button>',
 	);
 	$form['green_black'] = array(
-		'#type' => 'button',
-		'#value' => t('Green/Black'),
+		'#markup' => '<button type="button">Green/Black</button>',
 	);
 	$form['brown_black'] = array(
-		'#type' => 'button',
-		'#value' => t('Brown/Black'),
+		'#markup' => '<button type="button">Brown/Black</button>',
 		'#suffix' => '</div></div></div>'
 	);
 
@@ -251,8 +233,11 @@ function card_creator_form($form, &$form_state) {
 	);
 
 	$form['#attached']['js'][] = array(
+		'data' => drupal_get_path('module', 'card_creator') . '/libraries/snap.svg.js',
+	);
+
+	$form['#attached']['js'][] = array(
     'data' => drupal_get_path('module', 'card_creator') . '/js/card_creator.js',
-    'type' => 'file',
   );
 
 	return $form;

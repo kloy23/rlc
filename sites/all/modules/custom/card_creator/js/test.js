@@ -2,11 +2,125 @@
 
   $(document).ready(function() { // Begin $(document).ready()
 
+    // *** FUNCTIONS ***
+
+    
+
+    // find input fields
     var $inputFields = $('input[type="text"]');
     var selectedLogo;
 
-    // *** FUNCTIONS ***
 
+    // ******** LOAD SVG DOCUMENTS ********
+
+
+    // Use Snap.svg to load the 'preview' svg document
+    // Add the classes primaryColor and secondaryColor to text fields within the SVG
+    var preview = Snap('#preview');
+    Snap.load('sites/all/modules/custom/card_creator/svgTemplates/template1.svg', function(f) {
+      preview.append(f);
+      // this allows the color options loaded by loadTwoColors to take effect automagically.
+      // select all text fields in the svg element
+      var svgElement = preview.selectAll('text');
+      // for every svg text field
+      for (i=0; i<svgElement.length; i++) {
+        // target the current svg text field
+        var el = svgElement[i];
+        // get it's id
+        var id = el.attr('id');
+        // if the id is equal to 'companyName', or 'name'
+        if (id == 'companyName' || id == 'name') {
+          // give it the class of 'primaryColor'
+          el.attr('class', 'primaryColor');
+        } else { // if the id is not 'companyName', or 'name'
+          // give it the class of 'secondaryColor'
+          el.attr('class', 'secondaryColor');
+        }
+      }
+
+    });
+    // Use Snap.svg to load the 'templates' svg document  
+    var allTemplates = Snap('#templates');
+    Snap.load('sites/all/modules/custom/card_creator/svgTemplates/selectTemplate.svg', function(f) {
+      allTemplates.append(f);
+      // get all rect within loaded svg.  Each template has a rect that has an id to identify it.
+      var svgElements = allTemplates.selectAll('rect');
+      // target the first template
+      var firstTemplate = svgElements[0].node;
+      // Style the template, since it is selected when page loads
+      $(firstTemplate).attr({
+        class: 'selected',
+        fill: '#E0FFFF',
+        stroke: '#F00',
+        'stroke-width': '2px'
+      });
+      // click handeler for when a rect within #templates is clicked
+      // must insert the click handeler here in order to add it to svg document
+      for (i=0; i<svgElements.length; i++) {
+        var el = svgElements[i];
+        (function(el) {
+          el.mouseover(function() {
+              highlightTemplate(el);
+          });
+          el.mouseout(function() {
+              unHighlightTemplate(el);
+          });
+          el.click(function(e) {
+              highlightSelectedTemplate(el);
+              changeTemplate(e);
+          });
+        })(el);
+      }
+    });
+    // use Snap.svg to load logos in the 'clipart' svg
+    var clipart = Snap('#clipart');
+    // load the svg document that acts as a selection for logos
+    Snap.load('sites/all/modules/custom/card_creator/logos/vehicles/vehicles.svg', function(f) {
+      clipart.append(f);
+      var category = 'vehicles';
+      $('#clipart').css({
+        'background-color': 'white',
+        'height': '935px',
+        'width': '100%'
+      });
+      addClipartFunctionality(category);
+    });
+
+
+    // ******** ADD FUNCTIONALITY TO SVG DOCUMENTS ********
+
+
+    // hide clipart color on doc load
+    $('#clipartColor').hide();
+    // when a clipart category is selected, load that clipart svg doc
+    var loadClipartCategory = function() {
+      var category = this.id;
+      clipart.clear();
+      var fileName = 'card_creator/logos/' + category + '/' + category + '.svg';
+      Snap.load(fileName, function(f){
+        clipart.append(f);
+        if (category == 'vehicles') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '935px',
+            'width': '100%'
+          });
+        } else if (category == 'manufacturer') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '1300px',
+            'width': '100%'
+          });
+        } else if (category == 'animals') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '100%',
+            'width': '100%'
+          });
+        }
+        addClipartFunctionality(category);
+      });
+    }
     var addClipartFunctionality = function(category) {
       // target the layer that holds the logos
       var logos = clipart.select('#layer1');
@@ -31,35 +145,6 @@
           })
         })(el);
       }
-    }
-    // when a clipart category is selected, load that clipart svg doc
-    var loadClipartCategory = function() {
-      var category = this.id;
-      clipart.clear();
-      var fileName = 'sites/all/modules/custom/card_creator/logos/' + category + '/' + category + '.svg';
-      Snap.load(fileName, function(f){
-        clipart.append(f);
-        if (category == 'vehicles') {
-          $('#clipart').css({
-            'background-color': 'white',
-            'height': '935px',
-            'width': '100%'
-          });
-        } else if (category == 'manufacturer') {
-          $('#clipart').css({
-            'background-color': 'white',
-            'height': '1300px',
-            'width': '100%'
-          });
-        } else if (category == 'animals') {
-          $('#clipart').css({
-            'background-color': 'white',
-            'height': '100%',
-            'width': '100%'
-          });
-        }
-        addClipartFunctionality(category);
-      });
     }
     // when called, change the color of current logo
     var changeLogoColor = function() {
@@ -102,7 +187,7 @@
       // get the id of clicked logo
       var selectedLogoId = el.id;
       // dynamicly create the file name based on the id of selected logo
-      var fileName = 'sites/all/modules/custom/card_creator/logos/' + category + '/' + el.id + '.svg';
+      var fileName = 'card_creator/logos/' + category + '/' + el.id + '.svg';
       // load the logo that was selected, and give it the x and y values of placeholder
       var logo = Snap.load(fileName, function(f) {
         var el = f.select('svg');
@@ -144,7 +229,7 @@
       // fetch the color that is selected
       var color = fetchSelectedColor();
       preview.clear(); // removes display of old template
-      var fileName = 'sites/all/modules/custom/card_creator/svgTemplates/' + templateId + '.svg'; // dynamicly creates url to template
+      var fileName = 'card_creator/svgTemplates/' + templateId + '.svg'; // dynamicly creates url to template
       Snap.load(fileName, function(f) {
         preview.append(f);
         // target the loaded svg document
@@ -168,7 +253,7 @@
           if (id == 'companyName' || id == 'name') {
             el.attr('class', 'primaryColor');
           } else {
-              el.attr('class', 'secondaryColor');
+            el.attr('class', 'secondaryColor');
           }
           // if the appropriate text field is not empty
           if (fieldVal.length !== 0) {
@@ -214,6 +299,159 @@
         }
       });
     }
+
+
+    // ******** THEME SVG DOCUMENTS ********
+
+
+    var highlightTemplate = function(el) {
+      var rect = el.node;
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr('fill', '#E0FFFF');
+      }
+    }
+
+    var unHighlightTemplate = function(el) {
+      var rect = el.node;
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr('fill', '#FFF');
+      }    
+    }
+
+    var highlightSelectedTemplate = function(el) {
+      var rect = el.node;
+      var svgElement = Snap.select('#templates');
+      var svgNodes = svgElement.selectAll('rect')
+      for (i=0; i<svgNodes.length; i++) {
+        var el = svgNodes[i];
+        var node = el.node;
+        if ($(node).attr('class') == 'selected') {
+          $(node).attr({
+            class: '',
+            fill: '#FFF',
+            stroke: '#000',
+            'stroke-width': '1px'
+          });
+        }
+      } 
+      $(rect).attr({
+        class: 'selected',
+        stroke: '#F00',
+        'stroke-width': '2px'
+      });
+    }
+
+    var highlightClipart = function(el) {
+      var rect = el.getElementsByTagName('rect')[0];
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr({
+          fill: '#E0FFFF',
+          opacity: '1'
+        });
+      }
+    }
+
+    var unHighlightClipart = function(el) {
+      var rect = el.getElementsByTagName('rect')[0];
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr({
+          fill: '#FFF',
+          opacity: '0'
+        });
+      }    
+    }
+
+    var highlightSelectedClipart = function(el) {
+      var rect = el.getElementsByTagName('rect')[0];
+      var logos = clipart.select('#layer1');
+      var svgElements = logos.node.children;
+      for (i=0; i<svgElements.length; i++) {
+        var el = svgElements[i];
+        var thisRect = el.getElementsByTagName('rect')[0];
+        if ($(thisRect).attr('class') == 'selected') {
+          $(thisRect).attr({
+            class: '',
+            opacity: '0'
+          });
+        }
+      } 
+      $(rect).attr({
+        class: 'selected',
+        stroke: '#F00',
+        'stroke-width': '2px'
+      });
+    }
+
+
+
+    // ******** COLOR OPTIONS ********
+
+
+    // Recreate 'Ink Color' options, dynamically add color boxes, add classes for css
+    $(function colorOptions() {
+      // One Color
+      var oneColorOptions = $('#oneColor').children();
+      // loop through each color altering the color of the text and add colorboxes
+      // i = 1 in order to skip the first field, which is not a color
+      for (i = 1; i < oneColorOptions.length; i++) {
+        var el = oneColorOptions[i];
+        var text = $(el).text();
+        var color = text.toLowerCase();
+        // create new button element.  This is used as the 'colorBox'
+        var colorBox = document.createElement('button');
+        // set the class of the new button to 'colorBox'
+        $(colorBox).attr('class', 'colorBox');
+        // set the class of text
+        $(el).attr('type', 'button').addClass('oneColorText selectOneColor');
+        // add the colorBox before current element
+        $(el).prepend(colorBox);
+        // sets the color of colorbox
+        $(colorBox).css({
+            'background-color': color
+        });
+      }
+      // Add .selected to the first color in #oneColor ('Black')
+      var styledOptions = $('#oneColor').children();
+      var firstStyledColor = styledOptions[1];
+      $(firstStyledColor).addClass('selected');
+
+      // Two Colors
+      var $twoColors = $('#twoColors').children();
+      // loop through each color altering the color of the text and add colorboxes
+      // i = 1 in order to skip the first field, which is not a color
+      for (i = 1; i < $twoColors.length; i++) {
+        var el = $twoColors[i];
+        var words = $(el).text().split('/');
+        var text1 = words[0];
+        var text2 = words[1];
+        var color1 = text1.toLowerCase();
+        var color2 = text2.toLowerCase();
+        // create new button element to act as first colorBox
+        var colorBox1 = document.createElement('button');
+        // create new button element to act as second colorBox
+        var colorBox2 = document.createElement('button');
+        // set the class of colorBox1 and colorBox2 to colorBox
+        $(colorBox1).attr('class', 'colorBox');
+        $(colorBox2).attr('class', 'colorBox');
+        // set the class of text
+        $(el).attr('type', 'button').addClass('twoColorText selectTwoColor');
+        // add colorBox2 and colorBox2 before the current element
+        $(el).prepend(colorBox1, colorBox2);
+         // set the color of colorBox1 to match the first color
+        $(colorBox1).css({
+          'background-color': color1
+        });
+        // set the color of colorBox2 to match the second color
+        $(colorBox2).css({
+          'background-color': color2
+        });
+      }
+    });
+
+
+    // ******** COLOR OPTIONS FUNCTIONALITY ********
+
+
     // clear any two color options from fields if they exist
     var clearTwoColorOptions = function(e) {
       // for each input field
@@ -333,12 +571,12 @@
       // set the class of colorBox1 and colorBox2 to colorBox
       // give colorboxes an id
       $(colorBox1).attr({
-        type: 'button',
+        // type: 'button',
         class: 'colorBox',
         id: 'primaryColor'
       });
       $(colorBox2).attr({
-        type: 'button',
+        // type: 'button',
         class: 'colorBox',
         id: 'secondaryColor'
       });
@@ -395,12 +633,12 @@
       // set the class of colorBox1 and colorBox2 to colorBox
       // give colorboxes an id
       $(colorBox1).attr({
-        type: 'button',
+        // type: 'button',
         class: 'colorBox selected',
         id: 'primaryColor'
       });
       $(colorBox2).attr({
-        type: 'button',
+        // type: 'button',
         class: 'colorBox',
         id: 'secondaryColor'
       });
@@ -459,7 +697,6 @@
       changeLogoColor();
       updateFillColor();
     }
-
     // change the color of a field when one of the two color options are selected, when using a two color option
     var changeFillColor = function() {
       var color = $(this).css('background-color');
@@ -501,157 +738,8 @@
     }
 
 
+    // ******** CREATE FONT OPTIONS ********
 
-    // *** LOAD SVG DOCUMENTS ***
-
-    // Use Snap.svg to load the 'preview' svg document
-    // Add the classes primaryColor and secondaryColor to text fields within the SVG
-    var preview = Snap('#preview');
-    Snap.load('sites/all/modules/custom/card_creator/svgTemplates/template1.svg', function(f) {
-      preview.append(f);
-      // this allows the color options loaded by loadTwoColors to take effect automagically.
-      // select all text fields in the svg element
-      var svgElement = preview.selectAll('text');
-      // for every svg text field
-      for (i=0; i<svgElement.length; i++) {
-        // target the current svg text field
-        var el = svgElement[i];
-        // get it's id
-        var id = el.attr('id');
-        // if the id is equal to 'companyName', or 'name'
-        if (id == 'companyName' || id == 'name') {
-          // give it the class of 'primaryColor'
-          el.attr('class', 'primaryColor');
-        } else { // if the id is not 'companyName', or 'name'
-          // give it the class of 'secondaryColor'
-          el.attr('class', 'secondaryColor');
-        }
-      }
-    });
-    // Use Snap.svg to load the 'templates' svg document  
-    var allTemplates = Snap('#templates');
-    Snap.load('sites/all/modules/custom/card_creator/svgTemplates/selectTemplate.svg', function(f) {
-      allTemplates.append(f);
-      // get all rect within loaded svg.  Each template has a rect that has an id to identify it.
-      var svgElements = allTemplates.selectAll('rect');
-      // target the first template
-      var firstTemplate = svgElements[0].node;
-      // Style the template, since it is selected when page loads
-      $(firstTemplate).attr({
-        class: 'selected',
-        fill: '#E0FFFF',
-        stroke: '#F00',
-        'stroke-width': '2px'
-      });
-      // click handeler for when a rect within #templates is clicked
-      // must insert the click handeler here in order to add it to svg document
-      for (i=0; i<svgElements.length; i++) {
-        var el = svgElements[i];
-        (function(el) {
-          el.mouseover(function() {
-              highlightTemplate(el);
-          });
-          el.mouseout(function() {
-              unHighlightTemplate(el);
-          });
-          el.click(function(e) {
-              highlightSelectedTemplate(el);
-              changeTemplate(e);
-          });
-        })(el);
-      }
-    });
-    // use Snap.svg to load logos in the 'clipart' svg
-    var clipart = Snap('#clipart');
-    // load the svg document that acts as a selection for logos
-    Snap.load('sites/all/modules/custom/card_creator/logos/vehicles/vehicles.svg', function(f) {
-      clipart.append(f);
-      var category = 'vehicles';
-      $('#clipart').css({
-        'background-color': 'white',
-        'height': '935px',
-        'width': '100%'
-      });
-      addClipartFunctionality(category);
-    });
-
-
-    // *** THEME SVG'S ***
-
-    var highlightTemplate = function(el) {
-      var rect = el.node;
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr('fill', '#E0FFFF');
-      }
-    }
-    var unHighlightTemplate = function(el) {
-      var rect = el.node;
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr('fill', '#FFF');
-      }    
-    }
-    var highlightSelectedTemplate = function(el) {
-      var rect = el.node;
-      var svgElement = Snap.select('#templates');
-      var svgNodes = svgElement.selectAll('rect')
-      for (i=0; i<svgNodes.length; i++) {
-        var el = svgNodes[i];
-        var node = el.node;
-        if ($(node).attr('class') == 'selected') {
-          $(node).attr({
-            class: '',
-            fill: '#FFF',
-            stroke: '#000',
-            'stroke-width': '1px'
-          });
-        }
-      } 
-      $(rect).attr({
-        class: 'selected',
-        stroke: '#F00',
-        'stroke-width': '2px'
-      });
-    }
-    var highlightClipart = function(el) {
-      var rect = el.getElementsByTagName('rect')[0];
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr({
-          fill: '#E0FFFF',
-          opacity: '1'
-        });
-      }
-    }
-    var unHighlightClipart = function(el) {
-      var rect = el.getElementsByTagName('rect')[0];
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr({
-          fill: '#FFF',
-          opacity: '0'
-        });
-      }    
-    }
-    var highlightSelectedClipart = function(el) {
-      var rect = el.getElementsByTagName('rect')[0];
-      var logos = clipart.select('#layer1');
-      var svgElements = logos.node.children;
-      for (i=0; i<svgElements.length; i++) {
-        var el = svgElements[i];
-        var thisRect = el.getElementsByTagName('rect')[0];
-        if ($(thisRect).attr('class') == 'selected') {
-          $(thisRect).attr({
-            class: '',
-            opacity: '0'
-          });
-        }
-      } 
-      $(rect).attr({
-        class: 'selected',
-        stroke: '#F00',
-        'stroke-width': '2px'
-      });
-    }
-
-    // ** CREATE FONT OPTIONS
 
     // create changeFontOptions (button that opens font family)
     $(function fontStyleOptions() {
@@ -680,17 +768,17 @@
         // give the button a type of 'button'.  Default type is submit, and we dont want that.
         $(fontOptionsButton).attr({
           class: 'button',
-          type: 'button',
+          // type: 'button',
           title: 'Change Font Options for this Field'
         }).text('A');
         $(bold).attr({
           class: 'button',
-          type: 'button',
+          // type: 'button',
           title: 'Toggle Bold for this field'
         }).text('B');
         $(italic).attr({
           class: 'button',
-          type: 'button',
+          // type: 'button',
           title: 'Toggle Italic for this field'
         }).text('I');
         // wrap the input field and button in a div (for themeing)
@@ -787,70 +875,9 @@
       }
     }
 
-    // *** COLOR OPTIONS ***
 
-    // Recreate 'Ink Color' options, dynamically add color boxes, add classes for css
-    $(function colorOptions() {
-      // One Color
-      var oneColorOptions = $('#oneColor').children();
-      // loop through each color altering the color of the text and add colorboxes
-      // i = 1 in order to skip the first field, which is not a color
-      for (i = 0; i < oneColorOptions.length; i++) {
-        var el = oneColorOptions[i];
-        var text = $(el).text();
-        var color = text.toLowerCase();
-        // create new button element.  This is used as the 'colorBox'
-        var colorBox = document.createElement('button');
-        // set the class of the new button to 'colorBox'
-        $(colorBox).attr('class', 'colorBox');
-        // set the class of text
-        $(el).addClass('oneColorText selectOneColor');
-        // add the colorBox before current element
-        $(el).prepend(colorBox);
-        // sets the color of colorbox
-        $(colorBox).css({
-            'background-color': color
-        });
-      }
-      // Add .selected to the first color in #oneColor ('Black')
-      var styledOptions = $('#oneColor').children();
-      var firstStyledColor = styledOptions[1];
-      $(firstStyledColor).addClass('selected');
+    // **** CLICK HANDLERS **** 
 
-      // Two Colors
-      var $twoColors = $('#twoColors').children();
-      // loop through each color altering the color of the text and add colorboxes
-      // i = 1 in order to skip the first field, which is not a color
-      for (i = 0; i < $twoColors.length; i++) {
-        var el = $twoColors[i];
-        var words = $(el).text().split('/');
-        var text1 = words[0];
-        var text2 = words[1];
-        var color1 = text1.toLowerCase();
-        var color2 = text2.toLowerCase();
-        // create new button element to act as first colorBox
-        var colorBox1 = document.createElement('button');
-        // create new button element to act as second colorBox
-        var colorBox2 = document.createElement('button');
-        // set the class of colorBox1 and colorBox2 to colorBox
-        $(colorBox1).attr('class', 'colorBox');
-        $(colorBox2).attr('class', 'colorBox');
-        // set the class of text
-        $(el).addClass('twoColorText selectTwoColor');
-        // add colorBox2 and colorBox2 before the current element
-        $(el).prepend(colorBox1, colorBox2);
-         // set the color of colorBox1 to match the first color
-        $(colorBox1).css({
-          'background-color': color1
-        });
-        // set the color of colorBox2 to match the second color
-        $(colorBox2).css({
-          'background-color': color2
-        });
-      }
-    });
-
-    // *** CLICK HANDLERS ***
 
     // When cardInfo is changed, update svg 
     $('#cardInfo').keyup(changeText);
@@ -868,10 +895,18 @@
     $('#bottomLeftColLowerLeft').children().click(loadClipartCategory);
 
 
+    // **** TESTING SAVE SVG ****
+    var fetchPreview = function() {
+      var svg = document.getElementById('preview');
+      var image = document.getElementById('testImage');
+      var SVGtopngDataURL = svg.toDataURL('image/png', {
+        callback: function(data) {
+          console.log(data);
+        }
+      })
+    }    
 
-
-
-
+    $('#saveSvg').click(fetchPreview);
 
   }); // End $(document).ready()
 
