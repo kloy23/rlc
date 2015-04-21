@@ -48,7 +48,7 @@
         } else if (category == 'manufacturer') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '1300px',
+            'height': '950px',
             'width': '100%'
           });
         } else if (category == 'animals') {
@@ -569,7 +569,7 @@
       var category = 'vehicles';
       $('#clipart').css({
         'background-color': 'white',
-        'height': '935px',
+        'height': '680px',
         'width': '100%'
       });
       addClipartFunctionality(category);

@@ -169,7 +169,7 @@ function card_creator_form($form, &$form_state) {
 
 	// Ink Color Selection
 	$form['select_ink_color'] = array(
-		'#markup' => '<h4>' . t('Select Ink Color') . '<h4>',
+		'#markup' => '<h4>' . t('Select Ink Color') . '</h4>',
 		'#prefix' => '<div id="bottomRightCol"><div id="bottomRightMid"><div id="bottomRightMidUpper">',
 		'#suffix' => '</div>',
 	);
