@@ -83,11 +83,11 @@ function card_creator_form($form, &$form_state) {
 		),
 	);
 	$form['line1'] = array(
-		'#type' => 'textfield',
+	  '#type' => 'textfield',
 		'#id' => 'line1',
 		'#size' => 25,
 		'#attributes' => array(
-			'placeholder' => t('Line 1'),
+		  'placeholder' => t('Line 1'),
 		),
 	);
 	$form['line2'] = array(
