@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * A page module that allows users to create and order custom business cards.
+ * A module that allows users to create and order custom business cards.
  */
 
 /**
@@ -9,10 +9,25 @@
  */
 function card_creator_help($path, $arg) {
   switch ($path) {
-    case "admin/help#card_creator":
-      return '<p>' . t("Allows users to create a custom business card") . '</p>';
+    case 'admin/help#card_creator':{
+      $ret_val = '<h3>' . t('About') . '</h3>';
+      $ret_val .= '<p>' . t('Allows customers to create and order custom business cards.') . '</p>';
+      return $ret_val;
       break;
+    }
   }
+}
+
+/**
+ * Implements hood_permission().
+ */
+function card_creator_permission() {
+  return array(
+    'administer card creator' => array(
+      'title' => t('Administer Card Creator'),
+      'description' => t('Perform administrative task on Card Creator functionality.'),
+    ),
+  );
 }
 
 /**
@@ -20,10 +35,12 @@ function card_creator_help($path, $arg) {
  */
 function card_creator_menu() {
 	$items = array();
-	$items['card_creator'] = array( //this creates a URL that will call this form at card_creator
-		'description' => 'Customize your business card!.',
-		'page callback' => 'drupal_get_form', //this is the function that will be called when the page is accessed.  for a form use drupal_get_form
-		'page arguments' => array('card_creator_form'), //put the name of the form here
+
+  // Business card creation page
+	$items['card-creator'] = array(
+		'description' => 'Customize your business card.',
+		'page callback' => 'drupal_get_form', 
+		'page arguments' => array('card_creator_form'), 
 		'access callback' => TRUE,
 	);
 
@@ -31,9 +48,10 @@ function card_creator_menu() {
 }
 
 /**
- * Build card creation form
+ * Implements hook_form().
  */
 function card_creator_form($form, &$form_state) {
+  $form = array();
 
 	// Attach css, js, and library files
 	$form['#attached']['css'] = array(
@@ -131,8 +149,22 @@ function card_creator_form($form, &$form_state) {
 	$form['preview'] = array(
 		'#markup' => '<svg id="preview"></svg>',
 		'#prefix' => '<div id="rightColumn">',
-		'#suffix' => '</div>',
 	);
+
+  // Price
+  $form['current_price'] = array(
+    '#markup' => t('Price = $19.99'),
+    '#prefix' => '<div id="currentPrice">',
+    '#suffix' => '</div>',
+  );
+
+  // Add To Card
+  $form['add_to_cart'] = array(
+    '#type' => 'submit',
+    '#value' => t('Add to cart'),
+    '#prefix' => '<div id="add_to_cart">',
+    '#suffix' => '</div></div>',
+  );
 
 	// Clipart selection
 	$form['select_clipart'] = array(

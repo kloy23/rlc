@@ -13,33 +13,23 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/rlcdev/admin/structure/menu/manage/main-menu</td>
+	<td>/rlcdev/admin/structure/menu</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Add link</td>
+	<td>xpath=(//a[contains(text(),'list links')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-mlid599-operations-edit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=edit-link-title</td>
-	<td>Card Creator</td>
-</tr>
-<tr>
-	<td>type</td>
 	<td>id=edit-link-path</td>
-	<td>http://localhost/rlcdev/card_creator/</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=edit-description</td>
-	<td>Create your business card.</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=edit-weight</td>
-	<td>label=2</td>
+	<td>http://localhost/rlcdev/card-creator/</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -48,7 +38,12 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=img.admin-menu-icon</td>
+	<td>link=Home</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Card Creator</td>
 	<td></td>
 </tr>
 

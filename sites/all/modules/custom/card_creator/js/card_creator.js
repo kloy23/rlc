@@ -9,6 +9,13 @@
 
     // *** FUNCTIONS ***
 
+    var updatePrice = function(cost) {
+      var $currentPrice = $('#currentPrice');
+      var basePrice = 19.99;
+      var total = parseFloat(basePrice) + parseFloat(cost);
+      $currentPrice.text("Price = $" + total);
+    }
+
     var addClipartFunctionality = function(category) {
       // target the layer that holds the logos
       var logos = clipart.select('#layer1');
@@ -287,6 +294,7 @@
     }
     // when a one color option is selected
     var loadOneColor = function(e) {
+      var cost = 0;
       var color = $(this).text().toLowerCase();
       // target the loaded svg document
       var svgNode = Snap.select('#preview');
@@ -299,6 +307,7 @@
         // change the current fields fill value to match the color selected
         el.attr('fill', color);
       }
+      updatePrice(cost);
       clearColorSelection();
       $(this).addClass('selected');
       changeLogoColor();
@@ -449,11 +458,13 @@
     }
     // when a two color option is selected, create the color options for each field
     var loadTwoColors = function() {
+      var cost = 4.00;
       var $clipartColor = $('#clipartColor');
       for (i = 0; i < $inputFields.length; i++) {
         var el = $inputFields[i];
         createColorBoxes(this, el);
       }
+      updatePrice(cost);
       $clipartColor.show();
       createClipartColorBoxes(this, $clipartColor);
       clearColorSelection();
