@@ -95,12 +95,12 @@
     // when a logo is clicked, add that logo to the preview
     var addLogo = function(category, el) {
       // target the loaded svg document
-      var svgNode = Snap('#preview'); 
+      var svgNode = Snap('#preview');
       // get the logo placeHolder from preview
       var placeHolder = svgNode.select('#logo');
       // get the x and y values from the placeholder
-      var x = $(placeHolder.node).attr('x');
-      var y = $(placeHolder.node).attr('y');
+      var x = $(placeHolder.node).attr('x').baseVal.value;
+      var y = $(placeHolder.node).attr('y').baseVal.value;
       // get the id of clicked logo
       var selectedLogoId = el.id;
       // dynamicly create the file name based on the id of selected logo
@@ -161,7 +161,7 @@
           var fieldVal = field.value;
           // retrive the fields id and add a # to the begining in order to be used in an id selector
           var fieldId = '#' + field.id;
-          // find current color options 
+          // find current color options
           var colorOptions = $(field).siblings();
           var primaryColor = $(colorOptions[1]).css('background-color');
           var secondaryColor = $(colorOptions[2]).css('background-color');
@@ -200,8 +200,8 @@
           // get the logo placeHolder from preview
           var placeHolder = svgNode.select('#logo');
           // get the x and y values from the placeholder
-          var x = $(placeHolder.node).attr('x');
-          var y = $(placeHolder.node).attr('y');
+          var x = $(placeHolder.node).attr('x').baseVal.value;
+          var y = $(placeHolder.node).attr('y').baseVal.value;
           // load the logo that was previously selected
           var logo = Snap.load(selectedLogo, function(f) {
             var el = f.select('svg');
@@ -362,21 +362,21 @@
         'width': '12px',
         'height': '12px'
       });
-      // add click handlers to colorBox1 and colorBox2 for each inputField 
+      // add click handlers to colorBox1 and colorBox2 for each inputField
       // When primary color is clicked, call changeFillColor
       $(colorBox1).click(changeFillColor);
       // When secondary color is clicked, call changeFillColor
       $(colorBox2).click(changeFillColor);
       var siblings = $(el).siblings();
-      // if the parent of the input field is #cardInfo, then it means that a color option has not been selected yet.  
-      // if a color options has not been selected, the input field will have 2 siblings  
+      // if the parent of the input field is #cardInfo, then it means that a color option has not been selected yet.
+      // if a color options has not been selected, the input field will have 2 siblings
       if (siblings.length == 2) {
         // add colorBox1 and colorBox2 before the current element
         $(el).after(colorBox1, colorBox2);
       } else { // a color option has been selected
         // get the siblings (colorBoxes) of the input field
         var colorBoxes = $(el).siblings();
-        // get the first sibling                
+        // get the first sibling
         var primaryColorBox = $(siblings[1]);
         // get the second sibling
         var secondaryColorBox = $(siblings[2]);
@@ -424,21 +424,21 @@
         'width': '12px',
         'height': '12px'
       });
-      // add click handlers to colorBox1 and colorBox2 for each inputField 
+      // add click handlers to colorBox1 and colorBox2 for each inputField
       // When primary color is clicked, call changeFillColor
       $(colorBox1).click(selectLogoColor);
       // When secondary color is clicked, call changeFillColor
       $(colorBox2).click(selectLogoColor);
       var siblings = $(el).siblings();
-      // if the parent of the input field is #cardInfo, then it means that a color option has not been selected yet.  
-      // if a color options has not been selected, the input field will have 2 siblings  
+      // if the parent of the input field is #cardInfo, then it means that a color option has not been selected yet.
+      // if a color options has not been selected, the input field will have 2 siblings
       if (siblings.length == 0) {
         // add colorBox1 and colorBox2 before the current element
         $(el).before(colorBox1, colorBox2);
       } else { // a color option has been selected
         // get the siblings (colorBoxes) of the input field
         var colorBoxes = $(el).siblings();
-        // get the first sibling                
+        // get the first sibling
         var primaryColorBox = $(siblings[0]);
         // get the second sibling
         var secondaryColorBox = $(siblings[1]);
@@ -473,10 +473,10 @@
       // find coresponding svg text field using the created id
       var svgElement = svgNode.select(id);
       // retrieve the id of the colorbox that was clicked
-      var colorBoxId = $(this).attr('id'); 
+      var colorBoxId = $(this).attr('id');
       // set the fill color to match the color selected
-      // change the class of the svg text field to the id of selected colorBox 
-      // changing class temporarily saves the cards color scheme, allowing the user to switch color options without losing their modifications 
+      // change the class of the svg text field to the id of selected colorBox
+      // changing class temporarily saves the cards color scheme, allowing the user to switch color options without losing their modifications
       svgElement.attr({
         fill: color,
         class: colorBoxId
@@ -502,6 +502,80 @@
       changeLogoColor();
     }
 
+    // *** THEME SVG'S ***
+
+    var highlightTemplate = function(el) {
+      var rect = el.node;
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr('fill', '#E0FFFF');
+      }
+    }
+    var unHighlightTemplate = function(el) {
+      var rect = el.node;
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr('fill', '#FFF');
+      }
+    }
+    var highlightSelectedTemplate = function(el) {
+      var rect = el.node;
+      var svgElement = Snap.select('#templates');
+      var svgNodes = svgElement.selectAll('rect')
+      for (i=0; i<svgNodes.length; i++) {
+        var el = svgNodes[i];
+        var node = el.node;
+        if ($(node).attr('class') == 'selected') {
+          $(node).attr({
+            class: '',
+            fill: '#FFF',
+            stroke: '#000',
+            'stroke-width': '1px'
+          });
+        }
+      }
+      $(rect).attr({
+        class: 'selected',
+        stroke: '#F00',
+        'stroke-width': '2px'
+      });
+    }
+    var highlightClipart = function(el) {
+      var rect = el.getElementsByTagName('rect')[0];
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr({
+          fill: '#E0FFFF',
+          opacity: '1'
+        });
+      }
+    }
+    var unHighlightClipart = function(el) {
+      var rect = el.getElementsByTagName('rect')[0];
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr({
+          fill: '#FFF',
+          opacity: '0'
+        });
+      }
+    }
+    var highlightSelectedClipart = function(el) {
+      var rect = el.getElementsByTagName('rect')[0];
+      var logos = clipart.select('#layer1');
+      var svgElements = logos.node.children;
+      for (i=0; i<svgElements.length; i++) {
+        var el = svgElements[i];
+        var thisRect = el.getElementsByTagName('rect')[0];
+        if ($(thisRect).attr('class') == 'selected') {
+          $(thisRect).attr({
+            class: '',
+            opacity: '0'
+          });
+        }
+      }
+      $(rect).attr({
+        class: 'selected',
+        stroke: '#F00',
+        'stroke-width': '2px'
+      });
+    }
 
 
     // *** LOAD SVG DOCUMENTS ***
@@ -530,7 +604,7 @@
         }
       }
     });
-    // Use Snap.svg to load the 'templates' svg document  
+    // Use Snap.svg to load the 'templates' svg document
     var allTemplates = Snap('#templates');
     Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/selectTemplate.svg', function(f) {
       allTemplates.append(f);
@@ -576,82 +650,6 @@
       });
       addClipartFunctionality(category);
     });
-
-
-    // *** THEME SVG'S ***
-
-    var highlightTemplate = function(el) {
-      var rect = el.node;
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr('fill', '#E0FFFF');
-      }
-    }
-    var unHighlightTemplate = function(el) {
-      var rect = el.node;
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr('fill', '#FFF');
-      }    
-    }
-    var highlightSelectedTemplate = function(el) {
-      var rect = el.node;
-      var svgElement = Snap.select('#templates');
-      var svgNodes = svgElement.selectAll('rect')
-      for (i=0; i<svgNodes.length; i++) {
-        var el = svgNodes[i];
-        var node = el.node;
-        if ($(node).attr('class') == 'selected') {
-          $(node).attr({
-            class: '',
-            fill: '#FFF',
-            stroke: '#000',
-            'stroke-width': '1px'
-          });
-        }
-      } 
-      $(rect).attr({
-        class: 'selected',
-        stroke: '#F00',
-        'stroke-width': '2px'
-      });
-    }
-    var highlightClipart = function(el) {
-      var rect = el.getElementsByTagName('rect')[0];
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr({
-          fill: '#E0FFFF',
-          opacity: '1'
-        });
-      }
-    }
-    var unHighlightClipart = function(el) {
-      var rect = el.getElementsByTagName('rect')[0];
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr({
-          fill: '#FFF',
-          opacity: '0'
-        });
-      }    
-    }
-    var highlightSelectedClipart = function(el) {
-      var rect = el.getElementsByTagName('rect')[0];
-      var logos = clipart.select('#layer1');
-      var svgElements = logos.node.children;
-      for (i=0; i<svgElements.length; i++) {
-        var el = svgElements[i];
-        var thisRect = el.getElementsByTagName('rect')[0];
-        if ($(thisRect).attr('class') == 'selected') {
-          $(thisRect).attr({
-            class: '',
-            opacity: '0'
-          });
-        }
-      } 
-      $(rect).attr({
-        class: 'selected',
-        stroke: '#F00',
-        'stroke-width': '2px'
-      });
-    }
 
     // ** CREATE FONT OPTIONS
 
@@ -854,7 +852,7 @@
 
     // *** CLICK HANDLERS ***
 
-    // When cardInfo is changed, update svg 
+    // When cardInfo is changed, update svg
     $('#cardInfo').keyup(changeText);
     // When a new font is selected for the entire doc, change text.
     $('#docFontFamily').change(changeAllFonts);

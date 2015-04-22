@@ -28,11 +28,11 @@ function card_creator_menu() {
 	);
 
 	return $items;
-} 
+}
 
 /**
  * Build card creation form
- */ 
+ */
 function card_creator_form($form, &$form_state) {
 
 	// Attach css, js, and library files
@@ -131,7 +131,7 @@ function card_creator_form($form, &$form_state) {
 	$form['preview'] = array(
 		'#markup' => '<svg id="preview"></svg>',
 		'#prefix' => '<div id="rightColumn">',
-		'#suffix' => '</div>', 
+		'#suffix' => '</div>',
 	);
 
 	// Clipart selection
