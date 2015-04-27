@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://localhost/rlcdev/" />
+<link rel="selenium.base" href="http://rlc.groupthirty.com/" />
 <title>card-creator-menu</title>
 </head>
 <body>
@@ -13,23 +13,33 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/rlcdev/admin/structure/menu</td>
+	<td>/admin/structure/menu/manage/main-menu</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>xpath=(//a[contains(text(),'list links')])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>id=edit-mlid599-operations-edit</td>
+	<td>link=Add link</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
+	<td>id=edit-link-title</td>
+	<td>Card Creator</td>
+</tr>
+<tr>
+	<td>type</td>
 	<td>id=edit-link-path</td>
-	<td>http://localhost/rlcdev/card-creator/</td>
+	<td>card-creator</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-description</td>
+	<td>Create your business card!</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=edit-weight</td>
+	<td>label=2</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -41,12 +51,6 @@
 	<td>link=Home</td>
 	<td></td>
 </tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Card Creator</td>
-	<td></td>
-</tr>
-
 </tbody></table>
 </body>
 </html>
