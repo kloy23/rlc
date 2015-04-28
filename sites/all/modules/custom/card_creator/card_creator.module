@@ -34,17 +34,17 @@ function card_creator_permission() {
  * Implements hook_menu().
  */
 function card_creator_menu() {
-	$items = array();
+  $items = array();
 
   // Business card creation page
-	$items['card-creator'] = array(
-		'description' => 'Customize your business card.',
-		'page callback' => 'drupal_get_form',
-		'page arguments' => array('card_creator_form'),
-		'access callback' => TRUE,
-	);
+  $items['card-creator'] = array(
+    'description' => 'Customize your business card.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('card_creator_form'),
+    'access callback' => TRUE,
+  );
 
-	return $items;
+  return $items;
 }
 
 /**
@@ -53,103 +53,103 @@ function card_creator_menu() {
 function card_creator_form($form, &$form_state) {
   $form = array();
 
-	// Attach css, js, and library files
-	$form['#attached']['css'] = array(
-  	drupal_get_path('module', 'card_creator') . '/css/styles.css',
-	);
+  // Attach css, js, and library files
+  $form['#attached']['css'] = array(
+    drupal_get_path('module', 'card_creator') . '/css/styles.css',
+  );
 
-	// Input Fields
-	$form['company_name'] = array(
-		'#type' => 'textfield',
-		'#id' => 'companyName',
-		'#size' => 25,
-		'#attributes' => array(
-			'placeholder' => t('Company Name'),
-		),
-		'#prefix' => '<div id="container"><div id="leftColumn"><div id="cardInfo">',
-	);
-	$form['name'] = array(
-		'#type' => 'textfield',
-		'#id' => 'name',
-		'#size' => 25,
-		'#attributes' => array(
-			'placeholder' => t('Name'),
-		),
-	);
-	$form['title'] = array(
-		'#type' => 'textfield',
-		'#id' => 'title',
-		'#size' => 25,
-		'#attributes' => array(
-			'placeholder' => t('Title'),
-		),
-	);
-	$form['address'] = array(
-		'#type' => 'textfield',
-		'#id' => 'address',
-		'#size' => 25,
-		'#attributes' => array(
-			'placeholder' => t('Address'),
-		),
-	);
-	$form['city_state_zip'] = array(
-		'#type' => 'textfield',
-		'#id' => 'cityStateZip',
-		'#size' => 25,
-		'#attributes' => array(
-			'placeholder' => t('City, State Zip'),
-		),
-	);
-	$form['line1'] = array(
-	  '#type' => 'textfield',
-		'#id' => 'line1',
-		'#size' => 25,
-		'#attributes' => array(
-		  'placeholder' => t('Line 1'),
-		),
-	);
-	$form['line2'] = array(
-		'#type' => 'textfield',
-		'#id' => 'line2',
-		'#size' => 25,
-		'#attributes' => array(
-			'placeholder' => t('Line 2'),
-		),
-	);
-	$form['line3'] = array(
-		'#type' => 'textfield',
-		'#id' => 'line3',
-		'#size' => 25,
-		'#attributes' => array(
-			'placeholder' => ('Line 3'),
-		),
-	);
-	$form['line4'] = array(
-		'#type' => 'textfield',
-		'#id' => 'line4',
-		'#size' => 25,
-		'#attributes' => array(
-			'placeholder' => ('Line 4'),
-		),
-		'#suffix' => '</div>',
-	);
+  // Input Fields
+  $form['company_name'] = array(
+    '#type' => 'textfield',
+    '#id' => 'companyName',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Company Name'),
+    ),
+    '#prefix' => '<div id="container"><div id="leftColumn"><div id="cardInfo">',
+  );
+  $form['name'] = array(
+    '#type' => 'textfield',
+    '#id' => 'name',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Name'),
+    ),
+  );
+  $form['title'] = array(
+    '#type' => 'textfield',
+    '#id' => 'title',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Title'),
+    ),
+  );
+  $form['address'] = array(
+    '#type' => 'textfield',
+    '#id' => 'address',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Address'),
+    ),
+  );
+  $form['city_state_zip'] = array(
+    '#type' => 'textfield',
+    '#id' => 'cityStateZip',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('City, State Zip'),
+    ),
+  );
+  $form['line1'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line1',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 1'),
+    ),
+  );
+  $form['line2'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line2',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 2'),
+    ),
+  );
+  $form['line3'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line3',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => ('Line 3'),
+    ),
+  );
+  $form['line4'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line4',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => ('Line 4'),
+    ),
+    '#suffix' => '</div>',
+  );
 
-	// Clipart Color Label
-	$form['clipart_color'] = array(
-		'#markup' => '<div><label id="clipartColor">' . t('Clipart Color') . '</label></div>',
-	);
+  // Clipart Color Label
+  $form['clipart_color'] = array(
+    '#markup' => '<div><label id="clipartColor">' . t('Clipart Color') . '</label></div>',
+  );
 
-	// Font Family Select List
-	$form['font_family'] = array(
-		'#markup' => '<select id="docFontFamily" title="Change the font for ALL fields."><option value="helvetica">Helvetica</option><option value="futura">Futura</option><option value="garamond">Garamond</option><option value="frutiger">Frutiger</option></select>',
-		'#suffix' => '</div>',
-	);
+  // Font Family Select List
+  $form['font_family'] = array(
+    '#markup' => '<select id="docFontFamily" title="Change the font for ALL fields."><option value="helvetica">Helvetica</option><option value="futura">Futura</option><option value="garamond">Garamond</option><option value="frutiger">Frutiger</option></select>',
+    '#suffix' => '</div>',
+  );
 
-	// Preview svg
-	$form['preview'] = array(
-		'#markup' => '<svg id="preview"></svg>',
-		'#prefix' => '<div id="rightColumn">',
-	);
+  // Preview svg
+  $form['preview'] = array(
+    '#markup' => '<svg id="preview"></svg>',
+    '#prefix' => '<div id="rightColumn">',
+  );
 
   // Price
   $form['current_price'] = array(
@@ -166,109 +166,117 @@ function card_creator_form($form, &$form_state) {
     '#suffix' => '</div></div>',
   );
 
-	// Clipart selection
-	$form['select_clipart'] = array(
-		'#markup' => '<h4>' . t('Select Clipart') . '</h4>',
-		'#prefix' => '<div id="bottom"><div id="bottomLeftCol"><div id="bottomLeftColUpper">',
-		'#suffix' => '</div>',
-	);
-	$form['vehicles'] = array(
-		'#markup' => '<button type="button" id="vehicles">Vehicles</button>',
-		'#prefix' => '<div id="bottomLeftColLower"><div id="bottomLeftColLowerLeft">',
-	);
-	$form['manufacturer'] = array(
-		'#markup' => '<button type="button" id="manufacturer">Manufactuer Logo\'s</button>',
-	);
-	$form['animals'] = array(
-		'#markup' => '<button type="button" id="animals">Animals</button>',
-		'#suffix' => '</div>',
-	);
+  // Clipart selection
+  $form['select_clipart'] = array(
+    '#markup' => '<h4>' . t('Select Clipart') . '</h4>',
+    '#prefix' => '<div id="bottom"><div id="bottomLeftCol"><div id="bottomLeftColUpper">',
+    '#suffix' => '</div>',
+  );
+  $form['vehicles'] = array(
+    '#markup' => '<button type="button" id="vehicles">Vehicles</button>',
+    '#prefix' => '<div id="bottomLeftColLower"><div id="bottomLeftColLowerLeft">',
+  );
+  $form['manufacturer'] = array(
+    '#markup' => '<button type="button" id="manufacturer">Manufactuer Logo\'s</button>',
+  );
+  $form['animals'] = array(
+    '#markup' => '<button type="button" id="animals">Animals</button>',
+    '#suffix' => '</div>',
+  );
 
-	// Clipart svg dispaly
-	$form['clipart'] = array(
-		'#markup' => '<svg id="clipart"></svg>',
-		'#prefix' => '<div id="bottomLeftColLowerRight">',
-		'#suffix' => '</div></div></div>',
-	);
+  // Clipart svg dispaly
+  $form['clipart'] = array(
+    '#markup' => '<svg id="clipart"></svg>',
+    '#prefix' => '<div id="bottomLeftColLowerRight">',
+    '#suffix' => '</div></div></div>',
+  );
 
-	// Ink Color Selection
-	$form['select_ink_color'] = array(
-		'#markup' => '<h4>' . t('Select Ink Color') . '</h4>',
-		'#prefix' => '<div id="bottomRightCol"><div id="bottomRightMid"><div id="bottomRightMidUpper">',
-		'#suffix' => '</div>',
-	);
+  // Ink Color Selection
+  $form['select_ink_color'] = array(
+    '#markup' => '<h4>' . t('Select Ink Color') . '</h4>',
+    '#prefix' => '<div id="bottomRightCol"><div id="bottomRightMid"><div id="bottomRightMidUpper">',
+    '#suffix' => '</div>',
+  );
 
-	// One Color Options
-	$form['black'] = array(
-		'#markup' => '<button type="button">Black</button>',
-		'#prefix' => '<div id="bottomRightMidLower"><div id="oneColor">',
-	);
-	$form['red'] = array(
-		'#markup' => '<button type="button">Red</button>',
-	);
-	$form['blue'] = array(
-		'#markup' => '<button type="button">Blue</button>',
-	);
-	$form['maroon'] = array(
-		'#markup' => '<button type="button">Maroon</button>',
-	);
-	$form['green'] = array(
-		'#markup' => '<button type="button">Green</button>',
-	);
-	$form['brown'] = array(
-		'#markup' => '<button type="button">Brown</button>',
-		'#suffix' => '</div>',
-	);
+  // One Color Options
+  $form['black'] = array(
+    '#markup' => '<button type="button">Black</button>',
+    '#prefix' => '<div id="bottomRightMidLower"><div id="oneColor">',
+  );
+  $form['red'] = array(
+    '#markup' => '<button type="button">Red</button>',
+  );
+  $form['blue'] = array(
+    '#markup' => '<button type="button">Blue</button>',
+  );
+  $form['maroon'] = array(
+    '#markup' => '<button type="button">Maroon</button>',
+  );
+  $form['green'] = array(
+    '#markup' => '<button type="button">Green</button>',
+  );
+  $form['brown'] = array(
+    '#markup' => '<button type="button">Brown</button>',
+    '#suffix' => '</div>',
+  );
 
-	// Two Color Options
-	$form['red_blue'] = array(
-		'#markup' => '<button type="button">Red/Blue</button>',
-		'#prefix' => '<div id="twoColors">',
-	);
-	$form['red_black'] = array(
-		'#markup' => '<button type="button">Red/Black</button>',
-	);
-	$form['blue_black'] = array(
-		'#markup' => '<button type="button">Blue/Black</button>',
-	);
-	$form['maroon_black'] = array(
-		'#markup' => '<button type="button">Maroon/Black</button>',
-	);
-	$form['green_black'] = array(
-		'#markup' => '<button type="button">Green/Black</button>',
-	);
-	$form['brown_black'] = array(
-		'#markup' => '<button type="button">Brown/Black</button>',
-		'#suffix' => '</div></div></div>'
-	);
+  // Two Color Options
+  $form['red_blue'] = array(
+    '#markup' => '<button type="button">Red/Blue</button>',
+    '#prefix' => '<div id="twoColors">',
+  );
+  $form['red_black'] = array(
+    '#markup' => '<button type="button">Red/Black</button>',
+  );
+  $form['blue_black'] = array(
+    '#markup' => '<button type="button">Blue/Black</button>',
+  );
+  $form['maroon_black'] = array(
+    '#markup' => '<button type="button">Maroon/Black</button>',
+  );
+  $form['green_black'] = array(
+    '#markup' => '<button type="button">Green/Black</button>',
+  );
+  $form['brown_black'] = array(
+    '#markup' => '<button type="button">Brown/Black</button>',
+    '#suffix' => '</div></div></div>'
+  );
 
-	// Template Selection
-	$form['select_template'] = array(
-		'#markup' => '<h4>' . t('Select A Template') . '</h4>',
-		'#prefix' => '<div id="bottomRightSide"><div id="bottomRightSideUpper">',
-		'#suffix' => '</div>',
-	);
+  // Template Selection
+  $form['select_template'] = array(
+    '#markup' => '<h4>' . t('Select A Template') . '</h4>',
+    '#prefix' => '<div id="bottomRightSide"><div id="bottomRightSideUpper">',
+    '#suffix' => '</div>',
+  );
 
-	// Templates svg display
-	$form['templates'] = array(
-		'#markup' => '<svg id="templates"></svg>',
-		'#prefix' => '<div id="bottomRightSideLower">',
-		'#suffix' => '</div></div></div></div>',
-	);
+  // Templates svg display
+  $form['templates'] = array(
+    '#markup' => '<svg id="templates"></svg>',
+    '#prefix' => '<div id="bottomRightSideLower">',
+    '#suffix' => '</div></div></div></div>',
+  );
 
-	$form['#attached']['js'][] = array(
-		'data' => drupal_get_path('module', 'card_creator') . '/libraries/snap.svg.js',
-	);
+  $form['#attached']['js'][] = array(
+    'data' => drupal_get_path('module', 'card_creator') . '/libraries/snap.svg.js',
+  );
 
-	$form['#attached']['js'][] = array(
+  $form['#attached']['js'][] = array(
     'data' => drupal_get_path('module', 'card_creator') . '/js/card_creator.js',
   );
 
-	return $form;
+  return $form;
 }
+
+/**
+ * Implements hook_form_validate().
+ */
 
 function card_creator_form_validate($form, &$form_state) {
 }
+
+/**
+ * Implements hook_form_submit().
+ */
 
 function card_creator_form_submit($form, &$form_state) {
 }
