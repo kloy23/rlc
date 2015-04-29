@@ -49,18 +49,18 @@ function card_creator_menu() {
 
 /**
  * Implements hook_commerce_product_type_info().
+ * Create a new product type for Business Cards.
  */
 function card_creator_commerce_product_type_info() {
   return array(
-    array(
+    'business_card' => array(
       'type' => 'business_card',
       'name' => t('Business Card'),
-      'description' => 'A customized business card.',
-      'module' => 'card_creator',
+      'description' => t('A customized business card'),
+      'help' => '',
     ),
   );
 }
-
 
 /**
  * Implements hook_form().
