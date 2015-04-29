@@ -19,7 +19,7 @@ function card_creator_help($path, $arg) {
 }
 
 /**
- * Implements hood_permission().
+ * Implements hook_permission().
  */
 function card_creator_permission() {
   return array(
@@ -46,6 +46,21 @@ function card_creator_menu() {
 
   return $items;
 }
+
+/**
+ * Implements hook_commerce_product_type_info().
+ */
+function card_creator_commerce_product_type_info() {
+  return array(
+    array(
+      'type' => 'business_card',
+      'name' => t('Business Card'),
+      'description' => 'A customized business card.',
+      'module' => 'card_creator',
+    ),
+  );
+}
+
 
 /**
  * Implements hook_form().
@@ -268,17 +283,22 @@ function card_creator_form($form, &$form_state) {
 }
 
 /**
- * Implements hook_form_validate().
+ * Validates Card Creator Form.
  */
 
 function card_creator_form_validate($form, &$form_state) {
 }
 
 /**
- * Implements hook_form_submit().
+ * Process a validated Card Creator Form submission.
  */
 
 function card_creator_form_submit($form, &$form_state) {
+  // Rebuild the form.
+  $form_state['rebuild'] = TRUE;
+
+  // Notify user.
+  drupal_set_message(t('Card Created'));
 }
 
 
