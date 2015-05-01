@@ -17,12 +17,39 @@ function business_card_fields_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_address',
-    'indexes' => array(),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'addressfield',
-    'settings' => array(),
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 30,
+    ),
     'translatable' => 0,
-    'type' => 'addressfield',
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_city_state_zip'
+  $field_bases['field_city_state_zip'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_city_state_zip',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 30,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_company_name'

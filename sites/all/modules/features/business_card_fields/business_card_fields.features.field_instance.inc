@@ -94,7 +94,7 @@ function business_card_fields_field_default_field_instances() {
         'currency_code' => 'default',
       ),
       'type' => 'commerce_price_full',
-      'weight' => 0,
+      'weight' => 2,
     ),
   );
 
@@ -107,15 +107,10 @@ function business_card_fields_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'addressfield',
-        'settings' => array(
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
-        'weight' => 4,
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
       ),
       'line_item' => array(
         'label' => 'above',
@@ -129,29 +124,57 @@ function business_card_fields_field_default_field_instances() {
     'label' => 'Address',
     'required' => 0,
     'settings' => array(
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'addressfield',
+      'module' => 'text',
       'settings' => array(
-        'available_countries' => array(
-          'US' => 'US',
-        ),
-        'default_country' => 'US',
-        'format_handlers' => array(
-          'address' => 'address',
-          'address-hide-postal-code' => 0,
-          'address-hide-street' => 0,
-          'address-hide-country' => 0,
-          'organisation' => 0,
-          'name-full' => 0,
-          'name-oneline' => 0,
-          'address-optional' => 0,
-        ),
+        'size' => 60,
       ),
-      'type' => 'addressfield_standard',
-      'weight' => 39,
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_product-business_card-field_city_state_zip'
+  $field_instances['commerce_product-business_card-field_city_state_zip'] = array(
+    'bundle' => 'business_card',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_city_state_zip',
+    'label' => 'City State Zip',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
     ),
   );
 
@@ -191,7 +214,7 @@ function business_card_fields_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 4,
     ),
   );
 
@@ -231,7 +254,7 @@ function business_card_fields_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 40,
+      'weight' => 9,
     ),
   );
 
@@ -271,7 +294,7 @@ function business_card_fields_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 41,
+      'weight' => 10,
     ),
   );
 
@@ -311,7 +334,7 @@ function business_card_fields_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 42,
+      'weight' => 11,
     ),
   );
 
@@ -351,7 +374,7 @@ function business_card_fields_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 43,
+      'weight' => 12,
     ),
   );
 
@@ -391,7 +414,7 @@ function business_card_fields_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 37,
+      'weight' => 5,
     ),
   );
 
@@ -431,13 +454,14 @@ function business_card_fields_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 38,
+      'weight' => 6,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
+  t('City State Zip');
   t('Company Name');
   t('Line 1');
   t('Line 2');
