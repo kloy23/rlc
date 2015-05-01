@@ -5,15 +5,26 @@
     var $inputFields = $('#cardInfo :input[type="text"]');
     var selectedLogo;
 
+    // Hide selected divs on pageload
     $('#clipartColor').hide();
+    $('#price').hide();
 
     // *** FUNCTIONS ***
 
     var updatePrice = function(cost) {
       var $currentPrice = $('#currentPrice');
+      var $price = $('#price');
+      // set base price as price for a one color business card
       var basePrice = 19.99;
+      // calculate total to be displayed to the customer
       var total = parseFloat(basePrice) + parseFloat(cost);
+      // Convert the price to be used in the "price" form field for drupal commerce
+      var convertedPrice = Math.ceil(total * 100);
+      // display price to customer
       $currentPrice.text("Price = $" + total);
+      // set the price for drupal price field
+      $price.val(convertedPrice);
+
     }
 
     var addClipartFunctionality = function(category) {
