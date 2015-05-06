@@ -607,6 +607,10 @@
     var preview = Snap('#preview');
     Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/template1.svg', function(f) {
       preview.append(f);
+      preview.attr({
+        'width' : '315px',
+        'height' : '180px',
+      });
       // this allows the color options loaded by loadTwoColors to take effect automagically.
       // select all text fields in the svg element
       var svgElement = preview.selectAll('text');
@@ -889,11 +893,26 @@
     // When a clipart category is clicked, load the svg
     $('#bottomLeftColLowerLeft').children().click(loadClipartCategory);
 
+    // **** TESTING SAVE SVG ****
+    var fetchPreview = function() {
+      var svg = document.getElementById("preview");
+      var SVGtopngDataURL = svg.toDataURL("image/png", {
+        callback: function(data) {
+          $.ajax({
+            type: "POST",
+            url: "upload_data.php",
+            data: {
+              img: data
+            }
+          })
+        }
+      });
+    }
 
-
-
-
-
+    $("#addToCart").click(function (e) {
+      e.preventDefault();
+      fetchPreview();
+    });
 
   }); // End $(document).ready()
 
