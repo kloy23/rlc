@@ -895,6 +895,8 @@
 
     // **** TESTING SAVE SVG ****
     var fetchPreview = function() {
+      var companyName = $('#companyName').val();
+      var name = $('#name').val();
       var svg = document.getElementById("preview");
       var SVGtopngDataURL = svg.toDataURL("image/svg+xml", {
         callback: function(data) {
@@ -902,7 +904,9 @@
             type: 'POST',
             url: '/rlcdev/card-creator-ajax',
             data: {
-              img: data
+              img: data,
+              company_name: companyName,
+              name: name
             }
           })
         }
@@ -910,7 +914,7 @@
     }
 
     $("#addToCart").click(function (e) {
-      e.preventDefault();
+      // e.preventDefault();
       fetchPreview();
     });
 
