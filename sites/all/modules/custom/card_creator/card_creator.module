@@ -44,7 +44,32 @@ function card_creator_menu() {
     'access callback' => TRUE,
   );
 
+  // Create page for ajax callback
+  $items['card-creator-ajax'] = array(
+    'title' => t('Card Creator AJAX'),
+    'type' => MENU_CALLBACK,
+    'page callback' => 'card_creator_ajax',
+    'access arguments' => array('access content'),
+  );
+
   return $items;
+}
+
+/**
+ * Implement the card_creator_ajax callback.
+ *
+ * Saves an image of the business card the user has created.
+ */
+function card_creator_ajax() {
+  define('UPLOAD_DIR', 'sites/all/modules/custom/card_creator/users_cards/');
+  $img = $_POST['img'];
+  $img = str_replace('data:image/svg+xml;base64,', '', $img);
+  $img = str_replace(' ', '+', $img);
+  $data = base64_decode($img);
+  $file = UPLOAD_DIR . uniqid() . '.svg';
+  $success = file_put_contents($file, $data);
+
+  print $success ? $file : 'Unable to save the file.';
 }
 
 /**
@@ -284,12 +309,11 @@ function card_creator_form($form, &$form_state) {
     '#suffix' => '</div></div></div></div>',
   );
 
-  // Include snap.svg library
+  // Include libraries
   $form['#attached']['js'][] = array(
     'data' => drupal_get_path('module', 'card_creator') . '/libraries/snap.svg.js',
   );
 
-  // Include svg_todataurl library
   $form['#attached']['js'][] = array(
     'data' => drupal_get_path('module', 'card_creator') . '/libraries/svg_todataurl.js',
   );

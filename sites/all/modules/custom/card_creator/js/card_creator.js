@@ -896,11 +896,11 @@
     // **** TESTING SAVE SVG ****
     var fetchPreview = function() {
       var svg = document.getElementById("preview");
-      var SVGtopngDataURL = svg.toDataURL("image/png", {
+      var SVGtopngDataURL = svg.toDataURL("image/svg+xml", {
         callback: function(data) {
           $.ajax({
-            type: "POST",
-            url: "upload_data.php",
+            type: 'POST',
+            url: '/rlcdev/card-creator-ajax',
             data: {
               img: data
             }
