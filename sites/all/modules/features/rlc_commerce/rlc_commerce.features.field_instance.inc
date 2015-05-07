@@ -10,7 +10,8 @@
 function rlc_commerce_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'commerce_customer_profile-billing-commerce_customer_address'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-commerce_customer_address'
   $field_instances['commerce_customer_profile-billing-commerce_customer_address'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -57,18 +58,27 @@ function rlc_commerce_field_default_field_instances() {
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'commerce_customer_address',
     'label' => 'Address',
-    'required' => TRUE,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'addressfield',
       'settings' => array(
-        'available_countries' => array(),
-        'default_country' => '',
+        'available_countries' => array(
+          'US' => 'US',
+        ),
+        'default_country' => 'US',
         'format_handlers' => array(
-          0 => 'address',
-          1 => 'name-oneline',
+          'address' => 'address',
+          'address-hide-country' => 'address-hide-country',
+          'name-oneline' => 'name-oneline',
+          'address-hide-postal-code' => 0,
+          'address-hide-street' => 0,
+          'organisation' => 0,
+          'name-full' => 0,
+          'address-optional' => 0,
         ),
       ),
       'type' => 'addressfield_standard',
@@ -293,7 +303,8 @@ function rlc_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_order-commerce_order-commerce_customer_billing'
+  // Exported field_instance:
+  // 'commerce_order-commerce_order-commerce_customer_billing'
   $field_instances['commerce_order-commerce_order-commerce_customer_billing'] = array(
     'bundle' => 'commerce_order',
     'deleted' => 0,
@@ -336,7 +347,8 @@ function rlc_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_order-commerce_order-commerce_line_items'
+  // Exported field_instance:
+  // 'commerce_order-commerce_order-commerce_line_items'
   $field_instances['commerce_order-commerce_order-commerce_line_items'] = array(
     'bundle' => 'commerce_order',
     'deleted' => 0,
@@ -385,7 +397,8 @@ function rlc_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_order-commerce_order-commerce_order_total'
+  // Exported field_instance:
+  // 'commerce_order-commerce_order-commerce_order_total'
   $field_instances['commerce_order-commerce_order-commerce_order_total'] = array(
     'bundle' => 'commerce_order',
     'default_value' => NULL,

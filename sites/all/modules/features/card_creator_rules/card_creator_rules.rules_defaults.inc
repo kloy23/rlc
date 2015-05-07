@@ -9,8 +9,8 @@
  */
 function card_creator_rules_default_rules_configuration() {
   $items = array();
-  $items['rules_test'] = entity_import('rules_config', '{ "rules_test" : {
-      "LABEL" : "test",
+  $items['rules_add_new_business_card_product_to_cart'] = entity_import('rules_config', '{ "rules_add_new_business_card_product_to_cart" : {
+      "LABEL" : "Add new business card product to cart",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "commerce_cart", "rules", "entity" ],
