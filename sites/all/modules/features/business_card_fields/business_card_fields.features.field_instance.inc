@@ -138,7 +138,59 @@ function business_card_fields_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-business_card-field_city_state_zip'
+  // Exported field_instance:
+  // 'commerce_product-business_card-field_business_card_image'
+  $field_instances['commerce_product-business_card-field_business_card_image'] = array(
+    'bundle' => 'business_card',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 11,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_business_card_image',
+    'label' => 'business_card_image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 36,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_product-business_card-field_city_state_zip'
   $field_instances['commerce_product-business_card-field_city_state_zip'] = array(
     'bundle' => 'business_card',
     'default_value' => NULL,
@@ -178,7 +230,8 @@ function business_card_fields_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-business_card-field_company_name'
+  // Exported field_instance:
+  // 'commerce_product-business_card-field_company_name'
   $field_instances['commerce_product-business_card-field_company_name'] = array(
     'bundle' => 'business_card',
     'default_value' => NULL,
@@ -470,6 +523,7 @@ function business_card_fields_field_default_field_instances() {
   t('Name');
   t('Price');
   t('Title');
+  t('business_card_image');
 
   return $field_instances;
 }
