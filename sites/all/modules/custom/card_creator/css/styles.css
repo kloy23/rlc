@@ -1,157 +1,176 @@
 #container {
-    margin: 0 0 0 5px;
-    padding: 10px;
-    border: 3px outset black;
-    float: left;
-    background-color: #d3d3d3;
-    border-radius: 10px;
-    margin-top: 20px;
-}
+  background-color: #d3d3d3;
+  border: 3px outset black;
+  border-radius: 10px;
+  float: left;
+  padding: 10px;
+  }
 #container #header {
-    border-bottom: 3px solid #c00;
-    float: left;
-    margin-bottom: 10px;
-    padding: 0;
-    width: 100%;
+  border-bottom: 3px solid #c00;
+  float: left;
+  margin-bottom: 10px;
+  padding: 0;
+  width: 100%;
 }
 #container #leftColumn {
-    float: left;
-    width: 40%;
+  float: left;
+  width: 45%;
+}
+#cardInfo > .form-item {
+  margin: 0;
 }
 #container #rightColumn {
-    float: left;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    width: 55%;
+  float: left;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 55%;
 }
 #rightColumn #preview {
-    background: none repeat scroll 0 0 white;
-    border: 3px outset black;
-    height: 180px;
-    margin-top: 25px;
-    width: 315px;
+  background: none repeat scroll 0 0 white;
+  border: 3px outset black;
+  height: 180px;
+  margin-top: 25px;
+  width: 315px;
+}
+#rightColumn #currentPrice {
+  float: left;
+  width: 50%;
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 15px;
+}
+#rightColumn #price {
+  display: none;
+}
+#rightColumn #add_to_cart {
+  float: right;
+  width: 50%
 }
 .button {
-    font-size: 10px;
-    margin: 2px;
+  font-size: 10px;
+  height: 25px;
+  margin: 2px;
 }
 .colorBox {
-    border-color: rgba(0, 0, 0, 0.2);
-    border-style: solid;
-    border-width: 1px;
-    float: left;
-    height: 10px;
-    margin-right: 2px;
-    padding-left: 2px;
-    position: relative;
-    width: 10px;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  float: left;
+  height: 10px;
+  margin-right: 2px;
+  padding-left: 2px;
+  position: relative;
+  width: 10px;
 }
 .oneColorText, .twoColorText {
-    font-size: 10px;
-    margin: 1px;
-    padding: 1px 0 1px 2px;
-    position: relative;
-    text-align: left;
-    width: 100%;
+  font-size: 10px;
+  margin: 1px;
+  padding: 1px 0 1px 2px;
+  position: relative;
+  text-align: left;
+  width: 100%;
 }
 .selected {
-    border-color: highlight;
-    border-style: inset;
-    border-width: 2px;
-    margin: 2px;
+  border-color: highlight;
+  border-style: inset;
+  border-width: 2px;
+  margin: 2px;
 }
 #container #bottom {
-    border-top: 1px solid black;
-    float: left;
-    margin-top: 10px;
-    padding-top: 10px;
-    width: 100%;
+  border-top: 1px solid black;
+  float: left;
+  margin-top: 10px;
+  padding-top: 10px;
+  width: 100%;
 }
 #bottom h4 {
-    border: 1px solid black;
-    background-color: darkgray;
-    margin: 25px;
+  border: 1px solid black;
+  background-color: darkgray;
+  margin: 25px;
 }
 #bottom #bottomLeftCol {
-    float: left;
-    height: 220px;
-    text-align: center;
-    width: 40%;
+  float: left;
+  height: 220px;
+  text-align: center;
+  width: 40%;
 }
 #bottomLeftColLower #bottomLeftColLowerLeft {
-    float: left;
-    width: 30%;
+  float: left;
+  width: 40%;
 }
 #bottomLeftCol #bottomLeftColUpper {
-    margin: -15px 0;
-    text-align: center;
+  margin: -15px 0;
+  text-align: center;
 }
 #bottomLeftColLower button {
-    width: 100%;
+  width: 100%;
 }
 #bottomLeftColLower #bottomLeftColLowerRight {
-    border: 1px solid black;
-    float: right;
-    height: 200px;
-    overflow: scroll;
-    width: 69%;
+  border: 1px solid black;
+  float: right;
+  height: 180px;
+  overflow: scroll;
+  width: 58%;
 }
 #bottom #bottomRightCol {
-    float: left;
-    height: 220px;
-    width: 59%;
+  float: left;
+  height: 220px;
+  width: 59%;
 }
 #bottomRightCol #bottomRightMid {
-    float: left;
-    height: 220px;
-    width: 47%;
+  float: left;
+  height: 220px;
+  width: 55%;
 }
 #bottomRightMid #bottomRightMidUpper {
-    margin: -15px 0;
-    text-align: center;
+  margin: -15px 0;
+  text-align: center;
 }
 #bottomRightMid #bottomRightMidLower {
-    font-size: 13px;
-    width: 100%;
+  font-size: 13px;
+  padding-top: 15px;
+  width: 100%;
 }
 #bottomRightMidLower p {
-    line-height: 7px;
+  line-height: 7px;
 }
 #bottomRightMidLower #oneColor {
-    float: left;
-    left: 15px;
-    line-height: 0;
-    position: relative;
-    text-align: left;
-    width: 30%;
+  float: left;
+  left: 15px;
+  line-height: 0;
+  position: relative;
+  text-align: left;
+  width: 30%;
 }
 #bottomRightMidLower #twoColors {
-    float: left;
-    left: 20px;
-    line-height: 0;
-    position: relative;
-    text-align: left;
-    width: 48%;
+  float: left;
+  left: 20px;
+  line-height: 0;
+  position: relative;
+  text-align: left;
+  width: 48%;
 }
 #bottomRightCol #bottomRightSide {
-    float: right;
-    width: 52%;
+  float: right;
+  width: 45%;
 }
 #bottomRightSide #bottomRightSideUpper {
-    margin: -15px 0;
-    text-align: center;
+  margin: -15px 0;
+  text-align: center;
 }
 #bottomRightSide #bottomRightSideLower {
-    height: 200px;
-    overflow: scroll;
+  border: 1px solid black;
+  height: 180px;
+  overflow: scroll;
 }
 #bottomRightSideLower #templates {
-    height: 480px;
-    width: 219px;
+  height: 370px;
+  width: 100%;
 }
 #container #footer {
-    border-top: 3px solid #c00;
-    float: left;
-    width: 100%;
+  border-top: 3px solid #c00;
+  float: left;
+  width: 100%;
 }
