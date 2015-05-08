@@ -902,7 +902,7 @@
         callback: function(data) {
           $.ajax({
             type: 'POST',
-            url: '/rlcdev/card-creator-ajax',
+            url: '/card-creator-ajax',
             data: {
               img: data,
               company_name: companyName,
