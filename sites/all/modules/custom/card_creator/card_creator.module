@@ -219,13 +219,10 @@ function card_creator_form($form, &$form_state) {
     '#default_value' => 1999,
   );
 
-  // Add To Cart
-  $form['add_to_cart'] = array(
-    '#type' => 'submit',
-    '#id' => 'addToCart',
-    '#value' => t('Add to cart'),
-    '#prefix' => '<div id="add_to_cart">',
-    '#suffix' => '</div></div>',
+  // Continue
+  $form['continue'] = array(
+    '#markup' => '<button id="continue">Continue</button>',
+    '#suffix' => '</div>'
   );
 
   // Clipart selection
@@ -318,6 +315,29 @@ function card_creator_form($form, &$form_state) {
     '#suffix' => '</div></div></div></div>',
   );
 
+  // Create div for proof
+  $form['proof'] = array(
+    '#markup' => '<img id="proofImage"></img>',
+    '#prefix' => '<div id="proof">',
+  );
+
+  $form['approve_proof'] = array(
+    '#type' => 'checkbox',
+    '#title' => 'I have checked this card for errors.',
+  );
+
+  $form['edit'] = array(
+    '#markup' => '<button id="edit">Edit</button>',
+  );
+
+  // Add To Cart
+  $form['add_to_cart'] = array(
+    '#type' => 'submit',
+    '#id' => 'addToCart',
+    '#value' => t('Add to cart'),
+    '#suffix' => '</div>',
+  );
+
   // Include libraries
   $form['#attached']['js'][] = array(
     'data' => drupal_get_path('module', 'card_creator') . '/libraries/snap.svg.js',
@@ -360,47 +380,50 @@ function card_creator_form_submit($form, &$form_state) {
   $line4 = $form_state['values']['line4'];
   $product_title = str_replace(' ', '', $company_name) . '-' . str_replace(' ', '', $name);
   $price = $form_state['values']['price'];
+  $approve_proof = $form_state['values']['approve_proof'];
 
-  // Use the information submitted to create a new business card product
-  $wrapper = entity_metadata_wrapper('commerce_product', commerce_product_new('business_card'));
-  $wrapper->title = $product_title;
-  $wrapper->sku = $product_title;
-  // Price in minors units 500 = 5$, provided by card_creator.js
-  $wrapper->commerce_price->amount = $price;
-  $wrapper->commerce_price->currency_code = 'USD';
+  if ($approve_proof != 0) {
+    // Use the information submitted to create a new business card product
+    $wrapper = entity_metadata_wrapper('commerce_product', commerce_product_new('business_card'));
+    $wrapper->title = $product_title;
+    $wrapper->sku = $product_title;
+    // Price in minors units 500 = 5$, provided by card_creator.js
+    $wrapper->commerce_price->amount = $price;
+    $wrapper->commerce_price->currency_code = 'USD';
 
-  $wrapper->field_company_name = $company_name;
-  $wrapper->field_name = $name;
-  $wrapper->field_title = $title;
-  $wrapper->field_address = $address;
-  $wrapper->field_city_state_zip = $city_state_zip;
-  $wrapper->field_line_1 = $line1;
-  $wrapper->field_line_2 = $line2;
-  $wrapper->field_line_3 = $line3;
-  $wrapper->field_line_4 = $line4;
+    $wrapper->field_company_name = $company_name;
+    $wrapper->field_name = $name;
+    $wrapper->field_title = $title;
+    $wrapper->field_address = $address;
+    $wrapper->field_city_state_zip = $city_state_zip;
+    $wrapper->field_line_1 = $line1;
+    $wrapper->field_line_2 = $line2;
+    $wrapper->field_line_3 = $line3;
+    $wrapper->field_line_4 = $line4;
 
-  // Save Image
-  $company_name = str_replace(' ', '', $company_name); // Removes all spaces
-  $company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
-  $name = str_replace(' ', '', $name); // Removes all spaces
-  $name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
-  $filepath = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
-  $file = (object) array(
-    'filename' => basename($filepath),
-    'filepath' => $filepath,
-    'filemime' => file_get_mimetype($filepath),
-    'filesize' => filesize($filepath),
-    'uid' => 1,
-    'status' => FILE_STATUS_PERMANENT,
-    'uri' => $filepath,
-    'display' => 1,
-    'description' => '',
-  );
+    // Save Image
+    $company_name = str_replace(' ', '', $company_name); // Removes all spaces
+    $company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
+    $name = str_replace(' ', '', $name); // Removes all spaces
+    $name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
+    $filepath = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
+    $file = (object) array(
+      'filename' => basename($filepath),
+      'filepath' => $filepath,
+      'filemime' => file_get_mimetype($filepath),
+      'filesize' => filesize($filepath),
+      'uid' => 1,
+      'status' => FILE_STATUS_PERMANENT,
+      'uri' => $filepath,
+      'display' => 1,
+      'description' => '',
+    );
 
-  $file = file_move($file, 'public://', FILE_EXISTS_REPLACE);
-  $wrapper->field_business_card_image = array('fid' => $file->fid);
+    $file = file_move($file, 'public://', FILE_EXISTS_REPLACE);
+    $wrapper->field_business_card_image = array('fid' => $file->fid);
 
-  $wrapper->save();
+    $wrapper->save();
+  }
 }
 
 

@@ -8,6 +8,7 @@
     // Hide selected divs on pageload
     $('#clipartColor').hide();
     $('#price').hide();
+    $('#proof').hide();
 
     // *** FUNCTIONS ***
 
@@ -893,8 +894,28 @@
     // When a clipart category is clicked, load the svg
     $('#bottomLeftColLowerLeft').children().click(loadClipartCategory);
 
-    // **** TESTING SAVE SVG ****
-    var fetchPreview = function() {
+    // Allows users to view the card before adding it to their cart
+    var loadProof = function() {
+      // Hide all divs within container
+      $('#leftColumn').hide();
+      $('#rightColumn').hide();
+      $('#bottom').hide();
+
+      // Show Proof Div
+      $('#proof').show();
+
+      // Generate the filename
+      // Replace spaces and special characters for companyName and name fields
+      var companyName = $('#companyName').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+      var name = $('#name').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+      // Replicate the file name given during the ajax callback
+      var fileDir = '../sites/default/files/tmp/' + companyName + '-' + name + '.svg#' + new Date().getTime();
+      // Set the image src to show the user the file that was created
+      $('#proofImage').attr('src', fileDir);
+    }
+
+    // use ajax to save the file
+    var saveCard = function() {
       var companyName = $('#companyName').val();
       var name = $('#name').val();
       var svg = document.getElementById("preview");
@@ -906,16 +927,44 @@
             data: {
               img: data,
               company_name: companyName,
-              name: name
-            }
-          })
+              name: name,
+            },
+          });
+          // Load Proof after ajax is finished
+          $(document).ajaxStop(function() {
+            loadProof();
+          });
         }
       });
     }
 
-    $("#addToCart").click(function (e) {
-      // e.preventDefault();
-      fetchPreview();
+    // Take the user through the proofing process
+    $('#continue').click(function(e) {
+      e.preventDefault();
+      saveCard();
+    });
+
+    // Allow user to edit their card if needed
+    $('#edit').click(function(e) {
+      e.preventDefault();
+      // Hide proof display
+      $('#proof').hide();
+
+      // Show card creation divs
+      $('#leftColumn').show();
+      $('#rightColumn').show();
+      $('#bottom').show();
+    });
+
+    $('#addToCart').click(function(e) {
+      var approval = $('#edit-approve-proof:checked').val();
+      // If proof is not approved
+      if (approval == undefined) {
+        // prevent form submittion
+        e.preventDefault();
+        // Notify the user
+        alert("You must approve this proof before adding this product to your cart.");
+      }
     });
 
   }); // End $(document).ready()
