@@ -10,6 +10,82 @@
     $('#price').hide();
     $('#proof').hide();
 
+    // *** THEME SVG'S ***
+
+    var highlightTemplate = function(el) {
+      var rect = el.node;
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr('fill', '#E0FFFF');
+      }
+    }
+    var unHighlightTemplate = function(el) {
+      var rect = el.node;
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr('fill', '#FFF');
+      }
+    }
+    var highlightSelectedTemplate = function(el) {
+      var rect = el.node;
+      var svgElement = Snap.select('#templates');
+      var svgNodes = svgElement.selectAll('rect')
+      for (i=0; i<svgNodes.length; i++) {
+        var el = svgNodes[i];
+        var node = el.node;
+        if ($(node).attr('class') == 'selected') {
+          $(node).attr({
+            class: '',
+            fill: '#FFF',
+            stroke: '#000',
+            'stroke-width': '1px'
+          });
+        }
+      }
+      $(rect).attr({
+        class: 'selected',
+        stroke: '#F00',
+        'stroke-width': '2px'
+      });
+    }
+    var highlightClipart = function(el) {
+      var rect = el.getElementsByTagName('rect')[0];
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr({
+          fill: '#E0FFFF',
+          opacity: '1'
+        });
+      }
+    }
+    var unHighlightClipart = function(el) {
+      var rect = el.getElementsByTagName('rect')[0];
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr({
+          fill: '#FFF',
+          opacity: '0'
+        });
+        // console.log(rect);
+      }
+    }
+    var highlightSelectedClipart = function(el) {
+      var rect = el.getElementsByTagName('rect')[0];
+      var logos = clipart.select('#layer1');
+      var svgElements = logos.node.children;
+      for (i=0; i<svgElements.length; i++) {
+        var el = svgElements[i];
+        var thisRect = el.getElementsByTagName('rect')[0];
+        if ($(thisRect).attr('class') == 'selected') {
+          $(thisRect).attr({
+            class: '',
+            opacity: '0'
+          });
+        }
+      }
+      $(rect).attr({
+        class: 'selected',
+        stroke: '#F00',
+        'stroke-width': '2px'
+      });
+    }
+
     // *** FUNCTIONS ***
 
     var updatePrice = function(cost) {
@@ -23,6 +99,7 @@
       var convertedPrice = Math.ceil(total * 100);
       // display price to customer
       $currentPrice.text("Price = $" + total);
+      console.log(cost);
       // set the price for drupal price field
       $price.val(convertedPrice);
 
@@ -44,18 +121,17 @@
             addLogo(category, el);
             highlightSelectedClipart(el);
           });
-          $(el).mouseover(function() {
+          $(el).hover(function() {
             highlightClipart(el);
-          });
-          $(el).mouseout(function() {
+          }, function() {
             unHighlightClipart(el);
-          })
+          });
         })(el);
       }
     }
     // when a clipart category is selected, load that clipart svg doc
     var loadClipartCategory = function() {
-      var category = this.id;
+      var category = $('#clipartCategory').val();
       clipart.clear();
       var fileName = '../sites/all/modules/custom/card_creator/logos/' + category + '/' + category + '.svg';
       Snap.load(fileName, function(f){
@@ -325,6 +401,7 @@
       changeLogoColor();
       clearTwoColorOptions();
     }
+
     // fetch the color that is currently selected, and return the value
     var fetchSelectedColor = function() {
       var colorOptions = $('#oneColor').children();
@@ -524,82 +601,6 @@
       $(this).addClass('selected');
       changeLogoColor();
     }
-
-    // *** THEME SVG'S ***
-
-    var highlightTemplate = function(el) {
-      var rect = el.node;
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr('fill', '#E0FFFF');
-      }
-    }
-    var unHighlightTemplate = function(el) {
-      var rect = el.node;
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr('fill', '#FFF');
-      }
-    }
-    var highlightSelectedTemplate = function(el) {
-      var rect = el.node;
-      var svgElement = Snap.select('#templates');
-      var svgNodes = svgElement.selectAll('rect')
-      for (i=0; i<svgNodes.length; i++) {
-        var el = svgNodes[i];
-        var node = el.node;
-        if ($(node).attr('class') == 'selected') {
-          $(node).attr({
-            class: '',
-            fill: '#FFF',
-            stroke: '#000',
-            'stroke-width': '1px'
-          });
-        }
-      }
-      $(rect).attr({
-        class: 'selected',
-        stroke: '#F00',
-        'stroke-width': '2px'
-      });
-    }
-    var highlightClipart = function(el) {
-      var rect = el.getElementsByTagName('rect')[0];
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr({
-          fill: '#E0FFFF',
-          opacity: '1'
-        });
-      }
-    }
-    var unHighlightClipart = function(el) {
-      var rect = el.getElementsByTagName('rect')[0];
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr({
-          fill: '#FFF',
-          opacity: '0'
-        });
-      }
-    }
-    var highlightSelectedClipart = function(el) {
-      var rect = el.getElementsByTagName('rect')[0];
-      var logos = clipart.select('#layer1');
-      var svgElements = logos.node.children;
-      for (i=0; i<svgElements.length; i++) {
-        var el = svgElements[i];
-        var thisRect = el.getElementsByTagName('rect')[0];
-        if ($(thisRect).attr('class') == 'selected') {
-          $(thisRect).attr({
-            class: '',
-            opacity: '0'
-          });
-        }
-      }
-      $(rect).attr({
-        class: 'selected',
-        stroke: '#F00',
-        'stroke-width': '2px'
-      });
-    }
-
 
     // *** LOAD SVG DOCUMENTS ***
 
@@ -892,12 +893,32 @@
       $('.selectTwoColor').click(loadTwoColors);
     });
     // When a clipart category is clicked, load the svg
-    $('#bottomLeftColLowerLeft').children().click(loadClipartCategory);
+    $('#clipartCategory').change(loadClipartCategory);
+    // When a quantity is selected, change the price
+    $('#edit-select-quantity').change(function (e){
+      var quantity = e.target.value;
+      var cost;
+      if (quantity == 1000) {
+        cost = 0;
+      } else if (quantity == 2000) {
+        cost = 20.00;
+      } else if (quantity == 3000) {
+        cost = 40.00;
+      } else if (quantity == 4000) {
+        cost = 60.00;
+      }  else if (quantity == 5000) {
+        cost = 80.00;
+      }  else if (quantity == 10000) {
+        cost = 160.00;
+      }
+      updatePrice(cost);
+    });
 
     // Allows users to view the card before adding it to their cart
     var loadProof = function() {
       // Hide all divs within container
       $('#leftColumn').hide();
+      $('#midColumn').hide();
       $('#rightColumn').hide();
       $('#bottom').hide();
 
@@ -914,7 +935,7 @@
       $('#proofImage').attr('src', fileDir);
     }
 
-    // use ajax to save the file
+    // SAVE THE ARTWORK
     var saveCard = function() {
       var companyName = $('#companyName').val();
       var name = $('#name').val();
@@ -939,7 +960,7 @@
     }
 
     // Take the user through the proofing process
-    $('#continue').click(function(e) {
+    $('#continue_button').click(function(e) {
       e.preventDefault();
       saveCard();
     });
@@ -952,6 +973,7 @@
 
       // Show card creation divs
       $('#leftColumn').show();
+      $('#midColumn').show();
       $('#rightColumn').show();
       $('#bottom').show();
     });

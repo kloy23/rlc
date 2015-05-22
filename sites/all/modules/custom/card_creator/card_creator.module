@@ -113,6 +113,10 @@ function card_creator_form($form, &$form_state) {
   );
 
   // Input Fields
+  $form['card_information'] = array(
+    '#markup' => '<h4>' . t('1) Enter Card Information') . '</h4>',
+    '#prefix' => '<div id="container"><div id="leftColumn"><div id="cardInfo">',
+  );
   $form['company_name'] = array(
     '#type' => 'textfield',
     '#id' => 'companyName',
@@ -120,7 +124,6 @@ function card_creator_form($form, &$form_state) {
     '#attributes' => array(
       'placeholder' => t('Company Name'),
     ),
-    '#prefix' => '<div id="container"><div id="leftColumn"><div id="cardInfo">',
   );
   $form['name'] = array(
     '#type' => 'textfield',
@@ -202,65 +205,53 @@ function card_creator_form($form, &$form_state) {
   // Preview svg
   $form['preview'] = array(
     '#markup' => '<svg id="preview"></svg>',
-    '#prefix' => '<div id="rightColumn">',
-  );
-
-  // Price
-  $form['current_price'] = array(
-    '#markup' => t('Price = $19.99'),
-    '#prefix' => '<div id="currentPrice">',
+    '#prefix' => '<div id="midColumn">',
     '#suffix' => '</div>',
   );
 
-  $form['price'] = array(
-    '#type' => 'textfield',
-    '#id' => 'price',
-    '#size' => 10,
-    '#default_value' => 1999,
+  // Template Selection
+  $form['select_template'] = array(
+    '#markup' => '<h4>' . t('2) Select a Template') . '</h4>',
+    '#prefix' => '<div id="rightColumn">',
   );
 
-  // Continue
-  $form['continue'] = array(
-    '#markup' => '<button id="continue">Continue</button>',
-    '#suffix' => '</div>'
+  // Templates svg display
+  $form['templates'] = array(
+    '#markup' => '<svg id="templates"></svg>',
+    '#prefix' => '<div id="rightColumnLower">',
+    '#suffix' => '</div></div>',
   );
 
   // Clipart selection
   $form['select_clipart'] = array(
-    '#markup' => '<h4>' . t('Select Clipart') . '</h4>',
-    '#prefix' => '<div id="bottom"><div id="bottomLeftCol"><div id="bottomLeftColUpper">',
+    '#markup' => '<h4>' . t('3) Select Clipart') . '</h4>',
+    '#prefix' => '<div id="bottom"><div id="bottomColOne"><div id="bottomColOneUpper">',
     '#suffix' => '</div>',
   );
-  $form['vehicles'] = array(
-    '#markup' => '<button type="button" id="vehicles">Vehicles</button>',
-    '#prefix' => '<div id="bottomLeftColLower"><div id="bottomLeftColLowerLeft">',
-  );
-  $form['manufacturer'] = array(
-    '#markup' => '<button type="button" id="manufacturer">Manufactuer Logo\'s</button>',
-  );
-  $form['animals'] = array(
-    '#markup' => '<button type="button" id="animals">Animals</button>',
+  $form['clipart_category'] = array(
+    '#markup' => '<select id="clipartCategory" title="Select Clipart Category."><option value="vehicles">Vehicles</option><option value="manufacturer">Manufactuer logo\'s</option><option value="animals">Animals</option></select>',
+    '#prefix' => '<div id="clipart_category">',
     '#suffix' => '</div>',
   );
 
   // Clipart svg dispaly
   $form['clipart'] = array(
     '#markup' => '<svg id="clipart"></svg>',
-    '#prefix' => '<div id="bottomLeftColLowerRight">',
-    '#suffix' => '</div></div></div>',
+    '#prefix' => '<div id="bottomColOneLower">',
+    '#suffix' => '</div></div>',
   );
 
   // Ink Color Selection
   $form['select_ink_color'] = array(
-    '#markup' => '<h4>' . t('Select Ink Color') . '</h4>',
-    '#prefix' => '<div id="bottomRightCol"><div id="bottomRightMid"><div id="bottomRightMidUpper">',
+    '#markup' => '<h4>' . t('4) Select Ink Color') . '</h4>',
+    '#prefix' => '<div id="bottomColTwo"><div id="bottomColTwoUpper">',
     '#suffix' => '</div>',
   );
 
   // One Color Options
   $form['black'] = array(
     '#markup' => '<button type="button">Black</button>',
-    '#prefix' => '<div id="bottomRightMidLower"><div id="oneColor">',
+    '#prefix' => '<div id="bottomColTwoLower"><div id="oneColor">',
   );
   $form['red'] = array(
     '#markup' => '<button type="button">Red</button>',
@@ -301,17 +292,63 @@ function card_creator_form($form, &$form_state) {
     '#suffix' => '</div></div></div>'
   );
 
-  // Template Selection
-  $form['select_template'] = array(
-    '#markup' => '<h4>' . t('Select A Template') . '</h4>',
-    '#prefix' => '<div id="bottomRightSide"><div id="bottomRightSideUpper">',
+  // Card Stock Selection
+  $form['card_stock'] = array(
+    '#markup' => '<h4>' . t('5) Chose Card Stock') . '</h4>',
+    '#prefix' => '<div id="bottomColThree"><div id="bottomColThreeUpper">',
     '#suffix' => '</div>',
   );
+  // Build Card Stock Options
+  $card_stocks = array(
+    'white_smooth' => t('White Smooth'),
+    'white_linen' => t('White Linen'),
+    'woodgrain' => t('Woodgrain'),
+  );
+  // Display Card Stock Options
+  $form['card_stock_options'] = array(
+    '#type' => 'radios',
+    '#prefix' => '<div id="bottomColThreeLower">',
+    '#options' => $card_stocks,
+    '#suffix' => '</div></div>',
+  );
 
-  // Templates svg display
-  $form['templates'] = array(
-    '#markup' => '<svg id="templates"></svg>',
-    '#prefix' => '<div id="bottomRightSideLower">',
+  // Qunatity
+  $form['qunatity'] = array(
+    '#markup' => '<h4>' . t('6) Select Qunatity') . '</h4>',
+    '#prefix' => '<div id="bottomColFour"><div id="bottomColFourUpper">',
+    '#suffix' => '</div>',
+  );
+  // Build Quantity Options
+  $quantitys = array(
+    '1000' => '1000',
+    '2000' => '2000',
+    '3000' => '3000',
+    '4000' => '4000',
+    '5000' => '5000',
+    '10000' => '10000',
+  );
+  // Display Quantity Options
+  $form['select_quantity'] = array(
+    '#type' => 'radios',
+    '#options' => $quantitys,
+    '#prefix' => '<div id="bottomColFourLower"><div id="select_quantity">',
+    '#suffix' => '</div>',
+  );
+  // Price
+  $form['current_price'] = array(
+    '#markup' => t('Price = $19.99'),
+    '#prefix' => '<div id="continue"><div id="currentPrice">',
+    '#suffix' => '</div>',
+  );
+  $form['price'] = array(
+    '#type' => 'textfield',
+    '#id' => 'price',
+    '#size' => 10,
+    '#default_value' => 1999,
+  );
+  // Continue
+  $form['continue'] = array(
+    '#markup' => '<button id="continue_button">Continue</button>',
     '#suffix' => '</div></div></div></div>',
   );
 
