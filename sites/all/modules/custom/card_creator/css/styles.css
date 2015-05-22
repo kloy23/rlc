@@ -189,13 +189,10 @@
   width: 50%;
 }
 #continue #continue_button {
-  bottom: 4px;
   float: right;
   position: relative;
   right: 15px;
-}
-#currentPrice #price {
-  display: none;
+  top: 10px;
 }
 #currentPrice #continue_button {
   float: right;

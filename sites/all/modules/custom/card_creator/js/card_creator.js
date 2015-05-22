@@ -7,6 +7,7 @@
 
     // Hide selected divs on pageload
     $('#clipartColor').hide();
+    $('#selectTwoColor').hide();
     $('#price').hide();
     $('#proof').hide();
 
@@ -87,22 +88,61 @@
     }
 
     // *** FUNCTIONS ***
-
-    var updatePrice = function(cost) {
+    var updatePrice = function() {
       var $currentPrice = $('#currentPrice');
-      var $price = $('#price');
-      // set base price as price for a one color business card
       var basePrice = 19.99;
-      // calculate total to be displayed to the customer
-      var total = parseFloat(basePrice) + parseFloat(cost);
-      // Convert the price to be used in the "price" form field for drupal commerce
-      var convertedPrice = Math.ceil(total * 100);
-      // display price to customer
-      $currentPrice.text("Price = $" + total);
-      console.log(cost);
-      // set the price for drupal price field
-      $price.val(convertedPrice);
+      var cost = 0;
+      var twoColors = $('#edit-two-color').val();
+      var cardStock = $('#edit-card-stock-options').children().children();
+      var quantity = $('#edit-select-quantity').children().children();
 
+      // If this is a two color card, change cost
+      if (twoColors == 1) {
+        cost = 4;
+      } else {
+        cost = 0;
+      }
+
+      // loop through cardStock options to see what is selected and set cost accordingly
+      for (i=0; i<cardStock.length; i++) {
+        el = cardStock[i];
+        if ( $(el).attr('checked') == true ) {
+          var fieldVal = $(el).val();
+          if (fieldVal == 'white_smooth') {
+            cost += 0;
+          } else if (fieldVal == 'white_linen') {
+            cost += 5;
+          } else if (fieldVal == 'woodgrain') {
+            cost += 10;
+          }
+        }
+      }
+
+      // loop through quantity options to see what is selected and set cost accordingly
+      for (i=0; i<quantity.length; i++) {
+        el = quantity[i];
+        if ( $(el).attr('checked') == true ) {
+          var fieldVal = $(el).val();
+          if (fieldVal == '1000') {
+            cost += 0;
+          } else if (fieldVal == '2000') {
+            cost += 20;
+          } else if (fieldVal == '3000') {
+            cost += 40;
+          } else if (fieldVal == '4000') {
+            cost += 60;
+          } else if (fieldVal == '5000') {
+            cost += 80;
+          } else if (fieldVal == '10000') {
+            cost += 160;
+          }
+        }
+      }
+      // calculate total to be displayed to the customer
+      var total = basePrice + cost;
+      var convertedTotal = total.toFixed(2);
+      // display price to customer
+      $currentPrice.text("Price = $" + convertedTotal);
     }
 
     var addClipartFunctionality = function(category) {
@@ -382,7 +422,6 @@
     }
     // when a one color option is selected
     var loadOneColor = function(e) {
-      var cost = 0;
       var color = $(this).text().toLowerCase();
       // target the loaded svg document
       var svgNode = Snap.select('#preview');
@@ -395,7 +434,9 @@
         // change the current fields fill value to match the color selected
         el.attr('fill', color);
       }
-      updatePrice(cost);
+      // Uncheck form field two_color
+      $('#edit-two-color').val(0).attr('checked', false);
+      updatePrice();
       clearColorSelection();
       $(this).addClass('selected');
       changeLogoColor();
@@ -547,13 +588,14 @@
     }
     // when a two color option is selected, create the color options for each field
     var loadTwoColors = function() {
-      var cost = 4.00;
       var $clipartColor = $('#clipartColor');
       for (i = 0; i < $inputFields.length; i++) {
         var el = $inputFields[i];
         createColorBoxes(this, el);
       }
-      updatePrice(cost);
+      // Check hidden form field two_color
+      $('#edit-two-color').val(1).attr('checked', true);
+      updatePrice();
       $clipartColor.show();
       createClipartColorBoxes(this, $clipartColor);
       clearColorSelection();
@@ -840,6 +882,10 @@
             'background-color': color
         });
       }
+      // uncheck two_color field
+      $('#edit-two-color').val(0).attr('checked', false);
+      // update price on page refresh
+      updatePrice();
       // Add .selected to the first color in #oneColor ('Black')
       var styledOptions = $('#oneColor').children();
       var firstStyledColor = styledOptions[0];
@@ -895,24 +941,8 @@
     // When a clipart category is clicked, load the svg
     $('#clipartCategory').change(loadClipartCategory);
     // When a quantity is selected, change the price
-    $('#edit-select-quantity').change(function (e){
-      var quantity = e.target.value;
-      var cost;
-      if (quantity == 1000) {
-        cost = 0;
-      } else if (quantity == 2000) {
-        cost = 20.00;
-      } else if (quantity == 3000) {
-        cost = 40.00;
-      } else if (quantity == 4000) {
-        cost = 60.00;
-      }  else if (quantity == 5000) {
-        cost = 80.00;
-      }  else if (quantity == 10000) {
-        cost = 160.00;
-      }
-      updatePrice(cost);
-    });
+    $('#edit-select-quantity').change(updatePrice);
+    $('#edit-card-stock-options').change(updatePrice);
 
     // Allows users to view the card before adding it to their cart
     var loadProof = function() {
