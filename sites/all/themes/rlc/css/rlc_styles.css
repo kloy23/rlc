@@ -8,7 +8,7 @@ div.ctools-modal-content .modal-header {
 }
 /* Theme Close Button*/
 div.ctools-modal-content a.close img {
-    bottom: 8px;
+    top: -8px;
     position: relative;
 }
 /*
