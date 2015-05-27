@@ -487,7 +487,7 @@
       $(colorBox1).css({
         'background-color': color1,
         'position': 'relative',
-        'top': '5px',
+        'top': '17px',
         'width': '12px',
         'height': '12px',
         'margin-right': '2px'
@@ -497,7 +497,7 @@
         'background-color': color2,
         'margin-right': '2px',
         'position': 'relative',
-        'top': '5px',
+        'top': '17px',
         'width': '12px',
         'height': '12px'
       });

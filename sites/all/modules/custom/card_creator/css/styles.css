@@ -4,13 +4,14 @@
   border-radius: 10px;
   float: left;
   padding: 10px;
+  width: 920px;
   }
 #container #leftColumn {
   float: left;
   width: 35%;
 }
 #cardInfo > .form-item {
-  margin: 0;
+    margin: -10px 0;
 }
 #container #midColumn {
   float: left;
@@ -80,18 +81,23 @@
   width: 100%;
 }
 #container h4 {
-  color: red;
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: 70%;
+    color: red;
+    font-weight: bold;
+    margin: 15px auto;
+    text-align: center;
 }
 #bottom #bottomColOne {
   float: left;
   height: 220px;
   text-align: center;
   width: 20%;
+}
+#bottomColOne #clipartColor {
+    float: left;
+    left: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    top: 5px;
 }
 #bottomColOne #clipart_category {
   float: left;
@@ -173,7 +179,7 @@
   border: 1px solid black;
   border-radius: 10px;
   float: right;
-  margin-top: 10px;
+  margin-top: 50px;
   width: 100%;
 }
 #continue #currentPrice {
@@ -186,13 +192,13 @@
   padding-left: 15px;
   position: relative;
   top: 2px;
-  width: 50%;
+  width: 65%;
 }
 #continue #continue_button {
   float: right;
   position: relative;
   right: 15px;
-  top: 10px;
+  top: 6px;
 }
 #currentPrice #continue_button {
   float: right;
