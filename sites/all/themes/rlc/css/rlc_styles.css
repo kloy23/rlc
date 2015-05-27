@@ -1,4 +1,17 @@
 /*
+  Login ajax page
+ */
+/* Theme Window*/
+div.ctools-modal-content .modal-header {
+    background-color: black;
+    padding: 5px 0 6px 5px;
+}
+/* Theme Close Button*/
+div.ctools-modal-content a.close img {
+    bottom: 8px;
+    position: relative;
+}
+/*
   Style Home Page
  */
 #panel-home-header {
@@ -19,10 +32,11 @@
 
 }
 #panel-home-right {
-    font-size: 15px;
-    line-height: 25px;
-    position: relative;
+    font-size: 12px;
+    font-weight: bold;
     left: 15%;
+    line-height: 16px;
+    position: relative;
 }
 /*
   Format Footer
