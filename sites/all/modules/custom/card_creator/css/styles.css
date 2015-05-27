@@ -4,49 +4,44 @@
   border-radius: 10px;
   float: left;
   padding: 10px;
+  width: 920px;
   }
-#container #header {
-  border-bottom: 3px solid #c00;
-  float: left;
-  margin-bottom: 10px;
-  padding: 0;
-  width: 100%;
-}
 #container #leftColumn {
   float: left;
-  width: 45%;
+  width: 35%;
 }
 #cardInfo > .form-item {
-  margin: 0;
+    margin: -10px 0;
+}
+#container #midColumn {
+  float: left;
+  margin: 60px 0 0;
+  padding: 0;
+  text-align: center;
+  width: 35%;
 }
 #container #rightColumn {
   float: left;
-  margin: 0;
+  margin-left: 40px;
   padding: 0;
   text-align: center;
-  width: 55%;
+  width: 23%;
 }
-#rightColumn #preview {
+#midColumn #preview {
   background: none repeat scroll 0 0 white;
   border: 3px outset black;
   height: 180px;
   margin-top: 25px;
   width: 315px;
 }
-#rightColumn #currentPrice {
-  float: left;
-  width: 50%;
-  color: red;
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: 15px;
+#rightColumn #templates {
+  height: 445px;
+  width: 100%;
 }
-#rightColumn #price {
-  display: none;
-}
-#rightColumn #add_to_cart {
-  float: right;
-  width: 50%
+#rightColumn #rightColumnLower {
+  border: 1px solid black;
+  height: 295px;
+  overflow: scroll;
 }
 .button {
   font-size: 10px;
@@ -85,58 +80,59 @@
   padding-top: 10px;
   width: 100%;
 }
-#bottom h4 {
-  border: 1px solid black;
-  background-color: darkgray;
-  margin: 25px;
+#container h4 {
+    color: red;
+    font-weight: bold;
+    margin: 15px auto;
+    text-align: center;
 }
-#bottom #bottomLeftCol {
+#bottom #bottomColOne {
   float: left;
   height: 220px;
   text-align: center;
-  width: 40%;
+  width: 20%;
 }
-#bottomLeftColLower #bottomLeftColLowerLeft {
+#bottomColOne #clipartColor {
+    float: left;
+    left: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    top: 5px;
+}
+#bottomColOne #clipart_category {
+  float: left;
+}
+#bottomColOne #bottomColOneLower {
+  border: 1px solid black;
   float: left;
   width: 40%;
-}
-#bottomLeftCol #bottomLeftColUpper {
-  margin: -15px 0;
-  text-align: center;
-}
-#bottomLeftColLower button {
-  width: 100%;
-}
-#bottomLeftColLower #bottomLeftColLowerRight {
-  border: 1px solid black;
-  float: right;
-  height: 180px;
+  height: 165px;
+  margin-top: 5px;
   overflow: scroll;
-  width: 58%;
+  width: 92%;
 }
-#bottom #bottomRightCol {
-  float: left;
-  height: 220px;
-  width: 59%;
-}
-#bottomRightCol #bottomRightMid {
-  float: left;
-  height: 220px;
-  width: 55%;
-}
-#bottomRightMid #bottomRightMidUpper {
-  margin: -15px 0;
+#bottomColOne #bottomColOneUpper {
+  margin-top: -15px;
   text-align: center;
 }
-#bottomRightMid #bottomRightMidLower {
+#bottom #bottomColTwo {
+  float: left;
+  height: 220px;
+  width: 30%;
+}
+#bottomColTwo #bottomColTwoUpper {
+  margin-top: -15px;
+  text-align: center;
+}
+#bottomColTwo #bottomColTwoLower {
   font-size: 13px;
   padding-top: 15px;
   width: 100%;
 }
-#bottomRightMidLower p {
+#bottomColTwoLower p {
   line-height: 7px;
 }
-#bottomRightMidLower #oneColor {
+#bottomColTwoLower #oneColor {
   float: left;
   left: 15px;
   line-height: 0;
@@ -144,7 +140,7 @@
   text-align: left;
   width: 30%;
 }
-#bottomRightMidLower #twoColors {
+#bottomColTwoLower #twoColors {
   float: left;
   left: 20px;
   line-height: 0;
@@ -152,25 +148,69 @@
   text-align: left;
   width: 48%;
 }
-#bottomRightCol #bottomRightSide {
-  float: right;
-  width: 45%;
+#bottom #bottomColThree {
+  float: left;
+  width: 20%;
 }
-#bottomRightSide #bottomRightSideUpper {
-  margin: -15px 0;
+#bottomColThree #bottomColThreeUpper {
+  margin-top: -15px;
   text-align: center;
 }
-#bottomRightSide #bottomRightSideLower {
-  border: 1px solid black;
-  height: 180px;
-  overflow: scroll;
+#bottom #bottomColFour {
+  float: left;
+  width: 30%;
 }
-#bottomRightSideLower #templates {
-  height: 370px;
-  width: 100%;
+#bottomColFour #bottomColFourUpper {
+  margin-top: -15px;
+  text-align: center;
 }
-#container #footer {
-  border-top: 3px solid #c00;
+#bottomColFour #bottomColFourLower {
   float: left;
   width: 100%;
+}
+#bottomColFourLower #select_quantity {
+  text-align: left;
+  float: right;
+  width: 65%;
+
+}
+#bottomColFourLower #continue {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  float: right;
+  margin-top: 50px;
+  width: 100%;
+}
+#continue #currentPrice {
+  color: red;
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  padding-left: 15px;
+  position: relative;
+  top: 2px;
+  width: 65%;
+}
+#continue #continue_button {
+  float: right;
+  position: relative;
+  right: 15px;
+  top: 6px;
+}
+#currentPrice #continue_button {
+  float: right;
+  width: 50%
+}
+#container #proofImage {
+  background: none repeat scroll 0 0 white;
+  border: 3px outset black;
+  height: 180px;
+  width: 315px;
+}
+
+#addToCart {
+    float: right;
 }

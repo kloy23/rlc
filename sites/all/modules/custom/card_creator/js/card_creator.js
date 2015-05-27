@@ -7,24 +7,142 @@
 
     // Hide selected divs on pageload
     $('#clipartColor').hide();
+    $('#selectTwoColor').hide();
     $('#price').hide();
+    $('#proof').hide();
+
+    // *** THEME SVG'S ***
+
+    var highlightTemplate = function(el) {
+      var rect = el.node;
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr('fill', '#E0FFFF');
+      }
+    }
+    var unHighlightTemplate = function(el) {
+      var rect = el.node;
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr('fill', '#FFF');
+      }
+    }
+    var highlightSelectedTemplate = function(el) {
+      var rect = el.node;
+      var svgElement = Snap.select('#templates');
+      var svgNodes = svgElement.selectAll('rect')
+      for (i=0; i<svgNodes.length; i++) {
+        var el = svgNodes[i];
+        var node = el.node;
+        if ($(node).attr('class') == 'selected') {
+          $(node).attr({
+            class: '',
+            fill: '#FFF',
+            stroke: '#000',
+            'stroke-width': '1px'
+          });
+        }
+      }
+      $(rect).attr({
+        class: 'selected',
+        stroke: '#F00',
+        'stroke-width': '2px'
+      });
+    }
+    var highlightClipart = function(el) {
+      var rect = el.getElementsByTagName('rect')[0];
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr({
+          fill: '#E0FFFF',
+          opacity: '1'
+        });
+      }
+    }
+    var unHighlightClipart = function(el) {
+      var rect = el.getElementsByTagName('rect')[0];
+      if ($(rect).attr('class') !== 'selected') {
+        $(rect).attr({
+          fill: '#FFF',
+          opacity: '0'
+        });
+        // console.log(rect);
+      }
+    }
+    var highlightSelectedClipart = function(el) {
+      var rect = el.getElementsByTagName('rect')[0];
+      var logos = clipart.select('#layer1');
+      var svgElements = logos.node.children;
+      for (i=0; i<svgElements.length; i++) {
+        var el = svgElements[i];
+        var thisRect = el.getElementsByTagName('rect')[0];
+        if ($(thisRect).attr('class') == 'selected') {
+          $(thisRect).attr({
+            class: '',
+            opacity: '0'
+          });
+        }
+      }
+      $(rect).attr({
+        class: 'selected',
+        stroke: '#F00',
+        'stroke-width': '2px'
+      });
+    }
 
     // *** FUNCTIONS ***
-
-    var updatePrice = function(cost) {
+    var updatePrice = function() {
       var $currentPrice = $('#currentPrice');
-      var $price = $('#price');
-      // set base price as price for a one color business card
       var basePrice = 19.99;
-      // calculate total to be displayed to the customer
-      var total = parseFloat(basePrice) + parseFloat(cost);
-      // Convert the price to be used in the "price" form field for drupal commerce
-      var convertedPrice = Math.ceil(total * 100);
-      // display price to customer
-      $currentPrice.text("Price = $" + total);
-      // set the price for drupal price field
-      $price.val(convertedPrice);
+      var cost = 0;
+      var twoColors = $('#edit-two-color').val();
+      var cardStock = $('#edit-card-stock-options').children().children();
+      var quantity = $('#edit-select-quantity').children().children();
 
+      // If this is a two color card, change cost
+      if (twoColors == 1) {
+        cost = 4;
+      } else {
+        cost = 0;
+      }
+
+      // loop through cardStock options to see what is selected and set cost accordingly
+      for (i=0; i<cardStock.length; i++) {
+        el = cardStock[i];
+        if ( $(el).attr('checked') == true ) {
+          var fieldVal = $(el).val();
+          if (fieldVal == 'white_smooth') {
+            cost += 0;
+          } else if (fieldVal == 'white_linen') {
+            cost += 5;
+          } else if (fieldVal == 'woodgrain') {
+            cost += 10;
+          }
+        }
+      }
+
+      // loop through quantity options to see what is selected and set cost accordingly
+      for (i=0; i<quantity.length; i++) {
+        el = quantity[i];
+        if ( $(el).attr('checked') == true ) {
+          var fieldVal = $(el).val();
+          if (fieldVal == '1000') {
+            cost += 0;
+          } else if (fieldVal == '2000') {
+            cost += 20;
+          } else if (fieldVal == '3000') {
+            cost += 40;
+          } else if (fieldVal == '4000') {
+            cost += 60;
+          } else if (fieldVal == '5000') {
+            cost += 80;
+          } else if (fieldVal == '10000') {
+            cost += 160;
+          }
+        }
+      }
+      // calculate total to be displayed to the customer
+      var total = basePrice + cost;
+      var convertedTotal = total.toFixed(2);
+      // display price to customer
+      $currentPrice.text("Price = $" + convertedTotal);
     }
 
     var addClipartFunctionality = function(category) {
@@ -43,18 +161,17 @@
             addLogo(category, el);
             highlightSelectedClipart(el);
           });
-          $(el).mouseover(function() {
+          $(el).hover(function() {
             highlightClipart(el);
-          });
-          $(el).mouseout(function() {
+          }, function() {
             unHighlightClipart(el);
-          })
+          });
         })(el);
       }
     }
     // when a clipart category is selected, load that clipart svg doc
     var loadClipartCategory = function() {
-      var category = this.id;
+      var category = $('#clipartCategory').val();
       clipart.clear();
       var fileName = '../sites/all/modules/custom/card_creator/logos/' + category + '/' + category + '.svg';
       Snap.load(fileName, function(f){
@@ -305,7 +422,6 @@
     }
     // when a one color option is selected
     var loadOneColor = function(e) {
-      var cost = 0;
       var color = $(this).text().toLowerCase();
       // target the loaded svg document
       var svgNode = Snap.select('#preview');
@@ -318,12 +434,15 @@
         // change the current fields fill value to match the color selected
         el.attr('fill', color);
       }
-      updatePrice(cost);
+      // Uncheck form field two_color
+      $('#edit-two-color').val(0).attr('checked', false);
+      updatePrice();
       clearColorSelection();
       $(this).addClass('selected');
       changeLogoColor();
       clearTwoColorOptions();
     }
+
     // fetch the color that is currently selected, and return the value
     var fetchSelectedColor = function() {
       var colorOptions = $('#oneColor').children();
@@ -368,7 +487,7 @@
       $(colorBox1).css({
         'background-color': color1,
         'position': 'relative',
-        'top': '5px',
+        'top': '17px',
         'width': '12px',
         'height': '12px',
         'margin-right': '2px'
@@ -378,7 +497,7 @@
         'background-color': color2,
         'margin-right': '2px',
         'position': 'relative',
-        'top': '5px',
+        'top': '17px',
         'width': '12px',
         'height': '12px'
       });
@@ -469,13 +588,14 @@
     }
     // when a two color option is selected, create the color options for each field
     var loadTwoColors = function() {
-      var cost = 4.00;
       var $clipartColor = $('#clipartColor');
       for (i = 0; i < $inputFields.length; i++) {
         var el = $inputFields[i];
         createColorBoxes(this, el);
       }
-      updatePrice(cost);
+      // Check hidden form field two_color
+      $('#edit-two-color').val(1).attr('checked', true);
+      updatePrice();
       $clipartColor.show();
       createClipartColorBoxes(this, $clipartColor);
       clearColorSelection();
@@ -523,82 +643,6 @@
       $(this).addClass('selected');
       changeLogoColor();
     }
-
-    // *** THEME SVG'S ***
-
-    var highlightTemplate = function(el) {
-      var rect = el.node;
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr('fill', '#E0FFFF');
-      }
-    }
-    var unHighlightTemplate = function(el) {
-      var rect = el.node;
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr('fill', '#FFF');
-      }
-    }
-    var highlightSelectedTemplate = function(el) {
-      var rect = el.node;
-      var svgElement = Snap.select('#templates');
-      var svgNodes = svgElement.selectAll('rect')
-      for (i=0; i<svgNodes.length; i++) {
-        var el = svgNodes[i];
-        var node = el.node;
-        if ($(node).attr('class') == 'selected') {
-          $(node).attr({
-            class: '',
-            fill: '#FFF',
-            stroke: '#000',
-            'stroke-width': '1px'
-          });
-        }
-      }
-      $(rect).attr({
-        class: 'selected',
-        stroke: '#F00',
-        'stroke-width': '2px'
-      });
-    }
-    var highlightClipart = function(el) {
-      var rect = el.getElementsByTagName('rect')[0];
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr({
-          fill: '#E0FFFF',
-          opacity: '1'
-        });
-      }
-    }
-    var unHighlightClipart = function(el) {
-      var rect = el.getElementsByTagName('rect')[0];
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr({
-          fill: '#FFF',
-          opacity: '0'
-        });
-      }
-    }
-    var highlightSelectedClipart = function(el) {
-      var rect = el.getElementsByTagName('rect')[0];
-      var logos = clipart.select('#layer1');
-      var svgElements = logos.node.children;
-      for (i=0; i<svgElements.length; i++) {
-        var el = svgElements[i];
-        var thisRect = el.getElementsByTagName('rect')[0];
-        if ($(thisRect).attr('class') == 'selected') {
-          $(thisRect).attr({
-            class: '',
-            opacity: '0'
-          });
-        }
-      }
-      $(rect).attr({
-        class: 'selected',
-        stroke: '#F00',
-        'stroke-width': '2px'
-      });
-    }
-
 
     // *** LOAD SVG DOCUMENTS ***
 
@@ -838,6 +882,10 @@
             'background-color': color
         });
       }
+      // uncheck two_color field
+      $('#edit-two-color').val(0).attr('checked', false);
+      // update price on page refresh
+      updatePrice();
       // Add .selected to the first color in #oneColor ('Black')
       var styledOptions = $('#oneColor').children();
       var firstStyledColor = styledOptions[0];
@@ -891,10 +939,34 @@
       $('.selectTwoColor').click(loadTwoColors);
     });
     // When a clipart category is clicked, load the svg
-    $('#bottomLeftColLowerLeft').children().click(loadClipartCategory);
+    $('#clipartCategory').change(loadClipartCategory);
+    // When a quantity is selected, change the price
+    $('#edit-select-quantity').change(updatePrice);
+    $('#edit-card-stock-options').change(updatePrice);
 
-    // **** TESTING SAVE SVG ****
-    var fetchPreview = function() {
+    // Allows users to view the card before adding it to their cart
+    var loadProof = function() {
+      // Hide all divs within container
+      $('#leftColumn').hide();
+      $('#midColumn').hide();
+      $('#rightColumn').hide();
+      $('#bottom').hide();
+
+      // Show Proof Div
+      $('#proof').show();
+
+      // Generate the filename
+      // Replace spaces and special characters for companyName and name fields
+      var companyName = $('#companyName').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+      var name = $('#name').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+      // Replicate the file name given during the ajax callback
+      var fileDir = '../sites/default/files/tmp/' + companyName + '-' + name + '.svg#' + new Date().getTime();
+      // Set the image src to show the user the file that was created
+      $('#proofImage').attr('src', fileDir);
+    }
+
+    // SAVE THE ARTWORK
+    var saveCard = function() {
       var companyName = $('#companyName').val();
       var name = $('#name').val();
       var svg = document.getElementById("preview");
@@ -906,16 +978,45 @@
             data: {
               img: data,
               company_name: companyName,
-              name: name
-            }
-          })
+              name: name,
+            },
+          });
+          // Load Proof after ajax is finished
+          $(document).ajaxStop(function() {
+            loadProof();
+          });
         }
       });
     }
 
-    $("#addToCart").click(function (e) {
-      // e.preventDefault();
-      fetchPreview();
+    // Take the user through the proofing process
+    $('#continue_button').click(function(e) {
+      e.preventDefault();
+      saveCard();
+    });
+
+    // Allow user to edit their card if needed
+    $('#edit').click(function(e) {
+      e.preventDefault();
+      // Hide proof display
+      $('#proof').hide();
+
+      // Show card creation divs
+      $('#leftColumn').show();
+      $('#midColumn').show();
+      $('#rightColumn').show();
+      $('#bottom').show();
+    });
+
+    $('#addToCart').click(function(e) {
+      var approval = $('#edit-approve-proof:checked').val();
+      // If proof is not approved
+      if (approval == undefined) {
+        // prevent form submittion
+        e.preventDefault();
+        // Notify the user
+        alert("You must approve this proof before adding this product to your cart.");
+      }
     });
 
   }); // End $(document).ready()
