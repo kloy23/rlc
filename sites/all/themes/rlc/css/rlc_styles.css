@@ -1,18 +1,18 @@
 /*
   Login ajax page
  */
-/* Theme Window*/
+/* Theme ajax window */
 div.ctools-modal-content .modal-header {
     background-color: black;
     padding: 5px 0 6px 5px;
 }
-/* Theme Close Button*/
+/* ajax window close button*/
 div.ctools-modal-content a.close img {
     top: -8px;
     position: relative;
 }
 /*
-  Style Home Page
+  Home Page
  */
 #panel-home-header {
   text-align: center;
@@ -20,24 +20,45 @@ div.ctools-modal-content a.close img {
   font-weight: bold;
 }
 #panel-home-header #disclaimer {
-    bottom: 15px;
-    color: red;
-    font-size: 10px;
-    position: relative;
+  bottom: 15px;
+  color: red;
+  font-size: 10px;
+  position: relative;
 }
 #panel-home-left {
-    float: right;
+  float: right;
 }
 #panel-home-left-login {
 
 }
 #panel-home-right {
-    font-size: 12px;
-    font-weight: bold;
-    left: 15%;
-    line-height: 16px;
-    position: relative;
+  font-size: 12px;
+  font-weight: bold;
+  left: 15%;
+  line-height: 16px;
+  position: relative;
 }
+/*
+  Shopping Cart
+*/
+.cart-pane {
+  width: 52em;
+}
+
+.page-cart #page-title, .page-checkout #page-title, #comments h2.title, .page-user-orders- #page-title {
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-color: #CCC #CCC #FFF;
+    margin: 0px;
+    padding: 0.5em;
+    width: 30.2em;
+}
+
 /*
   Format Footer
  */
