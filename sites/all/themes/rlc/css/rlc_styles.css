@@ -41,9 +41,7 @@ div.ctools-modal-content a.close img {
 /*
   Format Footer
  */
-section {
+#footer-wrapper section {
   float: left;
   width: 33%;
 }
-
-
