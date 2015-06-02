@@ -1,47 +1,70 @@
 /*
   Login ajax page
  */
-/* Theme Window*/
+/* Ajax Window */
 div.ctools-modal-content .modal-header {
-    background-color: black;
-    padding: 5px 0 6px 5px;
+  background-color: black;
+  padding: 5px 0 6px 5px;
 }
-/* Theme Close Button*/
+/* Ajax Window Close Button*/
 div.ctools-modal-content a.close img {
-    top: -8px;
-    position: relative;
+  top: -8px;
+  position: relative;
 }
 /*
-  Style Home Page
+  Home Page
  */
 #panel-home-header {
   text-align: center;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bold;
+  margin-bottom: 10px;
+  padding: 0.5em 0.5em 0 0.5em;
+  border: 1px outset;
+  background-color: #eee;
 }
 #panel-home-header #disclaimer {
-    bottom: 15px;
-    color: red;
-    font-size: 10px;
-    position: relative;
+  bottom: 15px;
+  color: red;
+  font-size: 10px;
+  position: relative;
 }
 #panel-home-left {
-    float: right;
-}
-#panel-home-left-login {
-
+    float: left;
 }
 #panel-home-right {
-    font-size: 12px;
-    font-weight: bold;
-    left: 15%;
-    line-height: 16px;
-    position: relative;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.5em;
+  position: relative;
+  left: 1.8em;
 }
 /*
-  Format Footer
+  Order Now Page
+*/
+#panel-order-now-top {
+
+}
+#panel-order-now-left-top {
+
+}
+#panel-order-now-left-bottom {
+
+}
+#panel-order-now-right-top {
+
+}
+#panel-order-now-right-bottom {
+
+}
+/*
+  Footer
  */
 #footer-wrapper section {
   float: left;
   width: 33%;
 }
+
+
+/*
+background-image: -moz-linear-gradient(center top , #EEE, #CCC);
