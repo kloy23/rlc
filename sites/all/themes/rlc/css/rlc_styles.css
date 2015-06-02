@@ -11,6 +11,19 @@ div.ctools-modal-content a.close img {
   top: -8px;
   position: relative;
 }
+
+/*
+  Buttons
+*/
+.buttons {
+  border: .1em outset;
+  padding: 0.7em;
+  background-color: #eee;
+  border-radius: .8em;
+  font-size: 1.2em;
+  line-height: 3.5em;
+}
+
 /*
   Home Page
  */
@@ -31,6 +44,7 @@ div.ctools-modal-content a.close img {
 }
 #panel-home-left {
     float: left;
+    line-height: 2.5em;
 }
 #panel-home-right {
   font-size: 1.5em;
@@ -43,19 +57,39 @@ div.ctools-modal-content a.close img {
   Order Now Page
 */
 #panel-order-now-top {
-
+  width: 45%;
+  float: left;
+  text-align: right;
+  margin-right: 1em;
+  padding-bottom: 2em;
+}
+#panel-order-now-top-button2 {
+  float: left;
+  width: 45%;
+  text-align: left;
+  margin-left: 1em;
 }
 #panel-order-now-left-top {
-
+  position: relative;
+  width: 50%;
+  left: 2em;
 }
 #panel-order-now-left-bottom {
-
+  width: 75%;
 }
 #panel-order-now-right-top {
-
+  position: relative;
+  top: 2em;
+  font-size: 1.5em;
+  font-weight: bold;
+  right: 2em;
 }
 #panel-order-now-right-bottom {
-
+  position: relative;
+  font-size: 1.5em;
+  font-weight: bold;
+  top: 4em;
+  right: 2em;
 }
 /*
   Footer
