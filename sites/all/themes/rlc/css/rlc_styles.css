@@ -43,10 +43,7 @@ div.ctools-modal-content a.close img {
   position: relative;
 }
 #panel-home-left {
-  float: right;
-}
-#panel-home-left-login {
-
+  float: left;
 }
 #panel-home-right {
   font-size: 12px;
