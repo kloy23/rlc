@@ -44,11 +44,19 @@ function card_creator_menu() {
     'access callback' => TRUE,
   );
 
-  // Create page for ajax callback
+  // Create page for ajax front callback
   $items['card-creator-ajax-front'] = array(
-    'title' => t('Card Creator AJAX'),
+    'title' => t('Card Creator AJAX front'),
     'type' => MENU_CALLBACK,
     'page callback' => 'card_creator_ajax_front',
+    'access arguments' => array('access content'),
+  );
+
+  // Create page for ajax back callback
+  $items['card-creator-ajax-back'] = array(
+    'title' => t('Card Creator AJAX back'),
+    'type' => MENU_CALLBACK,
+    'page callback' => 'card_creator_ajax_back',
     'access arguments' => array('access content'),
   );
 
@@ -56,9 +64,9 @@ function card_creator_menu() {
 }
 
 /**
- * Implement the card_creator_ajax callback.
+ * Implement the card_creator_ajax_front callback.
  *
- * Saves an image of the business card the user has created.
+ * Saves an image of the front of the business card the user has created.
  */
 function card_creator_ajax_front() {
   // Define the file directory to be used for storing users business cards.
@@ -79,6 +87,37 @@ function card_creator_ajax_front() {
   $img = str_replace(' ', '+', $img);
   $data = base64_decode($img);
   $file = UPLOAD_DIR . $company_name . '-' . $name . '.svg';
+
+  // Save an SVG of the card the user created
+  $success = file_put_contents($file, $data);
+
+  print $success ? $file : 'Unable to save the file.';
+}
+
+/**
+ * Implement the card_creator_ajax_front callback.
+ *
+ * Saves an image of the front of the business card the user has created.
+ */
+function card_creator_ajax_back() {
+  // Define the file directory to be used for storing users business cards.
+  define('UPLOAD_DIR', 'sites/default/files/tmp/');
+
+  // Get the svg.toDataUrl thats being passed via AJAX
+  $img = $_POST['img'];
+  // Get the Company Name for the card being created
+  $company_name = $_POST['company_name'];
+  $company_name = str_replace(' ', '', $company_name); // Removes all spaces
+  $company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
+  // Get the Name of the customer the card is being created for
+  $name = $_POST['name'];
+  $name = str_replace(' ', '', $name); // Removes all spaces
+  $name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
+  // Prepare dataURL to be saved as a file
+  $img = str_replace('data:image/svg+xml;base64,', '', $img);
+  $img = str_replace(' ', '+', $img);
+  $data = base64_decode($img);
+  $file = UPLOAD_DIR . $company_name . '-' . $name . '-back' . '.svg';
 
   // Save an SVG of the card the user created
   $success = file_put_contents($file, $data);
@@ -282,6 +321,12 @@ function card_creator_form($form, &$form_state) {
     '#markup' => '<button id="addBack" type="button">Add a Back</button><button id="removeBack" type="button">Remove Back</button>',
     '#suffix' => '</div>',
   );
+  $form['two_sided'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Two Sided Card?'),
+    '#prefix' => '<div id="selectTwoSided">',
+    '#suffix' => '</div>',
+  );
   // Two Sided Options
   $form['front_back'] = array(
     '#prefix' => '<div id="frontBack">',
@@ -453,7 +498,7 @@ function card_creator_form($form, &$form_state) {
 
   // Create div for proof
   $form['proof'] = array(
-    '#markup' => '<img id="proofImage"></img>',
+    '#markup' => '<img id="proofImageFront"></img><img id="proofImageBack"></img>',
     '#prefix' => '<div id="proof">',
   );
 
