@@ -126,21 +126,6 @@ function card_creator_ajax_back() {
 }
 
 /**
- * Implements hook_commerce_product_type_info().
- * Create a new product type for Business Cards.
- */
-function card_creator_commerce_product_type_info() {
-  return array(
-    'business_card' => array(
-      'type' => 'business_card',
-      'name' => t('Business Card'),
-      'description' => t('A customized business card'),
-      'help' => '',
-    ),
-  );
-}
-
-/**
  * Implements hook_form().
  */
 function card_creator_form($form, &$form_state) {
@@ -563,7 +548,21 @@ function card_creator_form_submit($form, &$form_state) {
   $two_color_card = $form_state['values']['two_color'];
   $selected_card_stock = $form_state['values']['card_stock_options'];
   $selected_quantity = $form_state['values']['select_quantity'];
+  $two_sided_card = $form_state['values']['two_sided'];
   $product_title = str_replace(' ', '', $company_name) . '-' . str_replace(' ', '', $name);
+
+  // Back Side Fields
+  $back_line1 = $form_state['values']['back_line_1'];
+  $back_line2 = $form_state['values']['back_line_2'];
+  $back_line3 = $form_state['values']['back_line_3'];
+  $back_line4 = $form_state['values']['back_line_4'];
+  $back_line5 = $form_state['values']['back_line_5'];
+  $back_line6 = $form_state['values']['back_line_6'];
+  $back_line7 = $form_state['values']['back_line_7'];
+  $back_line8 = $form_state['values']['back_line_8'];
+  $back_line9 = $form_state['values']['back_line_9'];
+
+  // Proof Approval
   $approve_proof = $form_state['values']['approve_proof'];
 
   // Calculate Price
@@ -593,46 +592,124 @@ function card_creator_form_submit($form, &$form_state) {
     $price += 16000;
   }
 
+  // If the proof has been approved
   if ($approve_proof != 0) {
-    // Use the information submitted to create a new business card product
-    $wrapper = entity_metadata_wrapper('commerce_product', commerce_product_new('business_card'));
-    $wrapper->title = $product_title;
-    $wrapper->sku = $product_title;
-    $wrapper->commerce_price->amount = $price;
-    $wrapper->commerce_price->currency_code = 'USD';
+    // If this is NOT a two sided card
+    if ($two_sided_card == 0) {
+      // Use the information submitted to create a new business card product
+      $wrapper = entity_metadata_wrapper('commerce_product', commerce_product_new('business_card'));
+      $wrapper->title = $product_title;
+      $wrapper->sku = $product_title;
+      $wrapper->commerce_price->amount = $price;
+      $wrapper->commerce_price->currency_code = 'USD';
+      $wrapper->field_company_name = $company_name;
+      $wrapper->field_name = $name;
+      $wrapper->field_title = $title;
+      $wrapper->field_address = $address;
+      $wrapper->field_city_state_zip = $city_state_zip;
+      $wrapper->field_line_1 = $line1;
+      $wrapper->field_line_2 = $line2;
+      $wrapper->field_line_3 = $line3;
+      $wrapper->field_line_4 = $line4;
 
-    $wrapper->field_company_name = $company_name;
-    $wrapper->field_name = $name;
-    $wrapper->field_title = $title;
-    $wrapper->field_address = $address;
-    $wrapper->field_city_state_zip = $city_state_zip;
-    $wrapper->field_line_1 = $line1;
-    $wrapper->field_line_2 = $line2;
-    $wrapper->field_line_3 = $line3;
-    $wrapper->field_line_4 = $line4;
+      // Save Image
+      $company_name = str_replace(' ', '', $company_name); // Removes all spaces
+      $company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
+      $name = str_replace(' ', '', $name); // Removes all spaces
+      $name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
+      $filepath = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
+      $file = (object) array(
+        'filename' => basename($filepath),
+        'filepath' => $filepath,
+        'filemime' => file_get_mimetype($filepath),
+        'filesize' => filesize($filepath),
+        'uid' => 1,
+        'status' => FILE_STATUS_PERMANENT,
+        'uri' => $filepath,
+        'display' => 1,
+        'description' => '',
+      );
 
-    // Save Image
-    $company_name = str_replace(' ', '', $company_name); // Removes all spaces
-    $company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
-    $name = str_replace(' ', '', $name); // Removes all spaces
-    $name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
-    $filepath = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
-    $file = (object) array(
-      'filename' => basename($filepath),
-      'filepath' => $filepath,
-      'filemime' => file_get_mimetype($filepath),
-      'filesize' => filesize($filepath),
-      'uid' => 1,
-      'status' => FILE_STATUS_PERMANENT,
-      'uri' => $filepath,
-      'display' => 1,
-      'description' => '',
-    );
+      $file = file_move($file, 'public://', FILE_EXISTS_REPLACE);
+      $wrapper->field_business_card_image = array('fid' => $file->fid);
 
-    $file = file_move($file, 'public://', FILE_EXISTS_REPLACE);
-    $wrapper->field_business_card_image = array('fid' => $file->fid);
+      // Save product
+      $wrapper->save();
+    } elseif ($two_sided_card == 1) { // If this is a two sided card
+      // Use the information submitted to create a new business card product
+      // Front Info
+      $wrapper = entity_metadata_wrapper('commerce_product', commerce_product_new('two_sided_business_card'));
+      $wrapper->title = $product_title;
+      $wrapper->sku = $product_title;
+      $wrapper->commerce_price->amount = $price;
+      $wrapper->commerce_price->currency_code = 'USD';
+      $wrapper->field_company_name = $company_name;
+      $wrapper->field_name = $name;
+      $wrapper->field_title = $title;
+      $wrapper->field_address = $address;
+      $wrapper->field_city_state_zip = $city_state_zip;
+      $wrapper->field_line_1 = $line1;
+      $wrapper->field_line_2 = $line2;
+      $wrapper->field_line_3 = $line3;
+      $wrapper->field_line_4 = $line4;
 
-    $wrapper->save();
+      // Back info
+      $wrapper->field_back_line_1 = $back_line1;
+      $wrapper->field_back_line_2 = $back_line2;
+      $wrapper->field_back_line_3 = $back_line3;
+      $wrapper->field_back_line_4 = $back_line4;
+      $wrapper->field_back_line_5 = $back_line5;
+      $wrapper->field_back_line_6 = $back_line6;
+      $wrapper->field_back_line_7 = $back_line7;
+      $wrapper->field_back_line_8 = $back_line8;
+      $wrapper->field_back_line_9 = $back_line9;
+
+      // Generate info for file names
+      $company_name = str_replace(' ', '', $company_name); // Removes all spaces
+      $company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
+      $name = str_replace(' ', '', $name); // Removes all spaces
+      $name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
+
+      // Generate file info for Front
+      $filepathFront = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
+      $fileFront = (object) array(
+        'filename' => basename($filepathFront),
+        'filepath' => $filepathFront,
+        'filemime' => file_get_mimetype($filepathFront),
+        'filesize' => filesize($filepathFront),
+        'uid' => 1,
+        'status' => FILE_STATUS_PERMANENT,
+        'uri' => $filepathFront,
+        'display' => 1,
+        'description' => '',
+      );
+
+      // Generate file info for Back
+      $filepathBack = 'sites/default/files/tmp/'. $company_name . '-' . $name . '-back' . '.svg';
+      $fileBack = (object) array(
+        'filename' => basename($filepathBack),
+        'filepath' => $filepathBack,
+        'filemime' => file_get_mimetype($filepathBack),
+        'filesize' => filesize($filepathBack),
+        'uid' => 1,
+        'status' => FILE_STATUS_PERMANENT,
+        'uri' => $filepathBack,
+        'display' => 1,
+        'description' => '',
+      );
+
+      // Save Front
+      $fileFront = file_move($fileFront, 'public://', FILE_EXISTS_REPLACE);
+      $wrapper->field_business_card_image_front = array('fid' => $fileFront->fid);
+
+      // Save Back
+      $fileBack = file_move($fileBack, 'public://', FILE_EXISTS_REPLACE);
+      $wrapper->field_business_card_image_back = array('fid' => $fileBack->fid);
+
+      // Save product
+      $wrapper->save();
+    }
+
   }
 }
 
