@@ -8,6 +8,7 @@
     // Hide selected divs on pageload
     $('#clipartColor').hide();
     $('#selectTwoColor').hide();
+    $('#selectTwoSided').hide();
     $('#price').hide();
     $('#proof').hide();
     $('#removeBack').hide();
@@ -15,6 +16,16 @@
     $('#cardInfoBack').hide();
     $('#previewBack').hide();
     $('#templatesBackDisplay').hide();
+
+    // *** SET DEFAULTS ***
+    $(function setDefaults() {
+      // uncheck two_color form field
+      $('#edit-two-color').val(0).attr('checked', false);
+      // uncheck two_sided form field
+      $('#edit-two-sided').val(0).attr('checked', false);
+      // update price on page refresh
+      updatePrice();
+    })
 
     // *** THEME SVG'S ***
 
@@ -97,51 +108,48 @@
       var basePrice = 19.99;
       var cost = 0;
       var twoColors = $('#edit-two-color').val();
-      var cardStock = $('#edit-card-stock-options').children().children();
-      var quantity = $('#edit-select-quantity').children().children();
+      var isTwoSided = $('#edit-two-sided').val();
+      var cardStock = $('#edit-card-stock-options').children().children('input');
+      var quantity = $('#edit-select-quantity').children().children('input');
 
       // If this is a two color card, change cost
       if (twoColors == 1) {
-        cost = 4;
+        cost += 4;
       } else {
-        cost = 0;
+        cost += 0;
       }
 
-      // loop through cardStock options to see what is selected and set cost accordingly
-      for (i=0; i<cardStock.length; i++) {
-        el = cardStock[i];
-        if ( $(el).attr('checked') == true ) {
-          var fieldVal = $(el).val();
-          if (fieldVal == 'white_smooth') {
-            cost += 0;
-          } else if (fieldVal == 'white_linen') {
-            cost += 5;
-          } else if (fieldVal == 'woodgrain') {
-            cost += 10;
-          }
-        }
+      // If this is a two sided card, change cost
+      if (isTwoSided == 1) {
+        cost += 10;
+      } else {
+        cost += 0;
       }
 
-      // loop through quantity options to see what is selected and set cost accordingly
-      for (i=0; i<quantity.length; i++) {
-        el = quantity[i];
-        if ( $(el).attr('checked') == true ) {
-          var fieldVal = $(el).val();
-          if (fieldVal == '1000') {
-            cost += 0;
-          } else if (fieldVal == '2000') {
-            cost += 20;
-          } else if (fieldVal == '3000') {
-            cost += 40;
-          } else if (fieldVal == '4000') {
-            cost += 60;
-          } else if (fieldVal == '5000') {
-            cost += 80;
-          } else if (fieldVal == '10000') {
-            cost += 160;
-          }
-        }
+      // If the cardStock is White Smooth
+      if (cardStock[0].checked == true) {
+        cost += 0;
+      } else if (cardStock[1].checked == true) { // If the cardStock is White Linen
+        cost += 5;
+      } else if (cardStock[2].checked == true) { // If the cardStock is WoodGrain
+        cost += 10;
       }
+
+      // If the Quantity is 1000
+      if (quantity[0].checked == true) {
+        cost += 0;
+      } else if (quantity[1].checked == true) { // If the Quantity is 2000
+        cost += 20;
+      } else if (quantity[2].checked == true) { // If the Quantity is 3000
+        cost += 40;
+      } else if (quantity[3].checked == true) { // If the Quantity is 4000
+        cost += 60;
+      } else if (quantity[4].checked == true) { // If the Quantity is 5000
+        cost += 80;
+      } else if (quantity[5].checked == true) { // If the Quantity is 10000
+        cost += 160;
+      }
+
       // calculate total to be displayed to the customer
       var total = basePrice + cost;
       var convertedTotal = total.toFixed(2);
@@ -163,7 +171,6 @@
             removeLogo();
             // adds the logo that has been selected
             addLogo(category, el);
-            console.log('logo clicked');
             highlightSelectedClipart(el);
           });
           $(el).hover(function() {
@@ -1023,10 +1030,6 @@
             'background-color': color
         });
       }
-      // uncheck two_color field
-      $('#edit-two-color').val(0).attr('checked', false);
-      // update price on page refresh
-      updatePrice();
       // Add .selected to the first color in #oneColor ('Black')
       var styledOptions = $('#oneColor').children();
       var firstStyledColor = styledOptions[0];
@@ -1067,6 +1070,8 @@
 
     // Switch to two sided
     var twoSided = function() {
+      // Check form field two_sided
+      $('#edit-two-sided').val(1).attr('checked', true);
       $('#addBack').hide();
       $('#removeBack').show();
       $('#frontBack').show();
@@ -1074,6 +1079,8 @@
 
     // Switch to one sided
     var oneSided = function() {
+      // Uncheck form field two_sided
+      $('#edit-two-sided').val(0).attr('checked', false);
       $('#addBack').show();
       $('#removeBack').hide();
       $('#frontBack').hide();
@@ -1103,17 +1110,19 @@
     // When addBack is clicked, execute twoSided and switch to back
     $('#addBack').click(function() {
       twoSided();
+      updatePrice();
       switchToBack();
+    });
+    // When removeBack is clicked, execute oneSided and switch to front
+    $('#removeBack').click(function() {
+      oneSided();
+      updatePrice();
+      switchToFront();
     });
     // When "back" is clicked, switch to back
     $('#back').click(switchToBack);
     // When "front" is clicked, switch to front
     $('#front').click(switchToFront);
-    // When removeBack is clicked, execute oneSided and switch to front
-    $('#removeBack').click(function() {
-      oneSided();
-      switchToFront();
-    });
     // When cardInfoFront is changed, update svg
     $('#cardInfoFront').on('input focus', 'input', function(e) {
       changeTextFront(e);
@@ -1135,8 +1144,12 @@
     // When a clipart category is clicked, load the svg
     $('#clipartCategory').change(loadClipartCategory);
     // When a quantity is selected, change the price
-    $('#edit-select-quantity').change(updatePrice);
-    $('#edit-card-stock-options').change(updatePrice);
+    $('#edit-select-quantity').on('change', 'input', function(e) {
+      updatePrice();
+    });
+    $('#edit-card-stock-options').on('change', 'input', function(e) {
+      updatePrice();
+    });
 
     // Allows users to view the card before adding it to their cart
     var loadProof = function() {
@@ -1149,37 +1162,90 @@
       // Show Proof Div
       $('#proof').show();
 
-      // Generate the filename
-      // Replace spaces and special characters for companyName and name fields
-      var companyName = $('#companyName').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
-      var name = $('#name').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
-      // Replicate the file name given during the ajax callback
-      var fileDir = '../sites/default/files/tmp/' + companyName + '-' + name + '.svg#' + new Date().getTime();
-      // Set the image src to show the user the file that was created
-      $('#proofImage').attr('src', fileDir);
+      var isTwoSided = $('#edit-two-sided').val();
+      // if card is two sided
+      if (isTwoSided == 1) {
+        // Generate the filename
+        // Replace spaces and special characters for companyName and name fields
+        var companyName = $('#companyName').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+        var name = $('#name').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+        // Replicate the file name given during the ajax callback
+        var fileDirFront = '../sites/default/files/tmp/' + companyName + '-' + name + '.svg#' + new Date().getTime();
+        var fileDirBack = '../sites/default/files/tmp/' + companyName + '-' + name + '-back' + '.svg#' + new Date().getTime();
+        // Make sure back is visible
+        $('#proofImageBack').show();
+        // Set the image src to show the user the file that was created
+        $('#proofImageFront').attr('src', fileDirFront);
+        $('#proofImageBack').attr('src', fileDirBack);
+      } else if (isTwoSided == 0) { // card is not two sided
+        // Generate the filename
+        // Replace spaces and special characters for companyName and name fields
+        var companyName = $('#companyName').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+        var name = $('#name').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+        // Replicate the file name given during the ajax callback
+        var fileDirFront = '../sites/default/files/tmp/' + companyName + '-' + name + '.svg#' + new Date().getTime();
+        // Set the image src to show the user the file that was created
+        $('#proofImageFront').attr('src', fileDirFront);
+        $('#proofImageBack').hide();
+      }
     }
 
     // SAVE THE ARTWORK
     var saveCard = function() {
       var companyName = $('#companyName').val();
       var name = $('#name').val();
-      var svg = document.getElementById("previewFront");
-      var SVGtopngDataURL = svg.toDataURL("image/svg+xml", {
-        callback: function(data) {
-          $.ajax({
-            type: 'POST',
-            url: '/rlcdev/card-creator-ajax-front',
-            data: {
-              img: data,
-              company_name: companyName,
-              name: name,
-            },
-          });
-          // Load Proof after ajax is finished
-          $(document).ajaxStop(function() {
-            loadProof();
-          });
-        }
+      var svgFront = document.getElementById("previewFront");
+      var svgBack = document.getElementById("previewBack");
+      var isTwoSided = $('#edit-two-sided').val();
+      // if card is two sided
+      if (isTwoSided == 1) {
+        // Temporarily show front and back in order for img to save correctly
+        $('#previewFront').show();
+        $('#previewBack').show();
+        var SVGtopngDataURLBack = svgBack.toDataURL("image/svg+xml", {
+          callback: function(data) {
+            $.ajax({
+              type: 'POST',
+              url: '/rlcdev/card-creator-ajax-back',
+              data: {
+                img: data,
+                company_name: companyName,
+                name: name,
+              },
+            });
+          }
+        });
+        var SVGtopngDataURLFront = svgFront.toDataURL("image/svg+xml", {
+          callback: function(data) {
+            $.ajax({
+              type: 'POST',
+              url: '/rlcdev/card-creator-ajax-front',
+              data: {
+                img: data,
+                company_name: companyName,
+                name: name,
+              },
+            });
+          }
+        });
+      } else if (isTwoSided == 0) { // card is not two sided
+        var SVGtopngDataURLFront = svgFront.toDataURL("image/svg+xml", {
+          callback: function(data) {
+            $.ajax({
+              type: 'POST',
+              url: '/rlcdev/card-creator-ajax-front',
+              data: {
+                img: data,
+                company_name: companyName,
+                name: name,
+              },
+            });
+          }
+        });
+      }
+      // Load Proof after ajax is finished
+      $(document).ajaxStop(function() {
+        loadProof();
       });
     }
 
@@ -1200,6 +1266,7 @@
       $('#midColumn').show();
       $('#rightColumn').show();
       $('#bottom').show();
+      switchToFront();
     });
 
     $('#addToCart').click(function(e) {
