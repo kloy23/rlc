@@ -163,6 +163,7 @@
             removeLogo();
             // adds the logo that has been selected
             addLogo(category, el);
+            console.log('logo clicked');
             highlightSelectedClipart(el);
           });
           $(el).hover(function() {
@@ -238,8 +239,8 @@
       // get the logo placeHolder from previewFront
       var placeHolder = svgNode.select('#logo');
       // get the x and y values from the placeholder
-      var x = $(placeHolder.node).attr('x').baseVal.value;
-      var y = $(placeHolder.node).attr('y').baseVal.value;
+      var x = $(placeHolder.node).attr('x');
+      var y = $(placeHolder.node).attr('y');
       // get the id of clicked logo
       var selectedLogoId = el.id;
       // dynamicly create the file name based on the id of selected logo
@@ -344,8 +345,8 @@
           // get the logo placeHolder from previewFront
           var placeHolder = svgNode.select('#logo');
           // get the x and y values from the placeholder
-          var x = $(placeHolder.node).attr('x').baseVal.value;
-          var y = $(placeHolder.node).attr('y').baseVal.value;
+          var x = $(placeHolder.node).attr('x');
+          var y = $(placeHolder.node).attr('y');
           // load the logo that was previously selected
           var logo = Snap.load(selectedLogo, function(f) {
             var el = f.select('svg');
@@ -1167,7 +1168,7 @@
         callback: function(data) {
           $.ajax({
             type: 'POST',
-            url: '/rlcdev/card-creator-ajax',
+            url: '/rlcdev/card-creator-ajax-front',
             data: {
               img: data,
               company_name: companyName,

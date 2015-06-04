@@ -45,10 +45,10 @@ function card_creator_menu() {
   );
 
   // Create page for ajax callback
-  $items['card-creator-ajax'] = array(
+  $items['card-creator-ajax-front'] = array(
     'title' => t('Card Creator AJAX'),
     'type' => MENU_CALLBACK,
-    'page callback' => 'card_creator_ajax',
+    'page callback' => 'card_creator_ajax_front',
     'access arguments' => array('access content'),
   );
 
@@ -60,7 +60,7 @@ function card_creator_menu() {
  *
  * Saves an image of the business card the user has created.
  */
-function card_creator_ajax() {
+function card_creator_ajax_front() {
   // Define the file directory to be used for storing users business cards.
   define('UPLOAD_DIR', 'sites/default/files/tmp/');
 
