@@ -19,10 +19,14 @@
 
     // *** SET DEFAULTS ***
     $(function setDefaults() {
+      var selectTwoColor = document.getElementById('edit-two-color');
+      var selectTwoSided = document.getElementById('edit-two-sided');
       // uncheck two_color form field
-      $('#edit-two-color').val(0).attr('checked', false);
+      selectTwoColor.checked = false;
+      selectTwoColor.value = 0;
       // uncheck two_sided form field
-      $('#edit-two-sided').val(0).attr('checked', false);
+      selectTwoSided.checked = false;
+      selectTwoSided.value = 0;
       // update price on page refresh
       updatePrice();
     })
@@ -501,6 +505,7 @@
     }
     // when a one color option is selected
     var loadOneColor = function(e) {
+      var selectTwoColor = document.getElementById('edit-two-color');
       var color = $(this).text().toLowerCase();
       // target the loaded svg document
       var svgNode = Snap.select('#previewFront');
@@ -514,7 +519,9 @@
         el.attr('fill', color);
       }
       // Uncheck form field two_color
-      $('#edit-two-color').val(0).attr('checked', false);
+      selectTwoColor.checked = false;
+      // set value of two color to 0
+      selectTwoColor.value = 0;
       updatePrice();
       clearColorSelection();
       $(this).addClass('selected');
@@ -667,13 +674,16 @@
     }
     // when a two color option is selected, create the color options for each field
     var loadTwoColors = function() {
+      var selectTwoColor = document.getElementById('edit-two-color');
       var $clipartColor = $('#clipartColor');
       for (i = 0; i < $inputFields.length; i++) {
         var el = $inputFields[i];
         createColorBoxes(this, el);
       }
       // Check hidden form field two_color
-      $('#edit-two-color').val(1).attr('checked', true);
+      selectTwoColor.checked = true;
+      // set value of hidden form field two_color to 1
+      selectTwoColor.value = 1;
       updatePrice();
       $clipartColor.show();
       createClipartColorBoxes(this, $clipartColor);
@@ -1070,8 +1080,11 @@
 
     // Switch to two sided
     var twoSided = function() {
+      var selectTwoSided = document.getElementById('edit-two-sided');
       // Check form field two_sided
-      $('#edit-two-sided').val(1).attr('checked', true);
+      selectTwoSided.checked = true;
+      // set value of form field two_sided to 1
+      selectTwoSided.value = 1;
       $('#addBack').hide();
       $('#removeBack').show();
       $('#frontBack').show();
@@ -1079,8 +1092,11 @@
 
     // Switch to one sided
     var oneSided = function() {
+      var selectTwoSided = document.getElementById('edit-two-sided');
       // Uncheck form field two_sided
-      $('#edit-two-sided').val(0).attr('checked', false);
+      selectTwoSided.checked = false;
+      // set value of form field two_sided to 0
+      selectTwoSided.value = 0;
       $('#addBack').show();
       $('#removeBack').hide();
       $('#frontBack').hide();
