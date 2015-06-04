@@ -2,7 +2,7 @@
 
   $(document).ready(function() { // Begin $(document).ready()
 
-    var $inputFields = $('#cardInfo :input[type="text"]');
+    var $inputFields = $('#cardInfoFront :input[type="text"], #cardInfoBack :input[type="text"]');
     var selectedLogo;
 
     // Hide selected divs on pageload
@@ -10,6 +10,11 @@
     $('#selectTwoColor').hide();
     $('#price').hide();
     $('#proof').hide();
+    $('#removeBack').hide();
+    $('#frontBack').hide();
+    $('#cardInfoBack').hide();
+    $('#previewBack').hide();
+    $('#templatesBackDisplay').hide();
 
     // *** THEME SVG'S ***
 
@@ -27,7 +32,7 @@
     }
     var highlightSelectedTemplate = function(el) {
       var rect = el.node;
-      var svgElement = Snap.select('#templates');
+      var svgElement = Snap.select('#templatesFront');
       var svgNodes = svgElement.selectAll('rect')
       for (i=0; i<svgNodes.length; i++) {
         var el = svgNodes[i];
@@ -63,7 +68,6 @@
           fill: '#FFF',
           opacity: '0'
         });
-        // console.log(rect);
       }
     }
     var highlightSelectedClipart = function(el) {
@@ -201,7 +205,7 @@
     // when called, change the color of current logo
     var changeLogoColor = function() {
       var color = fetchSelectedColor();
-      var svgNode = Snap.select('#preview');
+      var svgNode = Snap.select('#previewFront');
        // find the logo within the svg document, if one exist
       var node = svgNode.selectAll('svg');
       // if node.length is greater than 1, then a logo has already been selected
@@ -227,11 +231,11 @@
         }
       }
     }
-    // when a logo is clicked, add that logo to the preview
+    // when a logo is clicked, add that logo to the previewFront
     var addLogo = function(category, el) {
       // target the loaded svg document
-      var svgNode = Snap('#preview');
-      // get the logo placeHolder from preview
+      var svgNode = Snap('#previewFront');
+      // get the logo placeHolder from previewFront
       var placeHolder = svgNode.select('#logo');
       // get the x and y values from the placeholder
       var x = $(placeHolder.node).attr('x').baseVal.value;
@@ -247,17 +251,17 @@
           'x': x,
           'y': y
         });
-        preview.append(f);
+        previewFront.append(f);
         // set the logo's color to match selection
         changeLogoColor();
       });
       selectedLogo = fileName;
     }
-    // when a logo is already on the preview, and a different logo has been selected
+    // when a logo is already on the previewFront, and a different logo has been selected
     var removeLogo = function() {
-      // load the preview
-      var svgNode = Snap('#preview');
-      // target the node of preview
+      // load the previewFront
+      var svgNode = Snap('#previewFront');
+      // target the node of previewFront
       var node = svgNode.selectAll('svg');
       // if node.length is greater than 3, then a logo has already been selected
       if (node.length > 1) {
@@ -268,24 +272,29 @@
       }
     }
     // when called, changes the appropriate svg text field to match the value of corresponding html input field
-    var changeText = function(e) {
+    var changeTextFront = function(e) {
       var id = '#' + e.target.id;
       var newText = e.target.value;
-      $(preview.select(id).node).text(newText);
+      $(previewFront.select(id).node).text(newText);
     }
-    // Load the template that is selected
-    var changeTemplate = function(e) {
+    var changeTextBack = function(e) {
+      var id = '#' + e.target.id;
+      var newText = e.target.value;
+      $(previewBack.select(id).node).text(newText);
+    }
+    // Load the template that is selected for Front
+    var changeTemplateFront = function(e) {
       var templateId = e.target.id;
-      var svgLogo = Snap('#preview');
+      var svgLogo = Snap('#previewFront');
       var getLogo = svgLogo.selectAll('svg');
       // fetch the color that is selected
       var color = fetchSelectedColor();
-      preview.clear(); // removes display of old template
-      var fileName = '../sites/all/modules/custom/card_creator/svgTemplates/' + templateId + '.svg'; // dynamicly creates url to template
+      previewFront.clear(); // removes display of old template
+      var fileName = '../sites/all/modules/custom/card_creator/svgTemplates/front/' + templateId + '.svg'; // dynamicly creates url to template
       Snap.load(fileName, function(f) {
-        preview.append(f);
+        previewFront.append(f);
         // target the loaded svg document
-        var svgNode = Snap.select('#preview');
+        var svgNode = Snap.select('#previewFront');
         // find all text fields within the svg document
         var svgElement = svgNode.selectAll('text');
         // for each svg text field
@@ -310,7 +319,7 @@
           // if the appropriate text field is not empty
           if (fieldVal.length !== 0) {
             // target the appropriate svg field, and replace its text with the value of the appropriate text field
-            $(preview.select(fieldId).node).text(fieldVal);
+            $(previewFront.select(fieldId).node).text(fieldVal);
           }
           if (el.hasClass('primaryColor') && colorOptions.length > 2) {
               el.attr('fill', primaryColor);
@@ -331,8 +340,8 @@
         // If a logo is selected before a new template is selected, give the new template the existing logo.
         if (getLogo.length == 2) {
           // target the loaded svg document
-          var svgNode = Snap('#preview');
-          // get the logo placeHolder from preview
+          var svgNode = Snap('#previewFront');
+          // get the logo placeHolder from previewFront
           var placeHolder = svgNode.select('#logo');
           // get the x and y values from the placeholder
           var x = $(placeHolder.node).attr('x').baseVal.value;
@@ -344,10 +353,68 @@
               'x': x,
               'y': y
             });
-            preview.append(f);
+            previewFront.append(f);
             // set the logo color to match selection
             changeLogoColor();
           });
+        }
+      });
+    }
+    // Load the template that is selected for Back
+    var changeTemplateBack = function(e) {
+      var templateId = e.target.id;
+      var svgLogo = Snap('#previewBack');
+      var getLogo = svgLogo.selectAll('svg');
+      // fetch the color that is selected
+      var color = fetchSelectedColor();
+      previewBack.clear(); // removes display of old template
+      var fileName = '../sites/all/modules/custom/card_creator/svgTemplates/back/' + templateId + '.svg'; // dynamicly creates url to template
+      Snap.load(fileName, function(f) {
+        previewBack.append(f);
+        // target the loaded svg document
+        var svgNode = Snap.select('#previewBack');
+        // find all text fields within the svg document
+        var svgElement = svgNode.selectAll('text');
+        // for each svg text field
+        for (i = 0; i < svgElement.length; i++) {
+          // target the correct input field for the current svg text field
+          var fields = $('#cardInfoBack :input[type="text"]');
+          var field = fields[i];
+          // get the field value (text content)
+          var fieldVal = field.value;
+          // retrive the fields id and add a # to the begining in order to be used in an id selector
+          var fieldId = '#' + field.id;
+          // find current color options
+          var colorOptions = $(field).siblings();
+          var primaryColor = $(colorOptions[1]).css('background-color');
+          var secondaryColor = $(colorOptions[2]).css('background-color');
+          var el = svgElement[i];
+          var id = el.attr('id');
+          if (id == 'backLine1' || id == 'backLine2') {
+            el.attr('class', 'primaryColor');
+          } else {
+              el.attr('class', 'secondaryColor');
+          }
+          // if the appropriate text field is not empty
+          if (fieldVal.length !== 0) {
+            // target the appropriate svg field, and replace its text with the value of the appropriate text field
+            $(previewBack.select(fieldId).node).text(fieldVal);
+          }
+          if (el.hasClass('primaryColor') && colorOptions.length > 2) {
+              el.attr('fill', primaryColor);
+              if ($(colorOptions[2]).hasClass('selected')) {
+                $(colorOptions[2]).removeClass('selected');
+                $(colorOptions[1]).addClass('selected');
+              }
+          } else if (el.hasClass('secondaryColor') && colorOptions.length > 2) {
+              el.attr('fill', secondaryColor);
+              if ($(colorOptions[1]).hasClass('selected')) {
+                $(colorOptions[1]).removeClass('selected');
+                $(colorOptions[2]).addClass('selected');
+              }
+          } else {
+              el.attr('fill', color);
+          }
         }
       });
     }
@@ -375,16 +442,20 @@
       $(colorBox2).remove();
       $('#clipartColor').hide();
     }
-    // update preview when a two color option is selected
+    // update previewFront when a two color option is selected
     var updateFillColor = function() {
-      // target the loaded svg document
-      var svgNode = Snap.select('#preview');
-      // find all text fields within the svg document
-      var svgElement = svgNode.selectAll('text');
+      // target the loaded svg documents
+      var svgFrontNode = Snap.select('#previewFront');
+      var svgBackNode = Snap.select('#previewBack');
+      // find all text fields within the svg documents
+      var frontElements = svgFrontNode.selectAll('text');
+      var backElements = svgBackNode.selectAll('text');
+      // combine svg text fields
+      var svgElements = $(frontElements).add(backElements);
       // target clipart color Options
       var clipartColorOptions = $('#clipartColor').siblings();
       // for each svg text field
-      for (i = 0; i < svgElement.length; i++) {
+      for (i = 0; i < svgElements.length; i++) {
         // target the correct input field for the current svg text field
         var field = $inputFields[i];
         // find current color options are
@@ -393,7 +464,7 @@
         var colorBox2 = colorOptions[2];
         var primaryColor = $(colorBox1).css('background-color');
         var secondaryColor = $(colorBox2).css('background-color');
-        var el = svgElement[i];
+        var el = svgElements[i];
         if (el.hasClass('primaryColor') && colorOptions.length > 2) {
           el.attr('fill', primaryColor);
           $(colorBox1).addClass('selected');
@@ -424,7 +495,7 @@
     var loadOneColor = function(e) {
       var color = $(this).text().toLowerCase();
       // target the loaded svg document
-      var svgNode = Snap.select('#preview');
+      var svgNode = Snap.select('#previewFront');
       // find all text fields within the svg document
       var svgElement = svgNode.selectAll('text');
       // for each svg text field, set fill color to match selection
@@ -507,7 +578,7 @@
       // When secondary color is clicked, call changeFillColor
       $(colorBox2).click(changeFillColor);
       var siblings = $(el).siblings();
-      // if the parent of the input field is #cardInfo, then it means that a color option has not been selected yet.
+      // if the parent of the input field is #cardInfoFront, then it means that a color option has not been selected yet.
       // if a color options has not been selected, the input field will have 2 siblings
       if (siblings.length == 2) {
         // add colorBox1 and colorBox2 before the current element
@@ -569,7 +640,7 @@
       // When secondary color is clicked, call changeFillColor
       $(colorBox2).click(selectLogoColor);
       var siblings = $(el).siblings();
-      // if the parent of the input field is #cardInfo, then it means that a color option has not been selected yet.
+      // if the parent of the input field is #cardInfoFront, then it means that a color option has not been selected yet.
       // if a color options has not been selected, the input field will have 2 siblings
       if (siblings.length == 0) {
         // add colorBox1 and colorBox2 before the current element
@@ -606,12 +677,20 @@
 
     // change the color of a field when one of the two color options are selected, when using a two color option
     var changeFillColor = function() {
+      // target the current svg file
+      var svgNode;
       var color = $(this).css('background-color');
       // find the id of the input field that is a sibling of colorBox
       // add '#' in order to use the id within Snap
       var id = '#' + $(this).siblings('input').attr('id');
-      // target the current svg file
-      var svgNode = Snap.select('#preview');
+      // Load all parent divs
+      var parrentDiv = $(this).siblings('input').parents();
+      // Find out if input field is for front or back, and act accordingly
+      if (parrentDiv[2].id == 'cardInfoFront') {
+        svgNode = Snap.select('#previewFront');
+      } else if (parrentDiv[2].id == 'cardInfoBack') {
+        svgNode = Snap.select('#previewBack');
+      }
       // find coresponding svg text field using the created id
       var svgElement = svgNode.select(id);
       // retrieve the id of the colorbox that was clicked
@@ -646,18 +725,18 @@
 
     // *** LOAD SVG DOCUMENTS ***
 
-    // Use Snap.svg to load the 'preview' svg document
+    // Use Snap.svg to load the 'previewFront' svg document
     // Add the classes primaryColor and secondaryColor to text fields within the SVG
-    var preview = Snap('#preview');
-    Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/template1.svg', function(f) {
-      preview.append(f);
-      preview.attr({
+    var previewFront = Snap('#previewFront');
+    Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/front/template1.svg', function(f) {
+      previewFront.append(f);
+      previewFront.attr({
         'width' : '315px',
         'height' : '180px',
       });
       // this allows the color options loaded by loadTwoColors to take effect automagically.
       // select all text fields in the svg element
-      var svgElement = preview.selectAll('text');
+      var svgElement = previewFront.selectAll('text');
       // for every svg text field
       for (i=0; i<svgElement.length; i++) {
         // target the current svg text field
@@ -674,12 +753,40 @@
         }
       }
     });
-    // Use Snap.svg to load the 'templates' svg document
-    var allTemplates = Snap('#templates');
-    Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/selectTemplate.svg', function(f) {
-      allTemplates.append(f);
+    // Use Snap.svg to load the 'previewBack' svg document
+    // Add the classes primaryColor and secondaryColor to text fields within the SVG
+    var previewBack = Snap('#previewBack');
+    Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/back/template1.svg', function(f) {
+      previewBack.append(f);
+      previewBack.attr({
+        'width' : '315px',
+        'height' : '180px',
+      });
+      // this allows the color options loaded by loadTwoColors to take effect automagically.
+      // select all text fields in the svg element
+      var svgElement = previewBack.selectAll('text');
+      // for every svg text field
+      for (i=0; i<svgElement.length; i++) {
+        // target the current svg text field
+        var el = svgElement[i];
+        // get it's id
+        var id = el.attr('id');
+        // if the id is equal to 'companyName', or 'name'
+        if (id == 'backLine1' || id == 'backLine2') {
+          // give it the class of 'primaryColor'
+          el.attr('class', 'primaryColor');
+        } else { // if the id is not 'companyName', or 'name'
+          // give it the class of 'secondaryColor'
+          el.attr('class', 'secondaryColor');
+        }
+      }
+    });
+    // Use Snap.svg to load the 'templatesFront' svg document
+    var templatesFront = Snap('#templatesFront');
+    Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/front/selectTemplateFront.svg', function(f) {
+      templatesFront.append(f);
       // get all rect within loaded svg.  Each template has a rect that has an id to identify it.
-      var svgElements = allTemplates.selectAll('rect');
+      var svgElements = templatesFront.selectAll('rect');
       // target the first template
       var firstTemplate = svgElements[0].node;
       // Style the template, since it is selected when page loads
@@ -689,7 +796,7 @@
         stroke: '#F00',
         'stroke-width': '2px'
       });
-      // click handeler for when a rect within #templates is clicked
+      // click handeler for when a rect within #templatesFront is clicked
       // must insert the click handeler here in order to add it to svg document
       for (i=0; i<svgElements.length; i++) {
         var el = svgElements[i];
@@ -702,7 +809,40 @@
           });
           el.click(function(e) {
               highlightSelectedTemplate(el);
-              changeTemplate(e);
+              changeTemplateFront(e);
+          });
+        })(el);
+      }
+    });
+    // Use Snap.svg to load the 'templatesBack' svg document
+    var templatesBack = Snap('#templatesBack');
+    Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/back/selectTemplateBack.svg', function(f) {
+      templatesBack.append(f);
+      // get all rect within loaded svg.  Each template has a rect that has an id to identify it.
+      var svgElements = templatesBack.selectAll('rect');
+      // target the first template
+      var firstTemplate = svgElements[0].node;
+      // Style the template, since it is selected when page loads
+      $(firstTemplate).attr({
+        class: 'selected',
+        fill: '#E0FFFF',
+        stroke: '#F00',
+        'stroke-width': '2px'
+      });
+      // click handeler for when a rect within #templatesFront is clicked
+      // must insert the click handeler here in order to add it to svg document
+      for (i=0; i<svgElements.length; i++) {
+        var el = svgElements[i];
+        (function(el) {
+          el.mouseover(function() {
+              highlightTemplate(el);
+          });
+          el.mouseout(function() {
+              unHighlightTemplate(el);
+          });
+          el.click(function(e) {
+              highlightSelectedTemplate(el);
+              changeTemplateBack(e);
           });
         })(el);
       }
@@ -795,10 +935,10 @@
         })(el, fontOptions, fontFamily, fontOptionsButton, bold, italic);
       }
     });
-    // When font-family is changed, update preview.svg
+    // When font-family is changed, update previewFront.svg
     var changeAllFonts = function() {
       var $newFontFamily = $('#docFontFamily').val();
-      var svgNode = Snap.select('#preview');
+      var svgNode = Snap.select('#previewFront');
       var svgElement = svgNode.selectAll('text');
       for (i=0; i < svgElement.length; i++) {
         var el = svgElement[i].node;
@@ -813,7 +953,7 @@
     var changeFieldFont = function(currentField, fontFamilySelect) {
       var newFontFamily = $(fontFamilySelect).val();
       var id = '#' + $(currentField).attr('id');
-      var svgNode = Snap.select('#preview');
+      var svgNode = Snap.select('#previewFront');
       var svgText = svgNode.select(id);
       svgText.attr({
         'font-family': newFontFamily
@@ -832,7 +972,7 @@
     }
     // when bold is selected for current field
     var boldFont = function(currentField, bold) {
-      var svgNode = Snap.select('#preview');
+      var svgNode = Snap.select('#previewFront');
       var id = '#' + currentField.id;
       var svgElement = svgNode.select(id);
       if ($(bold).hasClass('selected')) {
@@ -845,7 +985,7 @@
     }
     // when italic is selected for current field
     var italicFont = function(currentField, italic) {
-      var svgNode = Snap.select('#preview');
+      var svgNode = Snap.select('#previewFront');
       var id = '#' + currentField.id;
       var svgElement = svgNode.select(id);
       if ($(italic).hasClass('selected')) {
@@ -924,10 +1064,63 @@
       }
     });
 
+    // Switch to two sided
+    var twoSided = function() {
+      $('#addBack').hide();
+      $('#removeBack').show();
+      $('#frontBack').show();
+    }
+
+    // Switch to one sided
+    var oneSided = function() {
+      $('#addBack').show();
+      $('#removeBack').hide();
+      $('#frontBack').hide();
+    }
+
+    // Switch to Back
+    var switchToBack = function() {
+      $('#cardInfoFront').hide();
+      $('#previewFront').hide();
+      $('#templatesFrontDisplay').hide();
+      $('#cardInfoBack').show();
+      $('#previewBack').show();
+      $('#templatesBackDisplay').show();
+    }
+    // Switch to Front
+    var switchToFront = function() {
+      $('#cardInfoFront').show();
+      $('#previewFront').show();
+      $('#templatesFrontDisplay').show();
+      $('#cardInfoBack').hide();
+      $('#previewBack').hide();
+      $('#templatesBackDisplay').hide();
+    }
+
     // *** CLICK HANDLERS ***
 
-    // When cardInfo is changed, update svg
-    $('#cardInfo').keyup(changeText);
+    // When addBack is clicked, execute twoSided and switch to back
+    $('#addBack').click(function() {
+      twoSided();
+      switchToBack();
+    });
+    // When "back" is clicked, switch to back
+    $('#back').click(switchToBack);
+    // When "front" is clicked, switch to front
+    $('#front').click(switchToFront);
+    // When removeBack is clicked, execute oneSided and switch to front
+    $('#removeBack').click(function() {
+      oneSided();
+      switchToFront();
+    });
+    // When cardInfoFront is changed, update svg
+    $('#cardInfoFront').on('input focus', 'input', function(e) {
+      changeTextFront(e);
+    });
+    // When cardInfoBack is changed, update svg
+    $('#cardInfoBack').on('input focus', 'input', function(e) {
+      changeTextBack(e);
+    });
     // When a new font is selected for the entire doc, change text.
     $('#docFontFamily').change(changeAllFonts);
     // When a one color option is clicked, call loadOneColor
@@ -969,7 +1162,7 @@
     var saveCard = function() {
       var companyName = $('#companyName').val();
       var name = $('#name').val();
-      var svg = document.getElementById("preview");
+      var svg = document.getElementById("previewFront");
       var SVGtopngDataURL = svg.toDataURL("image/svg+xml", {
         callback: function(data) {
           $.ajax({

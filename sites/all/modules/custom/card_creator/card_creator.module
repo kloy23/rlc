@@ -112,10 +112,10 @@ function card_creator_form($form, &$form_state) {
     drupal_get_path('module', 'card_creator') . '/css/styles.css',
   );
 
-  // Input Fields
+  // Input Fields for Front
   $form['card_information'] = array(
     '#markup' => '<h4>' . t('1) Enter Card Information') . '</h4>',
-    '#prefix' => '<div id="container"><div id="leftColumn"><div id="cardInfo">',
+    '#prefix' => '<div id="container"><div id="leftColumn"><div id="cardInfoFront">',
   );
   $form['company_name'] = array(
     '#type' => 'textfield',
@@ -191,18 +191,112 @@ function card_creator_form($form, &$form_state) {
     '#suffix' => '</div>',
   );
 
+  // Input Fields for Back
+
+  $form['card_information_back'] = array(
+    '#markup' => '<h4>' . t('1) Enter Card Information') . '</h4>',
+    '#prefix' => '<div id="cardInfoBack">',
+  );
+  $form['back_line_1'] = array(
+    '#type' => 'textfield',
+    '#id' => 'backLine1',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 1'),
+    ),
+  );
+  $form['back_line_2'] = array(
+    '#type' => 'textfield',
+    '#id' => 'backLine2',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 2'),
+    ),
+  );
+  $form['back_line_3'] = array(
+    '#type' => 'textfield',
+    '#id' => 'backLine3',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 3'),
+    ),
+  );
+  $form['back_line_4'] = array(
+    '#type' => 'textfield',
+    '#id' => 'backLine4',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 4'),
+    ),
+  );
+  $form['back_line_5'] = array(
+    '#type' => 'textfield',
+    '#id' => 'backLine5',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 5'),
+    ),
+  );
+  $form['back_line_6'] = array(
+    '#type' => 'textfield',
+    '#id' => 'backLine6',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 6'),
+    ),
+  );
+  $form['back_line_7'] = array(
+    '#type' => 'textfield',
+    '#id' => 'backLine7',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 7'),
+    ),
+  );
+  $form['back_line_8'] = array(
+    '#type' => 'textfield',
+    '#id' => 'backLine8',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => ('Line 8'),
+    ),
+  );
+  $form['back_line_9'] = array(
+    '#type' => 'textfield',
+    '#id' => 'backLine9',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => ('Line 9'),
+    ),
+    '#suffix' => '</div>',
+  );
+
   // Font Family Select List
   $form['font_family'] = array(
     '#markup' => 'Select Font Family <select id="docFontFamily" title="Change the font for ALL fields."><option value="helvetica">Helvetica</option><option value="futura">Futura</option><option value="garamond">Garamond</option><option value="frutiger">Frutiger</option></select>',
     '#suffix' => '</div>',
   );
 
-  // Preview svg
-  $form['preview'] = array(
-    '#markup' => '<svg id="preview"></svg>',
-    '#prefix' => '<div id="midColumn">',
+  $form['two_sided_options'] = array(
+    '#prefix' => '<div id="midColumn"><div id="twoSidedOptions">',
+    '#markup' => '<button id="addBack" type="button">Add a Back</button><button id="removeBack" type="button">Remove Back</button>',
     '#suffix' => '</div>',
   );
+  // Two Sided Options
+  $form['front_back'] = array(
+    '#prefix' => '<div id="frontBack">',
+    '#markup' => '<button id="front" type="button">Front</button><button id="back" type="button">Back</button>',
+    '#suffix' => '</div>',
+  );
+  // Preview svg
+  $form['previewFront'] = array(
+    '#markup' => '<svg id="previewFront"></svg>',
+  );
+  $form['previewBack'] = array(
+    '#markup' => '<svg id="previewBack"></svg>',
+    '#suffix' => '</div>',
+  );
+
 
   // Template Selection
   $form['select_template'] = array(
@@ -210,13 +304,17 @@ function card_creator_form($form, &$form_state) {
     '#prefix' => '<div id="rightColumn">',
   );
 
-  // Templates svg display
-  $form['templates'] = array(
-    '#markup' => '<svg id="templates"></svg>',
-    '#prefix' => '<div id="rightColumnLower">',
-    '#suffix' => '</div></div>',
+  // Templates svg displays
+  $form['templates_front'] = array(
+    '#markup' => '<svg id="templatesFront"></svg>',
+    '#prefix' => '<div id="rightColumnlower"><div id="templatesFrontDisplay">',
+    '#suffix' => '</div>',
   );
-
+  $form['templates_back'] = array(
+    '#markup' => '<svg id="templatesBack"></svg>',
+    '#prefix' => '<div id="templatesBackDisplay">',
+    '#suffix' => '</div></div></div>',
+  );
   // Clipart selection
   $form['select_clipart'] = array(
     '#markup' => '<h4>' . t('3) Select Clipart') . '</h4>',
