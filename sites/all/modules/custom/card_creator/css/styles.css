@@ -218,7 +218,7 @@
   float: right;
   width: 50%
 }
-#container #proofImage {
+#container #proofImageFront, #container #proofImageBack {
   background: none repeat scroll 0 0 white;
   border: 3px outset black;
   height: 180px;
