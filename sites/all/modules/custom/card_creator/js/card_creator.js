@@ -6,16 +6,7 @@
     var selectedLogo;
 
     // Hide selected divs on pageload
-    $('#clipartColor').hide();
-    $('#selectTwoColor').hide();
-    $('#selectTwoSided').hide();
-    $('#price').hide();
-    $('#proof').hide();
-    $('#removeBack').hide();
-    $('#frontBack').hide();
-    $('#cardInfoBack').hide();
-    $('#previewBack').hide();
-    $('#templatesBackDisplay').hide();
+    $('#clipartColor, #selectTwoColor, #selectTwoSided, #price, #proof, #removeBack, #frontBack, #cardInfoBack, #previewBack, #templatesBackDisplay').hide();
 
     // *** SET DEFAULTS ***
     $(function setDefaults() {
