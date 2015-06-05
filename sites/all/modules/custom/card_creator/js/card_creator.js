@@ -98,56 +98,77 @@
     }
 
     // *** FUNCTIONS ***
+
+    var calculateCost = function(isTwoSided, quantity, price500, price1000, pricePerThousand) {
+      // Store two sided price
+      var twoSidedPrice = 0;
+      // If this is a Two Sided card
+      if (isTwoSided == 1) {
+        if (quantity[0].checked == true || quantity[1].checked == true) {
+          twoSidedPrice = 14.00;
+        } else {
+          twoSidedPrice = 10.00;
+        }
+      }
+      // If the quantity is 500
+      if (quantity[0].checked == true) {
+        price = price500 + twoSidedPrice;
+        return price;
+      } else if (quantity[1].checked == true) {
+        price = price1000 + twoSidedPrice;
+        return price;
+      } else {
+        // Loop through quantities
+        for (i=0; i<quantity.length; i++) {
+          // Find the selected quantity
+          var el = quantity[i];
+          if (el.checked == true) {
+            var multiple = i;
+            multiple -= 1;
+            price = price1000 + (pricePerThousand * multiple) + (twoSidedPrice * (multiple + 1));
+            return price;
+          }
+        }
+      }
+    }
+
     var updatePrice = function() {
       var $currentPrice = $('#currentPrice');
-      var basePrice = 19.99;
+      var price;
       var cost = 0;
       var twoColors = $('#edit-two-color').val();
       var isTwoSided = $('#edit-two-sided').val();
       var cardStock = $('#edit-card-stock-options').children().children('input');
       var quantity = $('#edit-select-quantity').children().children('input');
 
-      // If this is a two color card, change cost
-      if (twoColors == 1) {
-        cost += 4;
-      } else {
-        cost += 0;
-      }
-
-      // If this is a two sided card, change cost
-      if (isTwoSided == 1) {
-        cost += 10;
-      } else {
-        cost += 0;
-      }
-
       // If the cardStock is White Smooth
       if (cardStock[0].checked == true) {
-        cost += 0;
-      } else if (cardStock[1].checked == true) { // If the cardStock is White Linen
-        cost += 5;
-      } else if (cardStock[2].checked == true) { // If the cardStock is WoodGrain
-        cost += 10;
+        var price500 = 14.95;
+        var price1000 = 16.95;
+        var pricePerThousand = 14.95;
+        price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+      } else if (cardStock[1].checked == true) { // White Linen
+        var price500 = 23.95;
+        var price1000 = 26.95;
+        var pricePerThousand = 22.50;
+        price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+      }else if (cardStock[2].checked == true || cardStock[3].checked == true || cardStock[4].checked == true) { // Linens => Soft White, Tan, and Gray
+        var price500 = 24.95;
+        var price1000 = 28.95;
+        var pricePerThousand = 23.50;
+        price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+      }else if (cardStock[5].checked == true || cardStock[6].checked == true) { // Yellow and Kromekote
+        var price500 = 32.95;
+        var price1000 = 36.95;
+        var pricePerThousand = 31.50;
+        price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+      }else if (cardStock[7].checked == true) { // Woodgrain
+        var price500 = 47.50;
+        var price1000 = 53.50;
+        var pricePerThousand = 46.00;
+        price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
       }
-
-      // If the Quantity is 1000
-      if (quantity[0].checked == true) {
-        cost += 0;
-      } else if (quantity[1].checked == true) { // If the Quantity is 2000
-        cost += 20;
-      } else if (quantity[2].checked == true) { // If the Quantity is 3000
-        cost += 40;
-      } else if (quantity[3].checked == true) { // If the Quantity is 4000
-        cost += 60;
-      } else if (quantity[4].checked == true) { // If the Quantity is 5000
-        cost += 80;
-      } else if (quantity[5].checked == true) { // If the Quantity is 10000
-        cost += 160;
-      }
-
-      // calculate total to be displayed to the customer
-      var total = basePrice + cost;
-      var convertedTotal = total.toFixed(2);
+      var convertedTotal = price.toFixed(2);
       // display price to customer
       $currentPrice.text("Price = $" + convertedTotal);
     }
