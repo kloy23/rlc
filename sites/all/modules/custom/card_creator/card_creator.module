@@ -578,28 +578,43 @@ function card_creator_form_submit($form, &$form_state) {
     if ($two_sided_card == 0) {
       $product_id = 1;
 
+      // Save Image
+      $file_company_name = str_replace(' ', '', $company_name); // Removes all spaces
+      $file_company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
+      $file_name = str_replace(' ', '', $name); // Removes all spaces
+      $file_name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
+      $filepath = 'sites/default/files/tmp/'. $file_company_name . '-' . $file_name . '.svg';
+      $file = (object) array(
+        'filename' => basename($filepath),
+        'filepath' => $filepath,
+        'filemime' => file_get_mimetype($filepath),
+        'filesize' => filesize($filepath),
+        'uid' => 1,
+        'status' => FILE_STATUS_PERMANENT,
+        'uri' => $filepath,
+        'display' => 1,
+        'description' => '',
+      );
+      $file = file_move($file, 'public://', FILE_EXISTS_REPLACE);
+
       // First, see if there is already a cart for this user.
       if (module_exists('commerce_cart')) {
         $order = commerce_cart_order_load($user->uid);
       }
-
       if (empty($order)) {
         // Create the new order in checkout
         $order = commerce_order_new($user->uid, 'checkout_checkout');
         // Save the order to get its ID.
         commerce_order_save($order);
       }
-
       // Link anonymous user session to the cart
       if (!$user->uid) {
         commerce_cart_order_session_save($order->order_id);
       }
-
       // Load whatever product represents the item the customer will be
       // paying for and create a line item for it.
       $product = commerce_product_load($product_id);
       $line_item = commerce_product_line_item_new($product, 1, $order->order_id, array(), 'business_card');
-
       // Add the custom values to the line_item fields
       foreach ($line_item as $field_name => $value) {
         $line_item->field_quantity['und'][0]['tid'] = $selected_quantity;
@@ -613,47 +628,18 @@ function card_creator_form_submit($form, &$form_state) {
         $line_item->field_line_2[LANGUAGE_NONE][0]['value'] = $line2;
         $line_item->field_line_3[LANGUAGE_NONE][0]['value'] = $line3;
         $line_item->field_line_4[LANGUAGE_NONE][0]['value'] = $line4;
+        $line_item->field_business_card_image['und'][0]['fid'] = $file->fid;
       }
-
-
       // Save the line item to get its ID.
       commerce_line_item_save($line_item);
-
       // Add the line item to the order using the wrapper.
       $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
       $order_wrapper->commerce_line_items[] = $line_item;
-
       // Save the order again to update its line item reference field.
       commerce_order_save($order);
-
       // Redirect to the order's checkout form.
       $form_state['redirect'] = 'cart';
 
-      // ['line_item']->field_quantity['und'][0]['tid']
-
-      // // Save Image
-      // $company_name = str_replace(' ', '', $company_name); // Removes all spaces
-      // $company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
-      // $name = str_replace(' ', '', $name); // Removes all spaces
-      // $name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
-      // $filepath = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
-      // $file = (object) array(
-      //   'filename' => basename($filepath),
-      //   'filepath' => $filepath,
-      //   'filemime' => file_get_mimetype($filepath),
-      //   'filesize' => filesize($filepath),
-      //   'uid' => 1,
-      //   'status' => FILE_STATUS_PERMANENT,
-      //   'uri' => $filepath,
-      //   'display' => 1,
-      //   'description' => '',
-      // );
-
-      // $file = file_move($file, 'public://', FILE_EXISTS_REPLACE);
-      // $wrapper->field_business_card_image = array('fid' => $file->fid);
-
-      // // Save product
-      // $wrapper->save();
     } elseif ($two_sided_card == 1) { // If this is a two sided card
       // Use the information submitted to create a new business card product
       // Front Info
