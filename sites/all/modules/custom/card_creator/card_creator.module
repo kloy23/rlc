@@ -556,7 +556,6 @@ function card_creator_form_submit($form, &$form_state) {
   $selected_card_stock = $form_state['values']['card_stock_options'];
   $selected_quantity = $form_state['values']['select_quantity'];
   $two_sided_card = $form_state['values']['two_sided'];
-  $product_title = str_replace(' ', '', $company_name) . '-' . str_replace(' ', '', $name);
 
   // Back Side Fields
   $back_line1 = $form_state['values']['back_line_1'];
@@ -576,13 +575,14 @@ function card_creator_form_submit($form, &$form_state) {
   if ($approve_proof != 0) {
     // If this is NOT a two sided card
     if ($two_sided_card == 0) {
-      $product_id = 1;
+      $product_id = 1; // Product Id of One Sided Business Card
 
-      // Save Image
+      // Generate info for file name
       $file_company_name = str_replace(' ', '', $company_name); // Removes all spaces
       $file_company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
       $file_name = str_replace(' ', '', $name); // Removes all spaces
       $file_name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
+      // Save Image
       $filepath = 'sites/default/files/tmp/'. $file_company_name . '-' . $file_name . '.svg';
       $file = (object) array(
         'filename' => basename($filepath),
@@ -641,42 +641,17 @@ function card_creator_form_submit($form, &$form_state) {
       $form_state['redirect'] = 'cart';
 
     } elseif ($two_sided_card == 1) { // If this is a two sided card
-      // Use the information submitted to create a new business card product
-      // Front Info
-      $wrapper = entity_metadata_wrapper('commerce_product', commerce_product_new('two_sided_business_card'));
-      $wrapper->title = $product_title;
-      $wrapper->sku = $product_title;
-      $wrapper->commerce_price->amount = $price;
-      $wrapper->commerce_price->currency_code = 'USD';
-      $wrapper->field_company_name = $company_name;
-      $wrapper->field_name = $name;
-      $wrapper->field_title = $title;
-      $wrapper->field_address = $address;
-      $wrapper->field_city_state_zip = $city_state_zip;
-      $wrapper->field_line_1 = $line1;
-      $wrapper->field_line_2 = $line2;
-      $wrapper->field_line_3 = $line3;
-      $wrapper->field_line_4 = $line4;
-
-      // Back info
-      $wrapper->field_back_line_1 = $back_line1;
-      $wrapper->field_back_line_2 = $back_line2;
-      $wrapper->field_back_line_3 = $back_line3;
-      $wrapper->field_back_line_4 = $back_line4;
-      $wrapper->field_back_line_5 = $back_line5;
-      $wrapper->field_back_line_6 = $back_line6;
-      $wrapper->field_back_line_7 = $back_line7;
-      $wrapper->field_back_line_8 = $back_line8;
-      $wrapper->field_back_line_9 = $back_line9;
+      // Use the information submitted to order a new two sided business card product
+      $product_id = 2;
 
       // Generate info for file names
-      $company_name = str_replace(' ', '', $company_name); // Removes all spaces
-      $company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
-      $name = str_replace(' ', '', $name); // Removes all spaces
-      $name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
+      $file_company_name = str_replace(' ', '', $company_name); // Removes all spaces
+      $file_company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
+      $file_name = str_replace(' ', '', $name); // Removes all spaces
+      $file_name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
 
       // Generate file info for Front
-      $filepathFront = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
+      $filepathFront = 'sites/default/files/tmp/'. $file_company_name . '-' . $file_name . '.svg';
       $fileFront = (object) array(
         'filename' => basename($filepathFront),
         'filepath' => $filepathFront,
@@ -690,7 +665,7 @@ function card_creator_form_submit($form, &$form_state) {
       );
 
       // Generate file info for Back
-      $filepathBack = 'sites/default/files/tmp/'. $company_name . '-' . $name . '-back' . '.svg';
+      $filepathBack = 'sites/default/files/tmp/'. $file_company_name . '-' . $file_name . '-back' . '.svg';
       $fileBack = (object) array(
         'filename' => basename($filepathBack),
         'filepath' => $filepathBack,
@@ -705,16 +680,65 @@ function card_creator_form_submit($form, &$form_state) {
 
       // Save Front
       $fileFront = file_move($fileFront, 'public://', FILE_EXISTS_REPLACE);
-      $wrapper->field_business_card_image_front = array('fid' => $fileFront->fid);
 
       // Save Back
       $fileBack = file_move($fileBack, 'public://', FILE_EXISTS_REPLACE);
-      $wrapper->field_business_card_image_back = array('fid' => $fileBack->fid);
 
-      // Save product
-      $wrapper->save();
+      // First, see if there is already a cart for this user.
+      if (module_exists('commerce_cart')) {
+        $order = commerce_cart_order_load($user->uid);
+      }
+      if (empty($order)) {
+        // Create the new order in checkout
+        $order = commerce_order_new($user->uid, 'checkout_checkout');
+        // Save the order to get its ID.
+        commerce_order_save($order);
+      }
+      // Link anonymous user session to the cart
+      if (!$user->uid) {
+        commerce_cart_order_session_save($order->order_id);
+      }
+      // Load whatever product represents the item the customer will be
+      // paying for and create a line item for it.
+      $product = commerce_product_load($product_id);
+      $line_item = commerce_product_line_item_new($product, 1, $order->order_id, array(), 'business_card');
+      // Add the custom values to the line_item fields
+      foreach ($line_item as $field_name => $value) {
+        $line_item->field_quantity['und'][0]['tid'] = $selected_quantity;
+        $line_item->field_card_stocks['und'][0]['tid'] = $selected_card_stock;
+        $line_item->field_company_name[LANGUAGE_NONE][0]['value'] = $company_name;
+        $line_item->field_name[LANGUAGE_NONE][0]['value'] = $name;
+        $line_item->field_title[LANGUAGE_NONE][0]['value'] = $title;
+        $line_item->field_address[LANGUAGE_NONE][0]['value'] = $address;
+        $line_item->field_city_state_zip[LANGUAGE_NONE][0]['value'] = $city_state_zip;
+        $line_item->field_line_1[LANGUAGE_NONE][0]['value'] = $line1;
+        $line_item->field_line_2[LANGUAGE_NONE][0]['value'] = $line2;
+        $line_item->field_line_3[LANGUAGE_NONE][0]['value'] = $line3;
+        $line_item->field_line_4[LANGUAGE_NONE][0]['value'] = $line4;
+        $line_item->field_business_card_image['und'][0]['fid'] = $fileFront->fid;
+        $line_item->field_two_sided['und'][0]['tid'] = 16; // 16 is the tid for two sided taxonomy term
+        $line_item->field_back_line_1[LANGUAGE_NONE][0]['value'] = $back_line1;
+        $line_item->field_back_line_2[LANGUAGE_NONE][0]['value'] = $back_line2;
+        $line_item->field_back_line_3[LANGUAGE_NONE][0]['value'] = $back_line3;
+        $line_item->field_back_line_4[LANGUAGE_NONE][0]['value'] = $back_line4;
+        $line_item->field_back_line_5[LANGUAGE_NONE][0]['value'] = $back_line5;
+        $line_item->field_back_line_6[LANGUAGE_NONE][0]['value'] = $back_line6;
+        $line_item->field_back_line_7[LANGUAGE_NONE][0]['value'] = $back_line7;
+        $line_item->field_back_line_8[LANGUAGE_NONE][0]['value'] = $back_line8;
+        $line_item->field_back_line_9[LANGUAGE_NONE][0]['value'] = $back_line9;
+        $line_item->field_business_card_image_back['und'][0]['fid'] = $fileBack->fid;
+      }
+      // Save the line item to get its ID.
+      commerce_line_item_save($line_item);
+      // Add the line item to the order using the wrapper.
+      $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
+      $order_wrapper->commerce_line_items[] = $line_item;
+      // Save the order again to update its line item reference field.
+      commerce_order_save($order);
+      // Redirect to the order's checkout form.
+      $form_state['redirect'] = 'cart';
     }
-
+    dpm($line_item);
   }
 }
 
