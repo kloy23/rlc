@@ -919,11 +919,15 @@
     var switchToBack = function() {
       $('#cardInfoFront, #previewFront, #templatesFrontDisplay, #oneColor, #twoColors').hide();
       $('#cardInfoBack, #previewBack, #templatesBackDisplay, #backColor').show();
+      $('#front').removeClass('selected');
+      $('#back').addClass('selected');
     };
     // Switch to Front
     var switchToFront = function() {
       $('#cardInfoBack, #previewBack, #templatesBackDisplay, #backColor').hide();
       $('#cardInfoFront, #previewFront, #templatesFrontDisplay, #oneColor, #twoColors').show();
+      $('#back').removeClass('selected');
+      $('#front').addClass('selected');
     };
     var calculateCost = function(isTwoSided, quantity, price500, price1000, pricePerThousand) {
       // Store two sided price
