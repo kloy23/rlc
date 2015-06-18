@@ -373,12 +373,7 @@ function card_creator_form($form, &$form_state) {
   $form['select_ink_color'] = array(
     '#markup' => '<h4>' . t('4) Select Ink Color') . '</h4>',
     '#prefix' => '<div id="bottomColTwo"><div id="bottomColTwoUpper">',
-  );
-  $form['two_color'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Two Color Card?'),
-    '#prefix' => '<div id="selectTwoColor">',
-    '#suffix' => '</div></div>',
+    '#suffix' => '</div>',
   );
 
   // One Color Options
@@ -422,6 +417,19 @@ function card_creator_form($form, &$form_state) {
   );
   $form['brown_black'] = array(
     '#markup' => '<button type="button">Brown/Black</button>',
+    '#suffix' => '</div>'
+  );
+
+  // Back Color Options
+  $form['back_black'] = array(
+    '#markup' => '<button type="button">Black</button>',
+    '#prefix' => '<div id="backColor">'
+  );
+  $form['back_blue'] = array(
+    '#markup' => '<button type="button">Blue</button>',
+  );
+  $form['back_red'] = array(
+    '#markup' => '<button type="button">Red</button>',
     '#suffix' => '</div></div></div>'
   );
 

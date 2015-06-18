@@ -2,19 +2,17 @@
   'use strict';
   $(document).ready(function() { // Begin $(document).ready()
 
+    var $frontInputFields = $('#cardInfoFront :input[type="text"]');
+    var $backInputFields = $('#cardInfoBack :input[type="text"]');
     var $inputFields = $('#cardInfoFront :input[type="text"], #cardInfoBack :input[type="text"]');
     var selectedLogo;
 
     // Hide selected divs on pageload
-    $('#clipartColor, #selectTwoColor, #selectTwoSided, #price, #proof, #removeBack, #frontBack, #cardInfoBack, #previewBack, #templatesBackDisplay').hide();
+    $('#clipartColor, #selectTwoSided, #removeBack, #frontBack, #cardInfoBack, #previewBack, #backColor, #templatesBackDisplay, #proof').hide();
 
     // *** SET DEFAULTS ***
     $(function setDefaults() {
-      var selectTwoColor = document.getElementById('edit-two-color');
       var selectTwoSided = document.getElementById('edit-two-sided');
-      // uncheck two_color form field
-      selectTwoColor.checked = false;
-      selectTwoColor.value = 0;
       // uncheck two_sided form field
       selectTwoSided.checked = false;
       selectTwoSided.value = 0;
@@ -26,17 +24,20 @@
 
     // Recreate 'Ink Color' options, dynamically add color boxes, add classes for css
     $(function colorOptions() {
-      var el;
+      var el,
+          text,
+          color,
+          colorBox;
       // One Color
       var oneColorOptions = $('#oneColor').children();
       // loop through each color altering the color of the text and add colorboxes
       // i = 1 in order to skip the first field, which is not a color
       for (var i = 0; i < oneColorOptions.length; i++) {
         el = oneColorOptions[i];
-        var text = $(el).text();
-        var color = text.toLowerCase();
+        text = $(el).text();
+        color = text.toLowerCase();
         // create new button element.  This is used as the 'colorBox'
-        var colorBox = document.createElement('button');
+        colorBox = document.createElement('button');
         // set the class of the new button to 'colorBox'
         $(colorBox).attr('class', 'colorBox');
         // set the class of text
@@ -83,6 +84,28 @@
           'background-color': color2
         });
       }
+      var backColorOptions = $('#backColor').children();
+      for (i = 0; i < backColorOptions.length; i++) {
+        el = backColorOptions[i];
+        text = $(el).text();
+        color = text.toLowerCase();
+        // create new button element.  This is used as the 'colorBox'
+        colorBox = document.createElement('button');
+        // set the class of the new button to 'colorBox'
+        $(colorBox).attr('class', 'colorBox');
+        // set the class of text
+        $(el).addClass('backColorText selectBackColor');
+        // add the colorBox before current element
+        $(el).prepend(colorBox);
+        // sets the color of colorbox
+        $(colorBox).css({
+            'background-color': color
+        });
+      }
+      // Add .selected to the first color in #backColor ('Black')
+      styledOptions = $('#backColor').children();
+      firstStyledColor = styledOptions[0];
+      $(firstStyledColor).addClass('selected');
     });
 
     // ** CREATE FONT OPTIONS
@@ -612,16 +635,12 @@
     var updateFillColor = function() {
       // target the loaded svg documents
       var svgFrontNode = Snap.select('#previewFront');
-      var svgBackNode = Snap.select('#previewBack');
-      // find all text fields within the svg documents
-      var frontElements = svgFrontNode.selectAll('text');
-      var backElements = svgBackNode.selectAll('text');
-      // combine svg text fields
-      var svgElements = $(frontElements).add(backElements);
+      // find all text fields within the svg document
+      var svgElements = svgFrontNode.selectAll('text');
       // for each svg text field
       for (var i = 0; i < svgElements.length; i++) {
         // target the correct input field for the current svg text field
-        var field = $inputFields[i];
+        var field = $frontInputFields[i];
         // find current color options are
         var colorOptions = $(field).siblings();
         var colorBox1 = colorOptions[1];
@@ -651,6 +670,15 @@
       var twoColors = $('#twoColors').children();
       for (i=0; i<twoColors.length; i++) {
         el = twoColors[i];
+        if ($(el).hasClass('selected')) {
+          $(el).removeClass('selected');
+        }
+      }
+    };
+    var clearBackColorSelection = function() {
+      var backColor = $('#backColor').children();
+      for (var i=0; i<backColor.length; i++) {
+        var el = backColor[i];
         if ($(el).hasClass('selected')) {
           $(el).removeClass('selected');
         }
@@ -778,7 +806,6 @@
     };
     // when a one color option is selected
     var loadOneColor = function() {
-      var selectTwoColor = document.getElementById('edit-two-color');
       var color = $(this).text().toLowerCase();
       // target the loaded svg document
       var svgNode = Snap.select('#previewFront');
@@ -791,11 +818,6 @@
         // change the current fields fill value to match the color selected
         el.attr('fill', color);
       }
-      // Uncheck form field two_color
-      selectTwoColor.checked = false;
-      // set value of two color to 0
-      selectTwoColor.value = 0;
-      updatePrice();
       clearColorSelection();
       $(this).addClass('selected');
       changeLogoColor();
@@ -803,17 +825,11 @@
     };
     // when a two color option is selected, create the color options for each field
     var loadTwoColors = function() {
-      var selectTwoColor = document.getElementById('edit-two-color');
       var $clipartColor = $('#clipartColor');
-      for (var i = 0; i < $inputFields.length; i++) {
+      for (var i = 0; i < $frontInputFields.length; i++) {
         var el = $inputFields[i];
         createColorBoxes(this, el);
       }
-      // Check hidden form field two_color
-      selectTwoColor.checked = true;
-      // set value of hidden form field two_color to 1
-      selectTwoColor.value = 1;
-      updatePrice();
       $clipartColor.show();
       createClipartColorBoxes(this, $clipartColor);
       clearColorSelection();
@@ -821,22 +837,33 @@
       changeLogoColor();
       updateFillColor();
     };
+    // when a one color option is selected
+    var loadBackColor = function() {
+      var color = $(this).text().toLowerCase();
+      // target the loaded svg document
+      var svgNode = Snap.select('#previewBack');
+      // find all text fields within the svg document
+      var svgElement = svgNode.selectAll('text');
+      // for each svg text field, set fill color to match selection
+      for (var i = 0; i < svgElement.length; i++) {
+        // target current svg text field
+        var el = svgElement[i];
+        // change the current fields fill value to match the color selected
+        el.attr('fill', color);
+      }
+      clearBackColorSelection();
+      $(this).addClass('selected');
+    };
     // change the color of a field when one of the two color options are selected, when using a two color option
     var changeFillColor = function() {
       // target the current svg file
-      var svgNode;
+      var svgNode = Snap.select('#previewFront');
       var color = $(this).css('background-color');
       // find the id of the input field that is a sibling of colorBox
       // add '#' in order to use the id within Snap
       var id = '#' + $(this).siblings('input').attr('id');
       // Load all parent divs
       var parrentDiv = $(this).siblings('input').parents();
-      // Find out if input field is for front or back, and act accordingly
-      if (parrentDiv[2].id == 'cardInfoFront') {
-        svgNode = Snap.select('#previewFront');
-      } else if (parrentDiv[2].id == 'cardInfoBack') {
-        svgNode = Snap.select('#previewBack');
-      }
       // find coresponding svg text field using the created id
       var svgElement = svgNode.select(id);
       // retrieve the id of the colorbox that was clicked
@@ -876,8 +903,7 @@
       // set value of form field two_sided to 1
       selectTwoSided.value = 1;
       $('#addBack').hide();
-      $('#removeBack').show();
-      $('#frontBack').show();
+      $('#removeBack, #frontBack').show();
     };
     // Switch to one sided
     var oneSided = function() {
@@ -886,27 +912,18 @@
       selectTwoSided.checked = false;
       // set value of form field two_sided to 0
       selectTwoSided.value = 0;
+      $('#removeBack, #frontBack').hide();
       $('#addBack').show();
-      $('#removeBack').hide();
-      $('#frontBack').hide();
     };
     // Switch to Back
     var switchToBack = function() {
-      $('#cardInfoFront').hide();
-      $('#previewFront').hide();
-      $('#templatesFrontDisplay').hide();
-      $('#cardInfoBack').show();
-      $('#previewBack').show();
-      $('#templatesBackDisplay').show();
+      $('#cardInfoFront, #previewFront, #templatesFrontDisplay, #oneColor, #twoColors').hide();
+      $('#cardInfoBack, #previewBack, #templatesBackDisplay, #backColor').show();
     };
     // Switch to Front
     var switchToFront = function() {
-      $('#cardInfoFront').show();
-      $('#previewFront').show();
-      $('#templatesFrontDisplay').show();
-      $('#cardInfoBack').hide();
-      $('#previewBack').hide();
-      $('#templatesBackDisplay').hide();
+      $('#cardInfoBack, #previewBack, #templatesBackDisplay, #backColor').hide();
+      $('#cardInfoFront, #previewFront, #templatesFrontDisplay, #oneColor, #twoColors').show();
     };
     var calculateCost = function(isTwoSided, quantity, price500, price1000, pricePerThousand) {
       // Store two sided price
@@ -983,15 +1000,12 @@
     };
     // Allows users to view the card before adding it to their cart
     var loadProof = function() {
-      var companyName;
-      var name;
-      var fileDirFront;
-      var fileDirBack;
+      var companyName,
+          name,
+          fileDirFront,
+          fileDirBack;
       // Hide all divs within container
-      $('#leftColumn').hide();
-      $('#midColumn').hide();
-      $('#rightColumn').hide();
-      $('#bottom').hide();
+      $('#leftColumn, #midColumn, #rightColumn, #bottom').hide();
       // Show Proof Div
       $('#proof').show();
       var isTwoSided = $('#edit-two-sided').val();
@@ -1254,6 +1268,10 @@
     $(function() {
       $('.selectTwoColor').click(loadTwoColors);
     });
+    // When a back color option is clicked, call loadBackColor
+    $(function() {
+      $('.selectBackColor').click(loadBackColor);
+    });
     // When a clipart category is clicked, load the svg
     $('#clipartCategory').change(loadClipartCategory);
     // When a quantity is selected, change the price
@@ -1273,12 +1291,8 @@
       e.preventDefault();
       // Hide proof display
       $('#proof').hide();
-
       // Show card creation divs
-      $('#leftColumn').show();
-      $('#midColumn').show();
-      $('#rightColumn').show();
-      $('#bottom').show();
+      $('#leftColumn, #midColumn, #rightColumn, #bottom').show();
       switchToFront();
     });
     $('#addToCart').click(function(e) {
