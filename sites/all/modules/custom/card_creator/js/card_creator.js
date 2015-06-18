@@ -128,12 +128,11 @@
         // create italic button
         var italic = document.createElement('button');
         // create options
-        var o1 = new Option('Helvetica', 'helvetica');
-        var o2 = new Option('Futura', 'futura');
-        var o3 = new Option('Garamond', 'garamond');
-        var o4 = new Option('Frutiger', 'frutiger');
+        var o1 = new Option('Helvetica', 'Helvetica');
+        var o2 = new Option('Times New Roman', 'Times New Roman');
+        var o3 = new Option('Comic Sans', 'Comic Sans MS');
         // add all options to an array
-        var options = [o1, o2, o3, o4];
+        var options = [o1, o2, o3];
         // give the button a type of 'button'.  Default type is submit, and we dont want that.
         $(fontOptionsButton).attr({
           class: 'button',
@@ -412,25 +411,26 @@
     // When font-family is changed, update previewFront.svg
     var changeAllFonts = function() {
       var $newFontFamily = $('#docFontFamily').val();
+      $newFontFamily = '"' + $newFontFamily + '"';
       var svgNode = Snap.select('#previewFront');
       var svgElement = svgNode.selectAll('text');
       for (var i=0; i < svgElement.length; i++) {
         var el = svgElement[i].node;
         var id = '#' + el.id;
         var textField = svgNode.select(id);
-        textField.attr({
-          'font-family': $newFontFamily
-        });
+        textField.attr('font-family', $newFontFamily);
       }
+      console.log($newFontFamily);
     };
     // When a font is changed for an individual field
     var changeFieldFont = function(currentField, fontFamilySelect) {
-      var newFontFamily = $(fontFamilySelect).val();
+      var $newFontFamily = $(fontFamilySelect).val();
+      $newFontFamily = '"' + $newFontFamily + '"';
       var id = '#' + $(currentField).attr('id');
       var svgNode = Snap.select('#previewFront');
       var svgText = svgNode.select(id);
       svgText.attr({
-        'font-family': newFontFamily
+        'font-family': $newFontFamily
       });
     };
     // when FontOptions button is clicked for a field

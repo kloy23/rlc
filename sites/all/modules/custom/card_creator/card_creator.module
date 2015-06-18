@@ -297,7 +297,7 @@ function card_creator_form($form, &$form_state) {
 
   // Font Family Select List
   $form['font_family'] = array(
-    '#markup' => 'Select Font Family <select id="docFontFamily" title="Change the font for ALL fields."><option value="helvetica">Helvetica</option><option value="futura">Futura</option><option value="garamond">Garamond</option><option value="frutiger">Frutiger</option></select>',
+    '#markup' => 'Select Font Family <select id="docFontFamily" title="Change the font for ALL fields."><option value="Helvetica">Helvetica</option><option value="Times New Roman">Times New Roman</option><option value="Comic Sans MS">Comic Sans</option></select>',
     '#suffix' => '</div>',
   );
 
