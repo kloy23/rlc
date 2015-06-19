@@ -427,9 +427,13 @@
       var $newFontFamily = $(fontFamilySelect).val();
       $newFontFamily = '"' + $newFontFamily + '"';
       var id = '#' + $(currentField).attr('id');
-      var svgNode = Snap.select('#previewFront');
-      var svgText = svgNode.select(id);
-      svgText.attr({
+      var frontSvgNode = Snap.select('#previewFront');
+      var backSvgNode = Snap.select('#previewBack');
+      var svgElement = frontSvgNode.select(id);
+      if (svgElement === null) {
+        svgElement = backSvgNode.select(id);
+      }
+      svgElement.attr({
         'font-family': $newFontFamily
       });
     };
@@ -446,9 +450,13 @@
     };
     // when bold is selected for current field
     var boldFont = function(currentField, bold) {
-      var svgNode = Snap.select('#previewFront');
+      var frontSvgNode = Snap.select('#previewFront');
+      var backSvgNode = Snap.select('#previewBack');
       var id = '#' + currentField.id;
-      var svgElement = svgNode.select(id);
+      var svgElement = frontSvgNode.select(id);
+      if (svgElement === null) {
+        svgElement = backSvgNode.select(id);
+      }
       if ($(bold).hasClass('selected')) {
         $(bold).removeClass('selected');
         svgElement.attr('font-weight', 'normal');
@@ -456,12 +464,17 @@
         $(bold).addClass('selected');
         svgElement.attr('font-weight', 'bold');
       }
+      console.log(svgElement);
     };
     // when italic is selected for current field
     var italicFont = function(currentField, italic) {
-      var svgNode = Snap.select('#previewFront');
+      var frontSvgNode = Snap.select('#previewFront');
+      var backSvgNode = Snap.select('#previewBack');
       var id = '#' + currentField.id;
-      var svgElement = svgNode.select(id);
+      var svgElement = frontSvgNode.select(id);
+      if (svgElement === null) {
+        svgElement = backSvgNode.select(id);
+      }
       if ($(italic).hasClass('selected')) {
         $(italic).removeClass('selected');
         svgElement.attr('font-style', 'normal');
