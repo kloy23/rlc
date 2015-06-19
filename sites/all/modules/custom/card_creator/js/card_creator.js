@@ -118,7 +118,6 @@
         var wrapper = document.createElement('div');
         // create button
         var fontOptionsButton = document.createElement('button');
-        // set button id to 'changeFontOptions', set type to 'button', and give the button a text value
         // create fontOptions div to wrap font options
         var fontOptions = document.createElement('div');
         // create fontFamily select
@@ -154,7 +153,7 @@
         // add the button before input field, within the wrapper
         $(el).before(fontOptionsButton);
         // add options to select list
-        $(fontFamily).append(options);
+        $(fontFamily).attr('id', 'fontFamily').append(options);
         // add select list to fontOptions
         $(fontOptions).append(fontFamily);
         // add bold button to fontOptions
@@ -408,19 +407,10 @@
       var newText = e.target.value;
       $(previewBack.select(id).node).text(newText);
     };
-    // When font-family is changed, update previewFront.svg
+    // When font-family is changed, update fontFamily select list for each field.
     var changeAllFonts = function() {
       var $newFontFamily = $('#docFontFamily').val();
-      $newFontFamily = '"' + $newFontFamily + '"';
-      var svgNode = Snap.select('#previewFront');
-      var svgElement = svgNode.selectAll('text');
-      for (var i=0; i < svgElement.length; i++) {
-        var el = svgElement[i].node;
-        var id = '#' + el.id;
-        var textField = svgNode.select(id);
-        textField.attr('font-family', $newFontFamily);
-      }
-      console.log($newFontFamily);
+      $('select[id=fontFamily]').val($newFontFamily).change();
     };
     // When a font is changed for an individual field
     var changeFieldFont = function(currentField, fontFamilySelect) {
