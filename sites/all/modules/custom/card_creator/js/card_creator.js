@@ -454,7 +454,6 @@
         $(bold).addClass('selected');
         svgElement.attr('font-weight', 'bold');
       }
-      console.log(svgElement);
     };
     // when italic is selected for current field
     var italicFont = function(currentField, italic) {
