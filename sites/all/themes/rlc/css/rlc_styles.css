@@ -104,7 +104,7 @@ div.ctools-modal-content a.close img {
   left: 2em;
 }
 #panel-order-now-left-bottom {
-  width: 75%;
+  width: 65%;
 }
 #panel-order-now-right-top {
   position: relative;
@@ -117,7 +117,7 @@ div.ctools-modal-content a.close img {
   position: relative;
   font-size: 1.5em;
   font-weight: bold;
-  top: 4em;
+  top: 5em;
   right: 2em;
 }
 /*
