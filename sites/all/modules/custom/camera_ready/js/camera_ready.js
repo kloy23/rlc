@@ -25,37 +25,55 @@
     };
 
     var showColorOptions = function() {
-      var $selectedColorVal = $selectColorType.val();
+      var $selectedColorTypeVal = $selectColorType.val();
       // if One Color is selected
-      if ($selectedColorVal === '24') {
+      if ($selectedColorTypeVal === '24') {
         // make sure two color options is hidden
         $twoColorOptions.hide();
         // show one color options
         $oneColorOptions.show();
-      } else if ($selectedColorVal === '25') {// Two color is selected.
+      } else if ($selectedColorTypeVal === '25') {// Two color is selected.
         // make sure one color options is hidden
         $oneColorOptions.hide();
         // show two color options
         $twoColorOptions.show();
       }
-    }
+    };
 
     var validateForm = function() {
       var fieldTwoSidedVal = document.getElementById('edit-line-item-fields-field-two-sided-und').value;
+      var $selectedColorTypeVal = $selectColorType.val();
+      var $selectedOneColorVal = $('#edit-line-item-fields-field-one-color-options-und').val();
+      var $selectedTwoColorVal = $('#edit-line-item-fields-field-two-color-options-und').val();
+      var $selectedBackColorVal = $('#edit-line-item-fields-field-back-color-options-und').val();
       var $cameraReadyFile = $('.form-item-line-item-fields-field-camera-ready-und-0').find('a');
       var $cameraReadyBackFile = $('.form-item-line-item-fields-field-camera-ready-back-und-0').find('a');
       // If this is a two sided card
       if (fieldTwoSidedVal === '16') {
         if ($cameraReadyFile.length === 0 || $cameraReadyBackFile.length === 0) {
           alert('You must upload a file for the front AND back in order to continue.');
-        } else {
-          loadProof();
+        } else if ($selectedColorTypeVal === '24') { // If One Color has been selected
+          if ($selectedOneColorVal === '_none') { // A color option has not been selected
+            alert('You must select a color option in order to continue.');
+          }
+        } else if ($selectedOneColorVal === '25') { // If Two Color has been selected
+          if ($selectedTwoColorVal === '_none') { // A color option has not been selected
+            alert('You must select a color option in order to continue.');
+          }
+        } else if ($selectedBackColorVal === '_none') { // A back color option has not been selected
+          alert('You must select a Back color option in order to continue.');
         }
-      } else {
+      } else if (fieldTwoSidedVal !== '16') { // If this is NOT a two sided card
         if ($cameraReadyFile.length === 0) {
           alert('You must upload a file in order to continue.');
-        } else {
-          loadProof();
+        } else if ($selectedColorTypeVal === '24') { // If One Color has been selected
+          if ($selectedOneColorVal === '_none') { // A color option has not been selected
+            alert('You must select a color option in order to continue.');
+          }
+        } else if ($selectedOneColorVal === '25') { // If Two Color has been selected
+          if ($selectedTwoColorVal === '_none') { // A color option has not been selected
+            alert('You must select a color option in order to continue.');
+          }
         }
       }
     };
@@ -67,16 +85,30 @@
       $('#edit , #approve').show();
     };
 
+    var orderApproved = function() {
+      var orderIsApproved = document.getElementById('edit-approve').checked;
+      // If the order is approved
+      if (orderIsApproved === true) {
+        $addToCartButton.show();
+        $('#edit').hide();
+      } else if (orderIsApproved === false) {
+        $addToCartButton.hide();
+        $('#edit').show();
+      }
+    };
+
     var editOrder = function() {
       $('#edit, #approve').hide();
       $formFields.show();
       $('#continue').show();
-    }
+    };
 
     // On page load, set defaults
     $(function setDefaults() {
       toggleTwoSided();
       showColorOptions();
+      // make user order approval is not checked
+      document.getElementById('edit-approve').checked = false;
       $('#edit, #approve').hide();
       $addToCartButton.hide();
     });
@@ -84,8 +116,9 @@
     // Click handlers
     $fieldTwoSided.change(toggleTwoSided);
     $selectColorType.change(showColorOptions);
-    $('#continue').click(loadApproval);
+    $('#continue').click(validateForm);
     $('#edit').click(editOrder);
+    $('#edit-approve').change(orderApproved);
 
   }); // End $(document).ready()
 
