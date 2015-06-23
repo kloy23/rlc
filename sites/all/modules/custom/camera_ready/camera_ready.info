@@ -1,0 +1,4 @@
+name = Camera Ready
+description = Provides a way for customers to upload and order camera ready business cards.
+core = 7.x
+package = Custom

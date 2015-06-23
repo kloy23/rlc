@@ -1,0 +1,48 @@
+<?php
+/**
+ * @file
+ * A module that allows users to upload custom business cards.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function camera_ready_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#camera_ready':{
+      $ret_val = '<h3>' . t('About') . '</h3>';
+      $ret_val .= '<p>' . t('Allows customers to upload and order business cards with customer provided artwork.') . '</p>';
+      return $ret_val;
+      break;
+    }
+  }
+}
+
+
+/**
+ * Implements hook_permission().
+ */
+function camera_ready_permission() {
+  return array(
+    'administer camera ready' => array(
+      'title' => t('Administer Camera Ready'),
+      'description' => t('Perform administrative task on Camera Ready functionality'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function camera_ready_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id === 'commerce_cart_add_to_cart_form_3') {
+    $form['#attached']['css'] = array(
+      drupal_get_path('module', 'camera_ready') . '/css/camera_ready.css',
+    );
+    $form['#attached']['js'][] = array(
+      'data' => drupal_get_path('module', 'camera_ready') . '/js/camera_ready.js',
+    );
+  }
+
+  return $form;
+}
