@@ -21,3 +21,8 @@
   padding: 2em;
   margin-bottom: 2em;
 }
+.form-error {
+  border: solid 1px red;
+  border-radius: 1px;
+  padding: .5em;
+}
