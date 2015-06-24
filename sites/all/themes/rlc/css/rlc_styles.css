@@ -46,35 +46,6 @@ div.ctools-modal-content a.close img {
   float: left;
 }
 #panel-home-right {
-  font-size: 12px;
-  font-weight: bold;
-  left: 15%;
-  line-height: 16px;
-  position: relative;
-}
-/*
-  Shopping Cart
-*/
-.cart-pane {
-  width: 52em;
-}
-
-.page-cart #page-title, .page-checkout #page-title, #comments h2.title, .page-user-orders- #page-title {
-    border-width: 1px;
-    border-style: solid;
-    -moz-border-top-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    border-image: none;
-    border-color: #CCC #CCC #FFF;
-    margin: 0px;
-    padding: 0.5em;
-    width: 30.2em;
-    float: left;
-    line-height: 2.5em;
-}
-#panel-home-right {
   font-size: 1.5em;
   font-weight: bold;
   line-height: 1.5em;
@@ -120,6 +91,7 @@ div.ctools-modal-content a.close img {
   top: 5em;
   right: 2em;
 }
+
 /*
   Footer
  */
@@ -128,6 +100,3 @@ div.ctools-modal-content a.close img {
   width: 33%;
 }
 
-
-/*
-background-image: -moz-linear-gradient(center top , #EEE, #CCC);
