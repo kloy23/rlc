@@ -9,6 +9,78 @@
  */
 function rlc_rules_default_rules_configuration() {
   $items = array();
+  $items['commerce_checkout_send_order_notification_e_mails_custom_'] = entity_import('rules_config', '{ "commerce_checkout_send_order_notification_e_mails_custom_" : {
+      "LABEL" : "Send order notification e-mails (custom)",
+      "PLUGIN" : "reaction rule",
+      "WEIGHT" : "4",
+      "OWNER" : "rules",
+      "TAGS" : [ "Commerce Checkout" ],
+      "REQUIRES" : [
+        "rules",
+        "commerce_invoice_receipt",
+        "php",
+        "mimemail",
+        "commerce_checkout"
+      ],
+      "ON" : { "commerce_checkout_complete" : [] },
+      "DO" : [
+        { "mail" : {
+            "to" : [ "commerce-order:mail" ],
+            "subject" : "Thank you for your order at [site:name].",
+            "message" : "Thank you for your order #[commerce-order:order-number] at [site:name].\\r\\n\\r\\nIf this is your first order with us, you will receive a separate e-mail with login instructions. You can view your order history with us at any time by logging into our website at:\\r\\n\\r\\n[site:login-url]\\r\\n\\r\\nYou can find the status of your current order at:\\r\\n\\r\\n[commerce-order:customer-url]\\r\\n\\r\\nYou should receive an emailed receipt shortly.\\r\\nPlease contact us if you have any questions about your order.",
+            "language" : [ "commerce-order:state" ]
+          }
+        },
+        { "commerce_invoice_receipt_action_mail" : {
+            "commerce_order" : [ "commerce_order" ],
+            "to" : "[commerce-order:owner] \\u003C[commerce-order:mail]\\u003E",
+            "subject" : "[site:name]: Reciept for Order #[commerce-order:order-id]"
+          }
+        },
+        { "variable_add" : {
+            "USING" : { "type" : "list\\u003Cfile\\u003E" },
+            "PROVIDE" : { "variable_added" : { "file_list" : "File List" } }
+          }
+        },
+        { "LOOP" : {
+            "USING" : { "list" : [ "commerce-order:commerce-line-items" ] },
+            "ITEM" : { "list_item" : "Current list item" },
+            "DO" : [
+              { "component_rules_fetch_business_card_product_files" : {
+                  "USING" : { "line_item" : [ "list-item" ] },
+                  "PROVIDE" : {
+                    "card_creator_front" : { "card_creator_front" : "Card Creator Front" },
+                    "card_creator_back" : { "card_creator_back" : "Card Creator Back" }
+                  }
+                }
+              },
+              { "list_add" : { "list" : [ "file-list" ], "item" : [ "card-creator-front" ] } },
+              { "list_add" : { "list" : [ "file-list" ], "item" : [ "card-creator-back" ] } },
+              { "component_rules_fetch_camera_ready_product_files" : {
+                  "USING" : { "line_item" : [ "list-item" ] },
+                  "PROVIDE" : {
+                    "camera_ready_front" : { "camera_ready_front" : "Camera Ready Front" },
+                    "camera_ready_back" : { "camera_ready_back" : "Camera Ready Back" }
+                  }
+                }
+              },
+              { "list_add" : { "list" : [ "file-list" ], "item" : [ "camera-ready-front" ] } },
+              { "list_add" : { "list" : [ "file-list" ], "item" : [ "camera-ready-back" ] } }
+            ]
+          }
+        },
+        { "mimemail" : {
+            "key" : "Email Order to Admin",
+            "to" : [ "site:mail" ],
+            "subject" : "A new order #[commerce-order:order-number] has been placed at [site:name].",
+            "body" : "A new order#[commerce-order:order-number] has been placed at [site:name] by [commerce-order:mail-username].\\r\\n\\r\\nView this order here:\\r\\n[commerce-order:url]\\/print",
+            "attachments" : "\\u003C?php\\r\\nforeach ($file_list as $file) {\\r\\n  echo drupal_realpath($file-\\u003Euri) . \\u0022\\\\n\\u0022;\\r\\n}\\r\\n?\\u003E",
+            "language" : [ "commerce-order:state" ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_calculate_price_for_1000'] = entity_import('rules_config', '{ "rules_calculate_price_for_1000" : {
       "LABEL" : "Calculate price for 1000",
       "PLUGIN" : "reaction rule",
