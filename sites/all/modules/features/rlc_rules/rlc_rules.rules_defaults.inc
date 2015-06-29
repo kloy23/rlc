@@ -12,7 +12,6 @@ function rlc_rules_default_rules_configuration() {
   $items['commerce_checkout_send_order_notification_e_mails_custom_'] = entity_import('rules_config', '{ "commerce_checkout_send_order_notification_e_mails_custom_" : {
       "LABEL" : "Send order notification e-mails (custom)",
       "PLUGIN" : "reaction rule",
-      "WEIGHT" : "4",
       "OWNER" : "rules",
       "TAGS" : [ "Commerce Checkout" ],
       "REQUIRES" : [
