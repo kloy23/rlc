@@ -1057,7 +1057,7 @@
           callback: function(data) {
             $.ajax({
               type: 'POST',
-              url: '/rlcdev/card-creator-ajax-back',
+              url: '/card-creator-ajax-back',
               data: {
                 img: data,
                 company_name: companyName,
@@ -1070,7 +1070,7 @@
           callback: function(data) {
             $.ajax({
               type: 'POST',
-              url: '/rlcdev/card-creator-ajax-front',
+              url: '/card-creator-ajax-front',
               data: {
                 img: data,
                 company_name: companyName,
@@ -1084,7 +1084,7 @@
           callback: function(data) {
             $.ajax({
               type: 'POST',
-              url: '/rlcdev/card-creator-ajax-front',
+              url: '/card-creator-ajax-front',
               data: {
                 img: data,
                 company_name: companyName,
