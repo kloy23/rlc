@@ -16,9 +16,9 @@ function rlc_rules_default_rules_configuration() {
       "TAGS" : [ "Commerce Checkout" ],
       "REQUIRES" : [
         "rules",
-        "commerce_invoice_receipt",
         "php",
         "mimemail",
+        "commerce_invoice_receipt",
         "commerce_checkout"
       ],
       "ON" : { "commerce_checkout_complete" : [] },
@@ -27,13 +27,8 @@ function rlc_rules_default_rules_configuration() {
             "to" : [ "commerce-order:mail" ],
             "subject" : "Thank you for your order at [site:name].",
             "message" : "Thank you for your order #[commerce-order:order-number] at [site:name].\\r\\n\\r\\nIf this is your first order with us, you will receive a separate e-mail with login instructions. You can view your order history with us at any time by logging into our website at:\\r\\n\\r\\n[site:login-url]\\r\\n\\r\\nYou can find the status of your current order at:\\r\\n\\r\\n[commerce-order:customer-url]\\r\\n\\r\\nYou should receive an emailed receipt shortly.\\r\\nPlease contact us if you have any questions about your order.",
+            "from" : "[site:name] \\u003C[site:mail]\\u003E",
             "language" : [ "commerce-order:state" ]
-          }
-        },
-        { "commerce_invoice_receipt_action_mail" : {
-            "commerce_order" : [ "commerce_order" ],
-            "to" : "[commerce-order:owner] \\u003C[commerce-order:mail]\\u003E",
-            "subject" : "[site:name]: Reciept for Order #[commerce-order:order-id]"
           }
         },
         { "variable_add" : {
@@ -72,9 +67,15 @@ function rlc_rules_default_rules_configuration() {
             "key" : "Email Order to Admin",
             "to" : [ "site:mail" ],
             "subject" : "A new order #[commerce-order:order-number] has been placed at [site:name].",
-            "body" : "A new order#[commerce-order:order-number] has been placed at [site:name] by [commerce-order:mail-username].\\r\\n\\r\\nView this order here:\\r\\n[commerce-order:url]\\/print",
-            "attachments" : "\\u003C?php\\r\\nforeach ($file_list as $file) {\\r\\n  echo drupal_realpath($file-\\u003Euri) . \\u0022\\\\n\\u0022;\\r\\n}\\r\\n?\\u003E",
+            "body" : "A new order#[commerce-order:order-number] has been placed at [site:name] by [commerce-order:owner].\\r\\n\\r\\nView this order here:\\r\\n[commerce-order:url]\\/print",
+            "attachments" : "\\u003C?php\\r\\nforeach ($file_list as $file) {\\r\\n  $realpath = drupal_realpath($file-\\u003Euri);\\r\\n  $path = str_replace($_SERVER[\\u0027DOCUMENT_ROOT\\u0027].\\u0027\\/\\u0027,\\u0027\\u0027,$realpath);\\r\\n  echo $path . \\u0022\\\\n\\u0022;\\r\\n}\\r\\n?\\u003E",
             "language" : [ "commerce-order:state" ]
+          }
+        },
+        { "commerce_invoice_receipt_action_mail" : {
+            "commerce_order" : [ "commerce_order" ],
+            "to" : "[commerce-order:owner] \\u003C[commerce-order:mail]\\u003E",
+            "subject" : "[site:name]: Receipt for Order #[commerce-order:order-id]"
           }
         }
       ]

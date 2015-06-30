@@ -2124,7 +2124,7 @@ function rlc_commerce_field_default_field_instances() {
         'settings' => array(
           'calculation' => FALSE,
         ),
-        'type' => 'commerce_price_formatted_amount',
+        'type' => 'commerce_price_formatted_components',
         'weight' => 2,
       ),
       'node_teaser' => array(
