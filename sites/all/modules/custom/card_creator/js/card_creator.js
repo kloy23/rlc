@@ -1294,6 +1294,8 @@
     });
     // Allow user to edit their card if needed
     $('#edit').click(function(e) {
+      // unset src for proof Images
+      $('#proofImageFront, #proofImageBack').attr('src', '');
       e.preventDefault();
       // Hide proof display
       $('#proof').hide();
