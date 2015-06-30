@@ -1,5 +1,5 @@
 #container {
-  background-color: #d3d3d3;
+  background-color: #eee;
   border: 3px outset black;
   border-radius: 10px;
   float: left;
@@ -10,8 +10,11 @@
   float: left;
   width: 35%;
 }
-#cardInfo > .form-item {
-    margin: -10px 0;
+#cardInfoFront > .form-item {
+  margin: -10px 0;
+}
+#cardInfoBack > .form-item {
+  margin: -10px 0;
 }
 #container #midColumn {
   float: left;
@@ -27,18 +30,29 @@
   text-align: center;
   width: 23%;
 }
-#midColumn #preview {
+#midColumn #twoSidedOptions {
+  position: relative;
+  bottom: 3em;
+}
+#midColumn #frontBack {
+  margin-top: -1.8em;
+}
+#midColumn #previewFront, #midColumn #previewBack {
   background: none repeat scroll 0 0 white;
   border: 3px outset black;
   height: 180px;
-  margin-top: 25px;
+  margin-top: 10px;
   width: 315px;
 }
-#rightColumn #templates {
+#rightColumn #templatesFront {
   height: 436px;
   width: 100%;
 }
-#rightColumn #rightColumnLower {
+#rightColumn #templatesBack {
+  height: 436px;
+  width: 100%;
+}
+#rightColumn #templatesFrontDisplay, #rightColumn #templatesBackDisplay {
   border: 1px solid black;
   height: 295px;
   overflow: scroll;
@@ -59,7 +73,7 @@
   position: relative;
   width: 10px;
 }
-.oneColorText, .twoColorText {
+.oneColorText, .twoColorText, .backColorText {
   font-size: 10px;
   margin: 1px;
   padding: 1px 0 1px 2px;
@@ -132,7 +146,7 @@
 #bottomColTwoLower p {
   line-height: 7px;
 }
-#bottomColTwoLower #oneColor {
+#bottomColTwoLower #oneColor, #bottomColTwoLower #backColor {
   float: left;
   left: 15px;
   line-height: 0;
@@ -204,7 +218,7 @@
   float: right;
   width: 50%
 }
-#container #proofImage {
+#container #proofImageFront, #container #proofImageBack {
   background: none repeat scroll 0 0 white;
   border: 3px outset black;
   height: 180px;

@@ -1,0 +1,86 @@
+<?php
+/**
+ * @file
+ * A module that allows users to upload custom business cards.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function camera_ready_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#camera_ready':{
+      $ret_val = '<h3>' . t('About') . '</h3>';
+      $ret_val .= '<p>' . t('Allows customers to upload and order business cards with customer provided artwork.') . '</p>';
+      return $ret_val;
+      break;
+    }
+  }
+}
+
+
+/**
+ * Implements hook_permission().
+ */
+function camera_ready_permission() {
+  return array(
+    'administer camera ready' => array(
+      'title' => t('Administer Camera Ready'),
+      'description' => t('Perform administrative task on Camera Ready functionality'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function camera_ready_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id === 'commerce_cart_add_to_cart_form_3') {
+    $form['#attached']['css'] = array(
+      drupal_get_path('module', 'camera_ready') . '/css/camera_ready.css',
+    );
+
+    $form['approve'] = array(
+      '#type' => 'checkbox',
+      '#options' => 'Yes',
+      '#title' => t('I agree that this artwork is free from errors, and understand that RaisedLetterCards.com is not responsible for typo\'s.'),
+      '#required' => true,
+      '#weight' => 48,
+      '#prefix' => '<div id="approve">',
+      '#suffix' => '</div>',
+    );
+
+    $form['edit'] = array(
+      '#markup' => '<button id="edit" type="button">Edit</button>',
+      '#weight' => 49,
+      '#prefix' => '<div id="buttons">',
+    );
+
+    $form['continue'] = array(
+      '#markup' => '<button id="continue" type="button">Continue</button>',
+      '#weight' => 49,
+      '#suffix' => '</div>',
+    );
+
+    $form['#validate'][] = 'camera_ready_form_validate';
+
+    $form['#attached']['js'][] = array(
+      'data' => drupal_get_path('module', 'camera_ready') . '/js/camera_ready.js',
+    );
+    return $form;
+  }
+}
+
+/**
+ * Validates Camera Ready Form.
+ */
+function camera_ready_form_validate($form, &$form_state) {
+
+}
+
+/**
+ * Process a validated Camera Ready Form submission.
+ */
+function camera_ready_form_submit($from, &$form_state) {
+  $form_state['redirect'] = 'cart';
+}

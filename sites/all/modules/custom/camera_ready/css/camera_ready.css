@@ -1,0 +1,28 @@
+#edit-line-item-fields-field-one-or-two-color {
+    width: 100%;
+}
+.form-item {
+  padding-right: 2em;
+  margin-bottom: .5em;
+}
+#continue, #edit {
+  margin-top: 1em;
+  background-image: -moz-linear-gradient(center top , #FC0, #FF0);
+  border: 1px solid #FF0;
+  box-shadow: 0px 0px 1px #FFF inset, 0px 0px 5px #B2B2B2;
+  text-shadow: 0px 1px 0px #FFF;
+  border-radius: 0.5em;
+  font-weight: bold;
+}
+#content-column{
+  background-color: #eee;
+  border: 3px outset black;
+  border-radius: 10px;
+  padding: 2em;
+  margin-bottom: 2em;
+}
+.form-error {
+  border: solid 1px red;
+  border-radius: 1px;
+  padding: .5em;
+}
