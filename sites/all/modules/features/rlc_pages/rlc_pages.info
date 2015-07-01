@@ -1,0 +1,13 @@
+name = rlc_pages
+description = Stores pages into code
+core = 7.x
+package = Features
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_pages][] = contact_us
+features[page_manager_pages][] = home
+features[page_manager_pages][] = order_now
+features[page_manager_pages][] = pricing
+features[page_manager_pages][] = upload_artwork
