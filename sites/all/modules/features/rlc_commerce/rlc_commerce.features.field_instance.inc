@@ -43,7 +43,7 @@ function rlc_commerce_field_default_field_instances() {
         'weight' => -10,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'addressfield',
         'settings' => array(
           'format_handlers' => array(
@@ -57,7 +57,7 @@ function rlc_commerce_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'commerce_customer_address',
-    'label' => 'Address',
+    'label' => 'Billing Address',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -2850,6 +2850,7 @@ function rlc_commerce_field_default_field_instances() {
   t('Back Line 7');
   t('Back Line 8');
   t('Back Line 9');
+  t('Billing Address');
   t('Billing information');
   t('Body');
   t('Card Stocks');

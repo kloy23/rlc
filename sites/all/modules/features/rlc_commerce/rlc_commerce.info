@@ -150,7 +150,6 @@ features[variable][] = menu_parent_product_display
 features[variable][] = node_options_product_display
 features[variable][] = node_preview_product_display
 features[variable][] = node_submitted_product_display
-features[views_view][] = order_camera_ready
 features_exclude[dependencies][addressfield] = addressfield
 features_exclude[dependencies][commerce] = commerce
 features_exclude[dependencies][commerce_customer] = commerce_customer
