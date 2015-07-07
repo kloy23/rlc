@@ -389,7 +389,7 @@
         } else if (category == 'animals') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '100%',
+            'height': '35em',
             'width': '100%'
           });
         }
