@@ -16,6 +16,7 @@
       // uncheck two_sided form field
       selectTwoSided.checked = false;
       selectTwoSided.value = 0;
+      loadClipartCategory();
       // update price on page refresh
       updatePrice();
     });
@@ -374,28 +375,88 @@
       var fileName = '../sites/all/modules/custom/card_creator/logos/' + category + '/' + category + '.svg';
       Snap.load(fileName, function(f){
         clipart.append(f);
-        if (category == 'vehicles') {
-          $('#clipart').css({
-            'background-color': 'white',
-            'height': '52em',
-            'width': '100%'
-          });
-        } else if (category == 'manufacturer') {
-          $('#clipart').css({
-            'background-color': 'white',
-            'height': '72em',
-            'width': '100%'
-          });
-        } else if (category == 'animals') {
+        if (category == 'animals') {
           $('#clipart').css({
             'background-color': 'white',
             'height': '35em',
+            'width': '100%'
+          });
+        } else if (category == 'construction') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '34em',
             'width': '100%'
           });
         } else if (category == 'furniture') {
           $('#clipart').css({
             'background-color': 'white',
             'height': '19em',
+            'width': '100%'
+          });
+        } else if (category == 'healthcare') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '19em',
+            'width': '100%'
+          });
+        } else if (category == 'jewelry') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '14em',
+            'width': '100%'
+          });
+        } else if (category == 'lawn') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '42em',
+            'width': '100%'
+          });
+        } else if (category == 'legal') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '14em',
+            'width': '100%'
+          });
+        } else if (category == 'manufacturer') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '73em',
+            'width': '100%'
+          });
+        } else if (category == 'miscellaneous') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '27em',
+            'width': '100%'
+          });
+        } else if (category == 'real_estate') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '12em',
+            'width': '100%'
+          });
+        } else if (category == 'religion') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '17em',
+            'width': '100%'
+          });
+        } else if (category == 'sports_recreation') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '24em',
+            'width': '100%'
+          });
+        } else if (category == 'vehicles') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '52em',
+            'width': '100%'
+          });
+        } else if (category == 'weddings') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '17em',
             'width': '100%'
           });
         }
@@ -1230,19 +1291,9 @@
         })(el);
       }
     });
+
     // use Snap.svg to load logos in the 'clipart' svg
     var clipart = Snap('#clipart');
-    // load the svg document that acts as a selection for logos
-    Snap.load('../sites/all/modules/custom/card_creator/logos/vehicles/vehicles.svg', function(f) {
-      clipart.append(f);
-      var category = 'vehicles';
-      $('#clipart').css({
-        'background-color': 'white',
-        'height': '52em',
-        'width': '100%'
-      });
-      addClipartFunctionality(category);
-    });
 
     // *** CLICK HANDLERS ***
 
