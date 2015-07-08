@@ -377,19 +377,25 @@
         if (category == 'vehicles') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '680px',
+            'height': '52em',
             'width': '100%'
           });
         } else if (category == 'manufacturer') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '950px',
+            'height': '72em',
             'width': '100%'
           });
         } else if (category == 'animals') {
           $('#clipart').css({
             'background-color': 'white',
             'height': '35em',
+            'width': '100%'
+          });
+        } else if (category == 'furniture') {
+          $('#clipart').css({
+            'background-color': 'white',
+            'height': '19em',
             'width': '100%'
           });
         }
@@ -1232,7 +1238,7 @@
       var category = 'vehicles';
       $('#clipart').css({
         'background-color': 'white',
-        'height': '680px',
+        'height': '52em',
         'width': '100%'
       });
       addClipartFunctionality(category);
