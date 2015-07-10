@@ -1,1 +1,26 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg id="svg3119" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 180" height="100%" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"> <metadata id="metadata3123">  <rdf:RDF>   <cc:Work rdf:about="">    <dc:format>image/svg+xml</dc:format>    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>    <dc:title/>   </cc:Work>  </rdf:RDF> </metadata> <text id="companyName" y="36.708618" x="22.585386" style="text-anchor:start;" font-weight="bold" font-size="22px" font-style="normal" font-stretch="normal" font-variant="normal" font-family="Helvetica">COMPANY NAME</text> <text id="name" font-size="12px" y="81.297714" x="142.85236" style="text-anchor:middle;" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">NAME</text> <text id="title" font-size="10px" y="89.964211" x="142.81525" style="text-anchor:middle;" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Title</text> <text id="address" style="text-anchor:start;" font-size="10px" y="147.2699" x="22.777929" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Street Address</text> <text id="cityStateZip" style="text-anchor:start;" font-size="10px" y="156.93689" x="22.777929" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">City, State, Zip</text> <text id="line1" style="text-anchor:end;" font-size="10px" y="122.26992" x="292.84708"  font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Phone:</text> <text id="line2" style="text-anchor:end;" font-size="10px" y="133.27094" x="292.84708" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Toll Free:</text> <text id="line3" style="text-anchor:end;" font-size="10px" y="145.2699" x="292.84708" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Fax:</text> <text id="line4" style="text-anchor:end;" font-size="10px" y="156.93689" x="292.84708" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Mobile:</text></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg3119" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 180" height="100%" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3123">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <text id="companyName" font-size="16.25px" y="61.414856" x="22.167931" font-family="Helvetica">Company Name</text>
+ <text id="name" font-size="12.5px" style="text-anchor:end" y="31.666386" x="293.15268" font-family="Helvetica">Name Here</text>
+ <text id="title" font-size="10px" style="text-anchor:end" y="42.213867" x="293.04358" font-family="Helvetica">Title Here</text>
+ <text id="address" font-size="10px" style="text-anchor:end" y="143.88885" x="292.84061" font-family="Helvetica">123 Main Street</text>
+ <text id="cityStateZip" font-size="10px" style="text-anchor:end" y="155.52501" x="293.04358" font-family="Helvetica">Anytown, USA 12345</text>
+ <text id="line1" font-size="10px" y="155.40501" x="22.21793" font-family="Helvetica">(000) 000-0000</text>
+ <text id="line2" font-size="10px" y="143.76886" x="22.21793" font-family="Helvetica">(800) 000-0000</text>
+ <text id="line3" font-size="10px" y="132.21593" x="22.843384" font-family="Helvetica">FAX (000) 000-0000</text>
+ <text id="line4" font-size="10px" y="120.60441" x="22.335354" font-family="Helvetica">CELL (000) 000-0000</text>
+ <text id="website" font-size="10px" y="76.990776" x="22.88793" font-family="Helvetica">www.website.com</text>
+ <text id="email" font-size="10px" y="108.97241" x="23.12793" font-family="Helvetica">john@website.com</text>
+ <path id="path68" d="m22.815 67.093h270" stroke="#231f20" stroke-width="1.2453" fill="none"/>
+ <rect id="logo" height="45" width="67.5" y="71.5" x="225.11" fill="none"/>
+</svg>

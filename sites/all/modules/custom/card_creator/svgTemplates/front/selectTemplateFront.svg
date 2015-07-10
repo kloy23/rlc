@@ -1,190 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 720" height="100%" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
-
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.54998 1080" height="12in" width="3.5061in" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
  <metadata id="metadata7">
-
   <rdf:RDF>
-
    <cc:Work rdf:about="">
-
     <dc:format>image/svg+xml</dc:format>
-
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-
     <dc:title/>
-
    </cc:Work>
-
   </rdf:RDF>
-
  </metadata>
-
- <g id="g3524">
-
-  <rect id="template1" height="179.29" width="314.55" stroke="#000" y="0.5" x="0.22501" fill="#FFF"/>
-
-  <text id="companyName" style="text-anchor:middle;" font-size="18px" y="95.093651" x="157.82288" font-family="Helvetica">COMPANY NAME</text>
-
-  <text id="name" style="text-anchor:start;" font-size="12px" y="30.194971" x="23.05686" font-family="Helvetica">NAME</text>
-
-  <text id="title" style="text-anchor:start;" font-size="10px" y="38.861412" x="23.066626" font-family="Helvetica">Title</text>
-
-  <text id="address" style="text-anchor:start;" font-size="10px" y="145.91721" x="23.05686" font-family="Helvetica">Street Address</text>
-
-  <text id="cityStateZip" style="text-anchor:start;" font-size="10px" y="155.5842" x="23.05686" font-family="Helvetica">City, State, Zip</text>
-
-  <text id="line1" style="text-anchor:end;" font-size="10px" y="120.91721" x="293.12601" font-family="Helvetica">Phone:</text>
-
-  <text id="line2" style="text-anchor:end;" font-size="10px" y="131.91824" x="293.12601" font-family="Helvetica">Toll Free:</text>
-
-  <text id="line3" style="text-anchor:end;" font-size="10px" y="143.91721" x="293.12601" font-family="Helvetica">Fax:</text>
-
-  <text id="line4" style="text-anchor:end;" font-size="10px" y="155.5842" x="293.12601" font-family="Helvetica">Mobile:</text>
-
+ <g id="g3721" transform="translate(.27499)">
+  <rect id="template1" height="179.29" width="314.55" stroke="#000" y=".5" x=".22501" fill="#fff"/>
+  <text id="text3478-1-1" style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="15px" line-height="125%" y="38.062504" x="253.01324" font-family="sans-serif" fill="#000000"><tspan id="tspan3482-5-6" y="38.062504" x="253.01324">LOGO</tspan><tspan id="tspan3486-3-1" y="56.812504" x="253.01324">HERE</tspan></text>
+  <text id="companyName" style="text-anchor:middle" font-size="16.25px" y="93.382385" x="152.41212" font-family="Helvetica">Company Name</text>
+  <text id="name" font-size="12.5px" y="28.483952" x="17.646109" font-family="Helvetica">Name Here</text>
+  <text id="title" font-size="10px" y="39.149967" x="17.655874" font-family="Helvetica">Title Here</text>
+  <text id="address" font-size="10px" y="142.20563" x="17.646109" font-family="Helvetica">Street Address</text>
+  <text id="cityStateZip" font-size="10px" y="153.87262" x="17.646109" font-family="Helvetica">City, State, Zip</text>
+  <text id="line1" font-size="10px" y="119.20563" x="17.396109" font-family="Helvetica">(000) 000-0000</text>
+  <text id="line2" font-size="10px" y="130.20758" x="17.396109" font-family="Helvetica">(800) 000-0000</text>
+  <text id="line3" style="text-anchor:end" font-size="10px" y="119.20563" x="287.71527" font-family="Helvetica">FAX (000) 000-0000</text>
+  <text id="line4" style="text-anchor:end" font-size="10px" y="130.32758" x="287.71527" font-family="Helvetica">CELL (000) 000-0000</text>
+  <text id="website" style="text-anchor:end" font-size="10px" y="153.75262" x="287.93872" font-family="Helvetica">www.website.com</text>
+  <text id="email" style="text-anchor:end" font-size="10px" y="142.20563" x="287.93872" font-family="Helvetica">john@website.com</text>
+  <rect id="logo" height="45" width="67.5" y="19.371" x="219.58" fill="none"/>
  </g>
-
- <g id="g3507">
-
-  <rect id="template2" height="179.29" width="314.55" stroke="#000" y="181.07" x="0.22501" fill="#FFF"/>
-
-  <text id="companyName-7" font-size="18px" y="253.99567" x="156.60248" font-family="Helvetica">
-
-   <tspan id="tspan3866" style="text-anchor:middle;text-align:center;">COMPANY NAME</tspan>
-
-  </text>
-
-  <text id="name-4" font-size="12px" y="301.95715" x="22.498953" font-family="Helvetica">NAME</text>
-
-  <text id="title-0" font-size="10px" y="310.62408" x="22.508749" font-family="Helvetica">Title</text>
-
-  <text id="address-9" font-size="10px" y="326.62323" x="22.498953" font-family="Helvetica">Street Address</text>
-
-  <text id="cityStateZip-4" font-size="10px" y="336.2901" x="22.498953" font-family="Helvetica">City, State, Zip</text>
-
-  <text id="line1-8" font-size="10px" y="301.18457" x="292.22748" font-family="Helvetica">
-
-   <tspan id="tspan3868" style="text-anchor:end;text-align:end;">Phone:</tspan>
-
-  </text>
-
-  <text id="line2-8" font-size="10px" y="312.18549" x="292.76459" font-family="Helvetica">
-
-   <tspan id="tspan3870" style="text-anchor:end;text-align:end;">Toll Free:</tspan>
-
-  </text>
-
-  <text id="line3-2" font-size="10px" y="324.18463" x="292.17865" font-family="Helvetica">
-
-   <tspan id="tspan3872" style="text-anchor:end;text-align:end;">Fax:</tspan>
-
-  </text>
-
-  <text id="line4-4" font-size="10px" y="335.85162" x="292.25677" font-family="Helvetica">
-
-   <tspan id="tspan3874" style="text-anchor:end;text-align:end;">Mobile:</tspan>
-
-  </text>
-
+ <g id="g3755" transform="translate(.27499)">
+  <rect id="template2" height="179.29" width="314.55" stroke="#000" y="181.07" x=".22501" fill="#fff"/>
+  <text id="text3478-1-1-0" style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="15px" line-height="125%" y="266.16064" x="157.18506" font-family="sans-serif" fill="#000000"><tspan id="tspan3482-5-6-7" y="266.16064" x="157.18506">LOGO</tspan><tspan id="tspan3486-3-1-7" y="284.91068" x="157.18506">HERE</tspan></text>
+  <text id="companyName-4" font-size="16.25px" style="text-anchor:middle" y="214.38548" x="157.46458" font-family="Helvetica">Company Name</text>
+  <text id="name-4" font-size="12.5px" style="text-anchor:middle" y="233.51711" x="157.29776" font-family="Helvetica">Name Here</text>
+  <text id="title-4" style="text-anchor:middle" font-size="10px" y="244.18312" x="157.6132" font-family="Helvetica">Title Here</text>
+  <text id="address-2" font-size="10px" y="325.23877" x="21.927933" font-family="Helvetica">123 Main Street</text>
+  <text id="cityStateZip-2" font-size="10px" y="336.90576" x="22.777933" font-family="Helvetica">Anytown, USA 12345</text>
+  <text id="line1-0" font-size="10px" y="300.40546" x="22.217934" font-family="Helvetica">(000) 000-0000</text>
+  <text id="line2-8" font-size="10px" y="312.61194" x="22.217934" font-family="Helvetica">(800) 000-0000</text>
+  <text id="line3-0" style="text-anchor:end" font-size="10px" y="300.40546" x="292.77484" font-family="Helvetica">FAX (000) 000-0000</text>
+  <text id="line4-0" style="text-anchor:end" font-size="10px" y="312.73193" x="292.77484" font-family="Helvetica">CELL (000) 000-0000</text>
+  <text id="website-5" style="text-anchor:end" font-size="10px" y="336.78577" x="292.99829" font-family="Helvetica">www.website.com</text>
+  <text id="email-2" style="text-anchor:end" font-size="10px" y="325.23877" x="292.99829" font-family="Helvetica">john@website.com</text>
+  <path id="path68" d="m22.5 220.3h270" stroke="#231f20" stroke-width="1.2453" fill="none"/>
+  <rect id="logo-0" height="45" width="67.5" y="247.47" x="123.75" fill="none"/>
  </g>
-
- <g id="g3492">
-
-  <rect id="template3" height="179.29" width="314.55" stroke="#000" y="360" x="0.22501" fill="#FFF"/>
-
-  <text id="companyName-0" style="text-anchor:middle;" font-size="18px" y="398.35254" x="22.397463" font-family="Helvetica">
-
-   <tspan id="tspan3381" style="text-anchor:start;text-align:start;" font-size="22px">COMPANY NAME</tspan>
-
-  </text>
-
-  <text id="name-9" style="text-anchor:start;" font-size="12px" y="449.44858" x="157.26855" font-family="Helvetica">
-
-   <tspan id="tspan3387" style="text-anchor:middle;text-align:center;">NAME</tspan>
-
-  </text>
-
-  <text id="title-4" style="text-anchor:start;" font-size="10px" y="457.91052" x="157.49023" font-family="Helvetica">
-
-   <tspan id="tspan3385" style="text-anchor:middle;text-align:center;">Title</tspan>
-
-  </text>
-
-  <text id="address-8" style="text-anchor:start;" font-size="10px" y="505.20227" x="22.675383" font-family="Helvetica">Street Address</text>
-
-  <text id="cityStateZip-8" style="text-anchor:start;" font-size="10px" y="514.86926" x="22.675383" font-family="Helvetica">City, State, Zip</text>
-
-  <text id="line1-2" style="text-anchor:end;" font-size="10px" y="480.20233" x="292.74454" font-family="Helvetica">Phone:</text>
-
-  <text id="line2-4" style="text-anchor:end;" font-size="10px" y="491.20331" x="292.74454" font-family="Helvetica">Toll Free:</text>
-
-  <text id="line3-5" style="text-anchor:end;" font-size="10px" y="503.20227" x="292.74454" font-family="Helvetica">Fax:</text>
-
-  <text id="line4-5" style="text-anchor:end;" font-size="10px" y="514.86926" x="292.74454" font-family="Helvetica">Mobile:</text>
-
+ <g id="g3586" transform="translate(.27499)">
+  <rect id="template3" height="179.29" width="314.55" stroke="#000" y="360" x=".22501" fill="#fff"/>
+  <text id="companyName-9" font-size="16.25px" y="420.93042" x="21.852934" font-family="Helvetica">Company Name</text>
+  <text id="name-2" style="text-anchor:end" font-size="12.5px" y="391.18195" x="292.83768" font-family="Helvetica">Name Here</text>
+  <text id="title-2" font-size="10px" style="text-anchor:end" y="401.72943" x="292.72858" font-family="Helvetica">Title Here</text>
+  <text id="address-5" style="text-anchor:end" font-size="10px" y="503.40442" x="292.5256" font-family="Helvetica">123 Main Street</text>
+  <text id="cityStateZip-5" style="text-anchor:end" font-size="10px" y="515.04059" x="292.72858" font-family="Helvetica">Anytown, USA 12345</text>
+  <text id="line1-8" font-size="10px" y="514.92059" x="21.902933" font-family="Helvetica">(000) 000-0000</text>
+  <text id="line2-2" font-size="10px" y="503.28442" x="21.902933" font-family="Helvetica">(800) 000-0000</text>
+  <text id="line3-6" font-size="10px" y="491.73148" x="22.528387" font-family="Helvetica">FAX (000) 000-0000</text>
+  <text id="line4-8" font-size="10px" y="480.11996" x="22.020357" font-family="Helvetica">CELL (000) 000-0000</text>
+  <text id="website-1" font-size="10px" y="436.50632" x="22.572933" font-family="Helvetica">www.website.com</text>
+  <text id="email-8" font-size="10px" y="468.48798" x="22.812933" font-family="Helvetica">john@website.com</text>
+  <path id="path68-6" d="m22.5 426.61h270" stroke="#231f20" stroke-width="1.2453" fill="none"/>
+  <rect id="logo-4" height="45" width="67.5" y="431.02" x="224.8" fill="none"/>
+  <text id="text3478-1-1-0-7" font-size="15px" xml:space="preserve" style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" line-height="125%" y="449.70697" x="258.23004" font-family="sans-serif" fill="#000000"><tspan id="tspan3482-5-6-7-0" y="449.70697" x="258.23004">LOGO</tspan><tspan id="tspan3486-3-1-7-6" y="468.45697" x="258.23004">HERE</tspan></text>
  </g>
-
- <g id="g3471">
-
-  <rect id="template4" height="179.29" width="314.55" stroke="#000" y="540.21" x="0.22501" fill="#FFF"/>
-
-  <text id="companyName-1" style="text-anchor:middle;" font-size="18px" y="575.51007" x="293.77539" font-family="Helvetica">
-
-   <tspan id="tspan3381-7" font-size="22px" font-family="Helvetica" style="text-anchor:end;text-align:end;" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">COMPANY NAME</tspan>
-
-  </text>
-
-  <text id="name-1" style="text-anchor:start;" font-size="12px" y="611.3316" x="23.093695" font-family="Helvetica">
-
-   <tspan id="tspan3412" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">NAME</tspan>
-
-  </text>
-
-  <text id="title-1" style="text-anchor:start;" font-size="10px" y="621.64844" x="23.605597" font-family="Helvetica">
-
-   <tspan id="tspan3414" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Title</tspan>
-
-  </text>
-
-  <text id="address-5" style="text-anchor:start;" font-size="10px" y="684.41595" x="157.04053" font-family="Helvetica">
-
-   <tspan id="tspan3391" style="text-anchor:middle;text-align:center;" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Street Address</tspan>
-
-  </text>
-
-  <text id="cityStateZip-2" style="text-anchor:start;" font-size="10px" y="696.02679" x="157.02588" font-family="Helvetica">
-
-   <tspan id="tspan3389" style="text-anchor:middle;text-align:center;" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">City, State, Zip</tspan>
-
-  </text>
-
-  <text id="line1-7" style="text-anchor:end;" font-size="10px" y="684.40131" x="22.072271" font-family="Helvetica">
-
-   <tspan id="tspan3393" style="text-anchor:start;text-align:start;" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Phone:</tspan>
-
-  </text>
-
-  <text id="line2-6" style="text-anchor:end;" font-size="10px" y="695.58948" x="22.072271" font-family="Helvetica">
-
-   <tspan id="tspan3395" style="text-anchor:start;text-align:start;" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Toll Free:</tspan>
-
-  </text>
-
-  <text id="line3-1" style="text-anchor:end;" font-size="10px" y="684.3598" x="292.41931" font-family="Helvetica">
-
-   <tspan id="tspan3416" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Fax:</tspan>
-
-  </text>
-
-  <text id="line4-42" style="text-anchor:end;" font-size="10px" y="694.02679" x="292.41931" font-family="Helvetica">
-
-   <tspan id="tspan3418" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Mobile:</tspan>
-
-  </text>
-
+ <g id="g3591" transform="translate(.27499)">
+  <g id="g3616">
+   <rect id="template4" height="179.29" width="314.55" stroke="#000" y="540.21" x=".22501" fill="#fff"/>
+   <text id="companyName-7" font-size="16.25px" y="600.20551" x="21.890377" font-family="Helvetica">Company Name</text>
+   <text id="name-1" style="text-anchor:end" font-size="12.5px" y="570.45703" x="292.87512" font-family="Helvetica">Name Here</text>
+   <text id="title-40" font-size="10px" style="text-anchor:end" y="581.00452" x="292.76602" font-family="Helvetica">Title Here</text>
+   <text id="address-3" font-size="10px" y="684.45624" x="21.650377" font-family="Helvetica">123 Main Street</text>
+   <text id="cityStateZip-57" font-size="10px" y="696.18549" x="22.500378" font-family="Helvetica">Anytown, USA 12345</text>
+   <text id="line1-5" font-size="10px" style="text-anchor:end" y="638.46521" x="292.82602" font-family="Helvetica">(000) 000-0000</text>
+   <text id="line2-87" font-size="10px" style="text-anchor:end" y="649.94299" x="292.82602" font-family="Helvetica">(800) 000-0000</text>
+   <text id="line3-5" font-size="10px" style="text-anchor:end" y="661.34534" x="292.82602" font-family="Helvetica">FAX (000) 000-0000</text>
+   <text id="line4-6" font-size="10px" style="text-anchor:end" y="672.84668" x="292.82602" font-family="Helvetica">CELL (000) 000-0000</text>
+   <text id="website-8" font-size="10px" style="text-anchor:end" y="696.06549" x="293.04947" font-family="Helvetica">www.website.com</text>
+   <text id="email-0" font-size="10px" style="text-anchor:end" y="684.45624" x="293.04947" font-family="Helvetica">john@website.com</text>
+   <rect id="logo-8" height="45" width="67.5" y="610.29" x="22.67" fill="none"/>
+   <text id="text3478-1-1-0-7-3" style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="15px" line-height="125%" y="628.98206" x="56.105507" font-family="sans-serif" fill="#000000"><tspan id="tspan3482-5-6-7-0-8" y="628.98206" x="56.105507">LOGO</tspan><tspan id="tspan3486-3-1-7-6-7" y="647.73206" x="56.105507">HERE</tspan></text>
+   <rect id="template4-0" height="179.29" width="314.55" stroke="#000" y="720.7" x=".47040" fill="#fff"/>
+   <rect id="template4-2" height="179.29" width="314.55" stroke="#000" y="900.29" x=".47040" fill="#fff"/>
+  </g>
  </g>
-
 </svg>
-
