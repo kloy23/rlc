@@ -45,16 +45,21 @@
   width: 315px;
 }
 #rightColumn #templatesFront {
-  height: 436px;
+  height: 47em;
   width: 100%;
 }
 #rightColumn #templatesBack {
-  height: 436px;
+  height: 31em;
   width: 100%;
 }
-#rightColumn #templatesFrontDisplay, #rightColumn #templatesBackDisplay {
+#rightColumn #templatesFrontDisplay {
   border: 1px solid black;
-  height: 295px;
+  height: 26.5em;
+  overflow: scroll;
+}
+#rightColumn #templatesBackDisplay {
+  border: 1px solid black;
+  height: 21.5em;
   overflow: scroll;
 }
 .button {

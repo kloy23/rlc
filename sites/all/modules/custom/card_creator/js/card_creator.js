@@ -185,24 +185,24 @@
     // *** FUNCTIONS ***
 
     var highlightTemplate = function(el) {
-      var rect = el.node;
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr('fill', '#E0FFFF');
+      var background = el.node.firstElementChild;
+      if ($(background).attr('class') !== 'selected') {
+        $(background).attr('fill', '#E0FFFF');
       }
     };
     var unHighlightTemplate = function(el) {
-      var rect = el.node;
-      if ($(rect).attr('class') !== 'selected') {
-        $(rect).attr('fill', '#FFF');
+      var background = el.node.firstElementChild;
+      if ($(background).attr('class') !== 'selected') {
+        $(background).attr('fill', '#FFF');
       }
     };
     var highlightSelectedTemplate = function(el) {
-      var rect = el.node;
+      var background = el.node.firstElementChild;
       var svgElement = Snap.select('#templatesFront');
-      var svgNodes = svgElement.selectAll('rect');
+      var svgNodes = svgElement.selectAll('g');
       for (var i=0; i<svgNodes.length; i++) {
         el = svgNodes[i];
-        var node = el.node;
+        var node = el.node.firstElementChild;
         if ($(node).attr('class') == 'selected') {
           $(node).attr({
             class: '',
@@ -212,7 +212,7 @@
           });
         }
       }
-      $(rect).attr({
+      $(background).attr({
         class: 'selected',
         stroke: '#F00',
         'stroke-width': '2px'
@@ -540,9 +540,9 @@
       }
     };
     // Load the template that is selected for Front
-    var changeTemplateFront = function(e) {
+    var changeTemplateFront = function(el) {
       var svgNode;
-      var templateId = e.target.id;
+      var templateId = el.node.id;
       var svgLogo = Snap('#previewFront');
       var getLogo = svgLogo.selectAll('svg');
       // fetch the color that is selected
@@ -1230,11 +1230,12 @@
     Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/front/selectTemplateFront.svg', function(f) {
       templatesFront.append(f);
       // get all rect within loaded svg.  Each template has a rect that has an id to identify it.
-      var svgElements = templatesFront.selectAll('rect');
+      var svgElements = templatesFront.selectAll('g');
       // target the first template
-      var firstTemplate = svgElements[0].node;
+      var firstTemplate = svgElements[0];
+      var firstTemplateBackground = firstTemplate.node.firstElementChild;
       // Style the template, since it is selected when page loads
-      $(firstTemplate).attr({
+      $(firstTemplateBackground).attr({
         class: 'selected',
         fill: '#E0FFFF',
         stroke: '#F00',
@@ -1253,7 +1254,7 @@
           });
           el.click(function(e) {
               highlightSelectedTemplate(el);
-              changeTemplateFront(e);
+              changeTemplateFront(el);
           });
         })(el);
       }

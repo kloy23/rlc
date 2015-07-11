@@ -15,12 +15,12 @@
  <text id="title" y="76.070229" x="22.274799" font-size="10px" font-family="Helvetica">Title Here</text>
  <text id="address" y="145.79861" x="162.215" font-size="10px" font-family="Helvetica">123 Main Street</text>
  <text id="cityStateZip" y="157.52786" x="163.065" font-size="10px" font-family="Helvetica">Anytown, USA 12345</text>
- <text id="line1" y="99.998657" x="162.505" font-size="10px" font-family="Helvetica">(000) 000-0000</text>
- <text id="line2" y="111.46811" x="162.505" font-family="Helvetica">(800) 000-0000</text>
- <text id="line3" y="122.89233" x="162.33501" font-family="Helvetica">FAX (000) 000-0000</text>
- <text id="line4" y="134.39877" x="162.755" font-size="10px" font-family="Helvetica">CELL (000) 000-0000</text>
- <text id="website" y="88.440575" x="163.175" font-size="10px" font-family="Helvetica">www.website.com</text>
- <text id="email" y="78.928978" x="163.41501" font-size="10px" font-family="Helvetica">john@website.com</text>
- <rect id="logo" height="45" width="67.5" y="94.396" x="55.93" fill="none"/>
+ <text id="line1" font-size="10px" y="99.998657" x="162.505" font-family="Helvetica">(000) 000-0000</text>
+ <text id="line2" font-size="10px" y="111.46811" x="162.505" font-family="Helvetica">(800) 000-0000</text>
+ <text id="line3" font-size="10px" y="122.89233" x="162.33501" font-family="Helvetica">FAX (000) 000-0000</text>
+ <text id="line4" font-size="10px" y="134.39877" x="162.755" font-family="Helvetica">CELL (000) 000-0000</text>
+ <text id="website" font-size="10px" y="88.440575" x="163.175" font-family="Helvetica">www.website.com</text>
+ <text id="email" font-size="10px" y="78.928978" x="163.41501" font-family="Helvetica">john@website.com</text>
+ <rect id="logo" height="45" width="67.5" y="94.195" x="44.668" fill="none"/>
  <path id="path234" stroke="#231f20" stroke-width="1.2508" fill="none" d="m157.5 157.5v-135"/>
 </svg>
