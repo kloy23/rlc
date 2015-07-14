@@ -571,6 +571,8 @@ function card_creator_form_submit($form, &$form_state) {
   $company_name = $form_state['values']['company_name'];
   $name = $form_state['values']['name'];
   $title = $form_state['values']['title'];
+  $email = $form_state['values']['email'];
+  $website = $form_state['values']['website'];
   $address = $form_state['values']['address'];
   $city_state_zip = $form_state['values']['city_state_zip'];
   $line1 = $form_state['values']['line1'];
@@ -656,6 +658,8 @@ function card_creator_form_submit($form, &$form_state) {
         $line_item->field_company_name[LANGUAGE_NONE][0]['value'] = $company_name;
         $line_item->field_name[LANGUAGE_NONE][0]['value'] = $name;
         $line_item->field_title[LANGUAGE_NONE][0]['value'] = $title;
+        $line_item->field_email[LANGUAGE_NONE][0]['value'] = $email;
+        $line_item->field_website[LANGUAGE_NONE][0]['value'] = $website;
         $line_item->field_address[LANGUAGE_NONE][0]['value'] = $address;
         $line_item->field_city_state_zip[LANGUAGE_NONE][0]['value'] = $city_state_zip;
         $line_item->field_line_1[LANGUAGE_NONE][0]['value'] = $line1;
@@ -737,6 +741,8 @@ function card_creator_form_submit($form, &$form_state) {
         $line_item->field_company_name[LANGUAGE_NONE][0]['value'] = $company_name;
         $line_item->field_name[LANGUAGE_NONE][0]['value'] = $name;
         $line_item->field_title[LANGUAGE_NONE][0]['value'] = $title;
+        $line_item->field_email[LANGUAGE_NONE][0]['value'] = $email;
+        $line_item->field_website[LANGUAGE_NONE][0]['value'] = $website;
         $line_item->field_address[LANGUAGE_NONE][0]['value'] = $address;
         $line_item->field_city_state_zip[LANGUAGE_NONE][0]['value'] = $city_state_zip;
         $line_item->field_line_1[LANGUAGE_NONE][0]['value'] = $line1;
