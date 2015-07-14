@@ -99,7 +99,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'display' => array(
         'label' => 'hidden',
@@ -146,7 +146,7 @@ function rlc_commerce_field_default_field_instances() {
           'show_single_product_attributes' => FALSE,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'display' => array(
         'label' => 'hidden',
@@ -197,7 +197,7 @@ function rlc_commerce_field_default_field_instances() {
           'calculation' => FALSE,
         ),
         'type' => 'commerce_price_formatted_amount',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'display' => array(
         'label' => 'hidden',
@@ -259,7 +259,7 @@ function rlc_commerce_field_default_field_instances() {
           'calculation' => FALSE,
         ),
         'type' => 'commerce_price_formatted_amount',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'display' => array(
         'label' => 'hidden',
@@ -321,7 +321,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -339,7 +339,42 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-business_card-field_back_color_options'
+  $field_instances['commerce_line_item-business_card-field_back_color_options'] = array(
+    'bundle' => 'business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 33,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_back_color_options',
+    'label' => 'Back Color',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 10,
     ),
   );
 
@@ -359,7 +394,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 16,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -377,7 +412,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 18,
+      'weight' => 23,
     ),
   );
 
@@ -397,7 +432,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 17,
+        'weight' => 21,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -415,7 +450,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 19,
+      'weight' => 24,
     ),
   );
 
@@ -435,7 +470,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 18,
+        'weight' => 22,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -453,7 +488,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 25,
     ),
   );
 
@@ -473,7 +508,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 19,
+        'weight' => 23,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -491,7 +526,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 26,
     ),
   );
 
@@ -511,7 +546,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 20,
+        'weight' => 24,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -529,7 +564,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 27,
     ),
   );
 
@@ -549,7 +584,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 21,
+        'weight' => 25,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -567,7 +602,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 28,
     ),
   );
 
@@ -587,7 +622,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 22,
+        'weight' => 26,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -605,7 +640,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 24,
+      'weight' => 29,
     ),
   );
 
@@ -625,7 +660,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 23,
+        'weight' => 27,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -643,7 +678,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 25,
+      'weight' => 30,
     ),
   );
 
@@ -663,7 +698,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 24,
+        'weight' => 28,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -681,7 +716,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 26,
+      'weight' => 31,
     ),
   );
 
@@ -703,7 +738,7 @@ function rlc_commerce_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 14,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -729,7 +764,7 @@ function rlc_commerce_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 17,
+      'weight' => 22,
     ),
   );
 
@@ -751,7 +786,7 @@ function rlc_commerce_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 26,
+        'weight' => 30,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -777,7 +812,7 @@ function rlc_commerce_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 28,
+      'weight' => 33,
     ),
   );
 
@@ -801,7 +836,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -836,7 +871,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -854,7 +889,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 17,
     ),
   );
 
@@ -874,7 +909,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -892,7 +927,44 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_line_item-business_card-field_email'
+  $field_instances['commerce_line_item-business_card-field_email'] = array(
+    'bundle' => 'business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_email',
+    'label' => 'Email',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 14,
     ),
   );
 
@@ -911,7 +983,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -929,7 +1001,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 18,
     ),
   );
 
@@ -948,7 +1020,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 11,
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -966,7 +1038,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 19,
     ),
   );
 
@@ -985,7 +1057,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -1003,7 +1075,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 20,
     ),
   );
 
@@ -1022,7 +1094,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 17,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -1040,7 +1112,7 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 21,
     ),
   );
 
@@ -1059,7 +1131,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -1077,7 +1149,42 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-business_card-field_one_color_options'
+  $field_instances['commerce_line_item-business_card-field_one_color_options'] = array(
+    'bundle' => 'business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 31,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_one_color_options',
+    'label' => 'Color',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 8,
     ),
   );
 
@@ -1100,7 +1207,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 15,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -1134,7 +1241,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -1152,7 +1259,42 @@ function rlc_commerce_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-business_card-field_two_color_options'
+  $field_instances['commerce_line_item-business_card-field_two_color_options'] = array(
+    'bundle' => 'business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 32,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_two_color_options',
+    'label' => 'Colors',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 9,
     ),
   );
 
@@ -1175,7 +1317,7 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 25,
+        'weight' => 29,
       ),
     ),
     'entity_type' => 'commerce_line_item',
@@ -1190,7 +1332,44 @@ function rlc_commerce_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 27,
+      'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_line_item-business_card-field_website'
+  $field_instances['commerce_line_item-business_card-field_website'] = array(
+    'bundle' => 'business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_website',
+    'label' => 'Website',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 15,
     ),
   );
 
@@ -2861,6 +3040,7 @@ function rlc_commerce_field_default_field_instances() {
   t('Company Name');
   t('Display path');
   t('Do you want this order to be printed with One Color, or Two Colors?');
+  t('Email');
   t('Front');
   t('Line 1');
   t('Line 2');
@@ -2882,6 +3062,7 @@ function rlc_commerce_field_default_field_instances() {
   t('Total');
   t('Two Sided');
   t('Unit price');
+  t('Website');
 
   return $field_instances;
 }

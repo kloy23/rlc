@@ -255,7 +255,7 @@ function rlc_pages_default_page_manager_pages() {
       'title' => '',
       'body' => '1000 High Quality Raised Letter Business Cards for just $16.95!"*
 Why Pay More?
-<p id="disclaimer">*Price is based White Smooth card stock.</p>',
+<p id="disclaimer">*Price is based on White Smooth card stock.</p>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -530,6 +530,35 @@ Why Pay More?
     $display->content['new-9e4ab5fa-9bbd-409f-94ca-0e50401083ab'] = $pane;
     $display->panels['center'][1] = 'new-9e4ab5fa-9bbd-409f-94ca-0e50401083ab';
     $pane = new stdClass();
+    $pane->pid = 'new-c744c164-8046-45bc-905f-342ef4166c77';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<p>Printed and Shipped within 48 hours.</p>
+<p>Satisfaction guaranteed!</p>',
+      'format' => 'filtered_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'panel-order-now-top-shipped',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'c744c164-8046-45bc-905f-342ef4166c77';
+    $display->content['new-c744c164-8046-45bc-905f-342ef4166c77'] = $pane;
+    $display->panels['center'][2] = 'new-c744c164-8046-45bc-905f-342ef4166c77';
+    $pane = new stdClass();
     $pane->pid = 'new-739a7c28-912f-4f56-9370-9b3f7217e48c';
     $pane->panel = 'left';
     $pane->type = 'custom';
@@ -558,35 +587,6 @@ Why Pay More?
     $display->content['new-739a7c28-912f-4f56-9370-9b3f7217e48c'] = $pane;
     $display->panels['left'][0] = 'new-739a7c28-912f-4f56-9370-9b3f7217e48c';
     $pane = new stdClass();
-    $pane->pid = 'new-c744c164-8046-45bc-905f-342ef4166c77';
-    $pane->panel = 'left';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<p>Printed and Shipped within 48 hours.</p>
-<p>Satisfaction guaranteed!.</p>',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'panel-order-now-right-bottom',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'c744c164-8046-45bc-905f-342ef4166c77';
-    $display->content['new-c744c164-8046-45bc-905f-342ef4166c77'] = $pane;
-    $display->panels['left'][1] = 'new-c744c164-8046-45bc-905f-342ef4166c77';
-    $pane = new stdClass();
     $pane->pid = 'new-902c7ab5-1f81-499e-b928-7858ca476afe';
     $pane->panel = 'left_';
     $pane->type = 'custom';
@@ -614,34 +614,6 @@ Why Pay More?
     $pane->uuid = '902c7ab5-1f81-499e-b928-7858ca476afe';
     $display->content['new-902c7ab5-1f81-499e-b928-7858ca476afe'] = $pane;
     $display->panels['left_'][0] = 'new-902c7ab5-1f81-499e-b928-7858ca476afe';
-    $pane = new stdClass();
-    $pane->pid = 'new-b1659927-53a6-42b5-b399-19c3d7caae2f';
-    $pane->panel = 'left_';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<img src="/sites/default/files/images/usps.png"></img>',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'panel-order-now-left-bottom',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'b1659927-53a6-42b5-b399-19c3d7caae2f';
-    $display->content['new-b1659927-53a6-42b5-b399-19c3d7caae2f'] = $pane;
-    $display->panels['left_'][1] = 'new-b1659927-53a6-42b5-b399-19c3d7caae2f';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
