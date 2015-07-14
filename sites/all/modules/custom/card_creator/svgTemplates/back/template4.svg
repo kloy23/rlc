@@ -1,44 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg id="svg3119" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 180" height="100%" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
-
  <metadata id="metadata3123">
-
   <rdf:RDF>
-
    <cc:Work rdf:about="">
-
     <dc:format>image/svg+xml</dc:format>
-
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-
     <dc:title/>
-
    </cc:Work>
-
   </rdf:RDF>
-
  </metadata>
-
- <text id="companyName" y="36.708618" x="294.43597" style="text-anchor:end;text-align:end;" font-weight="bold" font-size="22px" font-style="normal" font-stretch="normal" font-variant="normal" font-family="Helvetica">COMPANY NAME</text>
-
- <text id="name" style="text-anchor:start;" font-size="12px" y="82.949814" x="22.585386" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">NAME</text>
-
- <text id="title" style="text-anchor:start;" font-size="10px" y="91.61631" x="22.548277" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Title</text>
-
- <text id="address" font-size="10px" y="147.2699" x="157.46094" style="text-anchor:middle;text-align:center;" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Street Address</text>
-
- <text id="cityStateZip" font-size="10px" y="156.93689" x="157.46094" style="text-anchor:middle;text-align:center;" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">City, State, Zip</text>
-
- <text id="line1" font-size="10px" y="146.26993" x="21.765625" style="text-anchor:start;text-align:start;" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Phone:</text>
-
- <text id="line2" font-size="10px" y="157.27094" x="22.009766" style="text-anchor:start;text-align:start;" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Toll Free:</text>
-
- <text id="line3" style="text-anchor:end;" font-size="10px" y="145.2699" x="292.84708" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Fax:</text>
-
- <text id="line4" style="text-anchor:end;" font-size="10px" y="156.93689" x="292.84708" font-family="Helvetica" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="bold">Mobile:</text>
-
+ <path id="path" d="m62.594 56.384h229.88" stroke="#231f20" stroke-width="1.1491" fill="none"/>
+ <path id="path-2" d="m76.562 93.881h215.91" stroke="#231f20" stroke-width="1.1136" fill="none"/>
+ <path id="path-2-1" d="m64.094 131.78h228.38" stroke="#231f20" stroke-width="1.1453" fill="none"/>
+ <text id="text3369" font-size="12.5px" y="56.763428" x="21.302164" font-family="Helvetica" style="text-anchor:start">Name:</text>
+ <text id="text3369-8" style="text-anchor:start" font-size="12.5px" y="94.260437" x="22.431314" font-family="Helvetica">Address:</text>
+ <text id="text3369-8-2" style="text-anchor:start" font-size="12.5px" y="132.15628" x="21.302164" font-family="Helvetica">Phone:</text>
 </svg>
-

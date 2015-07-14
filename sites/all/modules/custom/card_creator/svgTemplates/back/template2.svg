@@ -10,14 +10,8 @@
    </cc:Work>
   </rdf:RDF>
  </metadata>
- <text id="backLine1" style="text-anchor:middle;" font-size="18px" y="94.446289" x="157.54395" font-family="Helvetica">COMPANY NAME</text>
- <text id="backLine2" style="text-anchor:start;" font-size="12px" y="123.70117" x="22.777929" font-family="Helvetica">NAME</text>
- <text id="backLine3" style="text-anchor:start;" font-size="10px" y="132.36816" x="22.787695" font-family="Helvetica">Title</text>
- <text id="backLine4" style="text-anchor:start;" font-size="10px" y="147.26953" x="22.777929" font-family="Helvetica">Street Address</text>
- <text id="backLine5" style="text-anchor:start;" font-size="10px" y="156.93652" x="22.777929" font-family="Helvetica">City, State, Zip</text>
- <text id="backLine6" style="text-anchor:end;" font-size="10px" y="122.26953" x="292.84708" font-family="Helvetica">Phone:</text>
- <text id="backLine7" style="text-anchor:end;" font-size="10px" y="133.27148" x="292.84708" font-family="Helvetica">Toll Free:</text>
- <text id="backLine8" style="text-anchor:end;" font-size="10px" y="145.26953" x="292.84708" font-family="Helvetica">Fax:</text>
- <text id="backLine9" style="text-anchor:end;" font-size="10px" y="156.93652" x="292.84708" font-family="Helvetica">Mobile:</text>
- <rect id="logo" height="45" width="90" y="22.137" x="22.115" fill="none"/>
+ <text id="backLine1" style="text-anchor:middle" font-size="20px" y="62.473061" x="157.43657" font-family="Helvetica">100% SATISFACTION</text>
+ <text id="backLine2" style="text-anchor:middle" font-size="20px" y="85.682396" x="157.14969" font-family="Helvetica">EXCELLENT SERVICE</text>
+ <text id="backLine3" style="text-anchor:middle" font-size="20px" y="108.78468" x="157.16328" font-family="Helvetica">MY GOAL</text>
+ <text id="backLine4" style="text-anchor:middle" font-size="20px" y="131.88693" x="156.97328" font-family="Helvetica">MY COMMITMENT</text>
 </svg>
