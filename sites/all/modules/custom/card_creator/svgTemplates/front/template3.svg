@@ -21,6 +21,6 @@
  <text id="line4" font-size="10px" y="120.60441" x="22.335354" font-family="Helvetica">CELL (000) 000-0000</text>
  <text id="website" font-size="10px" y="76.990776" x="22.88793" font-family="Helvetica">www.website.com</text>
  <text id="email" font-size="10px" y="108.97241" x="23.12793" font-family="Helvetica">john@website.com</text>
- <path id="path68" d="m22.815 67.093h270" stroke="#231f20" stroke-width="1.2453" fill="none"/>
+ <path id="path" d="m22.815 67.093h270" stroke="#231f20" stroke-width="1.2453" fill="none"/>
  <rect id="logo" height="45" width="67.5" y="71.5" x="225.11" fill="none"/>
 </svg>

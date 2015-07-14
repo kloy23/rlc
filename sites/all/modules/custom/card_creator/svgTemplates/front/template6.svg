@@ -22,5 +22,5 @@
  <text id="website" font-size="10px" y="88.440575" x="163.175" font-family="Helvetica">www.website.com</text>
  <text id="email" font-size="10px" y="78.928978" x="163.41501" font-family="Helvetica">john@website.com</text>
  <rect id="logo" height="45" width="67.5" y="94.195" x="44.668" fill="none"/>
- <path id="path234" stroke="#231f20" stroke-width="1.2508" fill="none" d="m157.5 157.5v-135"/>
+ <path id="path" stroke="#231f20" stroke-width="1.2508" fill="none" d="m157.5 157.5v-135"/>
 </svg>

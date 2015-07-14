@@ -261,7 +261,7 @@
       var el;
       var color;
       var colorOptions = $('#oneColor').children();
-      var clipartColorOptions = $('#clipartColor').siblings();
+      var twoColorOptions = $('#twoColors').children();
       for (var i=0; i<colorOptions.length; i++) {
         el = colorOptions[i];
         if ($(el).hasClass('selected')) {
@@ -269,17 +269,47 @@
           return color;
         }
       }
-      for (i=0; i<clipartColorOptions.length; i++) {
-        el = clipartColorOptions[i];
+      for (i=0; i<twoColorOptions.length; i++) {
+        el = twoColorOptions[i];
         if ($(el).hasClass('selected')) {
-          color = $(el).css('background-color');
-          return color;
+          var colors = $(el).text().toLowerCase().split('/');
+          return colors;
+        }
+      }
+    };
+    var fetchClipartColor = function() {
+      var el;
+      var color;
+      var clipartColorOptions = $('#clipartColor').siblings();
+      if (clipartColorOptions.length === 2) {
+        for (var i=0; i<clipartColorOptions.length; i++) {
+          el = clipartColorOptions[i];
+          if ($(el).hasClass('selected')) {
+            color = $(el).css('background-color');
+            return color;
+          }
+        }
+      } else {
+        color = fetchSelectedColor();
+        return color;
+      }
+    };
+    var colorPath = function() {
+      var color = fetchSelectedColor();
+      var svgNode = Snap.select('#previewFront');
+      var path = svgNode.select('#path');
+      if (path !== null) {
+        if ($.isArray(color)) {
+          color = color[1];
+          $(path.node).attr('stroke', color);
+        } else {
+          $(path.node).attr('stroke', color);
         }
       }
     };
     // when called, change the color of current logo
     var changeLogoColor = function() {
-      var color = fetchSelectedColor();
+      var color = fetchClipartColor();
       var svgNode = Snap.select('#previewFront');
        // find the logo within the svg document, if one exist
       var node = svgNode.selectAll('svg');
@@ -555,6 +585,8 @@
         svgNode = Snap.select('#previewFront');
         // find all text fields within the svg document
         var svgElement = svgNode.selectAll('text');
+        // find path if it exist
+        var path = svgNode.select('#path');
         // for each svg text field
         for (var i = 0; i < svgElement.length; i++) {
           // target the correct input field for the current svg text field
@@ -615,6 +647,9 @@
             // set the logo color to match selection
             changeLogoColor();
           });
+        }
+        if (path !== null) {
+          colorPath();
         }
       });
     };
@@ -706,6 +741,7 @@
       var svgFrontNode = Snap.select('#previewFront');
       // find all text fields within the svg document
       var svgElements = svgFrontNode.selectAll('text');
+      var path = svgFrontNode.select('#path');
       // for each svg text field
       for (var i = 0; i < svgElements.length; i++) {
         // target the correct input field for the current svg text field
@@ -889,6 +925,7 @@
       }
       clearColorSelection();
       $(this).addClass('selected');
+      colorPath();
       changeLogoColor();
       clearTwoColorOptions();
     };
@@ -903,6 +940,7 @@
       createClipartColorBoxes(this, $clipartColor);
       clearColorSelection();
       $(this).addClass('selected');
+      colorPath();
       changeLogoColor();
       updateFillColor();
     };
