@@ -8,7 +8,7 @@
     var selectedLogo;
 
     // Hide selected divs on pageload
-    $('#clipartColor, #selectTwoSided, #removeBack, #frontBack, #cardInfoBack, #previewBack, #backColor, #templatesBackDisplay, #proof').hide();
+    $('#clipartColor, #selectTwoSided, #removeBack, #frontBack, #cardInfoBack, #previewBack, #oneColorSelection, #twoColorSelection, #backColorSelection, #backColor, #templatesBackDisplay, #proof').hide();
 
     // *** SET DEFAULTS ***
     $(function setDefaults() {
@@ -16,6 +16,9 @@
       // uncheck two_sided form field
       selectTwoSided.checked = false;
       selectTwoSided.value = 0;
+      $('#oneColorSelection').val('18');
+      $('#twoColorSelection').val('0');
+      $('#backColorSelection').val('0');
       loadClipartCategory();
       // update price on page refresh
       updatePrice();
@@ -927,6 +930,7 @@
     // when a one color option is selected
     var loadOneColor = function() {
       var color = $(this).text().toLowerCase();
+      var tid = this.id;
       // target the loaded svg document
       var svgNode = Snap.select('#previewFront');
       // find all text fields within the svg document
@@ -938,6 +942,11 @@
         // change the current fields fill value to match the color selected
         el.attr('fill', color);
       }
+      // Populate oneColorSelection textfield with the tid of the color selected
+      // This information will be passed on during order creation, so the order will display the colors used.
+      $('#oneColorSelection').val(tid);
+      // Empty twoColorSelection, if a value exist
+      $('#twoColorSelection').val('0');
       clearColorSelection();
       $(this).addClass('selected');
       colorPath();
@@ -946,6 +955,7 @@
     };
     // when a two color option is selected, create the color options for each field
     var loadTwoColors = function() {
+      var tid = this.id;
       var $clipartColor = $('#clipartColor');
       for (var i = 0; i < $frontInputFields.length; i++) {
         var el = $inputFields[i];
@@ -958,10 +968,16 @@
       colorPath();
       changeLogoColor();
       updateFillColor();
+      // Populate twoColorSelection textfield with the tid of the color selected
+      // This information will be passed on during order creation, so the order will display the colors used.
+      $('#twoColorSelection').val(tid);
+      // Empty twoColorSelection, if a value exist
+      $('#oneColorSelection').val('0');
     };
     // when a one color option is selected
     var loadBackColor = function() {
       var color = $(this).text().toLowerCase();
+      var tid = this.id;
       // target the loaded svg document
       var svgNode = Snap.select('#previewBack');
       // find all text fields within the svg document
@@ -978,6 +994,9 @@
       }
       clearBackColorSelection();
       $(this).addClass('selected');
+      // Populate backColorSelection textfield with the value of color
+      // This information will be passed on during order creation, so the order will display the colors used.
+      $('#backColorSelection').val(tid);
     };
     // change the color of a field when one of the two color options are selected, when using a two color option
     var changeFillColor = function() {
@@ -1029,6 +1048,8 @@
       selectTwoSided.value = 1;
       $('#addBack').hide();
       $('#removeBack, #frontBack').show();
+      // Set color selection tid to black;
+      $('#backColorSelection').val('32');
     };
     // Switch to one sided
     var oneSided = function() {

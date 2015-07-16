@@ -392,60 +392,74 @@ function card_creator_form($form, &$form_state) {
     '#suffix' => '</div>',
   );
 
+  // Store Info for Color selections
+  $form['one_color_selection'] = array(
+    '#type' => 'textfield',
+    '#id' => 'oneColorSelection',
+  );
+  $form['two_color_selection'] = array(
+    '#type' => 'textfield',
+    '#id' => 'twoColorSelection',
+  );
+  $form['back_color_selection'] = array(
+    '#type' => 'textfield',
+    '#id' => 'backColorSelection',
+  );
+
   // One Color Options
   $form['black'] = array(
-    '#markup' => '<button type="button">Black</button>',
+    '#markup' => '<button id="18" type="button">Black</button>',
     '#prefix' => '<div id="bottomColTwoLower"><div id="oneColor">',
   );
   $form['red'] = array(
-    '#markup' => '<button type="button">Red</button>',
+    '#markup' => '<button id="19" type="button">Red</button>',
   );
   $form['blue'] = array(
-    '#markup' => '<button type="button">Blue</button>',
+    '#markup' => '<button id="20" type="button">Blue</button>',
   );
   $form['maroon'] = array(
-    '#markup' => '<button type="button">Maroon</button>',
+    '#markup' => '<button id="21" type="button">Maroon</button>',
   );
   $form['green'] = array(
-    '#markup' => '<button type="button">Green</button>',
+    '#markup' => '<button id="22" type="button">Green</button>',
   );
   $form['brown'] = array(
-    '#markup' => '<button type="button">Brown</button>',
+    '#markup' => '<button id="23" type="button">Brown</button>',
     '#suffix' => '</div>',
   );
 
   // Two Color Options
   $form['red_blue'] = array(
-    '#markup' => '<button type="button">Red/Blue</button>',
+    '#markup' => '<button id="26" type="button">Red/Blue</button>',
     '#prefix' => '<div id="twoColors">',
   );
   $form['red_black'] = array(
-    '#markup' => '<button type="button">Red/Black</button>',
+    '#markup' => '<button id="27" type="button">Red/Black</button>',
   );
   $form['blue_black'] = array(
-    '#markup' => '<button type="button">Blue/Black</button>',
+    '#markup' => '<button id="28" type="button">Blue/Black</button>',
   );
   $form['maroon_black'] = array(
-    '#markup' => '<button type="button">Maroon/Black</button>',
+    '#markup' => '<button id="29" type="button">Maroon/Black</button>',
   );
   $form['green_black'] = array(
-    '#markup' => '<button type="button">Green/Black</button>',
+    '#markup' => '<button id="30" type="button">Green/Black</button>',
   );
   $form['brown_black'] = array(
-    '#markup' => '<button type="button">Brown/Black</button>',
+    '#markup' => '<button id="31" type="button">Brown/Black</button>',
     '#suffix' => '</div>'
   );
 
   // Back Color Options
   $form['back_black'] = array(
-    '#markup' => '<button type="button">Black</button>',
+    '#markup' => '<button id="32" type="button">Black</button>',
     '#prefix' => '<div id="backColor">'
   );
   $form['back_blue'] = array(
-    '#markup' => '<button type="button">Blue</button>',
+    '#markup' => '<button id="33" type="button">Blue</button>',
   );
   $form['back_red'] = array(
-    '#markup' => '<button type="button">Red</button>',
+    '#markup' => '<button id="34" type="button">Red</button>',
     '#suffix' => '</div></div></div>'
   );
 
@@ -579,11 +593,14 @@ function card_creator_form_submit($form, &$form_state) {
   $line2 = $form_state['values']['line2'];
   $line3 = $form_state['values']['line3'];
   $line4 = $form_state['values']['line4'];
+  $color_selected = $form_state['values']['one_color_selection'];
+  $colors_selected = $form_state['values']['two_color_selection'];
   $selected_card_stock = $form_state['values']['card_stock_options'];
   $selected_quantity = $form_state['values']['select_quantity'];
   $two_sided_card = $form_state['values']['two_sided'];
 
   // Back Side Fields
+  $back_color_selected = $form_state['values']['back_color_selection'];
   $back_line1 = $form_state['values']['back_line_1'];
   $back_line2 = $form_state['values']['back_line_2'];
   $back_line3 = $form_state['values']['back_line_3'];
@@ -655,6 +672,8 @@ function card_creator_form_submit($form, &$form_state) {
       foreach ($line_item as $field_name => $value) {
         $line_item->field_quantity['und'][0]['tid'] = $selected_quantity;
         $line_item->field_card_stocks['und'][0]['tid'] = $selected_card_stock;
+        $line_item->field_one_color_options['und'][0]['tid'] = $color_selected;
+        $line_item->field_two_color_options['und'][0]['tid'] = $colors_selected;
         $line_item->field_company_name[LANGUAGE_NONE][0]['value'] = $company_name;
         $line_item->field_name[LANGUAGE_NONE][0]['value'] = $name;
         $line_item->field_title[LANGUAGE_NONE][0]['value'] = $title;
@@ -668,6 +687,7 @@ function card_creator_form_submit($form, &$form_state) {
         $line_item->field_line_4[LANGUAGE_NONE][0]['value'] = $line4;
         $line_item->field_business_card_image['und'][0]['fid'] = $file->fid;
       }
+      dpm(get_defined_vars());
       // Save the line item to get its ID.
       commerce_line_item_save($line_item);
       // Add the line item to the order using the wrapper.
@@ -738,6 +758,9 @@ function card_creator_form_submit($form, &$form_state) {
       foreach ($line_item as $field_name => $value) {
         $line_item->field_quantity['und'][0]['tid'] = $selected_quantity;
         $line_item->field_card_stocks['und'][0]['tid'] = $selected_card_stock;
+        $line_item->field_one_color_options['und'][0]['tid'] = $color_selected;
+        $line_item->field_two_color_options['und'][0]['tid'] = $colors_selected;
+        $line_item->field_back_color_options['und'][0]['tid'] = $back_color_selected;
         $line_item->field_company_name[LANGUAGE_NONE][0]['value'] = $company_name;
         $line_item->field_name[LANGUAGE_NONE][0]['value'] = $name;
         $line_item->field_title[LANGUAGE_NONE][0]['value'] = $title;
