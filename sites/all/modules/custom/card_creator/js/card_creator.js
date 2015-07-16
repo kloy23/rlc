@@ -143,11 +143,13 @@
           title: 'Change Font Options for this Field'
         }).text('A');
         $(bold).attr({
+          id: 'bold',
           class: 'button',
           type: 'button',
           title: 'Toggle Bold for this field'
         }).text('B');
         $(italic).attr({
+          id: 'italic',
           class: 'button',
           type: 'button',
           title: 'Toggle Italic for this field'
@@ -662,6 +664,22 @@
               }
           } else {
               el.attr('fill', color);
+          }
+          // Transfer font options to new template
+          // loop through font options for current field
+          var fontOptions = $(field).parent().children('div').children();
+          for (var x=0; x<fontOptions.length; x++) {
+            var fontOption = fontOptions[x];
+            if (fontOption.id === 'bold' && $(fontOption).hasClass('selected')) {
+              el.attr('font-weight', 'bold');
+            }
+            if (fontOption.id === 'italic' && $(fontOption).hasClass('selected')) {
+              el.attr('font-style', 'italic');
+            }
+            if (fontOption.id === 'fontFamily') {
+              var fontFamily = $(fontOption).val();
+              el.attr('font-family', fontFamily);
+            }
           }
         }
         // If a logo is selected before a new template is selected, give the new template the existing logo.
