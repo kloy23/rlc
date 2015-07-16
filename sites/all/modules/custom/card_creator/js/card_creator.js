@@ -643,9 +643,9 @@
           } else {
               el.attr('class', 'secondaryColor');
           }
-          // if the appropriate text field is not empty
+          // if the current text field is not empty
           if (fieldVal.length !== 0) {
-            // target the appropriate svg field, and replace its text with the value of the appropriate text field
+            // target the appropriate svg field, and replace its text with the value of the current text field
             $(previewFront.select(fieldId).node).text(fieldVal);
           }
           if (el.hasClass('primaryColor') && colorOptions.length > 2) {
@@ -1185,6 +1185,20 @@
         $('#proofImageBack').hide();
       }
     };
+    var removeEmptyFields = function() {
+      var el;
+      // target the loaded svg document
+      var svgFrontNode = Snap.select('#previewFront');
+      // loop through front imput fields and find all empty fields
+      for (var i=0; i < $frontInputFields.length; i++) {
+        el = $frontInputFields[i];
+        if (!$(el).val()) {
+          var id = '#' + el.id;
+          var svgTextField = svgFrontNode.select(id);
+          $(svgTextField.node).text('');
+        }
+      }
+    };
     // SAVE THE ARTWORK
     var saveCard = function() {
       var companyName = $('#companyName').val();
@@ -1249,31 +1263,6 @@
     // Use Snap.svg to load the 'previewFront' svg document
     // Add the classes primaryColor and secondaryColor to text fields within the SVG
     var previewFront = Snap('#previewFront');
-    Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/front/template1.svg', function(f) {
-      previewFront.append(f);
-      previewFront.attr({
-        'width' : '315px',
-        'height' : '180px',
-      });
-      // this allows the color options loaded by loadTwoColors to take effect automagically.
-      // select all text fields in the svg element
-      var svgElement = previewFront.selectAll('text');
-      // for every svg text field
-      for (var i=0; i<svgElement.length; i++) {
-        // target the current svg text field
-        var el = svgElement[i];
-        // get it's id
-        var id = el.attr('id');
-        // if the id is equal to 'companyName', or 'name'
-        if (id == 'companyName' || id == 'name') {
-          // give it the class of 'primaryColor'
-          el.attr('class', 'primaryColor');
-        } else { // if the id is not 'companyName', or 'name'
-          // give it the class of 'secondaryColor'
-          el.attr('class', 'secondaryColor');
-        }
-      }
-    });
     // Use Snap.svg to load the 'previewBack' svg document
     // Add the classes primaryColor and secondaryColor to text fields within the SVG
     var previewBack = Snap('#previewBack');
@@ -1318,6 +1307,7 @@
         stroke: '#F00',
         'stroke-width': '2px'
       });
+      changeTemplateFront(firstTemplate);
       // click handeler for when a group in #templatesFront is clicked
       // must insert the click handeler here in order to add it to svg document
       for (var i=0; i<svgElements.length; i++) {
@@ -1426,6 +1416,7 @@
     // Take the user through the proofing process
     $('#continue_button').click(function(e) {
       e.preventDefault();
+      removeEmptyFields();
       saveCard();
     });
     // Allow user to edit their card if needed

@@ -146,7 +146,7 @@ function card_creator_form($form, &$form_state) {
     '#id' => 'companyName',
     '#size' => 25,
     '#attributes' => array(
-      'placeholder' => t('Company Name'),
+      'placeholder' => t('Line 1'),
     ),
   );
   $form['name'] = array(
@@ -154,7 +154,7 @@ function card_creator_form($form, &$form_state) {
     '#id' => 'name',
     '#size' => 25,
     '#attributes' => array(
-      'placeholder' => t('Name'),
+      'placeholder' => t('Line 2'),
     ),
   );
   $form['title'] = array(
@@ -162,7 +162,7 @@ function card_creator_form($form, &$form_state) {
     '#id' => 'title',
     '#size' => 25,
     '#attributes' => array(
-      'placeholder' => t('Title'),
+      'placeholder' => t('Line 3'),
     ),
   );
   $form['email'] = array(
@@ -170,7 +170,7 @@ function card_creator_form($form, &$form_state) {
     '#id' => 'email',
     '#size' => 25,
     '#attributes' => array(
-      'placeholder' => t('Email'),
+      'placeholder' => t('Line 4'),
     ),
   );
   $form['website'] = array(
@@ -178,7 +178,7 @@ function card_creator_form($form, &$form_state) {
     '#id' => 'website',
     '#size' => 25,
     '#attributes' => array(
-      'placeholder' => t('Website'),
+      'placeholder' => t('Line 5'),
     ),
   );
   $form['address'] = array(
@@ -186,7 +186,7 @@ function card_creator_form($form, &$form_state) {
     '#id' => 'address',
     '#size' => 25,
     '#attributes' => array(
-      'placeholder' => t('Address'),
+      'placeholder' => t('Line 6'),
     ),
   );
   $form['city_state_zip'] = array(
@@ -194,7 +194,7 @@ function card_creator_form($form, &$form_state) {
     '#id' => 'cityStateZip',
     '#size' => 25,
     '#attributes' => array(
-      'placeholder' => t('City, State Zip'),
+      'placeholder' => t('Line 7'),
     ),
   );
   $form['line1'] = array(
@@ -202,7 +202,7 @@ function card_creator_form($form, &$form_state) {
     '#id' => 'line1',
     '#size' => 25,
     '#attributes' => array(
-      'placeholder' => t('Line 1'),
+      'placeholder' => t('Line 8'),
     ),
   );
   $form['line2'] = array(
@@ -210,7 +210,7 @@ function card_creator_form($form, &$form_state) {
     '#id' => 'line2',
     '#size' => 25,
     '#attributes' => array(
-      'placeholder' => t('Line 2'),
+      'placeholder' => t('Line 9'),
     ),
   );
   $form['line3'] = array(
@@ -218,7 +218,7 @@ function card_creator_form($form, &$form_state) {
     '#id' => 'line3',
     '#size' => 25,
     '#attributes' => array(
-      'placeholder' => ('Line 3'),
+      'placeholder' => ('Line 10'),
     ),
   );
   $form['line4'] = array(
@@ -226,7 +226,7 @@ function card_creator_form($form, &$form_state) {
     '#id' => 'line4',
     '#size' => 25,
     '#attributes' => array(
-      'placeholder' => ('Line 4'),
+      'placeholder' => ('Line 11'),
     ),
     '#suffix' => '</div>',
   );
