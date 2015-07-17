@@ -253,7 +253,7 @@ function rlc_pages_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '1000 High Quality Raised Letter Business Cards for just $16.95!"*
+      'body' => '1000 High Quality Raised Letter Business Cards for just $16.95!
 Why Pay More?
 <p id="disclaimer">*Price is based on White Smooth card stock.</p>',
       'format' => 'full_html',
@@ -759,6 +759,38 @@ Why Pay More?
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-bc1f913f-4598-4251-b711-cc3b93427e52';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Requirements',
+      'title' => '',
+      'body' => '<h3>File Requirements:</h3>
+We accept the following file formats: .TIF, .TIFF, .EPS, .PSD, .PNG, & .PDF.
+<h3>Resolution</h3>
+All file formats must have a minimum of 300 dpi (dot per inch) resolution.
+Images designed for the web typically cannot be used for printing as they have a low resolution of 72dpi.  If images are not created at a minimum of 300dpi there will be a substantial drop in the print quality.
+<h3>Bleeds</h3>
+Any uploaded artwork that requires bleeds will be printed in full color.
+',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'bc1f913f-4598-4251-b711-cc3b93427e52';
+    $display->content['new-bc1f913f-4598-4251-b711-cc3b93427e52'] = $pane;
+    $display->panels['center'][0] = 'new-bc1f913f-4598-4251-b711-cc3b93427e52';
+    $pane = new stdClass();
     $pane->pid = 'new-7f5077ed-3b1d-4c04-8712-495c83d69e13';
     $pane->panel = 'center';
     $pane->type = 'views';
@@ -786,13 +818,16 @@ Why Pay More?
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'panel-upload-artwork-form',
+      'css_class' => '',
+    );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '7f5077ed-3b1d-4c04-8712-495c83d69e13';
     $display->content['new-7f5077ed-3b1d-4c04-8712-495c83d69e13'] = $pane;
-    $display->panels['center'][0] = 'new-7f5077ed-3b1d-4c04-8712-495c83d69e13';
+    $display->panels['center'][1] = 'new-7f5077ed-3b1d-4c04-8712-495c83d69e13';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
