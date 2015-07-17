@@ -47,6 +47,7 @@
       var $colorSelectionVal = $colorSelection.val();
       // if One Color is selected
       if ($colorSelectionVal === '24') {
+        $('#notify').remove();
         // make sure two color options is hidden
         $twoColorOptions.hide();
         // set Two color Options to '_none'
@@ -58,8 +59,10 @@
         $oneColorOptions.hide();
         // set One Color Options to '_none'
         $oneColorSelection.val('_none');
+        var notify = document.createElement('h4');
+        $(notify).attr('id', 'notify').css('color', 'red').text('**Please make sure to upload artwork that contains both of the selected colors.**');
         // show two color options
-        $twoColorOptions.show();
+        $twoColorOptions.show().append(notify);
       }
     };
     var formError = function(el) {

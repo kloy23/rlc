@@ -94,6 +94,17 @@ div.ctools-modal-content a.close img {
 }
 
 /*
+  Upload Artwork
+ */
+#panel-upload-artwork-form {
+  background-color: #eee;
+  border: 3px outset black;
+  border-radius: 10px;
+  padding: 2em;
+  margin-bottom: 2em;
+}
+
+/*
   Footer
  */
 #footer-wrapper section {

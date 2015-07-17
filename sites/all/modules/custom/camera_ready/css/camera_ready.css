@@ -14,13 +14,6 @@
   border-radius: 0.5em;
   font-weight: bold;
 }
-#content-column{
-  background-color: #eee;
-  border: 3px outset black;
-  border-radius: 10px;
-  padding: 2em;
-  margin-bottom: 2em;
-}
 .form-error {
   border: solid 1px red;
   border-radius: 1px;
