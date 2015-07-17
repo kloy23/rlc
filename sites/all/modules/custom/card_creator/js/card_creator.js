@@ -44,6 +44,10 @@
         colorBox = document.createElement('button');
         // set the class of the new button to 'colorBox'
         $(colorBox).attr('class', 'colorBox');
+        $(colorBox).click(function(e) {
+          e.preventDefault();
+          console.log('Default Prevented');
+        });
         // set the class of text
         $(el).addClass('oneColorText selectOneColor');
         // add the colorBox before current element
@@ -75,6 +79,12 @@
         // set the class of colorBox1 and colorBox2 to colorBox
         $(colorBox1).attr('class', 'colorBox');
         $(colorBox2).attr('class', 'colorBox');
+        $(colorBox1).click(function(e) {
+          e.preventDefault();
+        });
+        $(colorBox2).click(function(e) {
+          e.preventDefault();
+        });
         // set the class of text
         $(el).addClass('twoColorText selectTwoColor');
         // add colorBox2 and colorBox2 before the current element
