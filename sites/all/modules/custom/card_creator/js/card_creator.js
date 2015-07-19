@@ -22,6 +22,7 @@
       loadClipartCategory();
       // update price on page refresh
       updatePrice();
+      changeCardStock();
     });
 
     // *** CREATE COLOR OPTIONS ***
@@ -46,7 +47,6 @@
         $(colorBox).attr('class', 'colorBox');
         $(colorBox).click(function(e) {
           e.preventDefault();
-          console.log('Default Prevented');
         });
         // set the class of text
         $(el).addClass('oneColorText selectOneColor');
@@ -1176,6 +1176,32 @@
       // display price to customer
       $currentPrice.text("Price = $" + convertedTotal);
     };
+    var setCardStockBackground = function(imgName) {
+      $('#previewFront, #previewBack, #proofImageFront, #proofImageBack').css('background-image', 'url("../sites/all/themes/rlc/css/images/' + imgName + '.png")');
+    };
+    var changeCardStock = function() {
+      var imgName;
+      var cardStock = $('#edit-card-stock-options').children().children('input');
+      // If cardstock is white smooth
+      if (cardStock[0].checked === true) {
+        imgName = 'whiteSmooth';
+      } else if (cardStock[1].checked === true) {
+        imgName = 'whiteLinen';
+      } else if (cardStock[2].checked === true) {
+        imgName = 'softWhite';
+      } else if (cardStock[3].checked === true) {
+        imgName = 'tan';
+      } else if (cardStock[4].checked === true) {
+        imgName = 'gray';
+      } else if (cardStock[5].checked === true) {
+        imgName = 'yellow';
+      } else if (cardStock[6].checked === true) {
+        imgName = 'kromekote';
+      } else if (cardStock[7].checked === true) {
+        imgName = 'woodgrain';
+      }
+      setCardStockBackground(imgName);
+    };
     // Allows users to view the card before adding it to their cart
     var loadProof = function() {
       var companyName,
@@ -1439,6 +1465,7 @@
       updatePrice();
     });
     $('#edit-card-stock-options').on('change', 'input', function() {
+      changeCardStock();
       updatePrice();
     });
     // Take the user through the proofing process
