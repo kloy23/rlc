@@ -94,6 +94,65 @@ div.ctools-modal-content a.close img {
 }
 
 /*
+ Card Stocks
+ */
+.whiteSmooth {
+  background-image: url("/sites/all/themes/rlc/css/images/whiteSmooth.png");
+  border: 3px outset #000;
+  height: 180px;
+  margin-top: 10px;
+  width: 315px;
+}
+.whiteLinen {
+  background-image: url("/sites/all/themes/rlc/css/images/whiteLinen.png");
+  border: 3px outset #000;
+  height: 180px;
+  margin-top: 10px;
+  width: 315px;
+}
+.softWhite {
+  background-image: url("/sites/all/themes/rlc/css/images/softWhite.png");
+  border: 3px outset #000;
+  height: 180px;
+  margin-top: 10px;
+  width: 315px;
+}
+.tan {
+  background-image: url("/sites/all/themes/rlc/css/images/tan.png");
+  border: 3px outset #000;
+  height: 180px;
+  margin-top: 10px;
+  width: 315px;
+}
+.gray {
+  background-image: url("/sites/all/themes/rlc/css/images/gray.png");
+  border: 3px outset #000;
+  height: 180px;
+  margin-top: 10px;
+  width: 315px;
+}
+.yellow {
+  background-image: url("/sites/all/themes/rlc/css/images/yellow.png");
+  border: 3px outset #000;
+  height: 180px;
+  margin-top: 10px;
+  width: 315px;
+}
+.kromekote {
+  background-image: url("/sites/all/themes/rlc/css/images/kromekote.png");
+  border: 3px outset #000;
+  height: 180px;
+  margin-top: 10px;
+  width: 315px;
+}
+.woodgrain {
+  background-image: url("/sites/all/themes/rlc/css/images/woodgrain.png");
+  border: 3px outset #000;
+  height: 180px;
+  margin-top: 10px;
+  width: 315px;
+}
+/*
   Upload Artwork
  */
 #panel-upload-artwork-form {

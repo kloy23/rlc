@@ -37,13 +37,6 @@
 #midColumn #frontBack {
   margin-top: -1.8em;
 }
-#midColumn #previewFront, #midColumn #previewBack {
-  background: none repeat scroll 0 0 white;
-  border: 3px outset black;
-  height: 180px;
-  margin-top: 10px;
-  width: 315px;
-}
 #rightColumn #templatesFront {
   height: 47em;
   width: 100%;
@@ -223,13 +216,6 @@
   float: right;
   width: 50%
 }
-#container #proofImageFront, #container #proofImageBack {
-  background: none repeat scroll 0 0 white;
-  border: 3px outset black;
-  height: 180px;
-  width: 315px;
-}
-
 #addToCart {
     float: right;
 }

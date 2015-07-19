@@ -1177,7 +1177,7 @@
       $currentPrice.text("Price = $" + convertedTotal);
     };
     var setCardStockBackground = function(imgName) {
-      $('#previewFront, #previewBack, #proofImageFront, #proofImageBack').css('background-image', 'url("../sites/all/themes/rlc/css/images/' + imgName + '.png")');
+      $('#previewFront, #previewBack, #proofImageFront, #proofImageBack').attr('class', imgName);
     };
     var changeCardStock = function() {
       var imgName;
