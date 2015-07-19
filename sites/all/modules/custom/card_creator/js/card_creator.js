@@ -1291,6 +1291,31 @@
     // Use Snap.svg to load the 'previewFront' svg document
     // Add the classes primaryColor and secondaryColor to text fields within the SVG
     var previewFront = Snap('#previewFront');
+    Snap.load('../sites/all/modules/custom/card_creator/svgTemplates/front/template1.svg', function(f) {
+      previewFront.append(f);
+      previewFront.attr({
+        'width' : '315px',
+        'height' : '180px',
+      });
+      // this allows the color options loaded by loadTwoColors to take effect automagically.
+      // select all text fields in the svg element
+      var svgElement = previewFront.selectAll('text');
+      // for every svg text field
+      for (var i=0; i<svgElement.length; i++) {
+        // target the current svg text field
+        var el = svgElement[i];
+        // get it's id
+        var id = el.attr('id');
+        // if the id is equal to 'companyName', or 'name'
+        if (id == 'companyName' || id == 'name') {
+          // give it the class of 'primaryColor'
+          el.attr('class', 'primaryColor');
+        } else { // if the id is not 'companyName', or 'name'
+          // give it the class of 'secondaryColor'
+          el.attr('class', 'secondaryColor');
+        }
+      }
+    });
     // Use Snap.svg to load the 'previewBack' svg document
     // Add the classes primaryColor and secondaryColor to text fields within the SVG
     var previewBack = Snap('#previewBack');
