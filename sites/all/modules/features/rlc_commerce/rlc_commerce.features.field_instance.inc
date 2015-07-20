@@ -842,7 +842,7 @@ function rlc_commerce_field_default_field_instances() {
     'entity_type' => 'commerce_line_item',
     'field_name' => 'field_card_stocks',
     'label' => 'Card Stocks',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -1213,7 +1213,7 @@ function rlc_commerce_field_default_field_instances() {
     'entity_type' => 'commerce_line_item',
     'field_name' => 'field_quantity',
     'label' => 'Quantity',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
