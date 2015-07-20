@@ -1176,31 +1176,32 @@
       // display price to customer
       $currentPrice.text("Price = $" + convertedTotal);
     };
-    var setCardStockBackground = function(imgName) {
-      $('#previewFront, #previewBack, #proofImageFront, #proofImageBack').attr('class', imgName);
-    };
     var changeCardStock = function() {
-      var imgName;
+      var className = fetchSelectedCardStock();
+      $('#previewFront, #previewBack, #proofImageFront, #proofImageBack').attr('class', className);
+    };
+    var fetchSelectedCardStock = function() {
       var cardStock = $('#edit-card-stock-options').children().children('input');
+      var className;
       // If cardstock is white smooth
       if (cardStock[0].checked === true) {
-        imgName = 'whiteSmooth';
+        className = 'whiteSmooth';
       } else if (cardStock[1].checked === true) {
-        imgName = 'whiteLinen';
+        className = 'whiteLinen';
       } else if (cardStock[2].checked === true) {
-        imgName = 'softWhite';
+        className = 'softWhite';
       } else if (cardStock[3].checked === true) {
-        imgName = 'tan';
+        className = 'tan';
       } else if (cardStock[4].checked === true) {
-        imgName = 'gray';
+        className = 'gray';
       } else if (cardStock[5].checked === true) {
-        imgName = 'yellow';
+        className = 'yellow';
       } else if (cardStock[6].checked === true) {
-        imgName = 'kromekote';
+        className = 'kromekote';
       } else if (cardStock[7].checked === true) {
-        imgName = 'woodgrain';
+        className = 'woodgrain';
       }
-      setCardStockBackground(imgName);
+      return className;
     };
     // Allows users to view the card before adding it to their cart
     var loadProof = function() {
