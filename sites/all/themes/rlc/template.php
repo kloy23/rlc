@@ -9,7 +9,7 @@
 $dgp = drupal_get_path('theme', 'rlc');
 
 include_once $dgp . '/inc/template.helpers.inc';
-include_once $dgp . '/inc/template.theme.inc';
+// include_once $dgp . '/inc/template.theme.inc';
 include_once $dgp . '/inc/template.process.inc';
-include_once $dgp . '/inc/template.forms.inc';
+// include_once $dgp . '/inc/template.forms.inc';
 
