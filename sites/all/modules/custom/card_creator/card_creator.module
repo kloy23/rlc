@@ -93,13 +93,12 @@ function card_creator_ajax_front() {
 
   $im = new Imagick();
   $im->setBackgroundColor(new ImagickPixel('transparent'));
-  $im->setResolution(350,350);
+  $im->setResolution(350, 350);
   $im->setFormat('svg');
   $im->readImageBlob($data);
   $im->setImageFormat('png');
-  $im->setImageUnits(imagick::RESOLUTION_PIXELSPERINCH);
+  $im->scaleImage(1225, 0);
   $im->writeImage($filepath);
-  // print_r($im->identifyImage());
   $im->clear();
   echo $filepath;
 }
@@ -134,13 +133,13 @@ function card_creator_ajax_back() {
 
   $im = new Imagick();
   $im->setBackgroundColor(new ImagickPixel('transparent'));
-  $im->setResolution(350,350);
+  $im->setResolution(350, 350);
   $im->setFormat('svg');
   $im->readImageBlob($data);
   $im->setImageFormat('png');
+  $im->scaleImage(1225, 0);
   $im->writeImage($filepath);
   $im->clear();
-
   echo $filepath;
 }
 
