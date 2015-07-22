@@ -457,85 +457,85 @@
         if (category == 'animals') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '35em',
+            'height': '495px',
             'width': '100%'
           });
         } else if (category == 'construction') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '34em',
+            'height': '463px',
             'width': '100%'
           });
         } else if (category == 'furniture') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '19em',
+            'height': '255px',
             'width': '100%'
           });
         } else if (category == 'healthcare') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '19em',
+            'height': '255px',
             'width': '100%'
           });
         } else if (category == 'jewelry') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '14em',
+            'height': '190px',
             'width': '100%'
           });
         } else if (category == 'lawn') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '42em',
+            'height': '575px',
             'width': '100%'
           });
         } else if (category == 'legal') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '14em',
+            'height': '190px',
             'width': '100%'
           });
         } else if (category == 'manufacturer') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '73em',
+            'height': '1000px',
             'width': '100%'
           });
         } else if (category == 'miscellaneous') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '27em',
+            'height': '365px',
             'width': '100%'
           });
         } else if (category == 'real_estate') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '12em',
+            'height': '155px',
             'width': '100%'
           });
         } else if (category == 'religion') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '17em',
+            'height': '225px',
             'width': '100%'
           });
         } else if (category == 'sports_recreation') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '24em',
+            'height': '325px',
             'width': '100%'
           });
         } else if (category == 'vehicles') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '52em',
+            'height': '710px',
             'width': '100%'
           });
         } else if (category == 'weddings') {
           $('#clipart').css({
             'background-color': 'white',
-            'height': '17em',
+            'height': '225px',
             'width': '100%'
           });
         }

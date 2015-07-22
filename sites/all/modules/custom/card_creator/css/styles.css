@@ -32,31 +32,32 @@
 }
 #midColumn #twoSidedOptions {
   position: relative;
-  bottom: 3em;
+  bottom: 40px;
 }
 #midColumn #frontBack {
-  margin-top: -1.8em;
+  margin-top: -35px;
 }
 #rightColumn #templatesFront {
-  height: 47em;
+  height: 645px;
   width: 100%;
 }
 #rightColumn #templatesBack {
-  height: 31em;
+  height: 430px;
   width: 100%;
 }
 #rightColumn #templatesFrontDisplay {
   border: 1px solid black;
-  height: 26.5em;
+  height: 365px;
   overflow: scroll;
 }
 #rightColumn #templatesBackDisplay {
   border: 1px solid black;
-  height: 21.5em;
+  height: 298px;
   overflow: scroll;
 }
 .button {
   font-size: 10px;
+  width: 25px;
   height: 25px;
   margin: 2px;
 }
