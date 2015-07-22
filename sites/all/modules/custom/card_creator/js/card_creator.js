@@ -1204,11 +1204,11 @@
       return className;
     };
     // Allows users to view the card before adding it to their cart
-    var loadProof = function() {
+    var loadProof = function(filepathFront, filepathBack) {
       var companyName,
-          name,
-          fileDirFront,
-          fileDirBack;
+          name;
+      filepathFront = '../' + filepathFront + '#' + Math.random();
+      filepathBack = '../' + filepathBack + '#' + Math.random();
       // Hide all divs within container
       $('#leftColumn, #midColumn, #rightColumn, #bottom').hide();
       // Show Proof Div
@@ -1216,27 +1216,14 @@
       var isTwoSided = $('#edit-two-sided').val();
       // if card is two sided
       if (isTwoSided == 1) {
-        // Generate the filename
-        // Replace spaces and special characters for companyName and name fields
-        companyName = $('#companyName').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
-        name = $('#name').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
-        // Replicate the file name given during the ajax callback
-        fileDirFront = '../sites/default/files/tmp/' + companyName + '-' + name + '.svg#' + new Date().getTime();
-        fileDirBack = '../sites/default/files/tmp/' + companyName + '-' + name + '-back' + '.svg#' + new Date().getTime();
         // Make sure back is visible
         $('#proofImageBack').show();
         // Set the image src to show the user the file that was created
-        $('#proofImageFront').attr('src', fileDirFront);
-        $('#proofImageBack').attr('src', fileDirBack);
+        $('#proofImageFront').attr('src', filepathFront);
+        $('#proofImageBack').attr('src', filepathBack);
       } else if (isTwoSided == 0) { // card is not two sided
-        // Generate the filename
-        // Replace spaces and special characters for companyName and name fields
-        companyName = $('#companyName').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
-        name = $('#name').val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
-        // Replicate the file name given during the ajax callback
-        fileDirFront = '../sites/default/files/tmp/' + companyName + '-' + name + '.svg#' + new Date().getTime();
         // Set the image src to show the user the file that was created
-        $('#proofImageFront').attr('src', fileDirFront);
+        $('#proofImageFront').attr('src', filepathFront);
         $('#proofImageBack').hide();
       }
     };
@@ -1256,6 +1243,8 @@
     };
     // SAVE THE ARTWORK
     var saveCard = function() {
+      var filepathFront;
+      var filepathBack;
       var companyName = $('#companyName').val();
       var name = $('#name').val();
       var svgFront = document.getElementById("previewFront");
@@ -1266,19 +1255,6 @@
         // Temporarily show front and back in order for img to save correctly
         $('#previewFront').show();
         $('#previewBack').show();
-        svgBack.toDataURL("image/svg+xml", {
-          callback: function(data) {
-            $.ajax({
-              type: 'POST',
-              url: '/card-creator-ajax-back',
-              data: {
-                img: data,
-                company_name: companyName,
-                name: name,
-              },
-            });
-          }
-        });
         svgFront.toDataURL("image/svg+xml", {
           callback: function(data) {
             $.ajax({
@@ -1289,6 +1265,25 @@
                 company_name: companyName,
                 name: name,
               },
+              success:function(filepath) {
+                filepathFront = filepath;
+              }
+            });
+          }
+        });
+        svgBack.toDataURL("image/svg+xml", {
+          callback: function(data) {
+            $.ajax({
+              type: 'POST',
+              url: '/card-creator-ajax-back',
+              data: {
+                img: data,
+                company_name: companyName,
+                name: name,
+              },
+              success:function(filepath) {
+                filepathBack = filepath;
+              }
             });
           }
         });
@@ -1303,13 +1298,16 @@
                 company_name: companyName,
                 name: name,
               },
+              success:function(filepath) {
+                filepathFront = filepath;
+              }
             });
           }
         });
       }
       // Load Proof after ajax is finished
       $(document).ajaxStop(function() {
-        loadProof();
+        loadProof(filepathFront, filepathBack);
       });
     };
 
