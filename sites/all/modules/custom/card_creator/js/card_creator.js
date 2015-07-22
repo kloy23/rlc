@@ -1207,8 +1207,8 @@
     var loadProof = function(filepathFront, filepathBack) {
       var companyName,
           name;
-      filepathFront = '../' + filepathFront + '#' + Math.random();
-      filepathBack = '../' + filepathBack + '#' + Math.random();
+      filepathFront = '../' + filepathFront + '#' + Math.floor(Math.random() * 500000);
+      filepathBack = '../' + filepathBack + '#' + Math.floor(Math.random() * 500000);
       // Hide all divs within container
       $('#leftColumn, #midColumn, #rightColumn, #bottom').hide();
       // Show Proof Div
