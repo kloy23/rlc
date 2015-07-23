@@ -16,12 +16,12 @@ div.ctools-modal-content a.close img {
   Buttons
 */
 .buttons {
-  border: .1em outset;
-  padding: 0.7em;
-  background-color: #eee;
-  border-radius: .8em;
+  border: 1px outset;
+  padding: 10px;
+  background-color: #E3E3E3;
+  border-radius: 10px;
   font-size: 1.2em;
-  line-height: 3.5em;
+  line-height: 60px;
 }
 
 /*
@@ -32,15 +32,16 @@ div.ctools-modal-content a.close img {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 10px;
-  padding: 0.5em 0.5em 0 0.5em;
+  padding: 10px 10px 0px;
   border: 1px outset;
-  border-radius: .5em;
+  border-radius: 10px;
   background-color: #eee;
 }
 #panel-home-header #disclaimer {
   bottom: 1em;
   color: #F00;
   font-size: .5em;
+  margin-bottom: 0;
   position: relative;
 }
 #panel-home-left {
@@ -49,48 +50,37 @@ div.ctools-modal-content a.close img {
 #panel-home-right {
   font-size: 1.3em;
   font-weight: bold;
-  line-height: 1.6em;
+  line-height: 30px;
   position: relative;
-  left: 1.8em;
+  left: 30px;
 }
 
 /*
   Order Now Page
 */
 #panel-order-now-top {
-  width: 45%;
   float: left;
   text-align: right;
-  margin-right: 1em;
-  padding-bottom: 2em;
+  padding-bottom: 30px;
+  width: 50%;
+  position: relative;
+  right: 10px;
 }
 #panel-order-now-top-button2 {
   float: left;
-  width: 45%;
   text-align: left;
-  margin-left: 1em;
+  width: 50%;
+  position: relative;
+  left: 10px;
 }
 #panel-order-now-top-shipped {
-  position: relative;
-  right: 1em;
-  bottom: 1em;
-  float: left;
-  text-align: center;
-  width: 100%;
-  font-size: 1.3em;
-  font-weight: bold;
-}
-#panel-order-now-left-top {
-  position: relative;
-  width: 50%;
-  left: 2em;
-}
-#panel-order-now-right-top {
-  position: relative;
-  top: 2em;
-  font-size: 1.5em;
-  font-weight: bold;
-  right: 2em;
+    position: relative;
+    bottom: 30px;
+    float: left;
+    text-align: center;
+    width: 100%;
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 /*
@@ -159,8 +149,7 @@ div.ctools-modal-content a.close img {
   background-color: #eee;
   border: 3px outset black;
   border-radius: 10px;
-  padding: 2em;
-  margin-bottom: 2em;
+  padding: 20px;
 }
 
 /*
