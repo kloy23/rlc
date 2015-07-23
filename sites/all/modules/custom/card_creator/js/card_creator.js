@@ -978,8 +978,8 @@
       clearColorSelection();
       $(this).addClass('selected');
       colorPath();
-      changeLogoColor();
       clearTwoColorOptions();
+      changeLogoColor();
     };
     // when a two color option is selected, create the color options for each field
     var loadTwoColors = function() {
