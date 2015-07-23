@@ -407,7 +407,6 @@ Why Pay More?
         'width_type' => '%',
         'children' => array(
           0 => 'main-row',
-          1 => 1,
         ),
         'parent' => 'canvas',
       ),
@@ -425,35 +424,6 @@ Why Pay More?
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      1 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'left_',
-          1 => 'left',
-        ),
-        'parent' => 'main',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'left' => array(
-        'type' => 'region',
-        'title' => 'right',
-        'width' => 75,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'left_' => array(
-        'type' => 'region',
-        'title' => 'left',
-        'width' => 25,
-        'width_type' => '%',
-        'parent' => '1',
         'class' => '',
         'hide_empty' => 0,
       ),
@@ -559,8 +529,8 @@ Why Pay More?
     $display->content['new-c744c164-8046-45bc-905f-342ef4166c77'] = $pane;
     $display->panels['center'][2] = 'new-c744c164-8046-45bc-905f-342ef4166c77';
     $pane = new stdClass();
-    $pane->pid = 'new-739a7c28-912f-4f56-9370-9b3f7217e48c';
-    $pane->panel = 'left';
+    $pane->pid = 'new-14c9db09-a2d8-494f-8b65-6b0aedb1ed03';
+    $pane->panel = 'center';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -568,35 +538,7 @@ Why Pay More?
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => 'Lowest Price and Highest Quality in the Business!',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'panel-order-now-right-top',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '739a7c28-912f-4f56-9370-9b3f7217e48c';
-    $display->content['new-739a7c28-912f-4f56-9370-9b3f7217e48c'] = $pane;
-    $display->panels['left'][0] = 'new-739a7c28-912f-4f56-9370-9b3f7217e48c';
-    $pane = new stdClass();
-    $pane->pid = 'new-902c7ab5-1f81-499e-b928-7858ca476afe';
-    $pane->panel = 'left_';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<img src="/sites/default/files/images/lowest_price.jpg"></img>',
+      'body' => '<img src="../sites/all/themes/rlc/css/images/satisfaction_guaranteed.svg"></img>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -605,15 +547,15 @@ Why Pay More?
       'settings' => NULL,
     );
     $pane->css = array(
-      'css_id' => 'panel-order-now-left-top',
+      'css_id' => 'panel-order-now-guarantee',
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 3;
     $pane->locks = array();
-    $pane->uuid = '902c7ab5-1f81-499e-b928-7858ca476afe';
-    $display->content['new-902c7ab5-1f81-499e-b928-7858ca476afe'] = $pane;
-    $display->panels['left_'][0] = 'new-902c7ab5-1f81-499e-b928-7858ca476afe';
+    $pane->uuid = '14c9db09-a2d8-494f-8b65-6b0aedb1ed03';
+    $display->content['new-14c9db09-a2d8-494f-8b65-6b0aedb1ed03'] = $pane;
+    $display->panels['center'][3] = 'new-14c9db09-a2d8-494f-8b65-6b0aedb1ed03';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
