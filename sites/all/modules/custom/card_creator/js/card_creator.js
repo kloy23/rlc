@@ -678,8 +678,8 @@
           // Transfer font options to new template
           // loop through font options for current field
           var fontOptions = $(field).parent().children('div').children();
-          for (var x=0; x<fontOptions.length; x++) {
-            var fontOption = fontOptions[x];
+          for (var c=0; c<fontOptions.length; c++) {
+            var fontOption = fontOptions[c];
             if (fontOption.id === 'bold' && $(fontOption).hasClass('selected')) {
               el.attr('font-weight', 'bold');
             }
