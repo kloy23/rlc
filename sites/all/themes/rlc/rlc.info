@@ -9,6 +9,10 @@ base theme = storefront
 stylesheets[all][] = css/colors.css
 stylesheets[all][] = css/rlc_styles.css
 
+;----------// Modernizr
+modernizr[tests][] = svg
+modernizr[Modernizr.svg][nope][] = js/conditional/no.svg.support.js
+
 ;----------// Regions
 regions[sidebar_first]     = Sidebar first
 regions[sidebar_second]    = Sidebar second
