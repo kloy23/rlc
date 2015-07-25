@@ -25,6 +25,41 @@ div.ctools-modal-content a.close img {
 }
 
 /*
+  Unsupported Browser
+ */
+#notification {
+  float: left;
+  width: 100%;
+  font-size: 14px;
+}
+.dlWrapper {
+  float: left;
+  width: 50%;
+  margin: 10px 0 5px;
+}
+.chromeDl {
+  padding: 5px 10px;
+  border: 1px outset #eee;
+  border-radius: 3px;
+  float: right;
+  margin-right: 10px;
+  background-image: url("/sites/all/themes/rlc/css/images/chrome_logo.png");
+  display: block;
+  width: 125px;
+  height: 36px;
+}
+.firefoxDl {
+  padding: 5px 10px;
+  border: 1px outset #eee;
+  border-radius: 3px;
+  float: left;
+  margin-left: 10px;
+  background-image: url("/sites/all/themes/rlc/css/images/getfirefox.png");
+  background-color: #fff;
+  width: 106px;
+  height: 36px;
+}
+/*
   Home Page
  */
 #panel-home-header {
