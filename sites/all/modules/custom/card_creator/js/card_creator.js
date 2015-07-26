@@ -1,4 +1,4 @@
-(function($) { // Throughout the document, replace "$" with "jQuery"
+(function ($) { // Throughout the document, replace "$" with "jQuery"
   'use strict';
   $(document).ready(function() { // Begin $(document).ready()
 
