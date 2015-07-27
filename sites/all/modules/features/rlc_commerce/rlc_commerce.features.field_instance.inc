@@ -1654,7 +1654,7 @@ function rlc_commerce_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => '[site:current-user:name]/[site:current-date:custom:m-d-y]',
-      'file_extensions' => 'tif tiff jpg jpeg eps psd png pdf',
+      'file_extensions' => 'tif tiff jpg jpeg png pdf',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -1694,7 +1694,7 @@ function rlc_commerce_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => '[site:current-user:name]/[site:current-date:custom:m-d-y]',
-      'file_extensions' => 'tif tiff jpg jpeg eps psd png pdf',
+      'file_extensions' => 'tif tiff jpg jpeg png pdf',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),

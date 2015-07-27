@@ -711,7 +711,7 @@ Why Pay More?
       'admin_title' => 'Requirements',
       'title' => '',
       'body' => '<h3>File Requirements:</h3>
-We accept the following file formats: .TIF, .TIFF, .EPS, .PSD, .PNG, & .PDF.
+We accept the following file formats: .TIF, .TIFF, .JPG, .JPEG, .PNG, & .PDF
 <h3>Resolution</h3>
 All file formats must have a minimum of 300 dpi (dot per inch) resolution.
 Images designed for the web typically cannot be used for printing as they have a low resolution of 72dpi.  If images are not created at a minimum of 300dpi there will be a substantial drop in the print quality.
