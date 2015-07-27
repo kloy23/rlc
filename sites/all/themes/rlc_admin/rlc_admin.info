@@ -1,0 +1,9 @@
+name = Rlc Admin
+description = A subtheme of Seven
+package = Core
+version = VERSION
+core = 7.x
+base theme = seven
+
+stylesheets[all][] = css/card_stocks.css
+scripts[] = js/rlc_card_stock.js
