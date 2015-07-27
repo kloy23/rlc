@@ -54,8 +54,6 @@ function rlc_preprocess_html(&$vars) {
     $vars['classes_array'][] = 'format-full';
   }
 
-  drupal_add_js($path_to_theme . '/js/rlc_card_stock.js');
-
   // Add extra class if set.
   if (theme_get_setting('extra_page_classes')) {
     if (function_exists('locale')) {

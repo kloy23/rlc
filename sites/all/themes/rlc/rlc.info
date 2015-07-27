@@ -9,6 +9,9 @@ base theme = storefront
 stylesheets[all][] = css/colors.css
 stylesheets[all][] = css/rlc_styles.css
 
+;----------// Scripts
+scripts[] = js/rlc_card_stock.js
+
 ;----------// Modernizr
 modernizr[tests][] = svg
 modernizr[Modernizr.svg][nope][] = js/conditional/no.svg.support.js
