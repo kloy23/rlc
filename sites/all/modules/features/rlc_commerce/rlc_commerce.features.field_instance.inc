@@ -1188,6 +1188,102 @@ function rlc_commerce_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'commerce_line_item-business_card-field_print_ready_back'
+  $field_instances['commerce_line_item-business_card-field_print_ready_back'] = array(
+    'bundle' => 'business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 35,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_print_ready_back',
+    'label' => 'Print Ready Back',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '[site:current-user:name]/[site:current-date:custom:m-d-y]',
+      'file_extensions' => 'png gif jpg jpeg pdf',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 35,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-business_card-field_print_ready_front'
+  $field_instances['commerce_line_item-business_card-field_print_ready_front'] = array(
+    'bundle' => 'business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 34,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_print_ready_front',
+    'label' => 'Print Ready Front',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '[site:current-user:name]/[site:current-date:custom:m-d-y]',
+      'file_extensions' => 'png gif jpg jpeg pdf',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 34,
+    ),
+  );
+
   // Exported field_instance: 'commerce_line_item-business_card-field_quantity'
   $field_instances['commerce_line_item-business_card-field_quantity'] = array(
     'bundle' => 'business_card',
@@ -3055,6 +3151,8 @@ function rlc_commerce_field_default_field_instances() {
   t('Price 1000');
   t('Price 500');
   t('Price Per Thousand');
+  t('Print Ready Back');
+  t('Print Ready Front');
   t('Product');
   t('Product Reference');
   t('Quantity');
