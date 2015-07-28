@@ -687,16 +687,13 @@ function rlc_rules_default_rules_configuration() {
         { "variable_add" : {
             "USING" : {
               "type" : "file",
-              "value" : [ "line-item:field-business-card-image:file" ]
+              "value" : [ "line-item:field-print-ready-front:file" ]
             },
             "PROVIDE" : { "variable_added" : { "card_creator_front_file" : "Card Creator Front File" } }
           }
         },
         { "variable_add" : {
-            "USING" : {
-              "type" : "file",
-              "value" : [ "line-item:field-business-card-image-back:file" ]
-            },
+            "USING" : { "type" : "file", "value" : [ "line-item:field-print-ready-back:file" ] },
             "PROVIDE" : { "variable_added" : { "card_creator_back_file" : "Card Creator Back File" } }
           }
         },
