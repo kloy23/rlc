@@ -5,7 +5,10 @@
       var el;
       var id;
       var cardStockSelection = $('.card-stocks');
-      setCardStockBackground(cardStockSelection);
+      for (var i=0; i<cardStockSelection.length; i++) {
+        el = cardStockSelection[i];
+        setCardStockBackground(el);
+      }
     });
   }); // End $(document).ready()
 
@@ -33,11 +36,16 @@
 
   var changeImageBackground = function(el, className) {
     var images = $(el).parents('tr').find('img');
-    if ($(images).attr('class') === 'undefined') {
-      $(images).addClass(className);
-    } else {
-      $(images).removeClass();
-      $(images).addClass(className);
+    var parent = images.parent();
+    // If the parent of the image is not a span.
+    // This prevents the image class from being assigned to uploaded files.
+    if (!parent.is('span')) {
+      if (images.attr('class') === 'undefined') {
+        images.addClass(className);
+      } else {
+        images.removeClass();
+        images.addClass(className);
+      }
     }
   };
 
