@@ -1203,6 +1203,13 @@
       }
       return className;
     };
+    var startLoading = function() {
+      var box = $('<div></div>').attr('id', 'loading');
+      $('body').prepend(box);
+    };
+    var endloading = function() {
+      $('#loading').remove();
+    }
     // Allows users to view the card before adding it to their cart
     var loadProof = function(filepathFront, filepathBack) {
       var companyName,
@@ -1250,6 +1257,14 @@
       var svgFront = document.getElementById("previewFront");
       var svgBack = document.getElementById("previewBack");
       var isTwoSided = $('#edit-two-sided').val();
+      // Show loading gif when ajax starts
+      $(document).ajaxStart(function() {
+        startLoading();
+      }).ajaxStop(function() {
+        loadProof(filepathFront, filepathBack);
+        // Remove loading gif when ajax stops
+        endloading();
+      });
       // if card is two sided
       if (isTwoSided == 1) {
         // Temporarily show front and back in order for img to save correctly
@@ -1305,10 +1320,6 @@
           }
         });
       }
-      // Load Proof after ajax is finished
-      $(document).ajaxStop(function() {
-        loadProof(filepathFront, filepathBack);
-      });
     };
 
     // *** LOAD SVG DOCUMENTS ***
