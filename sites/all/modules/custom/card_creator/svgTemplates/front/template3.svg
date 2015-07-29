@@ -17,9 +17,9 @@
  <text id="line1" y="111" x="23" font-size="10px" font-family="Helvetica">(000) 000-0000</text>
  <text id="line2" y="122" x="23" font-size="10px" font-family="Helvetica">(800) 000-0000</text>
  <text id="line3" y="133" x="23" font-size="10px" font-family="Helvetica">FAX (000) 000-0000</text>
- <text id="line4" y="144" x="23" font-size="10px" font-family="Helvetica">CELL (000) 000-0000</text>
+ <text id="line4" y="145" x="23" font-size="10px" font-family="Helvetica">CELL (000) 000-0000</text>
  <text id="email" y="155" x="23" font-size="10px" font-family="Helvetica">john@website.com</text>
- <text id="address" font-size="10px" style="text-anchor:end" y="144" x="293" font-family="Helvetica">123 Main Street</text>
+ <text id="address" font-size="10px" style="text-anchor:end" y="145" x="293" font-family="Helvetica">123 Main Street</text>
  <text id="cityStateZip" font-size="10px" style="text-anchor:end" y="155" x="293" font-family="Helvetica">Anytown, USA 12345</text>
  <path id="path" stroke="#231f20" stroke-width="1.2453" fill="none" d="m22.815 67.093h270"/>
  <rect id="logo" height="45" width="67.5" y="79.5" x="225.11" fill="none"/>

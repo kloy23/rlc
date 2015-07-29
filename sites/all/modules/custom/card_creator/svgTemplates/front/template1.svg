@@ -15,11 +15,11 @@
  <text id="title" font-size="10px" y="42" x="22.5" font-family="Helvetica">Title Here</text>
  <text id="line1" font-size="10px" y="122" x="22.5" font-family="Helvetica">(000) 000-0000</text>
  <text id="line2" font-size="10px" y="133" x="22.5" font-family="Helvetica">(800) 000-0000</text>
- <text id="email" font-size="10px" y="144" x="22.5" font-family="Helvetica">john@website.com</text>
+ <text id="email" font-size="10px" y="145" x="22.5" font-family="Helvetica">john@website.com</text>
  <text id="website" font-size="10px" y="155" x="22.5" font-family="Helvetica">www.website.com</text>
  <text id="line3" font-size="10px" style="text-anchor:end" y="122" x="293" font-family="Helvetica">FAX (000) 000-0000</text>
  <text id="line4" font-size="10px" style="text-anchor:end" y="133" x="293" font-family="Helvetica">CELL (000) 000-0000</text>
- <text id="address" font-size="10px" style="text-anchor:end" y="144" x="293" font-family="Helvetica">123 Main Street</text>
+ <text id="address" font-size="10px" style="text-anchor:end" y="145" x="293" font-family="Helvetica">123 Main Street</text>
  <text id="cityStateZip" font-size="10px" style="text-anchor:end" y="155" x="293" font-family="Helvetica">Anytown, USA 12345</text>
  <rect id="logo" height="45" width="67.5" y="22.435" x="224.71" fill="none"/>
 </svg>
