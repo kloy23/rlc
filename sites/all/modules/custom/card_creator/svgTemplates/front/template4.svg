@@ -10,16 +10,16 @@
    </cc:Work>
   </rdf:RDF>
  </metadata>
- <text id="companyName" font-size="16.25px" y="61.414856" x="22.167931" font-family="Helvetica">Company Name</text>
- <text id="name" style="text-anchor:end" font-size="12.5px" y="31.666386" x="293.15268" font-family="Helvetica">Name Here</text>
- <text id="title" font-size="10px" style="text-anchor:end" y="42.213867" x="293.04358" font-family="Helvetica">Title Here</text>
- <text id="address" font-size="10px" y="145.6656" x="21.927931" font-family="Helvetica">123 Main Street</text>
- <text id="cityStateZip" font-size="10px" y="157.39485" x="22.777931" font-family="Helvetica">Anytown, USA 12345</text>
- <text id="line1" font-size="10px" style="text-anchor:end" y="99.674538" x="293.10358" font-family="Helvetica">(000) 000-0000</text>
- <text id="line2" font-size="10px" style="text-anchor:end" y="111.15237" x="293.10358" font-family="Helvetica">(800) 000-0000</text>
- <text id="line3" font-size="10px" style="text-anchor:end" y="122.55471" x="293.10358" font-family="Helvetica">FAX (000) 000-0000</text>
- <text id="line4" font-size="10px" style="text-anchor:end" y="134.05605" x="293.10358" font-family="Helvetica">CELL (000) 000-0000</text>
- <text id="website" font-size="10px" style="text-anchor:end" y="157.27486" x="293.32703" font-family="Helvetica">www.website.com</text>
- <text id="email" font-size="10px" style="text-anchor:end" y="145.6656" x="293.32703" font-family="Helvetica">john@website.com</text>
+ <text id="companyName" font-size="16.25px" y="62" x="22" font-family="Helvetica">Company Name</text>
+ <text id="name" style="text-anchor:end" font-size="12.5px" y="32" x="293" font-family="Helvetica">Name Here</text>
+ <text id="title" font-size="10px" style="text-anchor:end" y="43" x="293" font-family="Helvetica">Title Here</text>
+ <text id="line1" font-size="10px" style="text-anchor:end" y="100" x="293" font-family="Helvetica">(000) 000-0000</text>
+ <text id="line2" font-size="10px" style="text-anchor:end" y="111" x="293" font-family="Helvetica">(800) 000-0000</text>
+ <text id="line3" font-size="10px" style="text-anchor:end" y="122" x="293" font-family="Helvetica">FAX (000) 000-0000</text>
+ <text id="line4" font-size="10px" style="text-anchor:end" y="133" x="293" font-family="Helvetica">CELL (000) 000-0000</text>
+ <text id="email" font-size="10px" style="text-anchor:end" y="144" x="293" font-family="Helvetica">john@website.com</text>
+ <text id="website" font-size="10px" style="text-anchor:end" y="155" x="293" font-family="Helvetica">www.website.com</text>
+ <text id="address" font-size="10px" y="144" x="22" font-family="Helvetica">123 Main Street</text>
+ <text id="cityStateZip" font-size="10px" y="155" x="22" font-family="Helvetica">Anytown, USA 12345</text>
  <rect id="logo" height="45" width="67.5" y="71.5" x="22.948" fill="none"/>
 </svg>
