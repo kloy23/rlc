@@ -10,9 +10,9 @@
    </cc:Work>
   </rdf:RDF>
  </metadata>
- <text id="backLine1" style="text-anchor:middle" font-size="12.5px" y="31.767601" x="157.56465" font-family="Helvetica">Your next service appointment</text>
- <text id="backLine2" style="text-anchor:middle" font-size="12.5px" y="49.28294" x="157.4834" font-family="Helvetica">is scheduled for:</text>
+ <text id="backLine1" style="text-anchor:middle" font-size="12.5px" y="31.767601" x="157.56465">Your next service appointment</text>
+ <text id="backLine2" style="text-anchor:middle" font-size="12.5px" y="49.28294" x="157.4834">is scheduled for:</text>
  <path id="path" d="m22.5 80.583h270" stroke="#231f20" stroke-width="1.2453" fill="none"/>
  <path id="path-2" d="m22.5 112.08h270" stroke="#231f20" stroke-width="1.2453" fill="none"/>
- <text id="backLine3" style="text-anchor:middle" font-size="15" y="154.57042" x="157.99008" font-family="Helvetica">Thank you for your business.</text>
+ <text id="backLine3" style="text-anchor:middle" font-size="15" y="154.57042" x="157.99008">Thank you for your business.</text>
 </svg>

@@ -13,7 +13,7 @@
  <path id="path" d="m62.594 56.384h229.88" stroke="#231f20" stroke-width="1.1491" fill="none"/>
  <path id="path-2" d="m76.562 93.881h215.91" stroke="#231f20" stroke-width="1.1136" fill="none"/>
  <path id="path-2-1" d="m64.094 131.78h228.38" stroke="#231f20" stroke-width="1.1453" fill="none"/>
- <text id="text3369" font-size="12.5px" y="56.763428" x="21.302164" font-family="Helvetica" style="text-anchor:start">Name:</text>
- <text id="text3369-8" style="text-anchor:start" font-size="12.5px" y="94.260437" x="22.431314" font-family="Helvetica">Address:</text>
- <text id="text3369-8-2" style="text-anchor:start" font-size="12.5px" y="132.15628" x="21.302164" font-family="Helvetica">Phone:</text>
+ <text id="text3369" font-size="12.5px" y="56.763428" x="21.302164" style="text-anchor:start">Name:</text>
+ <text id="text3369-8" style="text-anchor:start" font-size="12.5px" y="94.260437" x="22.431314">Address:</text>
+ <text id="text3369-8-2" style="text-anchor:start" font-size="12.5px" y="132.15628" x="21.302164">Phone:</text>
 </svg>
