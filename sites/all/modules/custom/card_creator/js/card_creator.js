@@ -10,21 +10,6 @@
     // Hide selected divs on pageload
     $('#clipartColor, #selectTwoSided, #removeBack, #frontBack, #cardInfoBack, #previewBack, #oneColorSelection, #twoColorSelection, #backColorSelection, #backColor, #templatesBackDisplay, #proof').hide();
 
-    // *** SET DEFAULTS ***
-    $(function setDefaults() {
-      var selectTwoSided = document.getElementById('edit-two-sided');
-      // uncheck two_sided form field
-      selectTwoSided.checked = false;
-      selectTwoSided.value = 0;
-      $('#oneColorSelection').val('18');
-      $('#twoColorSelection').val('0');
-      $('#backColorSelection').val('0');
-      loadClipartCategory();
-      // update price on page refresh
-      updatePrice();
-      changeCardStock();
-    });
-
     // *** CREATE COLOR OPTIONS ***
 
     // Recreate 'Ink Color' options, dynamically add color boxes, add classes for css
@@ -1528,6 +1513,23 @@
         // Notify the user
         alert("You must approve this proof before adding this product to your cart.");
       }
+    });
+
+    // *** SET DEFAULTS ***
+    $(function setDefaults() {
+      var selectTwoSided = document.getElementById('edit-two-sided');
+      // uncheck two_sided form field
+      selectTwoSided.checked = false;
+      selectTwoSided.value = 0;
+      $('#oneColorSelection').val('18');
+      $('#twoColorSelection').val('0');
+      $('#backColorSelection').val('0');
+      loadClipartCategory();
+      changeCardStock();
+      // Change all fonts to match docFontFamily
+      changeAllFonts();
+      // update price on page refresh
+      updatePrice();
     });
 
   }); // End $(document).ready()
