@@ -142,7 +142,7 @@
         var italic = document.createElement('button');
         // create options
         var o1 = new Option('Helvetica', 'Helvetica');
-        var o2 = new Option('Times New Roman', 'Times New Roman');
+        var o2 = new Option('Times', 'Times');
         var o3 = new Option('Comic Sans', 'Comic Sans MS');
         // add all options to an array
         var options = [o1, o2, o3];
@@ -561,7 +561,6 @@
     // When a font is changed for an individual field
     var changeFieldFont = function(currentField, fontFamilySelect) {
       var $newFontFamily = $(fontFamilySelect).val();
-      $newFontFamily = '"' + $newFontFamily + '"';
       var id = '#' + $(currentField).attr('id');
       var frontSvgNode = Snap.select('#previewFront');
       var backSvgNode = Snap.select('#previewBack');
