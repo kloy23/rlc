@@ -421,7 +421,7 @@ function card_creator_form($form, &$form_state) {
   );
   // Clipart Category
   $form['clipart_category'] = array(
-    '#markup' => '<select id="clipartCategory" title="Select Clipart Category."><option value="animals">Animals</option><option value="construction">Construction</option><option value="furniture">Furniture & Antiques</option><option value="healthcare">Healthcare</option><option value="jewelry">Jewelry</option><option value="lawn">Lawn & Garden</option><option value="legal">Legal</option><option value="manufacturer">Manufactuerer Logo\'s</option><option value="miscellaneous">Miscellaneous</option><option value="real_estate">Real Estate</option><option value="religion">Religion</option><option value="sports_recreation">Sports & Recreation</option><option value="vehicles">Vehicles</option><option value="weddings">Weddings</option></select>',
+    '#markup' => '<select id="clipartCategory" title="Select Clipart Category."><option value="animals">Animals</option><option value="construction">Construction</option><option value="furniture">Furniture & Antiques</option><option value="healthcare">Healthcare</option><option value="jewelry">Jewelry</option><option value="lawn">Lawn & Garden</option><option value="legal">Legal</option><option value="manufacturer">Manufacturer Logos</option><option value="miscellaneous">Miscellaneous</option><option value="real_estate">Real Estate</option><option value="religion">Religion</option><option value="sports_recreation">Sports & Recreation</option><option value="vehicles">Vehicles</option><option value="weddings">Weddings</option></select>',
     '#prefix' => '<div id="clipart_category">',
     '#suffix' => '</div>',
   );
