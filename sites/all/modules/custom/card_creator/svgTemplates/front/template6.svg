@@ -11,16 +11,16 @@
   </rdf:RDF>
  </metadata>
  <text id="companyName" y="35" x="162" font-size="16.25px">Company Name</text>
- <text id="name" y="67" x="22" font-size="12.5px">Name Here</text>
- <text id="title" y="78" x="22" font-size="10px">Title Here</text>
- <text id="line1" y="78" x="162" font-size="10px">(000) 000-0000</text>
- <text id="line2" y="89" x="162" font-size="10px">(800) 000-0000</text>
- <text id="line3" y="100" x="162" font-size="10px">FAX (000) 000-0000</text>
- <text id="line4" y="111" x="162" font-size="10px">CELL (000) 000-0000</text>
- <text id="email" y="122" x="162" font-size="10px">john@website.com</text>
- <text id="website" y="133" x="162" font-size="10px">www.website.com</text>
- <text id="address" y="145" x="162" font-size="10px">123 Main Street</text>
- <text id="cityStateZip" y="155" x="162" font-size="10px">Anytown, USA 12345</text>
+ <text id="name" y="68" x="22" font-size="12.5px">Name Here</text>
+ <text id="title" y="79" x="22" font-size="10px">Title Here</text>
+ <text id="line1" y="79" x="162" font-size="10px">(000) 000-0000</text>
+ <text id="line2" y="90" x="162" font-size="10px">(800) 000-0000</text>
+ <text id="line3" y="101" x="162" font-size="10px">FAX (000) 000-0000</text>
+ <text id="line4" y="112" x="162" font-size="10px">CELL (000) 000-0000</text>
+ <text id="email" y="123" x="162" font-size="10px">john@website.com</text>
+ <text id="website" y="134" x="162" font-size="10px">www.website.com</text>
+ <text id="address" y="146" x="162" font-size="10px">123 Main Street</text>
+ <text id="cityStateZip" y="156" x="162" font-size="10px">Anytown, USA 12345</text>
  <rect id="logo" height="45" width="67.5" y="96.195" x="22.668" fill="none"/>
  <path id="path" d="m157.5 157.5v-135" stroke="#231f20" stroke-width="1.2508" fill="none"/>
 </svg>
