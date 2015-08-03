@@ -127,10 +127,14 @@
         var italic = document.createElement('button');
         // create options
         var o1 = new Option('Helvetica', 'Helvetica');
-        var o2 = new Option('Times', 'Times');
-        var o3 = new Option('Comic Sans', 'Comic Sans MS');
+        var o2 = new Option('Announce', 'Announce');
+        var o3 = new Option('BrushScript', 'BrushScript BT');
+        var o4 = new Option('Comic Sans', 'Comic Sans MS');
+        var o5 = new Option('Hobo BT', 'Hobo BT');
+        var o6 = new Option('Souvenir', 'Souvenir');
+        var o7 = new Option('Times', 'Times');
         // add all options to an array
-        var options = [o1, o2, o3];
+        var options = [o1, o2, o3, o4, o5, o6, o7];
         // give the button a type of 'button'.  Default type is submit, and we dont want that.
         $(fontOptionsButton).attr({
           class: 'button',
