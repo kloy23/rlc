@@ -89,33 +89,23 @@ function card_creator_ajax_front() {
 
   $filename = $company_name . '-' . $name;
 
+  // Save svg for conversion
+  $file = UPLOAD_DIR . $filename . '.svg';
+  $success = file_put_contents($file, $data);
+
   // Create low res PNG for display
   $ext_display = '.png';
   $filepath_display = UPLOAD_DIR . $filename . $ext_display;
-
-  $im_display = new Imagick();
-  $im_display->setBackgroundColor(new ImagickPixel('transparent'));
-  $im_display->setFormat('svg');
-  $im_display->readImageBlob($data);
-  $im_display->setImageFormat('png');
-  $im_display->writeImage($filepath_display);
-  $im_display->clear();
+  exec('convert -density 150 ' . $file . ' -fuzz 20% -transparent white ' . $filepath_display);
   echo $filepath_display;
-
 
   // Create Print Ready PDF
   $ext_print = '.pdf';
   $filepath_print = UPLOAD_DIR . $filename . $ext_print;
+  exec('convert -density 350 ' . $file . ' -scale 1225 -colorspace CMYK ' . $filepath_print);
 
-  $im_print = new Imagick();
-  $im_print->setBackgroundColor(new ImagickPixel('transparent'));
-  $im_print->setResolution(350, 350);
-  $im_print->setFormat('svg');
-  $im_print->readImageBlob($data);
-  $im_print->setImageFormat('pdf');
-  $im_print->scaleImage(1225, 0);
-  $im_print->writeImage($filepath_print);
-  $im_print->clear();
+  // Delete the SVG from server
+  unlink($file);
 }
 
 /**
@@ -144,33 +134,23 @@ function card_creator_ajax_back() {
 
   $filename = $company_name . '-' . $name . '-back';
 
+  // Save svg for conversion
+  $file = UPLOAD_DIR . $filename . '.svg';
+  $success = file_put_contents($file, $data);
+
   // Create low res PNG for display
   $ext_display = '.png';
   $filepath_display = UPLOAD_DIR . $filename . $ext_display;
-
-  $im_display = new Imagick();
-  $im_display->setBackgroundColor(new ImagickPixel('transparent'));
-  $im_display->setFormat('svg');
-  $im_display->readImageBlob($data);
-  $im_display->setImageFormat('png');
-  $im_display->writeImage($filepath_display);
-  $im_display->clear();
+  exec('convert -density 150 ' . $file . ' -fuzz 20% -transparent white ' . $filepath_display);
   echo $filepath_display;
-
 
   // Create Print Ready PDF
   $ext_print = '.pdf';
   $filepath_print = UPLOAD_DIR . $filename . $ext_print;
+  exec('convert -density 350 ' . $file . ' -scale 1225 -colorspace CMYK ' . $filepath_print);
 
-  $im_print = new Imagick();
-  $im_print->setBackgroundColor(new ImagickPixel('transparent'));
-  $im_print->setResolution(350, 350);
-  $im_print->setFormat('svg');
-  $im_print->readImageBlob($data);
-  $im_print->setImageFormat('pdf');
-  $im_print->scaleImage(1225, 0);
-  $im_print->writeImage($filepath_print);
-  $im_print->clear();
+  // Delete the SVG from server
+  unlink($file);
 }
 
 /**
