@@ -31,12 +31,12 @@
       className = 'whiteSmooth';
     } else if (selectedCardStock === '2' || selectedCardStock === 'whitelinen') {
       className = 'whiteLinen';
-    } else if (selectedCardStock === '3' || selectedCardStock === 'softwhite') {
-      className = 'softWhite';
-    } else if (selectedCardStock === '4' || selectedCardStock === 'tan') {
-      className = 'tan';
-    } else if (selectedCardStock === '5'  || selectedCardStock === 'gray') {
-      className = 'gray';
+    } else if (selectedCardStock === '3' || selectedCardStock === 'softwhitelinen') {
+      className = 'softWhiteLinen';
+    } else if (selectedCardStock === '4' || selectedCardStock === 'tanlinen') {
+      className = 'tanLinen';
+    } else if (selectedCardStock === '5'  || selectedCardStock === 'graylinen') {
+      className = 'grayLinen';
     } else if (selectedCardStock === '6' || selectedCardStock === 'yellow') {
       className = 'yellow';
     } else if (selectedCardStock === '7' || selectedCardStock === 'kromekote') {
@@ -73,6 +73,7 @@
     var selectedCardStock = $(el).text().toLowerCase();
     selectedCardStock = $.trim(selectedCardStock).replace(/\s+/g, '');
     var className = fetchClassName(selectedCardStock);
+    console.log(selectedCardStock);
     changeImageBackground(el, className);
   };
 

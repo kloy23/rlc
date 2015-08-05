@@ -18,12 +18,12 @@
       className = 'whiteSmooth';
     } else if (selectedCardStock === 'whitelinen') {
       className = 'whiteLinen';
-    } else if (selectedCardStock === 'softwhite') {
-      className = 'softWhite';
-    } else if (selectedCardStock === 'tan') {
-      className = 'tan';
-    } else if (selectedCardStock === 'gray') {
-      className = 'gray';
+    } else if (selectedCardStock === 'softwhitelinen') {
+      className = 'softWhiteLinen';
+    } else if (selectedCardStock === 'tanlinen') {
+      className = 'tanLinen';
+    } else if (selectedCardStock === 'graylinen') {
+      className = 'grayLinen';
     } else if (selectedCardStock === 'yellow') {
       className = 'yellow';
     } else if (selectedCardStock === 'kromekote') {
