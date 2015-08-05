@@ -552,7 +552,7 @@ function card_creator_form($form, &$form_state) {
 
   $form['approve_proof'] = array(
     '#type' => 'checkbox',
-    '#title' => 'I have checked this card for errors.',
+    '#title' => ' I agree that this artwork is free from errors, and understand that RaisedLetterCards.com is not responsible for typo\'s.',
   );
 
   $form['edit'] = array(
