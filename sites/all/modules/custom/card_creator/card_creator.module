@@ -96,7 +96,7 @@ function card_creator_ajax_front() {
   // Create low res PNG for display
   $ext_display = '.png';
   $filepath_display = UPLOAD_DIR . $filename . $ext_display;
-  exec('convert -background none -density 150 ' . $file . ' ' . $filepath_display);
+  exec('convert -background none ' . $file . ' ' . $filepath_display);
   echo $filepath_display;
 
   // Create Print Ready PDF
@@ -672,6 +672,21 @@ function card_creator_form_submit($form, &$form_state) {
         commerce_cart_order_session_save($order->order_id);
       }
 
+      // Save SVG Image
+      $filepath_svg = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
+      $file_svg = (object) array(
+        'filename' => basename($filepath_svg),
+        'filepath' => $filepath_svg,
+        'filemime' => file_get_mimetype($filepath_svg),
+        'filesize' => filesize($filepath_svg),
+        'uid' => 1,
+        'status' => FILE_STATUS_PERMANENT,
+        'uri' => $filepath_svg,
+        'display' => 1,
+        'description' => '',
+      );
+      $file_svg = file_move($file_svg, $private_file_path, FILE_EXISTS_RENAME);
+
       // Save Print Image
       $filepath_print = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.pdf';
       $file_print = (object) array(
@@ -725,6 +740,7 @@ function card_creator_form_submit($form, &$form_state) {
         $line_item->field_line_4[LANGUAGE_NONE][0]['value'] = $line4;
         $line_item->field_business_card_image['und'][0]['fid'] = $file_display->fid;
         $line_item->field_print_ready_front['und'][0]['fid'] = $file_print->fid;
+        $line_item->field_svg_front['und'][0]['fid'] = $file_svg->fid;
       }
       // Save the line item to get its ID.
       commerce_line_item_save($line_item);
@@ -755,6 +771,21 @@ function card_creator_form_submit($form, &$form_state) {
         commerce_cart_order_session_save($order->order_id);
       }
 
+      // Save SVG Image for Front
+      $filepath_front_svg = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
+      $file_front_svg = (object) array(
+        'filename' => basename($filepath_front_svg),
+        'filepath' => $filepath_front_svg,
+        'filemime' => file_get_mimetype($filepath_front_svg),
+        'filesize' => filesize($filepath_front_svg),
+        'uid' => 1,
+        'status' => FILE_STATUS_PERMANENT,
+        'uri' => $filepath_front_svg,
+        'display' => 1,
+        'description' => '',
+      );
+      $file_front_svg = file_move($file_front_svg, $private_file_path, FILE_EXISTS_RENAME);
+
       // Save Print Image for Front
       $filepath_front_print = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.pdf';
       $file_front_print = (object) array(
@@ -783,6 +814,21 @@ function card_creator_form_submit($form, &$form_state) {
         'display' => 1,
         'description' => '',
       );
+
+      // Save SVG Image for Front
+      $filepath_back_svg = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
+      $file_back_svg = (object) array(
+        'filename' => basename($filepath_back_svg),
+        'filepath' => $filepath_back_svg,
+        'filemime' => file_get_mimetype($filepath_back_svg),
+        'filesize' => filesize($filepath_back_svg),
+        'uid' => 1,
+        'status' => FILE_STATUS_PERMANENT,
+        'uri' => $filepath_back_svg,
+        'display' => 1,
+        'description' => '',
+      );
+      $file_back_svg = file_move($file_back_svg, $private_file_path, FILE_EXISTS_RENAME);
 
       // Save Print Image for Back
       $filepath_back_print = 'sites/default/files/tmp/'. $company_name . '-' . $name . '-back' . '.pdf';
@@ -854,6 +900,8 @@ function card_creator_form_submit($form, &$form_state) {
         $line_item->field_business_card_image_back['und'][0]['fid'] = $file_back_display->fid;
         $line_item->field_print_ready_front['und'][0]['fid'] = $file_front_print->fid;
         $line_item->field_print_ready_back['und'][0]['fid'] = $file_back_print->fid;
+        $line_item->field_svg_front['und'][0]['fid'] = $file_front_svg->fid;
+        $line_item->field_svg_back['und'][0]['fid'] = $file_back_svg->fid;
       }
       // Save the line item to get its ID.
       commerce_line_item_save($line_item);
