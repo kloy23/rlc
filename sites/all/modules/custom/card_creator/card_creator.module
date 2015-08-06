@@ -93,8 +93,11 @@ function card_creator_ajax_front() {
   $file = UPLOAD_DIR . $filename . '.svg';
   $success = file_put_contents($file, $data);
 
-  //Send svg file name back to card_creator.js for display
-  echo $file;
+  // Create low res PNG for display
+  $ext_display = '.png';
+  $filepath_display = UPLOAD_DIR . $filename . $ext_display;
+  exec('convert -background none -density 150 ' . $file . ' ' . $filepath_display);
+  echo $filepath_display;
 
   // Create Print Ready PDF
   $ext_print = '.pdf';
@@ -132,8 +135,11 @@ function card_creator_ajax_back() {
   $file = UPLOAD_DIR . $filename . '.svg';
   $success = file_put_contents($file, $data);
 
-  //Send svg file name back to card_creator.js for display
-  echo $file;
+  // Create low res PNG for display
+  $ext_display = '.png';
+  $filepath_display = UPLOAD_DIR . $filename . $ext_display;
+  exec('convert -background none -density 150 ' . $file . ' ' . $filepath_display);
+  echo $filepath_display;
 
   // Create Print Ready PDF
   $ext_print = '.pdf';
@@ -682,7 +688,7 @@ function card_creator_form_submit($form, &$form_state) {
       $file_print = file_move($file_print, $private_file_path, FILE_EXISTS_RENAME);
 
       // Save Display Image
-      $filepath_display = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
+      $filepath_display = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.png';
       $file_display = (object) array(
         'filename' => basename($filepath_display),
         'filepath' => $filepath_display,
@@ -765,7 +771,7 @@ function card_creator_form_submit($form, &$form_state) {
       $file_front_print = file_move($file_front_print, $private_file_path, FILE_EXISTS_RENAME);
 
       // Save Display Image for Front
-      $filepath_front_display = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
+      $filepath_front_display = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.png';
       $file_front_display = (object) array(
         'filename' => basename($filepath_front_display),
         'filepath' => $filepath_front_display,
@@ -794,7 +800,7 @@ function card_creator_form_submit($form, &$form_state) {
       $file_back_print = file_move($file_back_print, $private_file_path, FILE_EXISTS_RENAME);
 
       // Save Display Image for Back
-      $filepath_back_display = 'sites/default/files/tmp/'. $company_name . '-' . $name . '-back' . '.svg';
+      $filepath_back_display = 'sites/default/files/tmp/'. $company_name . '-' . $name . '-back' . '.png';
       $file_back_display = (object) array(
         'filename' => basename($filepath_back_display),
         'filepath' => $filepath_back_display,
