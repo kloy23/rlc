@@ -121,7 +121,80 @@ div.ctools-modal-content a.close img {
 }
 
 /*
- Card Stocks
+  Pricing Page
+ */
+#pricing {
+  text-align: center;
+}
+#pricingHeader {
+  background-color: #eeeeee;
+  border: 1px outset;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+#pricing th{
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 10px;
+  border: 1px outset black;
+  background-color: #eeeeee;
+}
+
+/*Pricing table card stock samples*/
+
+.whiteSmoothSample {
+  background-image: url("/sites/all/themes/rlc/css/images/cardstocks/whiteSmooth.jpeg");
+  border: 2px outset #000;
+  height: 35px;
+  width: 62px;
+}
+.whiteLinenSample {
+  background-image: url("/sites/all/themes/rlc/css/images/cardstocks/whiteLinen.jpeg");
+  border: 2px outset #000;
+  height: 35px;
+  width: 62px;
+}
+.softWhiteLinenSample {
+  background-image: url("/sites/all/themes/rlc/css/images/cardstocks/softWhite.jpeg");
+  border: 2px outset #000;
+  height: 35px;
+  width: 62px;
+}
+.tanLinenSample {
+  background-image: url("/sites/all/themes/rlc/css/images/cardstocks/tan.jpeg");
+  border: 2px outset #000;
+  height: 35px;
+  width: 62px;
+}
+.grayLinenSample {
+  background-image: url("/sites/all/themes/rlc/css/images/cardstocks/gray.jpeg");
+  border: 2px outset #000;
+  height: 35px;
+  width: 62px;
+}
+.yellowSample {
+  background-image: url("/sites/all/themes/rlc/css/images/cardstocks/yellow.jpeg");
+  border: 2px outset #000;
+  height: 35px;
+  width: 62px;
+}
+.kromekoteSample {
+  background-image: url("/sites/all/themes/rlc/css/images/cardstocks/kromekote.jpeg");
+  border: 2px outset #000;
+  height: 35px;
+  width: 62px;
+}
+.woodgrainSample {
+  background-image: url("/sites/all/themes/rlc/css/images/cardstocks/woodgrain.jpeg");
+  border: 2px outset #000;
+  height: 35px;
+  width: 62px;
+}
+
+/*
+ Site Wide Card Stocks
  */
 .whiteSmooth {
   background-image: url("/sites/all/themes/rlc/css/images/cardstocks/whiteSmooth.jpeg");
