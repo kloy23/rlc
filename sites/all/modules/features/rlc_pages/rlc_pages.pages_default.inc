@@ -631,15 +631,131 @@ Why Pay More?
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => 'This is where our pricing information will go',
-      'format' => 'filtered_html',
+      'body' => '<!-- Head -->
+<div id="pricingHeader">
+  <h3>Pricing is based on the use of our Card Creator</h3>
+  <h3>There is no additional cost for the use of a second color</h3>
+  <h3>Uploaded Artwork will have an additional fee of $8.00</h3>
+</div>
+<!-- Card Stock Pricing Info -->
+<table>
+  <tr>
+    <th>Card Stock</th>
+    <th>Sample</th>
+    <th>500</th>
+    <th>1000</th>
+    <th>Per Additional 1000</th>
+  </tr>
+  <tr>
+    <td>White Smooth</td>
+    <td><div class="whiteSmoothSample"></div></td>
+    <td>$14.95</td>
+    <td>$16.95</td>
+    <td>$14.95</td>
+  </tr>
+  <tr>
+    <td>White Linen</td>
+    <td><div class="whiteLinenSample"></div></td>
+    <td>$23.95</td>
+    <td>$26.95</td>
+    <td>$22.50</td>
+  </tr>
+  <tr>
+    <td>Soft White Linen</td>
+    <td><div class="softWhiteLinenSample"></div></td>
+    <td>$24.95</td>
+    <td>$28.95</td>
+    <td>$23.50</td>
+  </tr>
+  <tr>
+    <td>Tan Linen</td>
+    <td><div class="tanLinenSample"></div></td>
+    <td>$24.95</td>
+    <td>$28.95</td>
+    <td>$23.50</td>
+  </tr>
+  <tr>
+    <td>Gray Linen</td>
+    <td><div class="grayLinenSample"></div></td>
+    <td>$24.95</td>
+    <td>$28.95</td>
+    <td>$23.50</td>
+  </tr>
+  <tr>
+    <td>Yellow</td>
+    <td><div class="yellowSample"></div></td>
+    <td>$32.95</td>
+    <td>$36.95</td>
+    <td>$31.50</td>
+  </tr>
+  <tr>
+    <td>KromeKote</td>
+    <td><div class="kromekoteSample"></div></td>
+    <td>$32.95</td>
+    <td>$36.95</td>
+    <td>$31.50</td>
+  </tr>
+  <tr>
+    <td>Woodgrain</td>
+    <td><div class="woodgrainSample"></div></td>
+    <td>$47.50</td>
+    <td>$53.50</td>
+    <td>$46.00</td>
+  </tr>
+</table>
+
+<!-- Backside Pricing Info -->
+<table>
+  <tr>
+    <th>1 Color Back</th>
+    <th>500 - 1000</th>
+    <th>Per Additional 1000</th>
+  </tr>
+  <tr>
+    <td>Any Card Stock</td>
+    <td>$14.00</td>
+    <td>$10.00</td>
+  </tr>
+</table>
+
+<!-- Shipping pricing Info -->
+<table>
+  <tr>
+    <th>Shipping</th>
+    <th>All orders are shipped at a flat rate based on the orders total quantity</th>
+  </tr>
+  <tr>
+    <td>Quantity | 500</td>
+    <td>$7.00</td>
+  </tr>
+  <tr>
+    <td>Quantity | 1,000 - 2,000</td>
+    <td>$8.25</td>
+  </tr>
+  <tr>
+    <td>Quantity | 2,500 - 4,000</td>
+    <td>$11.25</td>
+  </tr>
+  <tr>
+    <td>Quantity | 4,500 - 10,000</td>
+    <td>$15.00</td>
+  </tr>
+</table>
+<div id="pricingFooter">
+  <h3>Please Contact Us for a shipping quote for orders totaling over 10,000</h3>
+</div>
+',
+      'format' => 'full_html',
       'substitute' => TRUE,
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'pricing',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
