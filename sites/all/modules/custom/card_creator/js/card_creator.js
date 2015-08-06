@@ -1175,11 +1175,11 @@
       } else if (cardStock[1].checked === true) {
         className = 'whiteLinen';
       } else if (cardStock[2].checked === true) {
-        className = 'softWhite';
+        className = 'softWhiteLinen';
       } else if (cardStock[3].checked === true) {
-        className = 'tan';
+        className = 'tanLinen';
       } else if (cardStock[4].checked === true) {
-        className = 'gray';
+        className = 'grayLinen';
       } else if (cardStock[5].checked === true) {
         className = 'yellow';
       } else if (cardStock[6].checked === true) {
