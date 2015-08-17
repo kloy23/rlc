@@ -705,6 +705,8 @@ Why Pay More?
 </table>
 
 <!-- Backside Pricing Info -->
+<h3> All backs will be printed "flat", meaning the text will not be raised.</h3>
+<br />
 <table>
   <tr>
     <th>1 Color Back</th>
