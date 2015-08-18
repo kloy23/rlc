@@ -870,7 +870,7 @@
       // if a color options has not been selected, the input field will have 2 siblings
       if (siblings.length == 2) {
         // add colorBox1 and colorBox2 before the current element
-        $(el).after(colorBox1, colorBox2);
+        $(el).before(colorBox1, colorBox2);
       } else { // a color option has been selected
         // get the first sibling
         var primaryColorBox = $(siblings[1]);
