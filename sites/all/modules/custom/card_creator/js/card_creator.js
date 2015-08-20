@@ -354,18 +354,18 @@
         // find the existing logo
         var currentLogo = node[1];
         // select all elements within the logo
-        var elements = currentLogo.selectAll('*');
+        var elements = currentLogo.selectAll('path');
         // loop through each element
         for (var i=0; i<elements.length; i++) {
           // get current element
           var currentEl = elements[i];
           // if the elements fill is not white, and it is not none
-          if (currentEl.attr('fill') != 'rgb(255, 255, 255)' && currentEl.attr('fill') != 'none') {
+          if (currentEl.attr('fill') != 'rgb(255, 255, 255)' && currentEl.attr('fill') != 'none' && currentEl.attr('fill') != '') {
             // set the fill color to match the selected color
             currentEl.attr('fill', color);
           }
           // if the elements stroke is not white, and it is not none
-          if (currentEl.attr('stroke') != 'rgb(255, 255, 255)' && currentEl.attr('stroke') != 'none') {
+          if (currentEl.attr('stroke') != 'rgb(255, 255, 255)' && currentEl.attr('stroke') != 'none' && currentEl.attr('stroke') != '') {
             // set the stroke color to match the selected color
             currentEl.attr('stroke', color);
           }
