@@ -263,7 +263,7 @@
     var highlightSelectedClipart = function(el) {
       var rect = el.getElementsByTagName('rect')[0];
       var logos = clipart.select('#layer1');
-      var svgElements = logos.node.children;
+      var svgElements = $(logos.node).children();
       for (var i=0; i<svgElements.length; i++) {
         el = svgElements[i];
         var thisRect = el.getElementsByTagName('rect')[0];
@@ -414,7 +414,7 @@
       // target the layer that holds the logos
       var logos = clipart.select('#layer1');
       // find all logos that exist in the document
-      var svgElements = logos.node.children;
+      var svgElements = $(logos.node).children();
       // add click handlers to each logo
       for (var i=0; i<svgElements.length; i++) {
         var el = svgElements[i];
