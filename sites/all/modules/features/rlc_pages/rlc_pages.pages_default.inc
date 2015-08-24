@@ -453,7 +453,8 @@ Why Pay More?
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<a class="buttons" href="/card-creator/">Create Your Card</a>',
+      'body' => '<a class="buttons" href="/card-creator/">Create Your Card</a>
+<a class="buttons" href="/upload-artwork">Upload Custom Artwork</a>',
       'format' => 'filtered_html',
       'substitute' => TRUE,
     );
@@ -471,34 +472,6 @@ Why Pay More?
     $pane->uuid = '9ef70d4f-dc9a-4aad-93bb-1158f8a67e7d';
     $display->content['new-9ef70d4f-dc9a-4aad-93bb-1158f8a67e7d'] = $pane;
     $display->panels['center'][0] = 'new-9ef70d4f-dc9a-4aad-93bb-1158f8a67e7d';
-    $pane = new stdClass();
-    $pane->pid = 'new-9e4ab5fa-9bbd-409f-94ca-0e50401083ab';
-    $pane->panel = 'center';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<a class="buttons" href="/upload-artwork">Upload Custom Artwork</a>',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'panel-order-now-top-button2',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '9e4ab5fa-9bbd-409f-94ca-0e50401083ab';
-    $display->content['new-9e4ab5fa-9bbd-409f-94ca-0e50401083ab'] = $pane;
-    $display->panels['center'][1] = 'new-9e4ab5fa-9bbd-409f-94ca-0e50401083ab';
     $pane = new stdClass();
     $pane->pid = 'new-c744c164-8046-45bc-905f-342ef4166c77';
     $pane->panel = 'center';
@@ -523,11 +496,11 @@ Why Pay More?
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'c744c164-8046-45bc-905f-342ef4166c77';
     $display->content['new-c744c164-8046-45bc-905f-342ef4166c77'] = $pane;
-    $display->panels['center'][2] = 'new-c744c164-8046-45bc-905f-342ef4166c77';
+    $display->panels['center'][1] = 'new-c744c164-8046-45bc-905f-342ef4166c77';
     $pane = new stdClass();
     $pane->pid = 'new-14c9db09-a2d8-494f-8b65-6b0aedb1ed03';
     $pane->panel = 'center';
@@ -551,11 +524,11 @@ Why Pay More?
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '14c9db09-a2d8-494f-8b65-6b0aedb1ed03';
     $display->content['new-14c9db09-a2d8-494f-8b65-6b0aedb1ed03'] = $pane;
-    $display->panels['center'][3] = 'new-14c9db09-a2d8-494f-8b65-6b0aedb1ed03';
+    $display->panels['center'][2] = 'new-14c9db09-a2d8-494f-8b65-6b0aedb1ed03';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -705,8 +678,6 @@ Why Pay More?
 </table>
 
 <!-- Backside Pricing Info -->
-<h3> All backs will be printed "flat", meaning the text will not be raised.</h3>
-<br />
 <table>
   <tr>
     <th>1 Color Back</th>

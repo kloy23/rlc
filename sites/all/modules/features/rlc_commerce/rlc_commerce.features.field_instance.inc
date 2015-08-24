@@ -43,7 +43,7 @@ function rlc_commerce_field_default_field_instances() {
         'weight' => -10,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'addressfield',
         'settings' => array(
           'format_handlers' => array(
@@ -1322,6 +1322,100 @@ function rlc_commerce_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'commerce_line_item-business_card-field_svg_back'
+  $field_instances['commerce_line_item-business_card-field_svg_back'] = array(
+    'bundle' => 'business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 37,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_svg_back',
+    'label' => 'SVG Back',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'svg png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 37,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_line_item-business_card-field_svg_front'
+  $field_instances['commerce_line_item-business_card-field_svg_front'] = array(
+    'bundle' => 'business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 36,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_svg_front',
+    'label' => 'SVG Front',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'svg png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 36,
+    ),
+  );
+
   // Exported field_instance: 'commerce_line_item-business_card-field_title'
   $field_instances['commerce_line_item-business_card-field_title'] = array(
     'bundle' => 'business_card',
@@ -2340,7 +2434,7 @@ function rlc_commerce_field_default_field_instances() {
           'view' => 'commerce_line_item_table|default',
         ),
         'type' => 'commerce_line_item_reference_view',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'commerce_order',
@@ -2400,7 +2494,7 @@ function rlc_commerce_field_default_field_instances() {
           'calculation' => FALSE,
         ),
         'type' => 'commerce_price_formatted_components',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'node_teaser' => array(
         'label' => 'hidden',
@@ -3156,6 +3250,8 @@ function rlc_commerce_field_default_field_instances() {
   t('Product');
   t('Product Reference');
   t('Quantity');
+  t('SVG Back');
+  t('SVG Front');
   t('Title');
   t('Total');
   t('Two Sided');
