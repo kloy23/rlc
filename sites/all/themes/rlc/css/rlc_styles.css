@@ -13,6 +13,12 @@ div.ctools-modal-content a.close img {
 }
 
 /*
+  User Menu
+ */
+#secondary-menu-bar {
+  max-width: 100%;
+}
+/*
   Buttons
 */
 .buttons {
@@ -94,19 +100,9 @@ div.ctools-modal-content a.close img {
   Order Now Page
 */
 #panel-order-now-top {
-  float: left;
-  text-align: right;
+  text-align: center;
   padding-bottom: 30px;
-  width: 50%;
   position: relative;
-  right: 10px;
-}
-#panel-order-now-top-button2 {
-  float: left;
-  text-align: left;
-  width: 50%;
-  position: relative;
-  left: 10px;
 }
 #panel-order-now-top-shipped {
     position: relative;
@@ -276,5 +272,30 @@ div.ctools-modal-content a.close img {
 #footer-wrapper section {
   float: left;
   width: 33%;
+}
+
+/*
+  Mobile Media Queries
+ */
+@media only screen and (max-width: 768px) {
+  /*
+    Home Page Panel
+   */
+  #panel-home-left {
+    float: none;
+  }
+  #panel-home-right {
+    left: 0px;
+  }
+  .panels-flexible-region-first, .panels-flexible-region-last {
+    width: 100%;
+    text-align: center;
+  }
+  /*
+    Order Now Page Panel
+   */
+  #panel-order-now-top, #panel-order-now-top-button2 {
+    width: 100%;
+  }
 }
 
