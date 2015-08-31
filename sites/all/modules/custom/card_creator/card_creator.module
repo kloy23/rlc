@@ -158,6 +158,13 @@ function card_creator_form($form, &$form_state) {
     drupal_get_path('module', 'card_creator') . '/css/styles.css',
   );
 
+  // Title displayed above card creator form
+  $form['card_creator_info'] = array(
+    '#markup' => '<h1>' . t('Custom Business Card Creator') . '</h1>' . '<p>' . t('** For The Best Experience Please Use Either Google Chrome or Mozilla Firefox Browsers **') . '</p>',
+    '#prefix' => '<div id="card_creator_header">',
+    '#suffix' => '</div>',
+  );
+
   // Input Fields for Front
   $form['card_information'] = array(
     '#markup' => '<h4>' . t('1) Enter Card Information') . '</h4>',

@@ -38,6 +38,19 @@
   left: 0;
   z-index: 999;
 }
+#card_creator_header {
+  text-align: center;
+  background-color: #eee;
+  border: 3px outset black;
+  border-radius: 10px;
+  padding-top: 15px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+#card_creator_header p {
+  font-weight: bold;
+  color: red;
+}
 #container {
   background-color: #eee;
   border: 3px outset black;
