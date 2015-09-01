@@ -137,6 +137,10 @@ div.ctools-modal-content a.close img {
   border: 1px outset black;
   background-color: #eeeeee;
 }
+#pricingBacks {
+    margin: 10px 0px;
+    color: red;
+}
 
 /*Pricing table card stock samples*/
 
