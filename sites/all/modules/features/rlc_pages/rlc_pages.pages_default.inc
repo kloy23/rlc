@@ -255,7 +255,7 @@ function rlc_pages_default_page_manager_pages() {
       'title' => '',
       'body' => '1000 High Quality Raised Letter Business Cards for just $16.95!
 Why Pay More?
-<p id="disclaimer">*Price is based on White Smooth card stock.</p>',
+<p id="disclaimer">*Price is based on White Smooth card stock, and the use of our Custom Business Card Creator.</p>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -606,7 +606,7 @@ Why Pay More?
       'title' => '',
       'body' => '<!-- Head -->
 <div id="pricingHeader">
-  <h3>Pricing is based on the use of our Card Creator</h3>
+  <h3>Pricing is based on the use of our Custom Business Card Creator</h3>
   <h3>There is no additional cost for the use of a second color</h3>
   <h3>Uploaded Artwork will have an additional fee of $8.00</h3>
 </div>
@@ -678,6 +678,9 @@ Why Pay More?
 </table>
 
 <!-- Backside Pricing Info -->
+<div id="pricingBacks">
+<h3>** All Backs Are Printed "Flat", Meaning The Ink Is NOT Raised. **</h3>
+</div>
 <table>
   <tr>
     <th>1 Color Back</th>
