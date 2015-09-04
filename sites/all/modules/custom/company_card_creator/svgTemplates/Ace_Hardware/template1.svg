@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3119"
+   viewBox="0 0 315 180"
+   height="100%"
+   width="100%"
+   version="1.1"
+   inkscape:version="0.91 r"
+   sodipodi:docname="template1.svg">
+  <defs
+     id="defs18" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1600"
+     inkscape:window-height="876"
+     id="namedview16"
+     showgrid="false"
+     inkscape:zoom="0.94285714"
+     inkscape:cx="-20.681819"
+     inkscape:cy="90"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3119" />
+  <metadata
+     id="metadata3123">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1">
+    <g
+       transform="translate(-0.03759766,0.01623535)"
+       id="g3357">
+      <text
+         x="157.54395"
+         y="96.446289"
+         style="font-size:16.25px;text-anchor:middle"
+         font-size="16.25px"
+         id="companyName">Ace Hardware</text>
+      <text
+         style="font-size:12.5px"
+         x="22.5"
+         y="31"
+         font-size="12.5px"
+         id="line1">Name Here</text>
+      <text
+         style="font-size:10px"
+         x="22.5"
+         y="42"
+         font-size="10px"
+         id="line2">Title Here</text>
+      <text
+         style="font-size:10px"
+         x="22.5"
+         y="123"
+         font-size="10px"
+         id="line3">(000) 000-0000</text>
+      <text
+         style="font-size:10px"
+         x="22.5"
+         y="135"
+         font-size="10px"
+         id="line4">(800) 000-0000</text>
+      <text
+         style="font-size:10px"
+         x="22.5"
+         y="146"
+         font-size="10px"
+         id="line5">john@website.com</text>
+      <text
+         style="font-size:10px"
+         x="22.5"
+         y="156"
+         font-size="10px"
+         id="line6">www.website.com</text>
+      <text
+         x="293"
+         y="123"
+         style="font-size:10px;text-anchor:end"
+         font-size="10px"
+         id="line7">FAX (000) 000-0000</text>
+      <text
+         x="293"
+         y="135"
+         style="font-size:10px;text-anchor:end"
+         font-size="10px"
+         id="line8">CELL (000) 000-0000</text>
+      <text
+         x="293"
+         y="146"
+         style="font-size:10px;text-anchor:end"
+         font-size="10px"
+         id="line9">123 Main Street</text>
+      <text
+         x="293"
+         y="156"
+         style="font-size:10px;text-anchor:end"
+         font-size="10px"
+         id="line10">Anytown, USA 12345</text>
+      <rect
+         style="fill:none"
+         x="224.71001"
+         y="22.434999"
+         width="67.5"
+         height="45"
+         id="logo" />
+    </g>
+  </g>
+</svg>

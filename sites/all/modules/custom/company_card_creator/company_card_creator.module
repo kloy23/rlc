@@ -1,0 +1,445 @@
+<?php
+/**
+ * @file
+ * A module that allows users to create and order custom business cards.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function company_card_creator_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#company_card_creator':{
+      $ret_val = '<h3>' . t('About') . '</h3>';
+      $ret_val .= '<p>' . t('Allows customers to create and order company specific business cards.') . '</p>';
+      return $ret_val;
+      break;
+    }
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function company_card_creator_permission() {
+  return array(
+    'administer card creator' => array(
+      'title' => t('Administer Company Card Creator'),
+      'description' => t('Perform administrative task on Company Card Creator functionality.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function company_card_creator_menu() {
+  $items = array();
+
+  // Business card creation page
+  $items['company-card-creator'] = array(
+    'description' => 'Customize your company specific business card.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('company_card_creator_form'),
+    'access callback' => TRUE,
+  );
+
+  // Create page for ajax front callback
+  $items['company-card-creator-ajax-front'] = array(
+    'title' => t('Company Card Creator AJAX front'),
+    'type' => MENU_CALLBACK,
+    'page callback' => 'company_card_creator_ajax_front',
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+/**
+ * Implement the company_card_creator_ajax_front callback.
+ *
+ * Saves an image of the front of the business card the user has created.
+ */
+function company_card_creator_ajax_front() {
+  // Define the file directory to be used for storing users business cards.
+  define('UPLOAD_DIR', 'sites/default/files/tmp/');
+
+  // Get the svg.toDataUrl thats being passed via AJAX
+  $img = $_POST['img'];
+  // Get the Company Name for the card being created
+  $company_name = $_POST['company_name'];
+  $company_name = str_replace(' ', '', $company_name); // Removes all spaces
+  $company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
+  // Get the Name of the customer the card is being created for
+  $name = $_POST['name'];
+  $name = str_replace(' ', '', $name); // Removes all spaces
+  $name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
+  // Prepare dataURL to be saved as a file
+  $img = str_replace('data:image/svg+xml;base64,', '', $img);
+  $img = str_replace(' ', '+', $img);
+  $data = base64_decode($img);
+
+  $filename = $company_name . '-' . $name;
+
+  // Save svg
+  $file = UPLOAD_DIR . $filename . '.svg';
+  $success = file_put_contents($file, $data);
+
+  // Create low res PNG for display
+  $ext_display = '.png';
+  $filepath_display = UPLOAD_DIR . $filename . $ext_display;
+  exec('convert -background none ' . $file . ' ' . $filepath_display);
+  echo $filepath_display;
+
+  // Create Print Ready PDF
+  $ext_print = '.pdf';
+  $filepath_print = UPLOAD_DIR . $filename . $ext_print;
+  exec('convert -density 350 ' . $file . ' -scale 1225 -colorspace CMYK ' . $filepath_print);
+}
+
+/**
+ * Implements hook_form().
+ */
+function company_card_creator_form($form, &$form_state) {
+  $form = array();
+
+  // Attach css, js, and library files
+  $form['#attached']['css'] = array(
+    drupal_get_path('module', 'company_card_creator') . '/css/company_card_creator.css',
+  );
+
+  // Title displayed above card creator form
+  $form['company_card_creator_info'] = array(
+    '#markup' => '<h1>' . t('Company Business Card Creator') . '</h1>' . '<p>' . t('** For The Best Experience Please Use Either Google Chrome or Mozilla Firefox Browsers **') . '</p>',
+    '#prefix' => '<div id="company_card_creator_header">',
+    '#suffix' => '</div>',
+  );
+
+  // Input Fields for Front
+  $form['card_information'] = array(
+    '#markup' => '<h4>' . t('1) Enter Card Information') . '</h4>',
+    '#prefix' => '<div id="container"><div id="leftColumn"><div id="cardInfoFront">',
+  );
+  $form['line_1'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line1',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 1'),
+    ),
+  );
+  $form['line_2'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line2',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 2'),
+    ),
+  );
+  $form['line_3'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line3',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 3'),
+    ),
+  );
+  $form['line_4'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line4',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 4'),
+    ),
+  );
+  $form['line_5'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line5',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => ('Line 5'),
+    ),
+  );
+  $form['line_6'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line6',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => ('Line 6'),
+    ),
+  );
+  $form['line_7'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line7',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 7'),
+    ),
+  );
+  $form['line_8'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line8',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 8'),
+    ),
+  );
+  $form['line_9'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line9',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 9'),
+    ),
+  );
+  $form['line_10'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line10',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 10'),
+    ),
+    '#suffix' => '</div></div>',
+  );
+
+  // Preview svg
+  $form['previewFront'] = array(
+    '#prefix' => '<div id="midColumn">',
+    '#markup' => '<svg id="previewFront"></svg>',
+    '#suffix' => '</div>',
+  );
+
+  // Template Selection
+  $form['select_template'] = array(
+    '#markup' => '<h4>' . t('2) Select a Template') . '</h4>',
+    '#prefix' => '<div id="rightColumn">',
+  );
+
+  // Templates svg displays
+  $form['templates_front'] = array(
+    '#markup' => '<svg id="templatesFront"></svg>',
+    '#prefix' => '<div id="rightColumnlower"><div id="templatesFrontDisplay">',
+    '#suffix' => '</div></div></div>',
+  );
+
+  // Qunatity
+  $form['qunatity'] = array(
+    '#markup' => '<h4>' . t('6) Select Qunatity') . '</h4>',
+    '#prefix' => '<div id="bottomColumn"><div id="bottomColLeft"><div id="bottomColLeftUpper">',
+    '#suffix' => '</div>',
+  );
+  // Build Quantity Options
+  $quantitys = array(
+    '9' => '500',
+    '10' => '1000',
+    '11' => '2000',
+    '12' => '3000',
+    '13' => '4000',
+    '14' => '5000',
+    '15' => '10000',
+  );
+  // Display Quantity Options
+  $form['select_quantity'] = array(
+    '#type' => 'select',
+    '#options' => $quantitys,
+    '#default_value' => '9',
+    '#prefix' => '<div id="bottomColLeftLower"><div id="select_quantity">',
+    '#suffix' => '</div></div></div>',
+  );
+  // Price
+  $form['current_price'] = array(
+    '#markup' => t('Price = $14.95'),
+    '#prefix' => '<div id="bottomColRight"><div id="continue"><div id="currentPrice">',
+    '#suffix' => '</div>',
+  );
+  // Continue
+  $form['continue'] = array(
+    '#markup' => '<button id="continue_button">Continue</button>',
+    '#suffix' => '</div></div></div>',
+  );
+
+  // Create div for proof
+  $form['proof'] = array(
+    '#markup' => '<img id="proofImageFront"></img><img id="proofImageBack"></img>',
+    '#prefix' => '<div id="proof">',
+  );
+
+  $form['approve_proof'] = array(
+    '#type' => 'checkbox',
+    '#title' => ' I agree that this artwork is free from errors, and understand that RaisedLetterCards.com is not responsible for typo\'s.',
+  );
+
+  $form['edit'] = array(
+    '#markup' => '<button id="edit">Edit</button>',
+  );
+
+  // Add To Cart
+  $form['add_to_cart'] = array(
+    '#type' => 'submit',
+    '#id' => 'addToCart',
+    '#value' => t('Add to cart'),
+    '#suffix' => '</div>',
+  );
+
+  // Include libraries
+  $form['#attached']['js'][] = array(
+    'data' => drupal_get_path('module', 'company_card_creator') . '/libraries/snap.svg.js',
+  );
+
+  $form['#attached']['js'][] = array(
+    'data' => drupal_get_path('module', 'company_card_creator') . '/libraries/svg_todataurl.js',
+  );
+
+  // Include js for company_card_creator functionality.
+  $form['#attached']['js'][] = array(
+    'data' => drupal_get_path('module', 'company_card_creator') . '/js/company_card_creator.js',
+  );
+
+  return $form;
+}
+
+/**
+ * Validates Card Creator Form.
+ */
+
+function company_card_creator_form_validate($form, &$form_state) {
+
+}
+
+/**
+ * Process a validated Card Creator Form submission.
+ */
+
+function company_card_creator_form_submit($form, &$form_state) {
+  global $user;
+  $user_name = isset($user->name) ? $user->name : 'Anonymous';
+  $companyName = $_GET['companyName'];
+  $selected_card_stock = $_GET['cardStock'];
+  $line1 = $form_state['values']['line_1'];
+  $line2 = $form_state['values']['line_2'];
+  $line3 = $form_state['values']['line_3'];
+  $line4 = $form_state['values']['line_4'];
+  $line5 = $form_state['values']['line_5'];
+  $line6 = $form_state['values']['line_6'];
+  $line7 = $form_state['values']['line_7'];
+  $line8 = $form_state['values']['line_8'];
+  $line9 = $form_state['values']['line_9'];
+  $line10 = $form_state['values']['line_10'];
+  $selected_quantity = $form_state['values']['select_quantity'];
+
+  // Generate info for file name
+  $date = date('m-d-y');
+  $private_file_path = 'private://' . $user_name . '/' . $date;
+  $company_name = str_replace(' ', '', $companyName); // Removes all spaces
+  $company_name = preg_replace('/[^A-Za-z0-9\-]/', '', $company_name); // Removes special chars
+  $name = str_replace(' ', '', $line1); // Removes all spaces
+  $name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
+
+  // Proof Approval
+  $approve_proof = $form_state['values']['approve_proof'];
+
+  // if directory does not exist for user
+  if (!file_exists($private_file_path)) {
+    drupal_mkdir($private_file_path, 0775, TRUE);
+  }
+
+  // If the proof has been approved
+  if ($approve_proof != 0) {
+
+    $product_id = 5; // Product Id of Company Business Card
+
+    // First, see if there is already a cart for this user.
+    if (module_exists('commerce_cart')) {
+      $order = commerce_cart_order_load($user->uid);
+    }
+    if (empty($order)) {
+      // Create the new order in checkout
+      $order = commerce_order_new($user->uid, 'checkout_checkout');
+      // Save the order to get its ID.
+      commerce_order_save($order);
+    }
+    // Link anonymous user session to the cart
+    if (!$user->uid) {
+      commerce_cart_order_session_save($order->order_id);
+    }
+
+    // Save SVG Image
+    $filepath_svg = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.svg';
+    $file_svg = (object) array(
+      'filename' => basename($filepath_svg),
+      'filepath' => $filepath_svg,
+      'filemime' => file_get_mimetype($filepath_svg),
+      'filesize' => filesize($filepath_svg),
+      'uid' => 1,
+      'status' => FILE_STATUS_PERMANENT,
+      'uri' => $filepath_svg,
+      'display' => 1,
+      'description' => '',
+    );
+    $file_svg = file_move($file_svg, $private_file_path, FILE_EXISTS_RENAME);
+
+    // Save Print Image
+    $filepath_print = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.pdf';
+    $file_print = (object) array(
+      'filename' => basename($filepath_print),
+      'filepath' => $filepath_print,
+      'filemime' => file_get_mimetype($filepath_print),
+      'filesize' => filesize($filepath_print),
+      'uid' => 1,
+      'status' => FILE_STATUS_PERMANENT,
+      'uri' => $filepath_print,
+      'display' => 1,
+      'description' => '',
+    );
+    $file_print = file_move($file_print, $private_file_path, FILE_EXISTS_RENAME);
+
+    // Save Display Image
+    $filepath_display = 'sites/default/files/tmp/'. $company_name . '-' . $name . '.png';
+    $file_display = (object) array(
+      'filename' => basename($filepath_display),
+      'filepath' => $filepath_display,
+      'filemime' => file_get_mimetype($filepath_display),
+      'filesize' => filesize($filepath_display),
+      'uid' => 1,
+      'status' => FILE_STATUS_PERMANENT,
+      'uri' => $filepath_display,
+      'display' => 1,
+      'description' => '',
+    );
+    $file_display = file_move($file_display, $private_file_path, FILE_EXISTS_RENAME);
+
+    // Load whatever product represents the item the customer will be
+    // paying for and create a line item for it.
+    $product = commerce_product_load($product_id);
+    $line_item = commerce_product_line_item_new($product, 1, $order->order_id, array(), 'company_business_card');
+    // Add the custom values to the line_item fields
+    foreach ($line_item as $field_name => $value) {
+      $line_item->field_quantity['und'][0]['tid'] = $selected_quantity;
+      $line_item->field_company_card_stock[LANGUAGE_NONE][0]['value'] = $selected_card_stock;
+      $line_item->field_line_1[LANGUAGE_NONE][0]['value'] = $line1;
+      $line_item->field_line_2[LANGUAGE_NONE][0]['value'] = $line2;
+      $line_item->field_line_3[LANGUAGE_NONE][0]['value'] = $line3;
+      $line_item->field_line_4[LANGUAGE_NONE][0]['value'] = $line4;
+      $line_item->field_line_5[LANGUAGE_NONE][0]['value'] = $line5;
+      $line_item->field_line_6[LANGUAGE_NONE][0]['value'] = $line6;
+      $line_item->field_line_7[LANGUAGE_NONE][0]['value'] = $line7;
+      $line_item->field_line_8[LANGUAGE_NONE][0]['value'] = $line8;
+      $line_item->field_line_9[LANGUAGE_NONE][0]['value'] = $line9;
+      $line_item->field_line_10[LANGUAGE_NONE][0]['value'] = $line10;
+      $line_item->field_business_card_image['und'][0]['fid'] = $file_display->fid;
+      $line_item->field_print_ready_front['und'][0]['fid'] = $file_print->fid;
+      $line_item->field_svg_front['und'][0]['fid'] = $file_svg->fid;
+    }
+    // Save the line item to get its ID.
+    commerce_line_item_save($line_item);
+    // Add the line item to the order using the wrapper.
+    $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
+    $order_wrapper->commerce_line_items[] = $line_item;
+    // Save the order again to update its line item reference field.
+    commerce_order_save($order);
+    // Redirect to the order's checkout form.
+    $form_state['redirect'] = 'cart';
+
+  }
+
+}

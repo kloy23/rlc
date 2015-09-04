@@ -1,0 +1,4 @@
+name = Company Business Card Creator
+description = Provides a way for customers to create a company specific business card.
+core = 7.x
+package = Custom

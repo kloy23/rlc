@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg3119" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 180" height="100%" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3123">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <text id="companyName" style="text-anchor:end" font-size="16.25px" y="35" x="292">Company Name</text>
+ <text id="name" style="text-anchor:end" font-size="12.5px" y="63" x="292">Name Here</text>
+ <text id="title" style="text-anchor:end" font-size="10px" y="74" x="292">Title Here</text>
+ <text id="line1" font-size="10px" y="123" x="22">(000) 000-0000</text>
+ <text id="line2" font-size="10px" y="134" x="22">(800) 000-0000</text>
+ <text id="line3" font-size="10px" y="146" x="22">FAX (000) 000-0000</text>
+ <text id="line4" font-size="10px" y="156" x="22">CELL (000) 000-0000</text>
+ <text id="email" style="text-anchor:end" font-size="10px" y="124" x="292">john@website.com</text>
+ <text id="website" style="text-anchor:end" font-size="10px" y="134" x="292">www.website.com</text>
+ <text id="address" style="text-anchor:end" font-size="10px" y="146" x="292">123 Main Street</text>
+ <text id="cityStateZip" style="text-anchor:end" font-size="10px" y="156" x="292">Anytown, USA 12345</text>
+ <rect id="logo" height="45" width="67.5" y="42.404" x="31.034" fill="none"/>
+</svg>
