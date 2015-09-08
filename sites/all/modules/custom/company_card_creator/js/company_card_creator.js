@@ -28,6 +28,10 @@
       var cardStock = fetchCardStock();
       $('#previewFront, #proofImageFront').attr('class', cardStock);
     };
+    var setFields = function() {
+      var templateFields = Snap('#previewFront').selectAll('text');
+      console.log(templateFields.length);
+    };
     var highlightTemplate = function(el) {
       var background = el.node.firstElementChild;
       if ($(background).attr('class') !== 'selected') {
@@ -98,7 +102,6 @@
       var svgLogo = Snap('#previewFront');
       previewFront.clear(); // removes display of old template
       var fileName = '../sites/all/modules/custom/company_card_creator/svgTemplates/' + companyName + '/' + templateId + '.svg'; // dynamicly creates url to template
-      console.log(fileName);
       Snap.load(fileName, function(f) {
         previewFront.append(f);
         // target the loaded svg document
@@ -109,7 +112,6 @@
         for (var i = 0; i < svgElement.length; i++) {
           // target the correct input field for the current svg text field
           var field = $inputFields[i];
-          console.log(field);
           // get the field value (text content)
           var fieldVal = field.value;
           // retrive the fields id and add a # to the begining in order to be used in an id selector
@@ -294,6 +296,7 @@
 
     // *** SET DEFAULTS ***
     $(function setDefaults() {
+      setFields();
       setCardStock();
       updatePrice();
     });

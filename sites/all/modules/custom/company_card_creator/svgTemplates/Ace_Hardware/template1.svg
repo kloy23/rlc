@@ -1,135 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   id="svg3119"
-   viewBox="0 0 315 180"
-   height="100%"
-   width="100%"
-   version="1.1"
-   inkscape:version="0.91 r"
-   sodipodi:docname="template1.svg">
-  <defs
-     id="defs18" />
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1600"
-     inkscape:window-height="876"
-     id="namedview16"
-     showgrid="false"
-     inkscape:zoom="0.94285714"
-     inkscape:cx="-20.681819"
-     inkscape:cy="90"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg3119" />
-  <metadata
-     id="metadata3123">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:groupmode="layer"
-     id="layer1"
-     inkscape:label="Layer 1">
-    <g
-       transform="translate(-0.03759766,0.01623535)"
-       id="g3357">
-      <text
-         x="157.54395"
-         y="96.446289"
-         style="font-size:16.25px;text-anchor:middle"
-         font-size="16.25px"
-         id="companyName">Ace Hardware</text>
-      <text
-         style="font-size:12.5px"
-         x="22.5"
-         y="31"
-         font-size="12.5px"
-         id="line1">Name Here</text>
-      <text
-         style="font-size:10px"
-         x="22.5"
-         y="42"
-         font-size="10px"
-         id="line2">Title Here</text>
-      <text
-         style="font-size:10px"
-         x="22.5"
-         y="123"
-         font-size="10px"
-         id="line3">(000) 000-0000</text>
-      <text
-         style="font-size:10px"
-         x="22.5"
-         y="135"
-         font-size="10px"
-         id="line4">(800) 000-0000</text>
-      <text
-         style="font-size:10px"
-         x="22.5"
-         y="146"
-         font-size="10px"
-         id="line5">john@website.com</text>
-      <text
-         style="font-size:10px"
-         x="22.5"
-         y="156"
-         font-size="10px"
-         id="line6">www.website.com</text>
-      <text
-         x="293"
-         y="123"
-         style="font-size:10px;text-anchor:end"
-         font-size="10px"
-         id="line7">FAX (000) 000-0000</text>
-      <text
-         x="293"
-         y="135"
-         style="font-size:10px;text-anchor:end"
-         font-size="10px"
-         id="line8">CELL (000) 000-0000</text>
-      <text
-         x="293"
-         y="146"
-         style="font-size:10px;text-anchor:end"
-         font-size="10px"
-         id="line9">123 Main Street</text>
-      <text
-         x="293"
-         y="156"
-         style="font-size:10px;text-anchor:end"
-         font-size="10px"
-         id="line10">Anytown, USA 12345</text>
-      <rect
-         style="fill:none"
-         x="224.71001"
-         y="22.434999"
-         width="67.5"
-         height="45"
-         id="logo" />
-    </g>
-  </g>
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 180" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <defs id="defs3">
+  <rect id="SVGID_1_" y="0" width="800" height="600" x="0"/>
+ </defs>
+ <metadata id="metadata8">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <rect id="rect3373" height="2.1427" width="180.71" y="22.437" x="111.78" fill="#e73137"/>
+ <text id="line3" style="letter-spacing:0px" font-family="hellvetica" font-size="12.5px" y="39.936028" dx="0" font-style="italic" x="110.07713" font-weight="bold" line-height="125%">Your Ace Hardware</text>
+ <text id="line4" font-size="9.375px" font-style="italic" y="48.864143" x="110.61729" font-family="hellvetica">123 Main Street</text>
+ <text id="line5" font-size="9.375px" font-style="italic" y="59.720627" x="111.70676" font-family="Hellvetica">Anywhere, USA 12345-6789</text>
+ <text id="line6" font-size="9.375px" font-style="italic" y="68.648743" x="110.8599" font-family="Hellvetica">Phone: (800) 123-4567</text>
+ <text id="line7" font-size="9.375px" font-style="italic" y="79.005356" x="110.8599" font-family="Hellvetica">FAX: (123) 456-7890</text>
+ <text id="line1" font-size="12.5px" font-family="Hellvetica" y="123.71706" x="112.48191" font-weight="bold">John Smith</text>
+ <text id="line2" font-size="9.375px" font-style="italic" y="134.85904" x="110.67785" font-family="Hellvetica">Owner</text>
+ <g id="g3339" fill="#e73137" transform="matrix(.45099 0 0 .45099 -124.68 -9.2925)">
+  <clipPath id="SVGID_2_">
+   <use id="use3345" xlink:href="#SVGID_1_" height="100%" width="100%" y="0" x="0" overflow="visible"/>
+  </clipPath>
+  <path id="path3347" clip-path="url(#SVGID_2_)" d="m379.38 291.51c-0.019 1.259-0.496 3.461 0.366 7.5 0 0 2.63 19.458 22.442 19.842 5.698-0.39 8.104-1.474 11.036-2.909 11.008-5.387 12.838-17.458 12.838-17.458h-10.354c-5.99 13.521-17.629 8.984-17.629 8.984l6.549-30.766c12.58 0.344 13.049 12.196 13.049 12.196h10.527s0.74-12.451-11.395-19.837c-2.486-1.512-6.586-2.577-10.599-2.671 0.001 0.001-22.408-1.405-26.83 25.119"/>
+  <polygon id="polygon3349" points="447.32 288.9 464.99 288.9 462.98 298.48 445.3 298.48 443.29 308.07 460.97 308.07 458.91 317.61 423.31 317.61 433.45 269.73 469.05 269.73 467 279.31 449.37 279.31" clip-path="url(#SVGID_2_)"/>
+  <polygon id="polygon3351" points="357.05 317.7 351.32 287.14 330.95 317.7" clip-path="url(#SVGID_2_)"/>
+  <polygon id="polygon3353" points="370.92 257.7 382 317.7 362.53 317.7 355.68 280.55" clip-path="url(#SVGID_2_)"/>
+  <path id="path3355" clip-path="url(#SVGID_2_)" d="m460.74 315.21c0-1.417 1.148-2.463 2.509-2.463 1.343 0 2.491 1.045 2.491 2.463 0 1.43-1.148 2.474-2.491 2.474-1.361 0-2.509-1.044-2.509-2.474m2.509 2.062c1.115 0 1.996-0.874 1.996-2.063 0-1.171-0.881-2.052-1.996-2.052-1.132 0-2.014 0.881-2.014 2.052 0 1.189 0.882 2.063 2.014 2.063m-0.525-0.632h-0.432v-2.847h1.083c0.675 0 1.007 0.247 1.007 0.811 0 0.509-0.32 0.729-0.737 0.781l0.81 1.255h-0.483l-0.75-1.232h-0.497v1.232zm0.516-1.601c0.366 0 0.692-0.024 0.692-0.465 0-0.351-0.32-0.416-0.621-0.416h-0.587v0.881h0.516z"/>
+ </g>
 </svg>

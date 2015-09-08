@@ -51,8 +51,68 @@ function company_card_creator_menu() {
     'page callback' => 'company_card_creator_ajax_front',
     'access arguments' => array('access content'),
   );
-
   return $items;
+}
+
+/**
+ * Implements hook_block_info().
+ * Create a block for company selection.
+ */
+  function company_card_creator_block_info() {
+    $blocks['company_selection'] = array(
+      'info' => t('Company Selection'),
+    );
+
+    return $blocks;
+  }
+
+/**
+ * Implements hook_block_view().
+ */
+  function company_card_creator_block_view($delta = '') {
+    // This example is adapted from node.module.
+    $block = array();
+
+    switch ($delta) {
+      case 'company_selection':
+        $block['subject'] = t('Select Your Company');
+        $block['content'] = drupal_get_form('company_selection_form');
+        break;
+    }
+    return $block;
+  }
+/**
+ * Implements hook_form().
+ */
+function company_selection_form($form, &$form_state) {
+  $form = array();
+
+  $form['#attached']['css'] = array(
+    drupal_get_path('module', 'company_card_creator') . '/css/company_selection.css',
+  );
+
+  $companies = array(
+    '?companyName=Ace_Hardware&cardStock=whiteSmooth' => t('Ace Hardware'),
+    '?companyName=Liberty_Tax&cardStock=whiteLinen' => t('Liberty Tax'),
+  );
+
+  $form['company_select_list'] = array(
+    '#type' => 'select',
+    '#options' => $companies,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#id' => 'submit',
+    '#value' => 'Go',
+  );
+
+
+  $form['#attached']['js'][] = array(
+    'data' => drupal_get_path('module', 'company_card_creator') . '/js/company_selection.js',
+  );
+
+  return $form;
 }
 
 /**
