@@ -326,6 +326,8 @@ function company_card_creator_form_submit($form, &$form_state) {
   $line9 = $form_state['values']['line_9'];
   $line10 = $form_state['values']['line_10'];
   $selected_quantity = $form_state['values']['select_quantity'];
+  // Proof Approval
+  $approve_proof = $form_state['values']['approve_proof'];
 
   // Generate info for file name
   $date = date('m-d-y');
@@ -335,8 +337,26 @@ function company_card_creator_form_submit($form, &$form_state) {
   $name = str_replace(' ', '', $line1); // Removes all spaces
   $name = preg_replace('/[^A-Za-z0-9\-]/', '', $name); // Removes special chars
 
-  // Proof Approval
-  $approve_proof = $form_state['values']['approve_proof'];
+  // Set cardStock tid
+  if ($selected_card_stock === 'whiteSmooth') {
+    $selected_card_stock = '1';
+  } elseif ($selected_card_stock === 'whiteLinen') {
+    $selected_card_stock = '2';
+  } elseif ($selected_card_stock === 'softWhiteLinen') {
+    $selected_card_stock = '3';
+  } elseif ($selected_card_stock === 'tanLinen') {
+    $selected_card_stock = '4';
+  } elseif ($selected_card_stock === 'grayLinen') {
+    $selected_card_stock = '5';
+  } elseif ($selected_card_stock === 'yellow') {
+    $selected_card_stock = '6';
+  } elseif ($selected_card_stock === 'kromekote') {
+    $selected_card_stock = '7';
+  } elseif ($selected_card_stock === 'woodgrain') {
+    $selected_card_stock = '8';
+  } else {
+    $selected_card_stock = '0';
+  }
 
   // if directory does not exist for user
   if (!file_exists($private_file_path)) {
@@ -415,7 +435,7 @@ function company_card_creator_form_submit($form, &$form_state) {
     // Add the custom values to the line_item fields
     foreach ($line_item as $field_name => $value) {
       $line_item->field_quantity['und'][0]['tid'] = $selected_quantity;
-      $line_item->field_company_card_stock[LANGUAGE_NONE][0]['value'] = $selected_card_stock;
+      $line_item->field_card_stocks['und'][0]['tid'] = $selected_card_stock;
       $line_item->field_line_1[LANGUAGE_NONE][0]['value'] = $line1;
       $line_item->field_line_2[LANGUAGE_NONE][0]['value'] = $line2;
       $line_item->field_line_3[LANGUAGE_NONE][0]['value'] = $line3;
