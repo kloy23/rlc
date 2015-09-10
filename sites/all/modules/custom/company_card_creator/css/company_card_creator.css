@@ -61,12 +61,10 @@
   width: 25%;
 }
 #rightColumn #templatesFront {
-  height: 715px;
   width: 100%;
 }
 #rightColumn #templatesFrontDisplay {
   border: 1px solid black;
-  height: 365px;
   overflow: scroll;
 }
 #container #bottomColumn {

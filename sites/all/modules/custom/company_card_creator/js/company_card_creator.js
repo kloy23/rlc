@@ -28,9 +28,27 @@
       var cardStock = fetchCardStock();
       $('#previewFront, #proofImageFront').attr('class', cardStock);
     };
-    var setFields = function() {
-      var templateFields = Snap('#previewFront').selectAll('text');
-      console.log(templateFields.length);
+    var setPlaceholder = function(el, id) {
+      var placeholder = $(previewFront.select(id).node).text();
+      $(el).attr('placeholder', placeholder);
+    };
+    var setFields = function(svgElements) {
+      for (var i=0; i<$inputFields.length; i++) {
+        var el = $inputFields[i];
+        var id = '#' + el.id;
+        if ( i >= svgElements.length) {
+          $(id).hide();
+        } else if ( i <= svgElements.length) {
+          $(id).show();
+          setPlaceholder(el, id);
+        }
+      }
+    };
+    var setTemplateDisplay = function(svgElements) {
+      if (svgElements.length === 2) {
+        $('#rightColumn #templatesFrontDisplay').css('height', '255px');
+        $('#templatesFront').css('height', '240px');
+      }
     };
     var highlightTemplate = function(el) {
       var background = el.node.firstElementChild;
@@ -104,12 +122,17 @@
       var fileName = '../sites/all/modules/custom/company_card_creator/svgTemplates/' + companyName + '/' + templateId + '.svg'; // dynamicly creates url to template
       Snap.load(fileName, function(f) {
         previewFront.append(f);
+        previewFront.attr({
+          'width' : '315px',
+          'height' : '180px',
+        });
         // target the loaded svg document
         svgNode = Snap.select('#previewFront');
         // find all text fields within the svg document
-        var svgElement = svgNode.selectAll('text');
+        var svgElements = svgNode.selectAll('text');
+        setFields(svgElements);
         // for each svg text field
-        for (var i = 0; i < svgElement.length; i++) {
+        for (var i = 0; i < svgElements.length; i++) {
           // target the correct input field for the current svg text field
           var field = $inputFields[i];
           // get the field value (text content)
@@ -206,7 +229,9 @@
         if (!$(el).val()) {
           var id = '#' + el.id;
           var svgTextField = svgFrontNode.select(id);
-          $(svgTextField.node).text('');
+          if(svgTextField !== null) {
+            $(svgTextField.node).text('');
+          }
         }
       }
     };
@@ -227,6 +252,7 @@
       });
       svgFront.toDataURL("image/svg+xml", {
         callback: function(data) {
+          console.log(data);
           $.ajax({
             type: 'POST',
             url: '/card-creator-ajax-front',
@@ -246,17 +272,8 @@
     // *** LOAD SVG DOCUMENTS ***
 
     // Use Snap.svg to load the 'previewFront' svg document
-    // Add the classes primaryColor and secondaryColor to text fields within the SVG
     var previewFront = Snap('#previewFront');
     var companyName = fetchCompanyName();
-    var templatePath = '../sites/all/modules/custom/company_card_creator/svgTemplates/' + companyName + '/template1.svg';
-    Snap.load(templatePath, function(f) {
-      previewFront.append(f);
-      previewFront.attr({
-        'width' : '315px',
-        'height' : '180px',
-      });
-    });
     // Use Snap.svg to load the 'templatesFront' svg document
     var templatesFront = Snap('#templatesFront');
     var templateSelection = '../sites/all/modules/custom/company_card_creator/svgTemplates/' + companyName + '/' + companyName + '.svg';
@@ -264,6 +281,7 @@
       templatesFront.append(f);
       // get all rect within loaded svg.  Each template has a rect that has an id to identify it.
       var svgElements = templatesFront.selectAll('g');
+      setTemplateDisplay(svgElements);
       // target the first template
       var firstTemplate = svgElements[0];
       var firstTemplateBackground = firstTemplate.node.firstElementChild;
@@ -296,7 +314,6 @@
 
     // *** SET DEFAULTS ***
     $(function setDefaults() {
-      setFields();
       setCardStock();
       updatePrice();
     });
