@@ -86,14 +86,12 @@ div.ctools-modal-content a.close img {
   position: relative;
 }
 #panel-home-left {
-  float: left;
 }
 #panel-home-right {
+  float: left;
   font-size: 1.3em;
   font-weight: bold;
   line-height: 30px;
-  position: relative;
-  left: 30px;
 }
 
 /*

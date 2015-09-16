@@ -48,6 +48,9 @@
       if (svgElements.length === 2) {
         $('#rightColumn #templatesFrontDisplay').css('height', '255px');
         $('#templatesFront').css('height', '240px');
+      } if (svgElements.length === 6) {
+        $('#rightColumn #templatesFrontDisplay').css('height', '255px');
+        $('#templatesFront').css('height', '715px');
       }
     };
     var highlightTemplate = function(el) {
@@ -252,7 +255,6 @@
       });
       svgFront.toDataURL("image/svg+xml", {
         callback: function(data) {
-          console.log(data);
           $.ajax({
             type: 'POST',
             url: '/card-creator-ajax-front',
