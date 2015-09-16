@@ -200,7 +200,7 @@ function rlc_pages_default_page_manager_pages() {
       'right' => array(
         'type' => 'region',
         'title' => 'Right',
-        'width' => '54.454033278857636',
+        'width' => 54.454033278857636,
         'width_type' => '%',
         'parent' => '1',
         'class' => '',
@@ -236,6 +236,7 @@ function rlc_pages_default_page_manager_pages() {
       'header' => NULL,
       'top_left' => NULL,
       'log_in' => NULL,
+      'company_selection' => NULL,
     ),
   );
   $display->cache = array();
@@ -304,6 +305,29 @@ Why Pay More?
     $pane->uuid = '3c231214-37ae-4c46-a20d-bcc3914fda89';
     $display->content['new-3c231214-37ae-4c46-a20d-bcc3914fda89'] = $pane;
     $display->panels['left'][0] = 'new-3c231214-37ae-4c46-a20d-bcc3914fda89';
+    $pane = new stdClass();
+    $pane->pid = 'new-a7dc9ea6-09d2-48a3-b45a-0e2a7ab1f5fd';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'company_card_creator-company_selection';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'a7dc9ea6-09d2-48a3-b45a-0e2a7ab1f5fd';
+    $display->content['new-a7dc9ea6-09d2-48a3-b45a-0e2a7ab1f5fd'] = $pane;
+    $display->panels['left'][1] = 'new-a7dc9ea6-09d2-48a3-b45a-0e2a7ab1f5fd';
     $pane = new stdClass();
     $pane->pid = 'new-c2a5fc87-4bf1-4a4e-beea-2222af6c315b';
     $pane->panel = 'right';
