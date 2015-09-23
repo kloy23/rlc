@@ -94,6 +94,9 @@ function company_selection_form($form, &$form_state) {
   $companies = array(
     '?companyName=Ace_Hardware&cardStock=whiteSmooth' => t('Ace Hardware'),
     '?companyName=Liberty_Tax&cardStock=whiteSmooth' => t('Liberty Tax'),
+    '?companyName=Acura&cardStock=whiteSmooth' => t('Acura'),
+    '?companyName=Audi&cardStock=whiteSmooth' => t('Audi'),
+    '?companyName=BMW&cardStock=whiteSmooth' => t('BMW'),
   );
 
   $form['company_select_list'] = array(
@@ -258,6 +261,46 @@ function company_card_creator_form($form, &$form_state) {
     '#size' => 25,
     '#attributes' => array(
       'placeholder' => t('Line 10'),
+    ),
+  );
+  $form['line_11'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line11',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 11'),
+    ),
+  );
+  $form['line_12'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line12',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 12'),
+    ),
+  );
+  $form['line_13'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line13',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 13'),
+    ),
+  );
+  $form['line_14'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line14',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 14'),
+    ),
+  );
+  $form['line_15'] = array(
+    '#type' => 'textfield',
+    '#id' => 'line15',
+    '#size' => 25,
+    '#attributes' => array(
+      'placeholder' => t('Line 15'),
     ),
     '#suffix' => '</div></div>',
   );
