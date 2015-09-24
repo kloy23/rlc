@@ -92,11 +92,21 @@ function company_selection_form($form, &$form_state) {
   );
 
   $companies = array(
-    '?companyName=Ace_Hardware&cardStock=whiteSmooth' => t('Ace Hardware'),
-    '?companyName=Liberty_Tax&cardStock=whiteSmooth' => t('Liberty Tax'),
-    '?companyName=Acura&cardStock=whiteSmooth' => t('Acura'),
-    '?companyName=Audi&cardStock=whiteSmooth' => t('Audi'),
-    '?companyName=BMW&cardStock=whiteSmooth' => t('BMW'),
+    'Automotive' => array(
+      '?companyName=Acura&cardStock=whiteSmooth' => t('Acura'),
+      '?companyName=Audi&cardStock=whiteSmooth' => t('Audi'),
+      '?companyName=BMW&cardStock=whiteSmooth' => t('BMW'),
+      '?companyName=Buick&cardStock=whiteSmooth' => t('Buick'),
+      '?companyName=Cadillac&cardStock=whiteSmooth' => t('Cadillac'),
+      '?companyName=Chevy&cardStock=whiteSmooth' => t('Chevy'),
+      '?companyName=Chrysler&cardStock=whiteSmooth' => t('Chrysler'),
+    ),
+    'Hardware' => array(
+      '?companyName=Ace_Hardware&cardStock=whiteSmooth' => t('Ace Hardware'),
+    ),
+    'Financial' => array(
+      '?companyName=Liberty_Tax&cardStock=whiteSmooth' => t('Liberty Tax'),
+    ),
   );
 
   $form['company_select_list'] = array(
