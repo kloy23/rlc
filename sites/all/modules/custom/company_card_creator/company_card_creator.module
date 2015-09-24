@@ -100,6 +100,7 @@ function company_selection_form($form, &$form_state) {
       '?companyName=Cadillac&cardStock=whiteSmooth' => t('Cadillac'),
       '?companyName=Chevy&cardStock=whiteSmooth' => t('Chevy'),
       '?companyName=Chrysler&cardStock=whiteSmooth' => t('Chrysler'),
+      '?companyName=Dodge&cardStock=whiteSmooth' => t('Dodge'),
     ),
     'Hardware' => array(
       '?companyName=Ace_Hardware&cardStock=whiteSmooth' => t('Ace Hardware'),
