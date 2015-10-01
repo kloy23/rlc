@@ -23,6 +23,13 @@ function rlc_commerce_commerce_line_item_default_types() {
       'add_form_submit_value' => 'Add product',
       'base' => 'commerce_product_line_item',
     ),
+    'company_business_card' => array(
+      'name' => 'Company Business Card',
+      'description' => 'A customizable product line item type.',
+      'product' => TRUE,
+      'add_form_submit_value' => 'Add product',
+      'base' => 'commerce_product_line_item',
+    ),
   );
   return $items;
 }
@@ -43,6 +50,13 @@ function rlc_commerce_commerce_product_default_types() {
       'type' => 'camera_ready_business_card',
       'name' => 'Camera Ready Business Card',
       'description' => 'Business cards printed from customer provided artwork.',
+      'help' => '',
+      'revision' => 0,
+    ),
+    'company_business_card' => array(
+      'type' => 'company_business_card',
+      'name' => 'Company Business Card',
+      'description' => 'A company specific business card.',
       'help' => '',
       'revision' => 0,
     ),
