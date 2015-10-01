@@ -11,13 +11,12 @@
   </rdf:RDF>
  </metadata>
  <text id="line1" style="text-anchor:end;" font-size="12.75px" y="33" x="293" font-family="Helvetica" fill="#000000">John Smith</text>
- <text id="line2" style="text-anchor:end" font-size="9.375px" y="44" x="293" font-family="Helvetica" fill="#000000">Owner</text>
- <text id="line3" font-size="9.375" style="text-anchor:end;" y="136" x="157" font-family="Helvetica" fill="#000000">123 Main Street</text>
- <text id="line4" font-size="9.375" y="136" x="168.05872" font-family="Helvetica" fill="#000000">Anywhere, USA 12345</text>
- <text id="line5" font-size="9.375" style="text-anchor:end;" y="147" x="160" font-family="Helvetica" fill="#000000">Phone: (800) 123-4567</text>
- <text id="line6" font-size="9.375" y="147" x="170" font-family="Helvetica" fill="#000000">FAX: (123) 456-7890</text>
- <text id="line7" font-size="9.375" style="text-anchor:middle;" y="158" x="157" font-family="Helvetica" fill="#000000">email@yourdomain.com</text>
- <g id="g3020" transform="matrix(0.83764107,0,0,0.83764107,13.995173,13.174647)">
+ <text id="line2" style="text-anchor:end" font-size="9.375px" y="44" x="293" fill="#000000">Owner</text>
+ <text id="line3" font-size="9.375px" style="text-anchor:start;" y="125" x="22" font-family="Helvetica" fill="#000000">123 Main Street</text>
+ <text id="line4" font-size="9.375px" y="136" x="22" font-family="Helvetica" fill="#000000">Anywhere, USA 12345-6789</text>
+ <text id="line5" font-size="9.375px" style="text-anchor" y="147" x="22" font-family="Helvetica" fill="#000000">Phone: (800) 123-4567</text>
+ <text id="line6" font-size="9.375px" style="text-anchor:start" y="158" x="22" font-family="Helvetica" fill="#000000">email@yourdomain.com</text>
+ <g id="g3020" transform="matrix(0.58790168,0,0,0.58790168,16.03713,16.041442)">
   <path id="path3371" fill="#00F" d="m104.72,70.32c-0.0501-3.348,7.504-0.91093,8.0768,0.86024,0.7017,2.1506,0.31505,5.2402,0.51554,7.9145,0.22197,2.9319,1.4464,5.0536,0.85923,7.3977-2.5204,0.50181-5.3344-0.37915-6.3583-1.8927-1.9977-2.9395-0.26493-9.1043-1.7185-12.215-0.36517-0.78827-1.3676-1.5051-1.3748-2.0644"/>
   <path id="path3373" fill="#00F" d="m114.52,87.525c-0.15753-2.7815,1.518-4.1721,1.5466-7.0536,0.0215-1.7563-0.83059-3.7925-1.3748-5.3339-0.63727-1.8062-2.7281-5.6776-0.3437-6.5379,3.3725-1.2184,6.3154,3.3912,10.483,1.893,0.44394,6.7814,0.80195,14.559,0.68739,21.334-1.1242,0.09326-1.9476-0.11448-2.5777-0.51522-1.2101-2.646,0.0931-6.1659,0.34369-8.9475-1.6683,1.8854-1.2459,5.8641-2.4058,8.2583-2.7782-0.37277-4.8332-1.4696-6.3583-3.0969"/>
   <path id="path3375" fill="#00F" d="m104.38,68.772c-2.055,0.02129-3.4441-1.2403-5.4991-1.7205,3.3653-18.883,7.0743-37.421,10.654-56.088,1.919,18.438,2.8283,37.887,4.1243,56.948-1.654-0.17169-2.6493-0.61636-4.1243-0.51586-1.8831,0.12882-3.53,1.3621-5.1554,1.3764"/>
