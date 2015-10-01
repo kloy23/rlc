@@ -70,7 +70,6 @@ function company_card_creator_menu() {
  * Implements hook_block_view().
  */
   function company_card_creator_block_view($delta = '') {
-    // This example is adapted from node.module.
     $block = array();
 
     switch ($delta) {
@@ -92,6 +91,13 @@ function company_selection_form($form, &$form_state) {
   );
 
   $companies = array(
+    'Financial' => array(
+      '?companyName=HR_Block&cardStock=whiteSmooth' => t('H&R Block'),
+      '?companyName=Liberty_Tax&cardStock=whiteSmooth' => t('Liberty Tax'),
+    ),
+    'Hardware' => array(
+      '?companyName=Ace_Hardware&cardStock=whiteSmooth' => t('Ace Hardware'),
+    ),
     'Automotive' => array(
       '?companyName=Acura&cardStock=whiteSmooth' => t('Acura'),
       '?companyName=Audi&cardStock=whiteSmooth' => t('Audi'),
@@ -101,13 +107,6 @@ function company_selection_form($form, &$form_state) {
       '?companyName=Chevy&cardStock=whiteSmooth' => t('Chevy'),
       '?companyName=Chrysler&cardStock=whiteSmooth' => t('Chrysler'),
       '?companyName=Dodge&cardStock=whiteSmooth' => t('Dodge'),
-    ),
-    'Hardware' => array(
-      '?companyName=Ace_Hardware&cardStock=whiteSmooth' => t('Ace Hardware'),
-    ),
-    'Financial' => array(
-      '?companyName=Liberty_Tax&cardStock=whiteSmooth' => t('Liberty Tax'),
-      '?companyName=HR_Block&cardStock=whiteSmooth' => t('H&R Block'),
     ),
   );
 
