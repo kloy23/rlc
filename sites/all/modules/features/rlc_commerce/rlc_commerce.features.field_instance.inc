@@ -2390,7 +2390,7 @@ function rlc_commerce_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 18,
+      'weight' => 23,
     ),
   );
 
@@ -2410,13 +2410,13 @@ function rlc_commerce_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 19,
+        'weight' => 25,
       ),
     ),
     'entity_type' => 'commerce_line_item',
     'field_name' => 'field_card_stocks',
     'label' => 'Card Stocks',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -2425,7 +2425,7 @@ function rlc_commerce_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -2502,6 +2502,192 @@ function rlc_commerce_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-company_business_card-field_line_11'
+  $field_instances['commerce_line_item-company_business_card-field_line_11'] = array(
+    'bundle' => 'company_business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 20,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_line_11',
+    'label' => 'Line 11',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-company_business_card-field_line_12'
+  $field_instances['commerce_line_item-company_business_card-field_line_12'] = array(
+    'bundle' => 'company_business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 21,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_line_12',
+    'label' => 'Line 12',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 19,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-company_business_card-field_line_13'
+  $field_instances['commerce_line_item-company_business_card-field_line_13'] = array(
+    'bundle' => 'company_business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 22,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_line_13',
+    'label' => 'Line 13',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-company_business_card-field_line_14'
+  $field_instances['commerce_line_item-company_business_card-field_line_14'] = array(
+    'bundle' => 'company_business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 23,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_line_14',
+    'label' => 'Line 14',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-company_business_card-field_line_15'
+  $field_instances['commerce_line_item-company_business_card-field_line_15'] = array(
+    'bundle' => 'company_business_card',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 24,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_line_15',
+    'label' => 'Line 15',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 22,
     ),
   );
 
@@ -2853,7 +3039,7 @@ function rlc_commerce_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 19,
+      'weight' => 24,
     ),
   );
 
@@ -2879,7 +3065,7 @@ function rlc_commerce_field_default_field_instances() {
     'entity_type' => 'commerce_line_item',
     'field_name' => 'field_quantity',
     'label' => 'Quantity',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -2888,7 +3074,7 @@ function rlc_commerce_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -2936,7 +3122,7 @@ function rlc_commerce_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 20,
+      'weight' => 25,
     ),
   );
 
@@ -4183,6 +4369,11 @@ function rlc_commerce_field_default_field_instances() {
   t('Front');
   t('Line 1');
   t('Line 10');
+  t('Line 11');
+  t('Line 12');
+  t('Line 13');
+  t('Line 14');
+  t('Line 15');
   t('Line 2');
   t('Line 3');
   t('Line 4');
