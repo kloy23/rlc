@@ -18,13 +18,13 @@
  </metadata>
  style="text-anchor: middle; font-family: Helvetica;"
  <rect id="rect3373" height="2.1427" width="180.71" y="22.437" x="111.78" fill="#e73137"/>
- <text id="line3" style="font-family: Helvetica;" line-height="125%" font-size="12.5px" font-style="italic" dx="0" y="40" x="110" font-weight="bold">Your Ace Hardware</text>
- <text id="line4" font-size="9.375px" font-style="italic" y="53" x="110" style="font-family: Helvetica;">123 Main Street</text>
- <text id="line5" font-size="9.375px" font-style="italic" y="64" x="110" style="font-family: Helvetica;">Anywhere, USA 12345-6789</text>
- <text id="line6" font-size="9.375px" font-style="italic" y="75" x="110" style="font-family: Helvetica;">Phone: (800) 123-4567</text>
- <text id="line7" font-size="9.375px" font-style="italic" y="86" x="110" style="font-family: Helvetica;">FAX: (123) 456-7890</text>
- <text id="line1" font-size="12.5px" style="font-family: Helvetica;" y="123" x="110" font-weight="bold">John Smith</text>
- <text id="line2" font-size="9.375px" font-style="italic" y="134" x="110" style="font-family: Helvetica;">Owner</text>
+ <text id="line1" font-size="12.5px" y="123" x="110" font-weight="bold" font-family="Helvetica" fill="#000000">John Smith</text>
+ <text id="line2" font-size="9.375px" font-style="italic" y="134" x="110" font-family="Helvetica" fill="#000000">Owner</text>
+ <text id="line3" font-size="12.5px" font-style="italic" y="40" x="110" font-weight="bold" font-family="Helvetica" fill="#000000">Your Ace Hardware</text>
+ <text id="line4" font-size="9.375px" font-style="italic" y="53" x="110" font-family="Helvetica" fill="#000000">123 Main Street</text>
+ <text id="line5" font-size="9.375px" font-style="italic" y="64" x="110" font-family="Helvetica" fill="#000000">Anywhere, USA 12345-6789</text>
+ <text id="line6" font-size="9.375px" font-style="italic" y="75" x="110" font-family="Helvetica" fill="#000000">Phone: (800) 123-4567</text>
+ <text id="line7" font-size="9.375px" font-style="italic" y="86" x="110" font-family="Helvetica" fill="#000000">FAX: (123) 456-7890</text>
  <path id="path3347" d="m379.38 291.51c-0.019 1.259-0.496 3.461 0.366 7.5 0 0 2.63 19.458 22.442 19.842 5.698-0.39 8.104-1.474 11.036-2.909 11.008-5.387 12.838-17.458 12.838-17.458h-10.354c-5.99 13.521-17.629 8.984-17.629 8.984l6.549-30.766c12.58 0.344 13.049 12.196 13.049 12.196h10.527s0.74-12.451-11.395-19.837c-2.486-1.512-6.586-2.577-10.599-2.671 0.001 0.001-22.408-1.405-26.83 25.119" clip-path="url(#SVGID_2_)" transform="matrix(.45099 0 0 .45099 -124.68 -9.2925)" fill="#e73137"/>
  <polygon id="polygon3349" clip-path="url(#SVGID_2_)" transform="matrix(.45099 0 0 .45099 -124.68 -9.2925)" points="458.91 317.61 423.31 317.61 433.45 269.73 469.05 269.73 467 279.31 449.37 279.31 447.32 288.9 464.99 288.9 462.98 298.48 445.3 298.48 443.29 308.07 460.97 308.07" fill="#e73137"/>
  <polygon id="polygon3351" clip-path="url(#SVGID_2_)" transform="matrix(.45099 0 0 .45099 -124.68 -9.2925)" points="357.05 317.7 351.32 287.14 330.95 317.7" fill="#e73137"/>

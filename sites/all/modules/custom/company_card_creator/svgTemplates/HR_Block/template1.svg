@@ -10,13 +10,13 @@
    </cc:Work>
   </rdf:RDF>
  </metadata>
- <text id="line1" font-size="12.5px" font-family="Helvetica" y="92" x="67" font-weight="bold">John Smith</text>
- <text id="line2" font-size="9.375px" y="103" x="67" font-family="Helvetica">Owner</text>
- <text id="line3" font-size="9.375px" y="125" x="67" font-family="Helvetica">123 Main Street</text>
- <text id="line4" font-size="9.375px" y="136" x="67" font-family="Helvetica">Anywhere, USA 12345-6789</text>
- <text id="line5" font-size="9.375px" y="147" x="67" font-family="Helvetica">Phone: (800) 123-4567</text>
- <text id="line6" font-size="9.375px" y="147" x="170.37192" font-family="Helvetica">FAX: (123) 456-7890</text>
- <text id="line7" font-size="9.375px" y="158" x="67" font-family="Helvetica">email@yourdomain.com</text>
+ <text id="line1" font-size="12.5px" y="92" x="67" font-weight="bold" font-family="Helvetica" fill="#000000">John Smith</text>
+ <text id="line2" font-size="9.375px" y="103" x="67" font-family="Helvetica" fill="#000000">Owner</text>
+ <text id="line3" font-size="9.375px" y="125" x="67" font-family="Helvetica" fill="#000000">123 Main Street</text>
+ <text id="line4" font-size="9.375px" y="136" x="67" font-family="Helvetica" fill="#000000">Anywhere, USA 12345-6789</text>
+ <text id="line5" font-size="9.375px" y="147" x="67" font-family="Helvetica" fill="#000000">Phone: (800) 123-4567</text>
+ <text id="line6" font-size="9.375px" y="147" x="170.37192" font-family="Helvetica" fill="#000000">FAX: (123) 456-7890</text>
+ <text id="line7" font-size="9.375px" y="158" x="67" font-family="Helvetica" fill="#000000">email@yourdomain.com</text>
  <g id="g3429" transform="matrix(0.681 0 0 0.681 22.744 22.485)">
   <g id="g3403">
    <polygon id="polygon3405" points="55.25 55.248 0 55.248 0 0 0 0 55.25 0" fill="#6bb623"/>
