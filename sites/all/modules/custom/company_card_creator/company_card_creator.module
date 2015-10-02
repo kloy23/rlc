@@ -80,6 +80,21 @@ function company_card_creator_menu() {
     }
     return $block;
   }
+
+/**
+ * Implements hook_views_pre_render().
+ * Conditionaly set which "Card Stocks" field is shown on commerce_shopping_cart.
+ */
+  function company_card_creator_views_pre_render(&$view) {
+    if ($view->name == 'commerce_cart_form') {
+      $orders = $view->result;
+      foreach($orders as $order) {
+        if ($order->field_commerce_product[0]['raw']['product_id'] != 4) {
+          $order->field_field_card_stocks[0]['rendered']['#access'] = FALSE;
+        }
+      }
+    }
+  }
 /**
  * Implements hook_form().
  */
@@ -439,6 +454,11 @@ function company_card_creator_form_submit($form, &$form_state) {
   $line8 = $form_state['values']['line_8'];
   $line9 = $form_state['values']['line_9'];
   $line10 = $form_state['values']['line_10'];
+  $line11 = $form_state['values']['line_11'];
+  $line12 = $form_state['values']['line_12'];
+  $line13 = $form_state['values']['line_13'];
+  $line14 = $form_state['values']['line_14'];
+  $line15 = $form_state['values']['line_15'];
   $selected_quantity = $form_state['values']['select_quantity'];
   // Proof Approval
   $approve_proof = $form_state['values']['approve_proof'];
@@ -560,6 +580,11 @@ function company_card_creator_form_submit($form, &$form_state) {
       $line_item->field_line_8[LANGUAGE_NONE][0]['value'] = $line8;
       $line_item->field_line_9[LANGUAGE_NONE][0]['value'] = $line9;
       $line_item->field_line_10[LANGUAGE_NONE][0]['value'] = $line10;
+      $line_item->field_line_11[LANGUAGE_NONE][0]['value'] = $line11;
+      $line_item->field_line_12[LANGUAGE_NONE][0]['value'] = $line12;
+      $line_item->field_line_13[LANGUAGE_NONE][0]['value'] = $line13;
+      $line_item->field_line_14[LANGUAGE_NONE][0]['value'] = $line14;
+      $line_item->field_line_15[LANGUAGE_NONE][0]['value'] = $line15;
       $line_item->field_business_card_image['und'][0]['fid'] = $file_display->fid;
       $line_item->field_print_ready_front['und'][0]['fid'] = $file_print->fid;
       $line_item->field_svg_front['und'][0]['fid'] = $file_svg->fid;

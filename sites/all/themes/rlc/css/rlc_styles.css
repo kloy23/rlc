@@ -233,6 +233,19 @@ div.ctools-modal-content a.close img {
 }
 
 /*
+  Commerce_cart_form
+ */
+.card_stock_label {
+  font-weight: bold;
+  display: block;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+#company_card_stock {
+  float: left;
+  margin-right: 25px;
+}
+/*
  Site Wide Card Stocks
  */
 .whiteSmooth {

@@ -4,7 +4,7 @@
     $(function setCardstockDisplay() {
       var el;
       var id;
-      var cardStockSelection = $('select[id*="card-stocks"]');
+      var cardStockSelection = $('select[id*="card-stock"]');
       if (cardStockSelection.length !== 0) {
         for (var i=0; i<cardStockSelection.length; i++) {
           el = cardStockSelection[i];
@@ -22,6 +22,18 @@
           setCardStockBackground(el);
         }
       }
+    });
+    // Hide Card Stocks Field if Company Card Stock is being displayed.
+    $(function removeCardStocksField() {
+      var products = $('tr');
+      $(products).each(function() {
+        var companyCardStock = $(this).find('#company_card_stock');
+        $(companyCardStock).each(function() {
+          var siblings = $(this).siblings();
+          var cardStocks = siblings[0];
+          $(cardStocks).hide();
+        });
+      });
     });
   }); // End $(document).ready()
 
@@ -73,7 +85,6 @@
     var selectedCardStock = $(el).text().toLowerCase();
     selectedCardStock = $.trim(selectedCardStock).replace(/\s+/g, '');
     var className = fetchClassName(selectedCardStock);
-    console.log(selectedCardStock);
     changeImageBackground(el, className);
   };
 
