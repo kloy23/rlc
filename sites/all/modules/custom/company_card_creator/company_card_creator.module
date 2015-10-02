@@ -338,7 +338,7 @@ function company_card_creator_form($form, &$form_state) {
 
   // Qunatity
   $form['qunatity'] = array(
-    '#markup' => '<h4>' . t('6) Select Qunatity') . '</h4>',
+    '#markup' => '<h4>' . t('3) Select Qunatity') . '</h4>',
     '#prefix' => '<div id="bottomColumn"><div id="bottomColLeft"><div id="bottomColLeftUpper">',
     '#suffix' => '</div>',
   );
