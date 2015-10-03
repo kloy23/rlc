@@ -74,7 +74,7 @@ function company_card_creator_menu() {
 
     switch ($delta) {
       case 'company_selection':
-        $block['subject'] = t('Select Your Company');
+        $block['subject'] = t('Franchise Companies');
         $block['content'] = drupal_get_form('company_selection_form');
         break;
     }
