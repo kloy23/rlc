@@ -1165,7 +1165,6 @@
       var convertedTotal = price.toFixed(2);
       // display price to customer
       $currentPrice.text("Price = $" + convertedTotal);
-      console.log('update price fired');
     };
     var changeCardStock = function() {
       var className = fetchSelectedCardStock();
