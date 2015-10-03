@@ -50,19 +50,19 @@
         $('#templatesFront').css('height', '115px');
       } else if (svgElements.length === 2) {
         $('#rightColumn #templatesFrontDisplay').css('height', '255px');
-        $('#templatesFront').css('height', '230px'); 
+        $('#templatesFront').css('height', '230px');
       } else if (svgElements.length === 3) {
         $('#rightColumn #templatesFrontDisplay').css('height', '255px');
-        $('#templatesFront').css('height', '343'); 
+        $('#templatesFront').css('height', '343');
       } else if (svgElements.length === 4) {
         $('#rightColumn #templatesFrontDisplay').css('height', '255px');
-        $('#templatesFront').css('height', '456px'); 
+        $('#templatesFront').css('height', '456px');
       } else if (svgElements.length === 5) {
         $('#rightColumn #templatesFrontDisplay').css('height', '255px');
-        $('#templatesFront').css('height', '570px'); 
+        $('#templatesFront').css('height', '570px');
       } else if (svgElements.length === 6) {
         $('#rightColumn #templatesFrontDisplay').css('height', '255px');
-        $('#templatesFront').css('height', '715px'); 
+        $('#templatesFront').css('height', '715px');
       }
     };
     var highlightTemplate = function(el) {
@@ -168,11 +168,15 @@
       if (quantity === '9') {
         price = price500;
         return price;
-      } else if (quantity === '10') {
+      } else if (quantity === '10') { // If the quantity is 1000
         price = price1000;
         return price;
-      } else {
+      } else if (quantity > '10' && quantity < '15') { // If the quantity is 2000 or higher
         var multiple = quantity - 10;
+        price = price1000 + (pricePerThousand * multiple);
+        return price;
+      } else if (quantity === '15') { // If the quantity is 10,000
+        var multiple = 9;
         price = price1000 + (pricePerThousand * multiple);
         return price;
       }
@@ -187,9 +191,9 @@
       var cardStock = fetchCardStock();
       // If the cardStock is White Smooth
       if (cardStock === 'whiteSmooth') {
-        price500 = 14.95;
-        price1000 = 16.95;
-        pricePerThousand = 14.95;
+        price500 = 21.00;
+        price1000 = 24.50;
+        pricePerThousand = 23.50;
         price = calculateCost(quantity, price500, price1000, pricePerThousand);
       } else if (cardStock === 'whiteLinen') { // White Linen
         price500 = 23.95;
