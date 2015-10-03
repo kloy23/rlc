@@ -1105,8 +1105,12 @@
       if (quantity[0].checked === true) {
         price = price500 + twoSidedPrice;
         return price;
-      } else if (quantity[1].checked === true) {
+      } else if (quantity[1].checked === true) { // If the quantity is 1000
         price = price1000 + twoSidedPrice;
+        return price;
+      } else if (quantity[6].checked === true) { // If the quantity is 10000
+        var multiple = 9;
+        price = price1000 + (pricePerThousand * multiple) + (twoSidedPrice * (multiple));
         return price;
       } else {
         // Loop through quantities
@@ -1161,6 +1165,7 @@
       var convertedTotal = price.toFixed(2);
       // display price to customer
       $currentPrice.text("Price = $" + convertedTotal);
+      console.log('update price fired');
     };
     var changeCardStock = function() {
       var className = fetchSelectedCardStock();
@@ -1528,10 +1533,10 @@
       $('#backColorSelection').val('0');
       loadClipartCategory();
       changeCardStock();
-      // Change all fonts to match docFontFamily
-      changeAllFonts();
       // update price on page refresh
       updatePrice();
+      // Change all fonts to match docFontFamily
+      changeAllFonts();
     });
 
   }); // End $(document).ready()
