@@ -83,6 +83,156 @@ function rlc_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rlc_rules_calculate_price_of_company_card_1000'] = entity_import('rules_config', '{ "rlc_rules_calculate_price_of_company_card_1000" : {
+      "LABEL" : "Calculate Price of Company Card 1000",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
+      "ON" : { "commerce_product_calculate_sell_price" : [] },
+      "IF" : [
+        { "data_is" : {
+            "data" : [ "commerce-line-item:type" ],
+            "value" : "company_business_card"
+          }
+        },
+        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "10" } }
+      ],
+      "DO" : [
+        { "commerce_line_item_unit_price_add" : {
+            "commerce_line_item" : [ "commerce_line_item" ],
+            "amount" : "755",
+            "component_name" : "base_price",
+            "round_mode" : "0"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rlc_rules_calculate_price_of_company_card_10000'] = entity_import('rules_config', '{ "rlc_rules_calculate_price_of_company_card_10000" : {
+      "LABEL" : "Calculate Price of Company Card 10000",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
+      "ON" : { "commerce_product_calculate_sell_price" : [] },
+      "IF" : [
+        { "data_is" : {
+            "data" : [ "commerce-line-item:type" ],
+            "value" : "company_business_card"
+          }
+        },
+        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "15" } }
+      ],
+      "DO" : [
+        { "commerce_line_item_unit_price_add" : {
+            "commerce_line_item" : [ "commerce_line_item" ],
+            "amount" : "8450",
+            "component_name" : "base_price",
+            "round_mode" : "0"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rlc_rules_calculate_price_of_company_card_2000'] = entity_import('rules_config', '{ "rlc_rules_calculate_price_of_company_card_2000" : {
+      "LABEL" : "Calculate Price of Company Card 2000",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
+      "ON" : { "commerce_product_calculate_sell_price" : [] },
+      "IF" : [
+        { "data_is" : {
+            "data" : [ "commerce-line-item:type" ],
+            "value" : "company_business_card"
+          }
+        },
+        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "11" } }
+      ],
+      "DO" : [
+        { "commerce_line_item_unit_price_add" : {
+            "commerce_line_item" : [ "commerce_line_item" ],
+            "amount" : "1610",
+            "component_name" : "base_price",
+            "round_mode" : "0"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rlc_rules_calculate_price_of_company_card_3000'] = entity_import('rules_config', '{ "rlc_rules_calculate_price_of_company_card_3000" : {
+      "LABEL" : "Calculate Price of Company Card 3000",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
+      "ON" : { "commerce_product_calculate_sell_price" : [] },
+      "IF" : [
+        { "data_is" : {
+            "data" : [ "commerce-line-item:type" ],
+            "value" : "company_business_card"
+          }
+        },
+        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "12" } }
+      ],
+      "DO" : [
+        { "commerce_line_item_unit_price_add" : {
+            "commerce_line_item" : [ "commerce_line_item" ],
+            "amount" : "2465",
+            "component_name" : "base_price",
+            "round_mode" : "0"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rlc_rules_calculate_price_of_company_card_3000_cloned_'] = entity_import('rules_config', '{ "rlc_rules_calculate_price_of_company_card_3000_cloned_" : {
+      "LABEL" : "Calculate Price of Company Card 4000",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
+      "ON" : { "commerce_product_calculate_sell_price" : [] },
+      "IF" : [
+        { "data_is" : {
+            "data" : [ "commerce-line-item:type" ],
+            "value" : "company_business_card"
+          }
+        },
+        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "13" } }
+      ],
+      "DO" : [
+        { "commerce_line_item_unit_price_add" : {
+            "commerce_line_item" : [ "commerce_line_item" ],
+            "amount" : "3320",
+            "component_name" : "base_price",
+            "round_mode" : "0"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rlc_rules_calculate_price_of_company_card_5000'] = entity_import('rules_config', '{ "rlc_rules_calculate_price_of_company_card_5000" : {
+      "LABEL" : "Calculate Price of Company Card 5000",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
+      "ON" : { "commerce_product_calculate_sell_price" : [] },
+      "IF" : [
+        { "data_is" : {
+            "data" : [ "commerce-line-item:type" ],
+            "value" : "company_business_card"
+          }
+        },
+        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "14" } }
+      ],
+      "DO" : [
+        { "commerce_line_item_unit_price_add" : {
+            "commerce_line_item" : [ "commerce_line_item" ],
+            "amount" : "4175",
+            "component_name" : "base_price",
+            "round_mode" : "0"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_calculate_price_for_1000'] = entity_import('rules_config', '{ "rules_calculate_price_for_1000" : {
       "LABEL" : "Calculate price for 1000",
       "PLUGIN" : "reaction rule",
@@ -543,7 +693,7 @@ function rlc_rules_default_rules_configuration() {
     }
   }');
   $items['rules_calculate_price_of_company_card'] = entity_import('rules_config', '{ "rules_calculate_price_of_company_card" : {
-      "LABEL" : "Calculate Price of Company Card",
+      "LABEL" : "Calculate Price of Company Card 500",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
@@ -553,12 +703,13 @@ function rlc_rules_default_rules_configuration() {
             "data" : [ "commerce-line-item:type" ],
             "value" : "company_business_card"
           }
-        }
+        },
+        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "9" } }
       ],
       "DO" : [
         { "commerce_line_item_unit_price_add" : {
             "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : "300",
+            "amount" : "605",
             "component_name" : "base_price",
             "round_mode" : "0"
           }
