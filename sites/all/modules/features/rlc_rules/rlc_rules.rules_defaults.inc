@@ -51,6 +51,12 @@ function rlc_rules_default_rules_configuration() {
               },
               { "list_add" : { "list" : [ "file-list" ], "item" : [ "card-creator-front" ] } },
               { "list_add" : { "list" : [ "file-list" ], "item" : [ "card-creator-back" ] } },
+              { "component_rlc_rules_fetch_business_card_product_files_cloned_" : {
+                  "USING" : { "line_item" : [ "list-item" ] },
+                  "PROVIDE" : { "company_card_creator_front" : { "company_card_creator_front" : "Company Card Creator Front" } }
+                }
+              },
+              { "list_add" : { "list" : [ "file-list" ], "item" : [ "company-card-creator-front" ] } },
               { "component_rules_fetch_camera_ready_product_files" : {
                   "USING" : { "line_item" : [ "list-item" ] },
                   "PROVIDE" : {
@@ -231,6 +237,40 @@ function rlc_rules_default_rules_configuration() {
           }
         }
       ]
+    }
+  }');
+  $items['rlc_rules_fetch_business_card_product_files_cloned_'] = entity_import('rules_config', '{ "rlc_rules_fetch_business_card_product_files_cloned_" : {
+      "LABEL" : "Fetch Company Card Product Files",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
+        "company_card_creator_front" : {
+          "label" : "Company Card Creator Front",
+          "type" : "file",
+          "parameter" : false
+        }
+      },
+      "IF" : [
+        { "data_is" : { "data" : [ "line-item:type" ], "value" : "company_business_card" } }
+      ],
+      "DO" : [
+        { "variable_add" : {
+            "USING" : {
+              "type" : "file",
+              "value" : [ "line-item:field-print-ready-front:file" ]
+            },
+            "PROVIDE" : { "variable_added" : { "company_card_creator_front_file" : "Card Creator Front File" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "company-card-creator-front" ],
+            "value" : [ "company-card-creator-front-file" ]
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "company_card_creator_front" ]
     }
   }');
   $items['rules_calculate_price_for_1000'] = entity_import('rules_config', '{ "rules_calculate_price_for_1000" : {
@@ -944,7 +984,8 @@ function rlc_rules_default_rules_configuration() {
             "type" : "commerce_line_item",
             "bundle" : { "value" : {
                 "business_card" : "business_card",
-                "camera_ready_business_card" : "camera_ready_business_card"
+                "camera_ready_business_card" : "camera_ready_business_card",
+                "company_business_card" : "company_business_card"
               }
             }
           }
