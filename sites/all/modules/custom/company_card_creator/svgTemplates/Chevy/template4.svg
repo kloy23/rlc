@@ -199,15 +199,15 @@
    </cc:Work>
   </rdf:RDF>
  </metadata>
- <text id="line1" y="90" x="158" font-size="12.5px" style="text-anchor:middle">John Smith</text>
- <text id="line2" y="101" x="158" font-size="9.375px" style="text-anchor:middle">Owner</text>
- <text id="line3" font-size="11px" style="text-anchor:middle" y="136" x="75" font-weight="bold">Company Name</text>
- <text id="line4" y="147" x="75" font-size="9.375px" style="text-anchor:middle">123 Main Street</text>
- <text id="line5" y="158" x="75" font-size="9.375px" style="text-anchor:middle">Anywhere, USA 65421</text>
- <text id="line6" y="125" x="294" font-size="9.375px" style="text-anchor:end">Phone: (800) 123-4567</text>
- <text id="line7" y="136" x="294" font-size="9.375px" style="text-anchor:end">FAX: (123) 456-7890</text>
- <text id="line8" y="147" x="294" font-size="9.375px" style="text-anchor:end">Cell: (123) 345-7893</text>
- <text id="line9" y="158" x="294" font-size="9.375px" style="text-anchor:end">www.yourwebsite.com</text>
+ <text id="line1" y="90" x="158" font-size="12.5px" style="text-anchor:middle" font-family="Helvetica" fill="#000000">John Smith</text>
+ <text id="line2" y="101" x="158" font-size="9.375px" style="text-anchor:middle" font-family="Helvetica" fill="#000000">Owner</text>
+ <text id="line3" font-size="11px" style="text-anchor:middle" y="136" x="75" font-weight="bold" font-family="Helvetica" fill="#000000">Company Name</text>
+ <text id="line4" y="147" x="75" font-size="9.375px" style="text-anchor:middle" font-family="Helvetica" fill="#000000">123 Main Street</text>
+ <text id="line5" y="158" x="75" font-size="9.375px" style="text-anchor:middle" font-family="Helvetica" fill="#000000">Anywhere, USA 65421</text>
+ <text id="line6" y="125" x="294" font-size="9.375px" style="text-anchor:end" font-family="Helvetica" fill="#000000">Phone: (800) 123-4567</text>
+ <text id="line7" y="136" x="294" font-size="9.375px" style="text-anchor:end" font-family="Helvetica" fill="#000000">FAX: (123) 456-7890</text>
+ <text id="line8" y="147" x="294" font-size="9.375px" style="text-anchor:end" font-family="Helvetica" fill="#000000">Cell: (123) 345-7893</text>
+ <text id="line9" y="158" x="294" font-size="9.375px" style="text-anchor:end" font-family="Helvetica" fill="#000000">www.yourwebsite.com</text>
  <g id="g4338" transform="matrix(.76858 0 0 .76858 -65.839 14.167)">
   <g id="g10" transform="matrix(.26012 0 0 -.26012 114.89 52.244)">
    <g id="g4662" transform="matrix(1 0 0 .98934 0 -5.9174)">

@@ -11,7 +11,7 @@
   </rdf:RDF>
  </metadata>
  <text id="line1" style="text-anchor:end;" font-size="12.75px" y="33" x="293" font-family="Helvetica" fill="#000000">John Smith</text>
- <text id="line2" style="text-anchor:end" font-size="9.375px" y="44" x="293" fill="#000000">Owner</text>
+ <text id="line2" style="text-anchor:end" font-size="9.375px" y="44" x="293" font-family="Helvetica" fill="#000000">Owner</text>
  <text id="line3" font-size="9.375px" style="text-anchor:start;" y="125" x="22" font-family="Helvetica" fill="#000000">123 Main Street</text>
  <text id="line4" font-size="9.375px" y="136" x="22" font-family="Helvetica" fill="#000000">Anywhere, USA 12345-6789</text>
  <text id="line5" font-size="9.375px" style="text-anchor" y="147" x="22" font-family="Helvetica" fill="#000000">Phone: (800) 123-4567</text>
