@@ -2,8 +2,12 @@
   'use strict';
   $(document).ready(function() {
 
+    $(function(){
+      $('#company_selection').hide();
+    });
+
     var fetchArgument = function() {
-      var selectListVal = $('#edit-company-select-list').val();
+      var selectListVal = $('#company_selection').val();
       return selectListVal;
     };
 
@@ -12,10 +16,13 @@
       window.location.href = url;
     };
 
-    $('#submit').on('click', function(e) {
-      e.preventDefault();
+    $('#company_selection').change(function() {
       var argument = fetchArgument();
       goToCreator(argument);
+    });
+
+    $('#franchise_companies').click(function() {
+      $('#company_selection').toggle();
     });
 
   });

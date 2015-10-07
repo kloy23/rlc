@@ -74,8 +74,7 @@ function company_card_creator_menu() {
 
     switch ($delta) {
       case 'company_selection':
-        $block['subject'] = t('Franchise Companies');
-        $block['content'] = drupal_get_form('company_selection_form');
+        $block['content'] = company_selection_view();
         break;
     }
     return $block;
@@ -96,16 +95,16 @@ function company_card_creator_menu() {
     }
   }
 /**
- * Implements hook_form().
+ * Custom function to assemble renderable array for block content.
+ * Returns a renderable array with the block content.
+ * @return
+ *   returns a renderable array of block content.
  */
-function company_selection_form($form, &$form_state) {
-  $form = array();
-
-  $form['#attached']['css'] = array(
-    drupal_get_path('module', 'company_card_creator') . '/css/company_selection.css',
-  );
+function company_selection_view() {
+  $block = array();
 
   $companies = array(
+    'None' => t('None'),
     'Financial' => array(
       '?companyName=HR_Block&cardStock=whiteSmooth' => t('H&R Block'),
       '?companyName=Liberty_Tax&cardStock=whiteSmooth' => t('Liberty Tax'),
@@ -125,23 +124,26 @@ function company_selection_form($form, &$form_state) {
     ),
   );
 
-  $form['company_select_list'] = array(
+  $block['#attached']['css'] = array(
+    drupal_get_path('module', 'company_card_creator') . '/css/company_selection.css',
+  );
+
+  $block['franchise_companies'] = array (
+    '#markup' => '<a>' . t('Franchise Companies') . '</a>',
+    '#prefix' => '<div id="franchise_companies" class="buttons glossy">',
+    '#suffix' => '</div>',
+  );
+
+  $block['selection'] = array(
     '#type' => 'select',
+    '#id' => 'company_selection',
     '#options' => $companies,
   );
 
-  $form['submit'] = array(
-    '#type' => 'submit',
-    '#id' => 'submit',
-    '#value' => 'Go',
-  );
-
-
-  $form['#attached']['js'][] = array(
+  $block['#attached']['js'][] = array(
     'data' => drupal_get_path('module', 'company_card_creator') . '/js/company_selection.js',
   );
-
-  return $form;
+  return $block;
 }
 
 /**
