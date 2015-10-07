@@ -10,4 +10,5 @@ features[page_manager_pages][] = contact_us
 features[page_manager_pages][] = home
 features[page_manager_pages][] = order_now
 features[page_manager_pages][] = pricing
+features[page_manager_pages][] = spiritual_products
 features[page_manager_pages][] = upload_artwork
