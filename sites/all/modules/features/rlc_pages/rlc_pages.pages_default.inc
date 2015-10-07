@@ -291,6 +291,9 @@ Why Pay More?
 </div>
 <div class="buttons glossy">
 <a  href="/upload-artwork">Upload Custom Artwork</a>
+</div>
+<div class="buttons glossy">
+<a  href="/spiritual-products">Spiritual Products</a>
 </div>',
       'format' => 'full_html',
       'substitute' => TRUE,
