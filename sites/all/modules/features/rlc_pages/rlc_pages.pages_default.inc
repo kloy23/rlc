@@ -285,9 +285,13 @@ Why Pay More?
     );
     $pane->configuration = array(
       'admin_title' => 'Get Started',
-      'title' => 'Get Started',
-      'body' => '<a class="buttons" href="/card-creator/">Create Your Card</a>
-<a class="buttons" href="/upload-artwork">Upload Custom Artwork</a>',
+      'title' => '',
+      'body' => '<div class="buttons glossy">
+<a href="/card-creator/">Create Your Card</a>
+</div>
+<div class="buttons glossy">
+<a  href="/upload-artwork">Upload Custom Artwork</a>
+</div>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
