@@ -13,6 +13,20 @@ div.ctools-modal-content a.close img {
 }
 
 /*
+  Site Header
+*/
+#logo {
+  float: left;
+  margin: 15px 10px 0px 0px;
+}
+#siteSlogan {
+  color: #FFF;
+  font-family: BrushScript BT;
+  float: left;
+  font-size: 16px;
+}
+
+/*
   User Menu
  */
 #secondary-menu-bar {
@@ -22,14 +36,66 @@ div.ctools-modal-content a.close img {
   Buttons
 */
 .buttons {
-  border: 1px outset;
-  padding: 10px;
-  background-color: #E3E3E3;
-  border-radius: 10px;
-  font-size: 1.2em;
-  line-height: 60px;
+  width: 100%;
 }
-
+.glossy {
+  width: 75%;
+  height: 35px;
+  margin: 10px auto;
+  position: relative;
+  background: #414042;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(31%,#414042), color-stop(100%,#000000));
+  background: -webkit-linear-gradient(top,  #414042 31%,#000000 100%);
+  background: -moz-linear-gradient(top,  #414042 31%, #000000 100%);
+  background: -o-linear-gradient(top,  #414042 31%,#000000 100%);
+  background: -ms-linear-gradient(top,  #414042 31%,#000000 100%);
+  background: linear-gradient(to bottom,  #414042 31%,#000000 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414042', endColorstr='#000000',GradientType=0 );
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  border: 1px solid #C4C4C4;
+  font-size: 1em;
+  text-shadow: 1px 1px 0px rgba(255,255,25F5,.5);
+  -webkit-box-shadow:  0px 1px 3px 0px rgba(0, 0, 0, .2);    
+  box-shadow:  0px 1px 3px 0px rgba(0, 0, 0, .2);
+  position: relative;
+}
+.glossy a {
+  margin: 8px 0 0 0;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #FFF; 
+  position: relative;
+  z-index: 1;
+}
+.glossy:before {
+  content: "";
+  width: 95%;
+  height: 25px;
+  display: block;
+  position: absolute;
+  left: 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 8%, rgba(255,255,255,0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(8%,rgba(255,255,255,0.7)), color-stop(100%,rgba(255,255,255,0)));
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.7) 8%,rgba(255,255,255,0) 100%);
+  background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.7) 8%,rgba(255,255,255,0) 100%);
+  background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.7) 8%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.7) 8%,rgba(255,255,255,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+}
+.glossy:hover {
+  border: 2px outset;
+}
+.glossy:active {
+  border: 1px inset;
+}
 /*
   Unsupported Browser
  */
@@ -103,7 +169,10 @@ div.ctools-modal-content a.close img {
   padding: 10px 10px 0px;
   border: 1px outset;
   border-radius: 10px;
-  background-color: #eee;
+  background-color: rgb(65, 64, 66);
+  background-image: -moz-linear-gradient(center top , #414042, #000);
+  color: #ffffff;
+  background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#414042),color-stop(100%,#000000));
 }
 #panel-home-header #disclaimer {
   bottom: 1em;
@@ -113,6 +182,7 @@ div.ctools-modal-content a.close img {
   position: relative;
 }
 #panel-home-left {
+
 }
 #panel-home-right {
   float: left;
@@ -148,7 +218,10 @@ div.ctools-modal-content a.close img {
   text-align: center;
 }
 #pricingHeader {
-  background-color: #eeeeee;
+  background-color: rgb(65, 64, 66);
+  background-image: -moz-linear-gradient(center top , #414042, #000);
+  background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#414042),color-stop(100%,#000000));
+  color: #ffffff;
   border: 1px outset;
   border-radius: 10px;
   padding: 10px;
@@ -244,56 +317,56 @@ div.ctools-modal-content a.close img {
  */
 .whiteSmooth {
   background-image: url("/sites/all/themes/rlc/css/images/cardstocks/whiteSmooth.jpeg");
-  border: 3px outset #000;
+  border: 1px outset #000;
   height: 180px;
   margin-top: 10px;
   width: 315px;
 }
 .whiteLinen {
   background-image: url("/sites/all/themes/rlc/css/images/cardstocks/whiteLinen.jpeg");
-  border: 3px outset #000;
+  border: 1px outset #000;
   height: 180px;
   margin-top: 10px;
   width: 315px;
 }
 .softWhiteLinen {
   background-image: url("/sites/all/themes/rlc/css/images/cardstocks/softWhite.jpeg");
-  border: 3px outset #000;
+  border: 1px outset #000;
   height: 180px;
   margin-top: 10px;
   width: 315px;
 }
 .tanLinen {
   background-image: url("/sites/all/themes/rlc/css/images/cardstocks/tan.jpeg");
-  border: 3px outset #000;
+  border: 1px outset #000;
   height: 180px;
   margin-top: 10px;
   width: 315px;
 }
 .grayLinen {
   background-image: url("/sites/all/themes/rlc/css/images/cardstocks/gray.jpeg");
-  border: 3px outset #000;
+  border: 1px outset #000;
   height: 180px;
   margin-top: 10px;
   width: 315px;
 }
 .yellow {
   background-image: url("/sites/all/themes/rlc/css/images/cardstocks/yellow.jpeg");
-  border: 3px outset #000;
+  border: 1px outset #000;
   height: 180px;
   margin-top: 10px;
   width: 315px;
 }
 .kromekote {
   background-image: url("/sites/all/themes/rlc/css/images/cardstocks/kromekote.jpeg");
-  border: 3px outset #000;
+  border: 1px outset #000;
   height: 180px;
   margin-top: 10px;
   width: 315px;
 }
 .woodgrain {
   background-image: url("/sites/all/themes/rlc/css/images/cardstocks/woodgrain.jpeg");
-  border: 3px outset #000;
+  border: 1px outset #000;
   height: 180px;
   margin-top: 10px;
   width: 315px;
@@ -303,7 +376,7 @@ div.ctools-modal-content a.close img {
  */
 #panel-upload-artwork-form {
   background-color: #eee;
-  border: 3px outset black;
+  border: 1px outset black;
   border-radius: 10px;
   padding: 20px;
 }
