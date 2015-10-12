@@ -3344,6 +3344,226 @@ function rlc_commerce_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'commerce_line_item-spiritual_card-commerce_display_path'
+  $field_instances['commerce_line_item-spiritual_card-commerce_display_path'] = array(
+    'bundle' => 'spiritual_card',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'display' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'commerce_display_path',
+    'label' => 'Display path',
+    'required' => TRUE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-spiritual_card-commerce_product'
+  $field_instances['commerce_line_item-spiritual_card-commerce_product'] = array(
+    'bundle' => 'spiritual_card',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => 0,
+          'default_quantity' => 1,
+          'line_item_type' => 'spiritual_card',
+          'show_quantity' => 1,
+          'show_single_product_attributes' => 0,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 2,
+      ),
+      'display' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'commerce_product',
+    'label' => 'Product',
+    'required' => TRUE,
+    'settings' => array(
+      'field_injection' => TRUE,
+      'referenceable_types' => array(),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_product_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'commerce_product/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'commerce_product_reference_autocomplete',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_line_item-spiritual_card-commerce_total'
+  $field_instances['commerce_line_item-spiritual_card-commerce_total'] = array(
+    'bundle' => 'spiritual_card',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 1,
+      ),
+      'display' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 1,
+      ),
+      'node_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 1,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'commerce_total',
+    'label' => 'Total',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_price',
+      'settings' => array(
+        'currency_code' => 'default',
+      ),
+      'type' => 'commerce_price_full',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-spiritual_card-commerce_unit_price'
+  $field_instances['commerce_line_item-spiritual_card-commerce_unit_price'] = array(
+    'bundle' => 'spiritual_card',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'display' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'commerce_unit_price',
+    'label' => 'Unit price',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_price',
+      'settings' => array(
+        'currency_code' => 'default',
+      ),
+      'type' => 'commerce_price_full',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
   // 'commerce_order-commerce_order-commerce_customer_billing'
   $field_instances['commerce_order-commerce_order-commerce_customer_billing'] = array(
     'bundle' => 'commerce_order',
@@ -3977,6 +4197,386 @@ function rlc_commerce_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'commerce_product-spiritual_book-commerce_price'
+  $field_instances['commerce_product-spiritual_book-commerce_price'] = array(
+    'bundle' => 'spiritual_book',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'commerce_line_item_display' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'commerce_line_item_token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'line_item' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_full' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_rss' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_search_index' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_search_result' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'commerce_price',
+    'label' => 'Price',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_price',
+      'settings' => array(
+        'currency_code' => 'default',
+      ),
+      'type' => 'commerce_price_full',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_product-spiritual_book-field_product_image'
+  $field_instances['commerce_product-spiritual_book-field_product_image'] = array(
+    'bundle' => 'spiritual_book',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_product_image',
+    'label' => 'Product Image',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'product_images/spiritual_books',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 37,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_product-spiritual_card-commerce_price'
+  $field_instances['commerce_product-spiritual_card-commerce_price'] = array(
+    'bundle' => 'spiritual_card',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'commerce_line_item_display' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'commerce_line_item_token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'line_item' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_full' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_rss' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_search_index' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_search_result' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'commerce_price',
+    'label' => 'Price',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_price',
+      'settings' => array(
+        'currency_code' => 'default',
+      ),
+      'type' => 'commerce_price_full',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_product-spiritual_card-field_product_image'
+  $field_instances['commerce_product-spiritual_card-field_product_image'] = array(
+    'bundle' => 'spiritual_card',
+    'deleted' => 0,
+    'description' => 'Please Insert an Image to be displayed for this product.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 3,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_product_image',
+    'label' => 'Product Image',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'product_images/spiritual_cards',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 36,
+    ),
+  );
+
   // Exported field_instance:
   // 'commerce_product-two_sided_business_card-commerce_price'
   $field_instances['commerce_product-two_sided_business_card-commerce_price'] = array(
@@ -4066,9 +4666,9 @@ function rlc_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_display-body'
-  $field_instances['node-product_display-body'] = array(
-    'bundle' => 'product_display',
+  // Exported field_instance: 'node-custom_artwork_product_display-body'
+  $field_instances['node-custom_artwork_product_display-body'] = array(
+    'bundle' => 'custom_artwork_product_display',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4110,9 +4710,10 @@ function rlc_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_display-field_product_reference'
-  $field_instances['node-product_display-field_product_reference'] = array(
-    'bundle' => 'product_display',
+  // Exported field_instance:
+  // 'node-custom_artwork_product_display-field_product_reference'
+  $field_instances['node-custom_artwork_product_display-field_product_reference'] = array(
+    'bundle' => 'custom_artwork_product_display',
     'default_value' => array(
       0 => array(
         'product_id' => 3,
@@ -4150,7 +4751,9 @@ function rlc_commerce_field_default_field_instances() {
       'referenceable_types' => array(
         'business_card' => 0,
         'camera_ready_business_card' => 'camera_ready_business_card',
+        'company_business_card' => 0,
         'product' => 0,
+        'spiritual_cards' => 0,
         'two_sided_business_card' => 0,
       ),
       'user_register_form' => FALSE,
@@ -4160,7 +4763,104 @@ function rlc_commerce_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 32,
+      'weight' => 33,
+    ),
+  );
+
+  // Exported field_instance: 'node-spiritual_card_product_display-body'
+  $field_instances['node-spiritual_card_product_display-body'] = array(
+    'bundle' => 'spiritual_card_product_display',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => FALSE,
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-spiritual_card_product_display-field_product_reference'
+  $field_instances['node-spiritual_card_product_display-field_product_reference'] = array(
+    'bundle' => 'spiritual_card_product_display',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => 0,
+          'default_quantity' => 1,
+          'line_item_type' => 'spiritual_card',
+          'show_quantity' => 1,
+          'show_single_product_attributes' => 0,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_product_reference',
+    'label' => 'Product',
+    'required' => 1,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'product' => 0,
+        'spiritual_card' => 'spiritual_card',
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 33,
     ),
   );
 
@@ -4385,6 +5085,7 @@ function rlc_commerce_field_default_field_instances() {
   t('Line items');
   t('Name');
   t('Order total');
+  t('Please Insert an Image to be displayed for this product.');
   t('Please select a color option for the backside of your business card.');
   t('Please select a color option.');
   t('Price');
@@ -4394,6 +5095,7 @@ function rlc_commerce_field_default_field_instances() {
   t('Print Ready Back');
   t('Print Ready Front');
   t('Product');
+  t('Product Image');
   t('Product Reference');
   t('Quantity');
   t('SVG Back');
