@@ -825,6 +825,31 @@ Why Pay More?
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-81091f3b-d170-481b-8eb7-5c8e3ed0c2c1';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<h3 style="color: red;" align="center">*** All Cards are Based on Quantities of 250 ***</h3>',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '81091f3b-d170-481b-8eb7-5c8e3ed0c2c1';
+    $display->content['new-81091f3b-d170-481b-8eb7-5c8e3ed0c2c1'] = $pane;
+    $display->panels['center'][0] = 'new-81091f3b-d170-481b-8eb7-5c8e3ed0c2c1';
+    $pane = new stdClass();
     $pane->pid = 'new-d27a1026-991f-4960-b953-6cca93f4ae51';
     $pane->panel = 'center';
     $pane->type = 'views';
@@ -854,11 +879,46 @@ Why Pay More?
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'd27a1026-991f-4960-b953-6cca93f4ae51';
     $display->content['new-d27a1026-991f-4960-b953-6cca93f4ae51'] = $pane;
-    $display->panels['center'][0] = 'new-d27a1026-991f-4960-b953-6cca93f4ae51';
+    $display->panels['center'][1] = 'new-d27a1026-991f-4960-b953-6cca93f4ae51';
+    $pane = new stdClass();
+    $pane->pid = 'new-647246aa-5bf9-4ceb-bdeb-25ec3d45fa06';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'order_spiritual_books';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'default',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '647246aa-5bf9-4ceb-bdeb-25ec3d45fa06';
+    $display->content['new-647246aa-5bf9-4ceb-bdeb-25ec3d45fa06'] = $pane;
+    $display->panels['center'][2] = 'new-647246aa-5bf9-4ceb-bdeb-25ec3d45fa06';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
