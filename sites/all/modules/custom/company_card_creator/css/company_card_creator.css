@@ -15,13 +15,7 @@
 }
 #company_card_creator_header {
   text-align: center;
-  background-color: rgb(65, 64, 66);
-  background-image: -moz-linear-gradient(center top , #414042, #000);
-  background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#414042),color-stop(100%,#000000));
-  color: #ffffff;
-  border: 1px outset black;
-  border-radius: 10px;
-  padding-top: 15px;
+  padding-top: 20px;
   margin-bottom: 10px;
   width: 100%;
 }

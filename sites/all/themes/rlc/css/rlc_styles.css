@@ -12,9 +12,6 @@ div.ctools-modal-content a.close img {
   position: relative;
 }
 
-/*
-  Site Header
-*/
 #logo {
   float: left;
   margin: 15px 10px 0px 0px;
@@ -24,6 +21,15 @@ div.ctools-modal-content a.close img {
   font-family: BrushScript BT;
   float: left;
   font-size: 16px;
+}
+.rlc-header {
+  border: 1px outset;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(65, 64, 66);
+  background-image: -moz-linear-gradient(center top , #414042, #000);
+  color: #ffffff;
+  background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#414042),color-stop(100%,#000000));
 }
 
 /*
@@ -166,13 +172,6 @@ div.ctools-modal-content a.close img {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 10px;
-  padding: 10px 10px 0px;
-  border: 1px outset;
-  border-radius: 10px;
-  background-color: rgb(65, 64, 66);
-  background-image: -moz-linear-gradient(center top , #414042, #000);
-  color: #ffffff;
-  background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#414042),color-stop(100%,#000000));
 }
 #panel-home-header #disclaimer {
   bottom: 1em;

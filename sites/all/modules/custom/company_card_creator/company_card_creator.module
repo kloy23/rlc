@@ -202,7 +202,7 @@ function company_card_creator_form($form, &$form_state) {
   // Title displayed above card creator form
   $form['company_card_creator_info'] = array(
     '#markup' => '<h1>' . t('Company Business Card Creator') . '</h1>' . '<p>' . t('** For The Best Experience Please Use Either Google Chrome or Mozilla Firefox Browsers **') . '</p>',
-    '#prefix' => '<div id="company_card_creator_header">',
+    '#prefix' => '<div id="company_card_creator_header" class="rlc-header">',
     '#suffix' => '</div>',
   );
 

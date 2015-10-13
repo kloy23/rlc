@@ -266,7 +266,7 @@ Why Pay More?
     );
     $pane->css = array(
       'css_id' => 'panel-home-header',
-      'css_class' => '',
+      'css_class' => 'rlc-header',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -834,7 +834,7 @@ Why Pay More?
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<h3 style="color: red;" align="center">*** All Cards are Based on Quantities of 250 ***</h3>',
+      'body' => '<h3 align="center">*** All Cards are Based on Quantities of 250 ***</h3>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -842,7 +842,10 @@ Why Pay More?
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'rlc-header',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
