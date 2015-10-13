@@ -27,7 +27,7 @@
     $(function removeCardStocksField() {
       var products = $('tr');
       $(products).each(function() {
-        var companyCardStock = $(this).find('#company_card_stock');
+        var companyCardStock = $(this).find('#subOptions');
         $(companyCardStock).each(function() {
           var siblings = $(this).siblings();
           var cardStocks = siblings[0];
