@@ -212,6 +212,30 @@ div.ctools-modal-content a.close img {
 }
 
 /*
+  Spiritual Products Page
+ */
+#spiritual-products-display .pane-content {
+  width: 100%;
+}
+#spiritual-products-display .views-field-commerce-price {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: red;
+}
+#spiritual-products-display img {
+  max-width: 100%;
+}
+#spiritual-products-display .panel-col-first {
+  text-align: center;
+  width: 75%;
+  position: relative;
+  left: 10%
+}
+#spiritual-products-display .panel-col-last {
+  position: relative;
+  width: 25%;
+}
+/*
   Pricing Page
  */
 #pricing {

@@ -108,7 +108,6 @@ function rlc_commerce_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'panels_fields';
   $handler->display->display_options['row_options']['regions'] = array(
-    'title' => 'left',
     'field_product_image' => 'left',
     'commerce_price' => 'right',
     'add_to_cart_form' => 'right',
