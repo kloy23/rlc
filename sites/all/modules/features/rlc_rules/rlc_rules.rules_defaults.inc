@@ -486,6 +486,41 @@ function rlc_rules_default_rules_configuration() {
       "PROVIDES VARIABLES" : [ "product_quantity" ]
     }
   }');
+  $items['rules_add_new_business_card_product_to_cart'] = entity_import('rules_config', '{ "rules_add_new_business_card_product_to_cart" : {
+      "LABEL" : "Add new business card product to cart",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "commerce_cart", "entity" ],
+      "ON" : { "commerce_product_insert" : [] },
+      "IF" : [
+        { "data_is" : {
+            "data" : [ "commerce-product:type" ],
+            "op" : "IN",
+            "value" : { "value" : {
+                "business_card" : "business_card",
+                "camera_ready_business_card" : "camera_ready_business_card",
+                "two_sided_business_card" : "two_sided_business_card",
+                "company_business_card" : "company_business_card"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "commerce_cart_product_add_by_sku" : {
+            "USING" : {
+              "user" : [ "site:current-user" ],
+              "sku" : [ "commerce-product:sku" ],
+              "quantity" : "1",
+              "combine" : "0"
+            },
+            "PROVIDE" : { "product_add_line_item" : { "product_add_line_item" : "Added product line item" } }
+          }
+        },
+        { "redirect" : { "url" : "\\/cart" } }
+      ]
+    }
+  }');
   $items['rules_calculate_price_for_1000'] = entity_import('rules_config', '{ "rules_calculate_price_for_1000" : {
       "LABEL" : "Calculate price for 1000",
       "PLUGIN" : "reaction rule",
