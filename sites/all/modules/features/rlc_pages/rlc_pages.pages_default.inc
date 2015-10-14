@@ -636,14 +636,14 @@ Why Pay More?
       'admin_title' => '',
       'title' => '',
       'body' => '<!-- Head -->
-<div id="pricingHeader">
+<div id="pricingHeader" class="rlc-header">
   <h3>Pricing is based on the use of our Custom Business Card Creator</h3>
   <h3>There is no additional cost for the use of a second color</h3>
   <h3>Uploaded Artwork will have an additional fee of $8.00</h3>
 </div>
 <!-- Card Stock Pricing Info -->
 <table>
-  <tr>
+  <tr class="rlc-header">
     <th>Card Stock</th>
     <th>Sample</th>
     <th>500</th>
@@ -709,11 +709,11 @@ Why Pay More?
 </table>
 
 <!-- Backside Pricing Info -->
-<div id="pricingBacks">
+<div id="pricingBacks" class="rlc-header">
 <h3>** All Backs Are Printed "Flat", Meaning The Ink Is NOT Raised. **</h3>
 </div>
 <table>
-  <tr>
+  <tr class="rlc-header">
     <th>1 Color Back</th>
     <th>500 - 1000</th>
     <th>Per Additional 1000</th>
@@ -727,7 +727,7 @@ Why Pay More?
 
 <!-- Shipping pricing Info -->
 <table>
-  <tr>
+  <tr class="rlc-header">
     <th>Shipping</th>
     <th>All orders are shipped at a flat rate based on the orders total quantity</th>
   </tr>
@@ -748,7 +748,7 @@ Why Pay More?
     <td>$15.00</td>
   </tr>
 </table>
-<div id="pricingFooter">
+<div id="pricingFooter" class="rlc-header">
   <h3>Please Contact Us for a shipping quote for orders totaling over 10,000</h3>
 </div>
 ',

@@ -241,13 +241,6 @@ div.ctools-modal-content a.close img {
   text-align: center;
 }
 #pricingHeader {
-  background-color: rgb(65, 64, 66);
-  background-image: -moz-linear-gradient(center top , #414042, #000);
-  background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#414042),color-stop(100%,#000000));
-  color: #ffffff;
-  border: 1px outset;
-  border-radius: 10px;
-  padding: 10px;
   margin-bottom: 20px;
 }
 #pricing th{
@@ -255,8 +248,6 @@ div.ctools-modal-content a.close img {
   font-size: 16px;
   text-align: center;
   margin-bottom: 10px;
-  border: 1px outset black;
-  background-color: #eeeeee;
 }
 #pricingBacks {
     margin: 10px 0px;
