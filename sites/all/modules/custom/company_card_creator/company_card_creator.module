@@ -361,9 +361,9 @@ function company_card_creator_form($form, &$form_state) {
   );
   // Build Print Type Options
   $print_types = array(
-    '39' => t('Raised Letter'),
-    '40' => t('Full Color'),
-    '41' => t('Magnetic'),
+    '35' => t('Raised Letter'),
+    '36' => t('Full Color'),
+    '37' => t('Magnetic'),
   );
   // Build Quantity Options
   $quantitys = array(
