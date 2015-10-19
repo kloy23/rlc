@@ -4,56 +4,45 @@
     $(function setCardstockDisplay() {
       var el;
       var id;
-      var cardStockSelection = $('select[id*="card-stock"]');
-      if (cardStockSelection.length !== 0) {
-        for (var i=0; i<cardStockSelection.length; i++) {
-          el = cardStockSelection[i];
+      var cardStockDropdown = $('select[id*="card-stock"]');
+      var cardStockSelection = $('.card-stocks');
+      if (cardStockDropdown.length !== 0) {
+        for (var i=0; i<cardStockDropdown.length; i++) {
+          el = cardStockDropdown[i];
           (function (el) {
             $(el).change(function() {
               updateCardStockBackground(el);
             });
           })(el);
         }
-        $(cardStockSelection).change();
-      } else {
-        cardStockSelection = $('.card-stocks');
+        $(cardStockDropdown).change();
+      }
+      if (cardStockSelection.length !== 0) {
         for (var x=0; x<cardStockSelection.length; x++) {
           el = cardStockSelection[x];
           setCardStockBackground(el);
         }
       }
     });
-    // Hide Card Stocks Field if Company Card Stock is being displayed.
-    $(function removeCardStocksField() {
-      var products = $('tr');
-      $(products).each(function() {
-        var companyCardStock = $(this).find('#subOptions');
-        $(companyCardStock).each(function() {
-          var siblings = $(this).siblings();
-          var cardStocks = siblings[0];
-          $(cardStocks).hide();
-        });
-      });
-    });
   }); // End $(document).ready()
 
   var fetchClassName = function(selectedCardStock) {
     var className;
-    if (selectedCardStock === '1' || selectedCardStock === 'whitesmooth') {
+    if (selectedCardStock === '1' || selectedCardStock === 'whitesmooth' || selectedCardStock === 'White Smooth') {
       className = 'whiteSmooth';
-    } else if (selectedCardStock === '2' || selectedCardStock === 'whitelinen') {
+    } else if (selectedCardStock === '2' || selectedCardStock === 'whitelinen' || selectedCardStock === 'White Linen') {
       className = 'whiteLinen';
-    } else if (selectedCardStock === '3' || selectedCardStock === 'softwhitelinen') {
+    } else if (selectedCardStock === '3' || selectedCardStock === 'softwhitelinen' || selectedCardStock === 'Soft White Linen') {
       className = 'softWhiteLinen';
-    } else if (selectedCardStock === '4' || selectedCardStock === 'tanlinen') {
+    } else if (selectedCardStock === '4' || selectedCardStock === 'tanlinen' || selectedCardStock === 'Tan Linen') {
       className = 'tanLinen';
-    } else if (selectedCardStock === '5'  || selectedCardStock === 'graylinen') {
+    } else if (selectedCardStock === '5'  || selectedCardStock === 'graylinen' || selectedCardStock === 'Gray Linen') {
       className = 'grayLinen';
-    } else if (selectedCardStock === '6' || selectedCardStock === 'yellow') {
+    } else if (selectedCardStock === '6' || selectedCardStock === 'yellow' || selectedCardStock === 'Yellow') {
       className = 'yellow';
-    } else if (selectedCardStock === '7' || selectedCardStock === 'kromekote') {
+    } else if (selectedCardStock === '7' || selectedCardStock === 'kromekote' || selectedCardStock === 'Kromekote') {
       className = 'kromekote';
-    } else if (selectedCardStock === '8' || selectedCardStock === 'woodgrain') {
+    } else if (selectedCardStock === '8' || selectedCardStock === 'woodgrain' || selectedCardStock === 'Woodgrain') {
       className = 'woodgrain';
     }
     return className;
@@ -83,6 +72,7 @@
 
   var setCardStockBackground = function(el) {
     var selectedCardStock = $(el).text().toLowerCase();
+    console.log(selectedCardStock);
     selectedCardStock = $.trim(selectedCardStock).replace(/\s+/g, '');
     var className = fetchClassName(selectedCardStock);
     changeImageBackground(el, className);
