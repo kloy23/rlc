@@ -355,9 +355,15 @@ function company_card_creator_form($form, &$form_state) {
 
   // Qunatity
   $form['qunatity'] = array(
-    '#markup' => '<h4>' . t('3) Select Qunatity') . '</h4>',
+    '#markup' => '<h4>' . t('3) Select Type & Qunatity') . '</h4>',
     '#prefix' => '<div id="bottomColumn"><div id="bottomColLeft"><div id="bottomColLeftUpper">',
     '#suffix' => '</div>',
+  );
+  // Build Print Type Options
+  $print_types = array(
+    '39' => t('Raised Letter'),
+    '40' => t('Full Color'),
+    '41' => t('Magnetic'),
   );
   // Build Quantity Options
   $quantitys = array(
@@ -369,12 +375,19 @@ function company_card_creator_form($form, &$form_state) {
     '14' => '5000',
     '15' => '10000',
   );
+  // Display Print Type Options
+  $form['select_print_type'] = array(
+    '#type' => 'radios',
+    '#options' => $print_types,
+    '#prefix' => '<div id="bottomColLeftLower"><div id="select_print_type">',
+    '#suffix' => '</div>',
+  );
   // Display Quantity Options
   $form['select_quantity'] = array(
     '#type' => 'select',
     '#options' => $quantitys,
     '#default_value' => '9',
-    '#prefix' => '<div id="bottomColLeftLower"><div id="select_quantity">',
+    '#prefix' => '<div id="select_quantity">',
     '#suffix' => '</div></div></div>',
   );
   // Price
@@ -446,6 +459,7 @@ function company_card_creator_form_submit($form, &$form_state) {
   $user_name = isset($user->name) ? $user->name : 'Anonymous';
   $companyName = $_GET['companyName'];
   $selected_card_stock = $_GET['cardStock'];
+  $selected_print_type = $form_state['values']['select_print_type'];
   $line1 = $form_state['values']['line_1'];
   $line2 = $form_state['values']['line_2'];
   $line3 = $form_state['values']['line_3'];
@@ -571,6 +585,7 @@ function company_card_creator_form_submit($form, &$form_state) {
     // Add the custom values to the line_item fields
     foreach ($line_item as $field_name => $value) {
       $line_item->field_quantity['und'][0]['tid'] = $selected_quantity;
+      $line_item->field_print_type['und'][0]['tid'] = $selected_print_type;
       $line_item->field_card_stocks['und'][0]['tid'] = $selected_card_stock;
       $line_item->field_line_1[LANGUAGE_NONE][0]['value'] = $line1;
       $line_item->field_line_2[LANGUAGE_NONE][0]['value'] = $line2;
