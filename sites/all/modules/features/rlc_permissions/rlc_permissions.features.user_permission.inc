@@ -10,6 +10,47 @@
 function rlc_permissions_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'view any commerce_product entity'.
+  $permissions['view any commerce_product entity'] = array(
+    'name' => 'view any commerce_product entity',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'commerce_product',
+  );
+
+  // Exported permission: 'view any commerce_product entity of bundle business_card'.
+  $permissions['view any commerce_product entity of bundle business_card'] = array(
+    'name' => 'view any commerce_product entity of bundle business_card',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'commerce_product',
+  );
+
+  // Exported permission: 'view any commerce_product entity of bundle camera_ready_business_card'.
+  $permissions['view any commerce_product entity of bundle camera_ready_business_card'] = array(
+    'name' => 'view any commerce_product entity of bundle camera_ready_business_card',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'commerce_product',
+  );
+
+  // Exported permission: 'view any commerce_product entity of bundle company_business_card'.
+  $permissions['view any commerce_product entity of bundle company_business_card'] = array(
+    'name' => 'view any commerce_product entity of bundle company_business_card',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'commerce_product',
+  );
+
   // Exported permission: 'view any commerce_product entity of bundle spiritual_book'.
   $permissions['view any commerce_product entity of bundle spiritual_book'] = array(
     'name' => 'view any commerce_product entity of bundle spiritual_book',
@@ -24,6 +65,17 @@ function rlc_permissions_user_default_permissions() {
   $permissions['view any commerce_product entity of bundle spiritual_card'] = array(
     'name' => 'view any commerce_product entity of bundle spiritual_card',
     'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'commerce_product',
+  );
+
+  // Exported permission: 'view any commerce_product entity of bundle two_sided_business_card'.
+  $permissions['view any commerce_product entity of bundle two_sided_business_card'] = array(
+    'name' => 'view any commerce_product entity of bundle two_sided_business_card',
+    'roles' => array(
+      'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
