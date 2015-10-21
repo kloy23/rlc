@@ -25,7 +25,16 @@
   $product_type = $row->_field_data['commerce_product_field_data_commerce_product_product_id']['entity']->type;
 
   switch ($product_type) {
+
     case 'business_card':
+	print $field->last_render;
+	break;
+
+	case 'two_sided_business_card':
+	print $field->last_render;
+	break;
+
+	case 'camera_ready_business_card':
 	print $field->last_render;
 	break;
   }
