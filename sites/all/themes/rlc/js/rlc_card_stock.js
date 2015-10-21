@@ -72,7 +72,6 @@
 
   var setCardStockBackground = function(el) {
     var selectedCardStock = $(el).text().toLowerCase();
-    console.log(selectedCardStock);
     selectedCardStock = $.trim(selectedCardStock).replace(/\s+/g, '');
     var className = fetchClassName(selectedCardStock);
     changeImageBackground(el, className);

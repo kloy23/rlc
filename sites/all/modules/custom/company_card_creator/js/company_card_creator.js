@@ -10,6 +10,20 @@
 
     // *** FUNCTIONS ***
 
+    // Empty variable for storage of quantity 500 select option.
+    var quantity500;
+    var changeQuantityOptions = function(e) {
+      var quantity = $('#edit-select-quantity');
+      var option500 = quantity.children().eq(0);
+      var selectedPrintType = e.currentTarget.value;
+      if (selectedPrintType === '37') {
+        quantity500 = $(option500).detach();
+        quantity.change();
+      } else {
+        $(quantity).prepend(quantity500);
+        quantity.change();
+      }
+    };
     var fetchCompanyName = function() {
       var companyName = document.location.search.substring(1);
       var companyName = companyName.split('&');
@@ -220,6 +234,15 @@
       // display price to customer
       $currentPrice.text("Price = $" + convertedTotal);
     };
+    var validation = function() {
+      var printTypes = $('#edit-select-print-type').children().children('input');
+      if (printTypes[0].checked === false && printTypes[1].checked === false && printTypes[2].checked === false) {
+        alert('You must select a Print Type before you can continue.');
+      } else {
+        removeEmptyFields();
+        saveCard();
+      }
+    };
     var startLoading = function() {
       var box = $('<div></div>').attr('id', 'loading');
       $('body').prepend(box);
@@ -342,6 +365,10 @@
     $('#cardInfoFront').on('input focus', 'input', function(e) {
       changeTextFront(e);
     });
+    // Change quantity options based on the print type selected
+    $('#edit-select-print-type').on('change', 'input', function(e) {
+      changeQuantityOptions(e);
+    });
     // When a quantity is selected, change the price
     $('#edit-select-quantity').on('change', function() {
       updatePrice();
@@ -349,8 +376,7 @@
     // Take the user through the proofing process
     $('#continue_button').click(function(e) {
       e.preventDefault();
-      removeEmptyFields();
-      saveCard();
+      validation();
     });
     // Allow user to edit their card if needed
     $('#edit').click(function(e) {
