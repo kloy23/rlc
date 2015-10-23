@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the rlc_views feature.
- */
-
-include_once 'rlc_views.features.inc';

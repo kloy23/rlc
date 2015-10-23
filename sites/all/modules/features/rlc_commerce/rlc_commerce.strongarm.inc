@@ -20,6 +20,13 @@ function rlc_commerce_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_slideshow_images';
+  $strongarm->value = 0;
+  $export['comment_anonymous_slideshow_images'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_spiritual_card_product_display';
   $strongarm->value = 0;
   $export['comment_anonymous_spiritual_card_product_display'] = $strongarm;
@@ -41,6 +48,13 @@ function rlc_commerce_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_slideshow_images';
+  $strongarm->value = 1;
+  $export['comment_default_mode_slideshow_images'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_spiritual_card_product_display';
   $strongarm->value = 1;
   $export['comment_default_mode_spiritual_card_product_display'] = $strongarm;
@@ -51,6 +65,13 @@ function rlc_commerce_strongarm() {
   $strongarm->name = 'comment_default_per_page_custom_artwork_product_display';
   $strongarm->value = '50';
   $export['comment_default_per_page_custom_artwork_product_display'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_slideshow_images';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_slideshow_images'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -69,6 +90,13 @@ function rlc_commerce_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_slideshow_images';
+  $strongarm->value = 1;
+  $export['comment_form_location_slideshow_images'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_spiritual_card_product_display';
   $strongarm->value = 1;
   $export['comment_form_location_spiritual_card_product_display'] = $strongarm;
@@ -83,9 +111,23 @@ function rlc_commerce_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_slideshow_images';
+  $strongarm->value = '1';
+  $export['comment_preview_slideshow_images'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_spiritual_card_product_display';
   $strongarm->value = '1';
   $export['comment_preview_spiritual_card_product_display'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_slideshow_images';
+  $strongarm->value = '1';
+  $export['comment_slideshow_images'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -100,6 +142,13 @@ function rlc_commerce_strongarm() {
   $strongarm->name = 'comment_subject_field_custom_artwork_product_display';
   $strongarm->value = 1;
   $export['comment_subject_field_custom_artwork_product_display'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_slideshow_images';
+  $strongarm->value = 1;
+  $export['comment_subject_field_slideshow_images'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -198,6 +247,26 @@ function rlc_commerce_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__slideshow_images';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__slideshow_images'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__spiritual_card_product_display';
   $strongarm->value = array(
     'view_modes' => array(
@@ -286,6 +355,15 @@ function rlc_commerce_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_slideshow_images';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_slideshow_images'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_spiritual_card_product_display';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -305,6 +383,13 @@ function rlc_commerce_strongarm() {
   $strongarm->name = 'menu_parent_product_display';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_product_display'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_slideshow_images';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_slideshow_images'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -334,6 +419,15 @@ function rlc_commerce_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_slideshow_images';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_slideshow_images'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_spiritual_card_product_display';
   $strongarm->value = array(
     0 => 'status',
@@ -346,6 +440,13 @@ function rlc_commerce_strongarm() {
   $strongarm->name = 'node_preview_custom_artwork_product_display';
   $strongarm->value = '1';
   $export['node_preview_custom_artwork_product_display'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_slideshow_images';
+  $strongarm->value = '0';
+  $export['node_preview_slideshow_images'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -367,6 +468,13 @@ function rlc_commerce_strongarm() {
   $strongarm->name = 'node_submitted_product_display';
   $strongarm->value = 0;
   $export['node_submitted_product_display'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_slideshow_images';
+  $strongarm->value = 0;
+  $export['node_submitted_slideshow_images'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

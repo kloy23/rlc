@@ -77,15 +77,18 @@ function rlc_pages_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => 'Please use the form below to contact us.',
-      'format' => 'filtered_html',
+      'body' => '<p align="center" style="font-size:18px; font-weight:bold;">Please use the form below to contact us.',
+      'format' => 'full_html',
       'substitute' => TRUE,
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'rlc-header',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -108,7 +111,10 @@ function rlc_pages_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'rlc-header',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -174,6 +180,7 @@ function rlc_pages_default_page_manager_pages() {
         'children' => array(
           0 => 2,
           1 => 1,
+          2 => 3,
         ),
         'parent' => 'canvas',
       ),
@@ -225,6 +232,25 @@ function rlc_pages_default_page_manager_pages() {
         'class' => '',
         'hide_empty' => 0,
       ),
+      3 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'footer',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'footer' => array(
+        'type' => 'region',
+        'title' => 'Footer',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '3',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -237,6 +263,7 @@ function rlc_pages_default_page_manager_pages() {
       'top_left' => NULL,
       'log_in' => NULL,
       'company_selection' => NULL,
+      'footer' => NULL,
     ),
   );
   $display->cache = array();
@@ -246,7 +273,7 @@ function rlc_pages_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-ff003493-b20e-435b-9047-6365a7c4cf9f';
-    $pane->panel = 'header';
+    $pane->panel = 'footer';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -255,7 +282,6 @@ function rlc_pages_default_page_manager_pages() {
       'admin_title' => '',
       'title' => '',
       'body' => '1000 High Quality Raised Letter Business Cards for just $16.95!
-Why Pay More?
 <p id="disclaimer">*Price is based on White Smooth card stock, and the use of our Custom Business Card Creator.</p>',
       'format' => 'full_html',
       'substitute' => TRUE,
@@ -273,7 +299,45 @@ Why Pay More?
     $pane->locks = array();
     $pane->uuid = 'ff003493-b20e-435b-9047-6365a7c4cf9f';
     $display->content['new-ff003493-b20e-435b-9047-6365a7c4cf9f'] = $pane;
-    $display->panels['header'][0] = 'new-ff003493-b20e-435b-9047-6365a7c4cf9f';
+    $display->panels['footer'][0] = 'new-ff003493-b20e-435b-9047-6365a7c4cf9f';
+    $pane = new stdClass();
+    $pane->pid = 'new-00b44c6d-5197-4a37-9b9c-cc33cb94b398';
+    $pane->panel = 'header';
+    $pane->type = 'views';
+    $pane->subtype = 'image_carousel';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '00b44c6d-5197-4a37-9b9c-cc33cb94b398';
+    $display->content['new-00b44c6d-5197-4a37-9b9c-cc33cb94b398'] = $pane;
+    $display->panels['header'][0] = 'new-00b44c6d-5197-4a37-9b9c-cc33cb94b398';
     $pane = new stdClass();
     $pane->pid = 'new-3c231214-37ae-4c46-a20d-bcc3914fda89';
     $pane->panel = 'left';
@@ -1007,7 +1071,10 @@ Any uploaded artwork that requires bleeds will be printed in full color.
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'rlc-header',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
