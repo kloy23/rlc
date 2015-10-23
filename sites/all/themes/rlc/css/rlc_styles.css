@@ -17,10 +17,10 @@ div.ctools-modal-content a.close img {
   margin: 15px 10px 0px 0px;
 }
 #siteSlogan {
-  color: #c7c7c7;
+  color: #C7C7C7;
   font-family: BrushScript BT;
-  float: left;
-  font-size: 16px;
+  font-size: 20px;
+  text-align: center;
 }
 .rlc-header {
   border: 1px outset;
@@ -167,9 +167,10 @@ div.ctools-modal-content a.close img {
 /*
   Home Page
  */
+
 #panel-home-header {
   text-align: center;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -188,6 +189,8 @@ div.ctools-modal-content a.close img {
   font-size: 1.3em;
   font-weight: bold;
   line-height: 30px;
+  position: relative;
+  top: 20px;
 }
 
 /*
