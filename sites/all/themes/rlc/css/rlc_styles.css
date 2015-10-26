@@ -12,9 +12,16 @@ div.ctools-modal-content a.close img {
   position: relative;
 }
 
+.primary-menu {
+  position: relative;
+  left: 7%;
+}
 #logo {
   float: left;
-  margin: 15px 10px 0px 0px;
+  margin: 30px 10px 0px 65px;
+}
+#secondary_logo {
+  position: absolute;
 }
 #siteSlogan {
   color: #C7C7C7;
