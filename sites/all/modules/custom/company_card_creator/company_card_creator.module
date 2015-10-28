@@ -103,25 +103,24 @@ function company_card_creator_menu() {
 function company_selection_view() {
   $block = array();
 
-  $companies = array(
-    'None' => t('None'),
-    'Financial' => array(
-      '?companyName=HR_Block&cardStock=whiteSmooth' => t('H&R Block'),
-      '?companyName=Liberty_Tax&cardStock=whiteSmooth' => t('Liberty Tax'),
-    ),
-    'Hardware' => array(
-      '?companyName=Ace_Hardware&cardStock=whiteSmooth' => t('Ace Hardware'),
-    ),
-    'Automotive' => array(
-      '?companyName=Acura&cardStock=whiteSmooth' => t('Acura'),
-      '?companyName=Audi&cardStock=whiteSmooth' => t('Audi'),
-      '?companyName=BMW&cardStock=whiteSmooth' => t('BMW'),
-      '?companyName=Buick&cardStock=whiteSmooth' => t('Buick'),
-      '?companyName=Cadillac&cardStock=whiteSmooth' => t('Cadillac'),
-      '?companyName=Chevy&cardStock=whiteSmooth' => t('Chevy'),
-      '?companyName=Chrysler&cardStock=whiteSmooth' => t('Chrysler'),
-      '?companyName=Dodge&cardStock=whiteSmooth' => t('Dodge'),
-    ),
+  $financial = array(
+    '?companyName=HR_Block&cardStock=whiteSmooth' => t('H&R Block'),
+    '?companyName=Liberty_Tax&cardStock=whiteSmooth' => t('Liberty Tax'),
+  );
+
+  $hardware = array(
+    '?companyName=Ace_Hardware&cardStock=whiteSmooth' => t('Ace Hardware'),
+  );
+
+  $automotive = array(
+    '?companyName=Acura&cardStock=whiteSmooth' => t('Acura'),
+    '?companyName=Audi&cardStock=whiteSmooth' => t('Audi'),
+    '?companyName=BMW&cardStock=whiteSmooth' => t('BMW'),
+    '?companyName=Buick&cardStock=whiteSmooth' => t('Buick'),
+    '?companyName=Cadillac&cardStock=whiteSmooth' => t('Cadillac'),
+    '?companyName=Chevy&cardStock=whiteSmooth' => t('Chevy'),
+    '?companyName=Chrysler&cardStock=whiteSmooth' => t('Chrysler'),
+    '?companyName=Dodge&cardStock=whiteSmooth' => t('Dodge'),
   );
 
   $block['#attached']['css'] = array(
@@ -130,14 +129,50 @@ function company_selection_view() {
 
   $block['franchise_companies'] = array (
     '#markup' => '<a>' . t('Franchise Companies') . '</a>',
-    '#prefix' => '<div id="franchise_companies" class="buttons glossy">',
+    '#prefix' => '<div id="company_selection"><div id="franchise_companies" class="buttons glossy">',
     '#suffix' => '</div>',
   );
 
-  $block['selection'] = array(
+  $block['financial_companies'] = array (
+    '#markup' => '<a>' . t('Financial Companies') . '</a>',
+    '#prefix' => '<div id="financial_companies"><div class="submenu_buttons glossy company_selection_left">',
+    '#suffix' => '</div>',
+  );
+
+  $block['financial_selection'] = array(
+    '#prefix' => '<div class="company_selection_right">',
     '#type' => 'select',
-    '#id' => 'company_selection',
-    '#options' => $companies,
+    '#id' => 'financial_selection',
+    '#options' => $financial,
+    '#suffix' => '</div></div>',
+  );
+
+  $block['hardware_companies'] = array (
+    '#markup' => '<a>' . t('Hardware Companies') . '</a>',
+    '#prefix' => '<div id="hardware_companies"><div class="submenu_buttons glossy company_selection_left">',
+    '#suffix' => '</div>',
+  );
+
+  $block['hardware_selection'] = array(
+    '#prefix' => '<div class="company_selection_right">',
+    '#type' => 'select',
+    '#id' => 'hardware_selection',
+    '#options' => $hardware,
+    '#suffix' => '</div></div>',
+  );
+
+  $block['automotive_companies'] = array (
+    '#markup' => '<a>' . t('Automotive Companies') . '</a>',
+    '#prefix' => '<div id="automotive_companies"><div class="submenu_buttons glossy company_selection_left">',
+    '#suffix' => '</div>',
+  );
+
+  $block['automotive_selection'] = array(
+    '#prefix' => '<div class="company_selection_right">',
+    '#type' => 'select',
+    '#id' => 'automotive_selection',
+    '#options' => $automotive,
+    '#suffix' => '</div></div></div>',
   );
 
   $block['#attached']['js'][] = array(

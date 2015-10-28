@@ -1,7 +1,9 @@
 #company_selection {
-  width: 65%;
-  text-align: center;
-  position: relative;
-  bottom: 15px;
-  left: 47px;
+  width: 100%;
+}
+.company_selection_left {
+  float: left;
+}
+.company_selection_right {
+  float: right;
 }

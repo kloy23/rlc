@@ -2,12 +2,14 @@
   'use strict';
   $(document).ready(function() {
 
-    $(function(){
-      $('#company_selection').hide();
-    });
 
-    var fetchArgument = function() {
-      var selectListVal = $('#company_selection').val();
+    // $(function(){
+    //   $allCategories.hide();
+    //   $allSelectList.hide();
+    // });
+
+    var fetchArgument = function(e) {
+      var selectListVal = e.target.value;
       return selectListVal;
     };
 
@@ -21,8 +23,17 @@
       goToCreator(argument);
     });
 
-    $('#franchise_companies').click(function() {
-      $('#company_selection').toggle();
+    $franchiseCompanies.click(function() {
+      $allCategories.toggle();
+    });
+
+    $allCategories.click(function() {
+      $(this).find('select').toggle();
+    });
+
+    $allSelectList.change(function(e) {
+      var argument = fetchArgument(e);
+      goToCreator(argument);
     });
 
   });
