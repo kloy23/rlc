@@ -2,11 +2,15 @@
   'use strict';
   $(document).ready(function() {
 
+    var $allCategories = $('#categories');
+    var $allSelectList = $('#categories select');
+    var $categoryButton = $('.category').children().find('a');
 
-    // $(function(){
-    //   $allCategories.hide();
-    //   $allSelectList.hide();
-    // });
+
+    $(function(){
+      $allCategories.hide();
+      $allSelectList.hide();
+    });
 
     var fetchArgument = function(e) {
       var selectListVal = e.target.value;
@@ -18,22 +22,31 @@
       window.location.href = url;
     };
 
-    $('#company_selection').change(function() {
-      var argument = fetchArgument();
-      goToCreator(argument);
-    });
-
-    $franchiseCompanies.click(function() {
+    $('#franchise_companies').click(function() {
       $allCategories.toggle();
     });
 
-    $allCategories.click(function() {
-      $(this).find('select').toggle();
+    $categoryButton.click(function() {
+      var $button = $(this).parent();
+      var $selectList = $button.parent().find('select');
+      var $selectListParent = $selectList.parent();
+      $selectList.toggle();
+      if ($selectList.is(':visible')) {
+        $button.addClass('company_selection_left');
+        $selectListParent.addClass('company_selection_right');
+      } else {
+        $button.removeClass('company_selection_left');
+        $selectListParent.removeClass('company_selection_right');
+      }
     });
 
     $allSelectList.change(function(e) {
       var argument = fetchArgument(e);
-      goToCreator(argument);
+      if (argument !== '0') {
+        goToCreator(argument);
+      } else {
+        // Do Nothing;
+      }
     });
 
   });

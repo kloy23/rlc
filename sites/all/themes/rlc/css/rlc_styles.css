@@ -55,17 +55,6 @@ div.ctools-modal-content a.close img {
   height: 35px;
   padding: 0 5px;
 }
-.submenu_buttons {
-  font-size: 0.8em;
-  height: 35px;
-  padding: 0 10px;
-}
-.submenu_buttons:before {
-  height: 30px !important;
-  width: 95% !important;
-  left: 3px !important;
-  border-radius: 20px !important;
-}
 .glossy {
   margin: 10px auto;
   position: relative;
@@ -202,15 +191,6 @@ div.ctools-modal-content a.close img {
 }
 #panel-home-left {
 
-}
-#company_selection {
-  width: 100%;
-}
-.company_selection_left {
-  float: left;
-}
-.company_selection_right {
-  float: right;
 }
 #panel-home-right {
   float: left;

@@ -103,16 +103,19 @@ function company_card_creator_menu() {
 function company_selection_view() {
   $block = array();
 
+  // Build Company Options
+
   $financial = array(
+    t('Select A Company'),
     '?companyName=HR_Block&cardStock=whiteSmooth' => t('H&R Block'),
     '?companyName=Liberty_Tax&cardStock=whiteSmooth' => t('Liberty Tax'),
   );
-
   $hardware = array(
+    t('Select A Company'),
     '?companyName=Ace_Hardware&cardStock=whiteSmooth' => t('Ace Hardware'),
   );
-
   $automotive = array(
+    t('Select A Company'),
     '?companyName=Acura&cardStock=whiteSmooth' => t('Acura'),
     '?companyName=Audi&cardStock=whiteSmooth' => t('Audi'),
     '?companyName=BMW&cardStock=whiteSmooth' => t('BMW'),
@@ -123,9 +126,13 @@ function company_selection_view() {
     '?companyName=Dodge&cardStock=whiteSmooth' => t('Dodge'),
   );
 
+  // Attach CSS
+
   $block['#attached']['css'] = array(
     drupal_get_path('module', 'company_card_creator') . '/css/company_selection.css',
   );
+
+  // Create Franchise Companies Button
 
   $block['franchise_companies'] = array (
     '#markup' => '<a>' . t('Franchise Companies') . '</a>',
@@ -133,51 +140,52 @@ function company_selection_view() {
     '#suffix' => '</div>',
   );
 
+  // Franchise Company Buttons and Select List
+
   $block['financial_companies'] = array (
     '#markup' => '<a>' . t('Financial Companies') . '</a>',
-    '#prefix' => '<div id="financial_companies"><div class="submenu_buttons glossy company_selection_left">',
+    '#prefix' => '<div id="categories"><div class="category"><div class="submenu_buttons glossy">',
     '#suffix' => '</div>',
   );
-
   $block['financial_selection'] = array(
-    '#prefix' => '<div class="company_selection_right">',
+    '#prefix' => '<div>',
     '#type' => 'select',
     '#id' => 'financial_selection',
     '#options' => $financial,
     '#suffix' => '</div></div>',
   );
-
   $block['hardware_companies'] = array (
     '#markup' => '<a>' . t('Hardware Companies') . '</a>',
-    '#prefix' => '<div id="hardware_companies"><div class="submenu_buttons glossy company_selection_left">',
+    '#prefix' => '<div class="category"><div class="submenu_buttons glossy">',
     '#suffix' => '</div>',
   );
-
   $block['hardware_selection'] = array(
-    '#prefix' => '<div class="company_selection_right">',
+    '#prefix' => '<div>',
     '#type' => 'select',
     '#id' => 'hardware_selection',
     '#options' => $hardware,
     '#suffix' => '</div></div>',
   );
-
   $block['automotive_companies'] = array (
     '#markup' => '<a>' . t('Automotive Companies') . '</a>',
-    '#prefix' => '<div id="automotive_companies"><div class="submenu_buttons glossy company_selection_left">',
+    '#prefix' => '<div class="category"><div class="submenu_buttons glossy">',
     '#suffix' => '</div>',
   );
-
   $block['automotive_selection'] = array(
-    '#prefix' => '<div class="company_selection_right">',
+    '#prefix' => '<div>',
     '#type' => 'select',
     '#id' => 'automotive_selection',
     '#options' => $automotive,
-    '#suffix' => '</div></div></div>',
+    '#suffix' => '</div></div></div></div>',
   );
+
+  // Attach JS   
 
   $block['#attached']['js'][] = array(
     'data' => drupal_get_path('module', 'company_card_creator') . '/js/company_selection.js',
   );
+
+  // Render Block
   return $block;
 }
 

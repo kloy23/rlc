@@ -1,9 +1,30 @@
 #company_selection {
   width: 100%;
 }
+.category {
+  float: left;
+  width: 100%;
+  margin: -10px 0px;
+}
 .company_selection_left {
   float: left;
+  width: 50% !important;
 }
 .company_selection_right {
   float: right;
+  width: 45% !important;
+  position: relative;
+  bottom: 6px;
+}
+.submenu_buttons {
+  font-size: 0.8em;
+  height: 35px;
+  padding: 0 10px;
+  width: 70%;
+}
+.submenu_buttons:before {
+  height: 30px !important;
+  width: 96% !important;
+  left: 3px !important;
+  border-radius: 20px !important;
 }
