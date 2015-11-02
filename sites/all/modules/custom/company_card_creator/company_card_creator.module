@@ -143,7 +143,7 @@ function company_selection_view() {
   // Franchise Company Buttons and Select List
 
   $block['financial_companies'] = array (
-    '#markup' => '<a>' . t('Financial Companies') . '</a>',
+    '#markup' => '<a>' . t('Financial') . '</a>',
     '#prefix' => '<div id="categories"><div class="category"><div class="submenu_buttons glossy">',
     '#suffix' => '</div>',
   );
@@ -155,7 +155,7 @@ function company_selection_view() {
     '#suffix' => '</div></div>',
   );
   $block['hardware_companies'] = array (
-    '#markup' => '<a>' . t('Hardware Companies') . '</a>',
+    '#markup' => '<a>' . t('Hardware') . '</a>',
     '#prefix' => '<div class="category"><div class="submenu_buttons glossy">',
     '#suffix' => '</div>',
   );
@@ -167,7 +167,7 @@ function company_selection_view() {
     '#suffix' => '</div></div>',
   );
   $block['automotive_companies'] = array (
-    '#markup' => '<a>' . t('Automotive Companies') . '</a>',
+    '#markup' => '<a>' . t('Automotive') . '</a>',
     '#prefix' => '<div class="category"><div class="submenu_buttons glossy">',
     '#suffix' => '</div>',
   );
