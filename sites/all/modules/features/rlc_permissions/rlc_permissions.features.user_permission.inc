@@ -51,6 +51,16 @@ function rlc_permissions_user_default_permissions() {
     'module' => 'commerce_product',
   );
 
+  // Exported permission: 'view any commerce_product entity of bundle greeting_card'.
+  $permissions['view any commerce_product entity of bundle greeting_card'] = array(
+    'name' => 'view any commerce_product entity of bundle greeting_card',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'commerce_product',
+  );
+
   // Exported permission: 'view any commerce_product entity of bundle spiritual_book'.
   $permissions['view any commerce_product entity of bundle spiritual_book'] = array(
     'name' => 'view any commerce_product entity of bundle spiritual_book',

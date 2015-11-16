@@ -65,6 +65,13 @@ function rlc_commerce_commerce_line_item_default_types() {
       'add_form_submit_value' => 'Add product',
       'base' => 'commerce_product_line_item',
     ),
+    'greeting_card' => array(
+      'name' => 'Greeting Card',
+      'description' => 'A customizable product line item type.',
+      'product' => TRUE,
+      'add_form_submit_value' => 'Add product',
+      'base' => 'commerce_product_line_item',
+    ),
     'spiritual_book' => array(
       'name' => 'Spiritual Book',
       'description' => 'A customizable product line item type.',
@@ -106,6 +113,13 @@ function rlc_commerce_commerce_product_default_types() {
       'type' => 'company_business_card',
       'name' => 'Company Business Card',
       'description' => 'A company specific business card.',
+      'help' => '',
+      'revision' => 0,
+    ),
+    'greeting_card' => array(
+      'type' => 'greeting_card',
+      'name' => 'Greeting Card',
+      'description' => 'Uncustomizable greeting cards.',
       'help' => '',
       'revision' => 0,
     ),

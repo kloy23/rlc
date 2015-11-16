@@ -9,6 +9,7 @@ features[user_permission][] = view any commerce_product entity
 features[user_permission][] = view any commerce_product entity of bundle business_card
 features[user_permission][] = view any commerce_product entity of bundle camera_ready_business_card
 features[user_permission][] = view any commerce_product entity of bundle company_business_card
+features[user_permission][] = view any commerce_product entity of bundle greeting_card
 features[user_permission][] = view any commerce_product entity of bundle spiritual_book
 features[user_permission][] = view any commerce_product entity of bundle spiritual_card
 features[user_permission][] = view any commerce_product entity of bundle two_sided_business_card
