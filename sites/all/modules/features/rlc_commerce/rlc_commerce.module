@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the rlc-commerce feature.
+ * Code for the RLC Commerce feature.
  */
 
 include_once 'rlc_commerce.features.inc';

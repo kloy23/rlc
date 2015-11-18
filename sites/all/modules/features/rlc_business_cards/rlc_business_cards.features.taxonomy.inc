@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * rlc_commerce.features.taxonomy.inc
+ * rlc_business_cards.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function rlc_commerce_taxonomy_default_vocabularies() {
+function rlc_business_cards_taxonomy_default_vocabularies() {
   return array(
     'back_color_options' => array(
       'name' => 'Back Color Options',

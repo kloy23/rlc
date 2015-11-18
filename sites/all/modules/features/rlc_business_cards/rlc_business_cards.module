@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the RLC Business Cards feature.
+ */
+
+include_once 'rlc_business_cards.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the RLC Spiritual Products feature.
+ */
+
+include_once 'rlc_spiritual_products.features.inc';

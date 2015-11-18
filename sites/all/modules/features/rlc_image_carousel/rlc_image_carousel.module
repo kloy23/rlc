@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the RLC Image Carousel feature.
+ */
+
+include_once 'rlc_image_carousel.features.inc';
