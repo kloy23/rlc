@@ -186,6 +186,42 @@
 
     // *** FUNCTIONS ***
 
+    var disableTwoSided = function() {
+      var printType = fetchPrintType();
+      if (printType === 'magnetic') {
+        $('#addBack').hide();
+      } else {
+        $('#addBack').show();
+      }
+    }
+    var quantity500;
+    var changeQuantityOptions = function(e) {
+      var quantity = $('#edit-select-quantity');
+      var option500 = quantity.children().eq(0);
+      var selectedPrintType = e.currentTarget.value;
+      if (selectedPrintType === '37') {
+        quantity500 = $(option500).detach();
+        quantity.change();
+      } else {
+        $(quantity).prepend(quantity500);
+        quantity.change();
+      }
+    };
+    var fetchPrintType = function() {
+      var printType;
+      var $printTypes = $('#edit-select-print-type').children().children('input');
+      // If this is a Raised Letter Card
+      if ($printTypes[0].checked === true) {
+        printType = 'raisedLetter';
+        return printType;
+      } else if ($printTypes[1].checked === true) {
+        printType = 'fullColor';
+        return printType;
+      } else if ($printTypes[2].checked === true) {
+        printType = 'magnetic';
+        return printType;
+      }
+    };
     var highlightTemplate = function(el) {
       var background = el.node.firstElementChild;
       if ($(background).attr('class') !== 'selected') {
@@ -1095,35 +1131,27 @@
       var price;
       // If this is a Two Sided card
       if (isTwoSided == 1) {
-        if (quantity[0].checked === true || quantity[1].checked === true) {
+        if (quantity === '9' || quantity === '10') {
           twoSidedPrice = 14.00;
         } else {
           twoSidedPrice = 10.00;
         }
       }
       // If the quantity is 500
-      if (quantity[0].checked === true) {
+      if (quantity === '9') {
         price = price500 + twoSidedPrice;
         return price;
-      } else if (quantity[1].checked === true) { // If the quantity is 1000
+      } else if (quantity === '10') { // If the quantity is 1000
         price = price1000 + twoSidedPrice;
         return price;
-      } else if (quantity[6].checked === true) { // If the quantity is 10000
+      } else if (quantity > '10' && quantity < '15') { // If the quantity is 2000 or higher
+        var multiple = quantity - 10;
+        price = price1000 + (pricePerThousand * multiple) + (twoSidedPrice * (multiple));
+        return price;
+      } else if (quantity === '15') { // If the quantity is 10,000
         var multiple = 9;
         price = price1000 + (pricePerThousand * multiple) + (twoSidedPrice * (multiple));
         return price;
-      } else {
-        // Loop through quantities
-        for (var i=0; i<quantity.length; i++) {
-          // Find the selected quantity
-          var el = quantity[i];
-          if (el.checked === true) {
-            var multiple = i;
-            multiple -= 1;
-            price = price1000 + (pricePerThousand * multiple) + (twoSidedPrice * (multiple + 1));
-            return price;
-          }
-        }
       }
     };
     var updatePrice = function() {
@@ -1134,32 +1162,46 @@
       var $currentPrice = $('#currentPrice');
       var isTwoSided = $('#edit-two-sided').val();
       var cardStock = $('#edit-card-stock-options').children().children('input');
-      var quantity = $('#edit-select-quantity').children().children('input');
-      // If the cardStock is White Smooth
-      if (cardStock[0].checked === true) {
-        price500 = 14.95;
-        price1000 = 16.95;
-        pricePerThousand = 14.95;
-        price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
-      } else if (cardStock[1].checked === true) { // White Linen
-        price500 = 23.95;
-        price1000 = 26.95;
+      var quantity = $('#edit-select-quantity').val();
+      var printType = fetchPrintType();
+      // If the print type is raisedLetter
+      if (printType == 'raisedLetter') {
+        // If the cardStock is White Smooth
+        if (cardStock[0].checked === true) {
+          price500 = 14.95;
+          price1000 = 16.95;
+          pricePerThousand = 14.95;
+          price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+        } else if (cardStock[1].checked === true) { // White Linen
+          price500 = 23.95;
+          price1000 = 26.95;
+          pricePerThousand = 22.50;
+          price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+        } else if (cardStock[2].checked === true || cardStock[3].checked === true || cardStock[4].checked === true) { // Linens => Soft White, Tan, and Gray
+          price500 = 24.95;
+          price1000 = 28.95;
+          pricePerThousand = 23.50;
+          price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+        } else if (cardStock[5].checked === true || cardStock[6].checked === true) { // Yellow and Kromekote
+          price500 = 32.95;
+          price1000 = 36.95;
+          pricePerThousand = 31.50;
+          price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+        } else if (cardStock[7].checked === true) { // Woodgrain
+          price500 = 47.50;
+          price1000 = 53.50;
+          pricePerThousand = 46.00;
+          price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+        }
+      } else if (printType === 'fullColor') {
+        price500 = 20.00;
+        price1000 = 23.50;
         pricePerThousand = 22.50;
         price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
-      } else if (cardStock[2].checked === true || cardStock[3].checked === true || cardStock[4].checked === true) { // Linens => Soft White, Tan, and Gray
-        price500 = 24.95;
-        price1000 = 28.95;
-        pricePerThousand = 23.50;
-        price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
-      } else if (cardStock[5].checked === true || cardStock[6].checked === true) { // Yellow and Kromekote
-        price500 = 32.95;
-        price1000 = 36.95;
-        pricePerThousand = 31.50;
-        price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
-      } else if (cardStock[7].checked === true) { // Woodgrain
-        price500 = 47.50;
-        price1000 = 53.50;
-        pricePerThousand = 46.00;
+      } else if (printType === 'magnetic') {
+        price500 = 119.00;
+        price1000 = 119.00;
+        pricePerThousand = 119.00;
         price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
       }
       var convertedTotal = price.toFixed(2);
@@ -1171,27 +1213,41 @@
       $('#previewFront, #previewBack, #proofImageFront, #proofImageBack').attr('class', className);
     };
     var fetchSelectedCardStock = function() {
+      var printType = fetchPrintType();
       var cardStock = $('#edit-card-stock-options').children().children('input');
       var className;
-      // If cardstock is white smooth
-      if (cardStock[0].checked === true) {
+      if (printType === 'raisedLetter') {
+        // If cardstock is white smooth
+        if (cardStock[0].checked === true) {
+          className = 'whiteSmooth';
+        } else if (cardStock[1].checked === true) {
+          className = 'whiteLinen';
+        } else if (cardStock[2].checked === true) {
+          className = 'softWhiteLinen';
+        } else if (cardStock[3].checked === true) {
+          className = 'tanLinen';
+        } else if (cardStock[4].checked === true) {
+          className = 'grayLinen';
+        } else if (cardStock[5].checked === true) {
+          className = 'yellow';
+        } else if (cardStock[6].checked === true) {
+          className = 'kromekote';
+        } else if (cardStock[7].checked === true) {
+          className = 'woodgrain';
+        }
+      } else {
         className = 'whiteSmooth';
-      } else if (cardStock[1].checked === true) {
-        className = 'whiteLinen';
-      } else if (cardStock[2].checked === true) {
-        className = 'softWhiteLinen';
-      } else if (cardStock[3].checked === true) {
-        className = 'tanLinen';
-      } else if (cardStock[4].checked === true) {
-        className = 'grayLinen';
-      } else if (cardStock[5].checked === true) {
-        className = 'yellow';
-      } else if (cardStock[6].checked === true) {
-        className = 'kromekote';
-      } else if (cardStock[7].checked === true) {
-        className = 'woodgrain';
       }
       return className;
+    };
+    var validation = function() {
+      var printTypes = $('#edit-select-print-type').children().children('input');
+      if (printTypes[0].checked === false && printTypes[1].checked === false && printTypes[2].checked === false) {
+        alert('You must select a Print Type before you can continue.');
+      } else {
+        removeEmptyFields();
+        saveCard();
+      }
     };
     var startLoading = function() {
       var box = $('<div></div>').attr('id', 'loading');
@@ -1485,8 +1541,14 @@
     });
     // When a clipart category is clicked, load the svg
     $('#clipartCategory').change(loadClipartCategory);
+    // Change quantity options based on the print type selected
+    $('#edit-select-print-type').on('change', 'input', function(e) {
+      changeQuantityOptions(e);
+      disableTwoSided();
+      changeCardStock();
+    });
     // When a quantity is selected, change the price
-    $('#edit-select-quantity').on('change', 'input', function() {
+    $('#edit-select-quantity').on('change', function() {
       updatePrice();
     });
     $('#edit-card-stock-options').on('change', 'input', function() {
@@ -1496,8 +1558,7 @@
     // Take the user through the proofing process
     $('#continue_button').click(function(e) {
       e.preventDefault();
-      removeEmptyFields();
-      saveCard();
+      validation();
     });
     // Allow user to edit their card if needed
     $('#edit').click(function(e) {

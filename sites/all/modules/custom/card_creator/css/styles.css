@@ -200,18 +200,22 @@
   float: left;
   width: 100%;
 }
+#bottomColFourLower #select_print_type {
+  float: left;
+  width: 50%;
+}
 #bottomColFourLower #select_quantity {
-  text-align: left;
   float: right;
-  width: 65%;
-
+  position: relative;
+  top: 10px;
+  width: 45%;
 }
 #bottomColFourLower #continue {
   background-color: white;
   border: 1px solid black;
   border-radius: 10px;
   float: right;
-  margin-top: 50px;
+  margin-top: 90px;
   width: 100%;
 }
 #continue #currentPrice {

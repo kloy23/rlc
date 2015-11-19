@@ -520,9 +520,15 @@ function card_creator_form($form, &$form_state) {
 
   // Qunatity
   $form['qunatity'] = array(
-    '#markup' => '<h4>' . t('6) Select Qunatity') . '</h4>',
+    '#markup' => '<h4>' . t('6) Print Type & Quantity') . '</h4>',
     '#prefix' => '<div id="bottomColFour"><div id="bottomColFourUpper">',
     '#suffix' => '</div>',
+  );
+  // Build Print Type Options
+  $print_types = array(
+    '35' => t('Raised Letter'),
+    '36' => t('Full Color'),
+    '37' => t('Magnetic'),
   );
   // Build Quantity Options
   $quantitys = array(
@@ -534,12 +540,18 @@ function card_creator_form($form, &$form_state) {
     '14' => '5000',
     '15' => '10000',
   );
+  $form['select_print_type'] = array(
+    '#type' => 'radios',
+    '#options' => $print_types,
+    '#prefix' => '<div id="bottomColFourLower"><div id="select_print_type">',
+    '#suffix' => '</div>',
+  );
   // Display Quantity Options
   $form['select_quantity'] = array(
-    '#type' => 'radios',
+    '#type' => 'select',
     '#options' => $quantitys,
     '#default_value' => '9',
-    '#prefix' => '<div id="bottomColFourLower"><div id="select_quantity">',
+    '#prefix' => '<div id="select_quantity">',
     '#suffix' => '</div>',
   );
   // Price
@@ -617,6 +629,7 @@ function card_creator_form_submit($form, &$form_state) {
   $website = $form_state['values']['website'];
   $address = $form_state['values']['address'];
   $city_state_zip = $form_state['values']['city_state_zip'];
+  $selected_print_type = $form_state['values']['select_print_type'];
   $line1 = $form_state['values']['line1'];
   $line2 = $form_state['values']['line2'];
   $line3 = $form_state['values']['line3'];
@@ -728,6 +741,7 @@ function card_creator_form_submit($form, &$form_state) {
       // Add the custom values to the line_item fields
       foreach ($line_item as $field_name => $value) {
         $line_item->field_quantity['und'][0]['tid'] = $selected_quantity;
+        $line_item->field_print_type['und'][0]['tid'] = $selected_print_type;
         $line_item->field_card_stocks['und'][0]['tid'] = $selected_card_stock;
         $line_item->field_one_color_options['und'][0]['tid'] = $color_selected;
         $line_item->field_two_color_options['und'][0]['tid'] = $colors_selected;
@@ -875,6 +889,7 @@ function card_creator_form_submit($form, &$form_state) {
       // Add the custom values to the line_item fields
       foreach ($line_item as $field_name => $value) {
         $line_item->field_quantity['und'][0]['tid'] = $selected_quantity;
+        $line_item->field_print_type['und'][0]['tid'] = $selected_print_type;
         $line_item->field_card_stocks['und'][0]['tid'] = $selected_card_stock;
         $line_item->field_one_color_options['und'][0]['tid'] = $color_selected;
         $line_item->field_two_color_options['und'][0]['tid'] = $colors_selected;

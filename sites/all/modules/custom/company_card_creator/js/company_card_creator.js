@@ -38,6 +38,21 @@
       var cardStock = cardStock[1];
       return cardStock;
     };
+    var fetchPrintType = function() {
+      var printType;
+      var $printTypes = $('#edit-select-print-type').children().children('input');
+      // If this is a Raised Letter Card
+      if ($printTypes[0].checked === true) { 
+        printType = 'raisedLetter';
+        return printType;
+      } else if ($printTypes[1].checked === true) {
+        printType = 'fullColor';
+        return printType;
+      } else if ($printTypes[2].checked === true) {
+        printType = 'magnetic';
+        return printType;
+      }
+    };
     var setCardStock = function() {
       var cardStock = fetchCardStock();
       $('#previewFront, #proofImageFront').attr('class', cardStock);
@@ -203,31 +218,40 @@
       var $currentPrice = $('#currentPrice');
       var quantity = $('#edit-select-quantity').val();
       var cardStock = fetchCardStock();
-      // If the cardStock is White Smooth
-      if (cardStock === 'whiteSmooth') {
-        price500 = 21.00;
-        price1000 = 24.50;
-        pricePerThousand = 23.50;
-        price = calculateCost(quantity, price500, price1000, pricePerThousand);
-      } else if (cardStock === 'whiteLinen') { // White Linen
-        price500 = 23.95;
-        price1000 = 26.95;
-        pricePerThousand = 22.50;
-        price = calculateCost(quantity, price500, price1000, pricePerThousand);
-      } else if (cardStock === 'softWhiteLinen' || cardStock === 'tanLinen' || cardStock === 'grayLinen') { // Linens => Soft White, Tan, and Gray
-        price500 = 24.95;
-        price1000 = 28.95;
-        pricePerThousand = 23.50;
-        price = calculateCost(quantity, price500, price1000, pricePerThousand);
-      } else if (cardStock === 'yellow' || cardStock === 'kromekote') { // Yellow and Kromekote
-        price500 = 32.95;
-        price1000 = 36.95;
-        pricePerThousand = 31.50;
-        price = calculateCost(quantity, price500, price1000, pricePerThousand);
-      } else if (cardStock === 'Woodgrain') { // Woodgrain
-        price500 = 47.50;
-        price1000 = 53.50;
-        pricePerThousand = 46.00;
+      var printType = fetchPrintType();
+      // If the print type is not magnetic
+      if (printType !== 'magnetic') {
+        // If the cardStock is White Smooth
+        if (cardStock === 'whiteSmooth') {
+          price500 = 21.00;
+          price1000 = 24.50;
+          pricePerThousand = 23.50;
+          price = calculateCost(quantity, price500, price1000, pricePerThousand);
+        } else if (cardStock === 'whiteLinen') { // White Linen
+          price500 = 23.95;
+          price1000 = 26.95;
+          pricePerThousand = 22.50;
+          price = calculateCost(quantity, price500, price1000, pricePerThousand);
+        } else if (cardStock === 'softWhiteLinen' || cardStock === 'tanLinen' || cardStock === 'grayLinen') { // Linens => Soft White, Tan, and Gray
+          price500 = 24.95;
+          price1000 = 28.95;
+          pricePerThousand = 23.50;
+          price = calculateCost(quantity, price500, price1000, pricePerThousand);
+        } else if (cardStock === 'yellow' || cardStock === 'kromekote') { // Yellow and Kromekote
+          price500 = 32.95;
+          price1000 = 36.95;
+          pricePerThousand = 31.50;
+          price = calculateCost(quantity, price500, price1000, pricePerThousand);
+        } else if (cardStock === 'Woodgrain') { // Woodgrain
+          price500 = 47.50;
+          price1000 = 53.50;
+          pricePerThousand = 46.00;
+          price = calculateCost(quantity, price500, price1000, pricePerThousand);
+        }
+      } else if (printType === 'magnetic') {
+        price500 = 119.00;
+        price1000 = 119.00;
+        pricePerThousand = 119.00;
         price = calculateCost(quantity, price500, price1000, pricePerThousand);
       }
       var convertedTotal = price.toFixed(2);
