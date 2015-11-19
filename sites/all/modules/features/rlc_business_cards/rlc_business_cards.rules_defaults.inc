@@ -9,156 +9,6 @@
  */
 function rlc_business_cards_default_rules_configuration() {
   $items = array();
-  $items['rlc_rules_calculate_price_of_company_card_1000'] = entity_import('rules_config', '{ "rlc_rules_calculate_price_of_company_card_1000" : {
-      "LABEL" : "Calculate Price of Company Card 1000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "data_is" : {
-            "data" : [ "commerce-line-item:type" ],
-            "value" : "company_business_card"
-          }
-        },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "10" } }
-      ],
-      "DO" : [
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : "755",
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rlc_rules_calculate_price_of_company_card_10000'] = entity_import('rules_config', '{ "rlc_rules_calculate_price_of_company_card_10000" : {
-      "LABEL" : "Calculate Price of Company Card 10000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "data_is" : {
-            "data" : [ "commerce-line-item:type" ],
-            "value" : "company_business_card"
-          }
-        },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "15" } }
-      ],
-      "DO" : [
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : "8450",
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rlc_rules_calculate_price_of_company_card_2000'] = entity_import('rules_config', '{ "rlc_rules_calculate_price_of_company_card_2000" : {
-      "LABEL" : "Calculate Price of Company Card 2000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "data_is" : {
-            "data" : [ "commerce-line-item:type" ],
-            "value" : "company_business_card"
-          }
-        },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "11" } }
-      ],
-      "DO" : [
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : "1610",
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rlc_rules_calculate_price_of_company_card_3000'] = entity_import('rules_config', '{ "rlc_rules_calculate_price_of_company_card_3000" : {
-      "LABEL" : "Calculate Price of Company Card 3000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "data_is" : {
-            "data" : [ "commerce-line-item:type" ],
-            "value" : "company_business_card"
-          }
-        },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "12" } }
-      ],
-      "DO" : [
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : "2465",
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rlc_rules_calculate_price_of_company_card_3000_cloned_'] = entity_import('rules_config', '{ "rlc_rules_calculate_price_of_company_card_3000_cloned_" : {
-      "LABEL" : "Calculate Price of Company Card 4000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "data_is" : {
-            "data" : [ "commerce-line-item:type" ],
-            "value" : "company_business_card"
-          }
-        },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "13" } }
-      ],
-      "DO" : [
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : "3320",
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rlc_rules_calculate_price_of_company_card_5000'] = entity_import('rules_config', '{ "rlc_rules_calculate_price_of_company_card_5000" : {
-      "LABEL" : "Calculate Price of Company Card 5000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "data_is" : {
-            "data" : [ "commerce-line-item:type" ],
-            "value" : "company_business_card"
-          }
-        },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "14" } }
-      ],
-      "DO" : [
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : "4175",
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
   $items['rlc_rules_fetch_business_card_product_files_cloned_'] = entity_import('rules_config', '{ "rlc_rules_fetch_business_card_product_files_cloned_" : {
       "LABEL" : "Fetch Company Card Product Files",
       "PLUGIN" : "rule",
@@ -193,56 +43,849 @@ function rlc_business_cards_default_rules_configuration() {
       "PROVIDES VARIABLES" : [ "company_card_creator_front" ]
     }
   }');
-  $items['rules_add_new_business_card_product_to_cart'] = entity_import('rules_config', '{ "rules_add_new_business_card_product_to_cart" : {
-      "LABEL" : "Add new business card product to cart",
+  $items['rlc_rules_fetch_price_of_company_card'] = entity_import('rules_config', '{ "rlc_rules_fetch_price_of_company_card" : {
+      "LABEL" : "Fetch Price of Company Card",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
+        "calculated_price" : {
+          "label" : "Calculated Price",
+          "type" : "commerce_price",
+          "parameter" : false
+        }
+      },
+      "RULES" : [
+        { "RULE" : {
+            "PROVIDE" : { "raised_price" : { "raised_price" : "Raised Price" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-print-type" ], "value" : "35" } }
+            ],
+            "DO" : [
+              { "component_rlc_rules_fetch_price_of_company_raised_letter" : {
+                  "USING" : { "line_item" : [ "line_item" ] },
+                  "PROVIDE" : { "raised_price" : { "raised_price" : "Raised Price" } }
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "calculated-price:amount" ],
+                  "value" : [ "raised-price:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "Raised Letter"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "full_color_price" : { "full_color_price" : "Full Color Price" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-print-type" ], "value" : "36" } }
+            ],
+            "DO" : [
+              { "component_rlc_rules_fetch_price_of_company_full_color" : {
+                  "USING" : { "line_item" : [ "line_item" ] },
+                  "PROVIDE" : { "full_color_price" : { "full_color_price" : "Full Color Price" } }
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "calculated-price:amount" ],
+                  "value" : [ "full-color-price:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "Full Color"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "magnetic_price" : { "magnetic_price" : "Magnetic Price" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-print-type" ], "value" : "37" } }
+            ],
+            "DO" : [
+              { "component_rlc_rules_fetch_price_of_company_magnetic" : {
+                  "USING" : { "line_item" : [ "line_item" ] },
+                  "PROVIDE" : { "magnetic_price" : { "magnetic_price" : "Magnetic Price" } }
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "calculated-price:amount" ],
+                  "value" : [ "magnetic-price:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "Magnetic"
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "calculated_price" ]
+    }
+  }');
+  $items['rlc_rules_fetch_price_of_company_full_color'] = entity_import('rules_config', '{ "rlc_rules_fetch_price_of_company_full_color" : {
+      "LABEL" : "Fetch Price of Company Full Color",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
+        "full_color_price" : {
+          "label" : "Full Color Price",
+          "type" : "commerce_price",
+          "parameter" : false
+        }
+      },
+      "RULES" : [
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "9" } }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "full-color-price:amount" ],
+                  "value" : [ "line-item:field-print-type:field-company-price-500:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "500"
+          }
+        },
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "10" } }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "full-color-price:amount" ],
+                  "value" : [ "line-item:field-print-type:field-company-price-1000:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "1000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "11" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "full-color-price:amount" ], "value" : [ "price-2k" ] } }
+            ],
+            "LABEL" : "2000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_3k" : "Additional Cost",
+                "price_3k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "12" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "2"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_3k" : "Additional Cost" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-3k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_3k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "full-color-price:amount" ], "value" : [ "price-3k" ] } }
+            ],
+            "LABEL" : "3000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_4k" : "Additional Cost",
+                "price_4k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "13" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "3"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_4k" : "Additional Cost" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-4k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_4k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "full-color-price:amount" ], "value" : [ "price-4k" ] } }
+            ],
+            "LABEL" : "4000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_5k" : "Calculation result",
+                "price_5k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "14" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "4"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_5k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-5k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_5k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "full-color-price:amount" ], "value" : [ "price-5k" ] } }
+            ],
+            "LABEL" : "5000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_10k" : "Calculation result",
+                "price_10k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "15" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "9"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_10k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-10k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_10k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "full-color-price:amount" ], "value" : [ "price-10k" ] } }
+            ],
+            "LABEL" : "10000"
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "full_color_price" ]
+    }
+  }');
+  $items['rlc_rules_fetch_price_of_company_magnetic'] = entity_import('rules_config', '{ "rlc_rules_fetch_price_of_company_magnetic" : {
+      "LABEL" : "Fetch Price of Company Magnetic",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
+        "magnetic_price" : {
+          "label" : "Magnetic Price",
+          "type" : "commerce_price",
+          "parameter" : false
+        }
+      },
+      "RULES" : [
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "9" } }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "magnetic-price:amount" ],
+                  "value" : [ "line-item:field-print-type:field-company-price-500:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "500"
+          }
+        },
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "10" } }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "magnetic-price:amount" ],
+                  "value" : [ "line-item:field-print-type:field-company-price-1000:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "1000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "11" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "magnetic-price:amount" ], "value" : [ "price-2k" ] } }
+            ],
+            "LABEL" : "2000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_3k" : "Additional Cost",
+                "price_3k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "12" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "2"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_3k" : "Additional Cost" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-3k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_3k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "magnetic-price:amount" ], "value" : [ "price-3k" ] } }
+            ],
+            "LABEL" : "3000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_4k" : "Additional Cost",
+                "price_4k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "13" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "3"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_4k" : "Additional Cost" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-4k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_4k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "magnetic-price:amount" ], "value" : [ "price-4k" ] } }
+            ],
+            "LABEL" : "4000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_5k" : "Calculation result",
+                "price_5k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "14" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "4"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_5k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-5k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_5k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "magnetic-price:amount" ], "value" : [ "price-5k" ] } }
+            ],
+            "LABEL" : "5000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_10k" : "Calculation result",
+                "price_10k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "15" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "9"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_10k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-10k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_10k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "magnetic-price:amount" ], "value" : [ "price-10k" ] } }
+            ],
+            "LABEL" : "10000"
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "magnetic_price" ]
+    }
+  }');
+  $items['rlc_rules_fetch_price_of_company_raised_letter'] = entity_import('rules_config', '{ "rlc_rules_fetch_price_of_company_raised_letter" : {
+      "LABEL" : "Fetch Price of Company Raised Letter",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
+        "raised_price" : {
+          "label" : "Raised Price",
+          "type" : "commerce_price",
+          "parameter" : false
+        }
+      },
+      "RULES" : [
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "9" } }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "raised-price:amount" ],
+                  "value" : [ "line-item:field-print-type:field-company-price-500:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "500"
+          }
+        },
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "10" } }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "raised-price:amount" ],
+                  "value" : [ "line-item:field-print-type:field-company-price-1000:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "1000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "11" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "raised-price:amount" ], "value" : [ "price-2k" ] } }
+            ],
+            "LABEL" : "2000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_3k" : "Additional Cost",
+                "price_3k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "12" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "2"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_3k" : "Additional Cost" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-3k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_3k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "raised-price:amount" ], "value" : [ "price-3k" ] } }
+            ],
+            "LABEL" : "3000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_4k" : "Additional Cost",
+                "price_4k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "13" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "3"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_4k" : "Additional Cost" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-4k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_4k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "raised-price:amount" ], "value" : [ "price-4k" ] } }
+            ],
+            "LABEL" : "4000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_5k" : "Calculation result",
+                "price_5k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "14" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "4"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_5k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-5k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_5k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "raised-price:amount" ], "value" : [ "price-5k" ] } }
+            ],
+            "LABEL" : "5000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_10k" : "Calculation result",
+                "price_10k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : { "company_business_card" : "company_business_card" } }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "15" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "9"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_10k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-10k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_10k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "raised-price:amount" ], "value" : [ "price-10k" ] } }
+            ],
+            "LABEL" : "10000"
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "raised_price" ]
+    }
+  }');
+  $items['rules_calculate_price_for_business_cards'] = entity_import('rules_config', '{ "rules_calculate_price_for_business_cards" : {
+      "LABEL" : "Calculate price for Business Cards",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_cart", "entity" ],
-      "ON" : { "commerce_product_insert" : [] },
+      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
+      "ON" : { "commerce_product_calculate_sell_price" : [] },
       "IF" : [
         { "data_is" : {
-            "data" : [ "commerce-product:type" ],
+            "data" : [ "commerce-line-item:type" ],
             "op" : "IN",
             "value" : { "value" : {
                 "business_card" : "business_card",
-                "camera_ready_business_card" : "camera_ready_business_card",
-                "two_sided_business_card" : "two_sided_business_card",
-                "company_business_card" : "company_business_card"
+                "camera_ready_business_card" : "camera_ready_business_card"
               }
             }
           }
         }
       ],
       "DO" : [
-        { "commerce_cart_product_add_by_sku" : {
-            "USING" : {
-              "user" : [ "site:current-user" ],
-              "sku" : [ "commerce-product:sku" ],
-              "quantity" : "1",
-              "combine" : "0"
-            },
-            "PROVIDE" : { "product_add_line_item" : { "product_add_line_item" : "Added product line item" } }
+        { "component_rules_fetch_price_of_business_card" : {
+            "USING" : { "line_item" : [ "commerce-line-item" ] },
+            "PROVIDE" : { "calculated_price" : { "calculated_price" : "Calculated Price" } }
           }
         },
-        { "redirect" : { "url" : "\\/cart" } }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_for_1000'] = entity_import('rules_config', '{ "rules_calculate_price_for_1000" : {
-      "LABEL" : "Calculate price for 1000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_card_stocks" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "10" } }
-      ],
-      "DO" : [
         { "commerce_line_item_unit_price_add" : {
             "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "commerce-line-item:field-card-stocks:field-price-1000:amount" ],
+            "amount" : [ "calculated-price:amount" ],
             "component_name" : "base_price",
             "round_mode" : "0"
           }
@@ -250,445 +893,8 @@ function rlc_business_cards_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_calculate_price_for_10000'] = entity_import('rules_config', '{ "rules_calculate_price_for_10000" : {
-      "LABEL" : "Calculate price for 10000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_card_stocks" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "15" } }
-      ],
-      "DO" : [
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-card-stocks:field-price-per-thousand:amount" ],
-              "op" : "*",
-              "input_2" : "9"
-            },
-            "PROVIDE" : { "result" : { "additional_cost" : "Additional Cost" } }
-          }
-        },
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-card-stocks:field-price-1000:amount" ],
-              "op" : "+",
-              "input_2" : [ "additional-cost" ]
-            },
-            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
-          }
-        },
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "result" ],
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_for_2000'] = entity_import('rules_config', '{ "rules_calculate_price_for_2000" : {
-      "LABEL" : "Calculate price for 2000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_card_stocks" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "11" } }
-      ],
-      "DO" : [
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-card-stocks:field-price-1000:amount" ],
-              "op" : "+",
-              "input_2" : [ "commerce-line-item:field-card-stocks:field-price-per-thousand:amount" ]
-            },
-            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
-          }
-        },
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "result" ],
-            "component_name" : "base_price",
-            "round_mode" : "1"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_for_3000'] = entity_import('rules_config', '{ "rules_calculate_price_for_3000" : {
-      "LABEL" : "Calculate price for 3000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_card_stocks" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "12" } }
-      ],
-      "DO" : [
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-card-stocks:field-price-per-thousand:amount" ],
-              "op" : "*",
-              "input_2" : "2"
-            },
-            "PROVIDE" : { "result" : { "additional_cost" : "Additional Cost" } }
-          }
-        },
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-card-stocks:field-price-1000:amount" ],
-              "op" : "+",
-              "input_2" : [ "additional-cost" ]
-            },
-            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
-          }
-        },
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "result" ],
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_for_4000'] = entity_import('rules_config', '{ "rules_calculate_price_for_4000" : {
-      "LABEL" : "Calculate price for 4000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_card_stocks" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "13" } }
-      ],
-      "DO" : [
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-card-stocks:field-price-per-thousand:amount" ],
-              "op" : "*",
-              "input_2" : "3"
-            },
-            "PROVIDE" : { "result" : { "additional_cost" : "Additional Cost" } }
-          }
-        },
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-card-stocks:field-price-1000:amount" ],
-              "op" : "+",
-              "input_2" : [ "additional-cost" ]
-            },
-            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
-          }
-        },
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "result" ],
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_for_500'] = entity_import('rules_config', '{ "rules_calculate_price_for_500" : {
-      "LABEL" : "Calculate price for 500",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_card_stocks" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "9" } }
-      ],
-      "DO" : [
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "commerce-line-item:field-card-stocks:field-price-500:amount" ],
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_for_5000'] = entity_import('rules_config', '{ "rules_calculate_price_for_5000" : {
-      "LABEL" : "Calculate price for 5000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_card_stocks" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "14" } }
-      ],
-      "DO" : [
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-card-stocks:field-price-per-thousand:amount" ],
-              "op" : "*",
-              "input_2" : "4"
-            },
-            "PROVIDE" : { "result" : { "additional_cost" : "Additional Cost" } }
-          }
-        },
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-card-stocks:field-price-1000:amount" ],
-              "op" : "+",
-              "input_2" : [ "additional-cost" ]
-            },
-            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
-          }
-        },
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "result" ],
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_for_two_sided_10000'] = entity_import('rules_config', '{ "rules_calculate_price_for_two_sided_10000" : {
-      "LABEL" : "Calculate price for Two Sided 10000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_two_sided" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "15" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-two-sided" ], "value" : "16" } }
-      ],
-      "DO" : [
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-two-sided:field-price-per-thousand:amount" ],
-              "op" : "*",
-              "input_2" : "9"
-            },
-            "PROVIDE" : { "result" : { "additional_cost" : "Additional Cost" } }
-          }
-        },
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-two-sided:field-price:amount" ],
-              "op" : "+",
-              "input_2" : [ "additional-cost" ]
-            },
-            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
-          }
-        },
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "result" ],
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_for_two_sided_2000'] = entity_import('rules_config', '{ "rules_calculate_price_for_two_sided_2000" : {
-      "LABEL" : "Calculate price for Two Sided 2000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_two_sided" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "11" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-two-sided" ], "value" : "16" } }
-      ],
-      "DO" : [
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-two-sided:field-price:amount" ],
-              "op" : "+",
-              "input_2" : [ "commerce-line-item:field-two-sided:field-price-per-thousand:amount" ]
-            },
-            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
-          }
-        },
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "result" ],
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_for_two_sided_3000'] = entity_import('rules_config', '{ "rules_calculate_price_for_two_sided_3000" : {
-      "LABEL" : "Calculate price for Two Sided 3000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_two_sided" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "12" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-two-sided" ], "value" : "16" } }
-      ],
-      "DO" : [
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-two-sided:field-price-per-thousand:amount" ],
-              "op" : "*",
-              "input_2" : "2"
-            },
-            "PROVIDE" : { "result" : { "additional_cost" : "Additional Cost" } }
-          }
-        },
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-two-sided:field-price:amount" ],
-              "op" : "+",
-              "input_2" : [ "additional-cost" ]
-            },
-            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
-          }
-        },
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "result" ],
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_for_two_sided_4000'] = entity_import('rules_config', '{ "rules_calculate_price_for_two_sided_4000" : {
-      "LABEL" : "Calculate price for Two Sided 4000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_two_sided" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "13" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-two-sided" ], "value" : "16" } }
-      ],
-      "DO" : [
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-two-sided:field-price-per-thousand:amount" ],
-              "op" : "*",
-              "input_2" : "3"
-            },
-            "PROVIDE" : { "result" : { "additional_cost" : "Additional Cost" } }
-          }
-        },
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-two-sided:field-price:amount" ],
-              "op" : "+",
-              "input_2" : [ "additional-cost" ]
-            },
-            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
-          }
-        },
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "result" ],
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_for_two_sided_5000'] = entity_import('rules_config', '{ "rules_calculate_price_for_two_sided_5000" : {
-      "LABEL" : "Calculate price for Two Sided 5000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_two_sided" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "14" } },
-        { "data_is" : { "data" : [ "commerce-line-item:field-two-sided" ], "value" : "16" } }
-      ],
-      "DO" : [
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-two-sided:field-price-per-thousand:amount" ],
-              "op" : "*",
-              "input_2" : "4"
-            },
-            "PROVIDE" : { "result" : { "additional_cost" : "Additional Cost" } }
-          }
-        },
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "commerce-line-item:field-two-sided:field-price:amount" ],
-              "op" : "+",
-              "input_2" : [ "additional-cost" ]
-            },
-            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
-          }
-        },
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "result" ],
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_for_two_sided_500_or_1000'] = entity_import('rules_config', '{ "rules_calculate_price_for_two_sided_500_or_1000" : {
-      "LABEL" : "Calculate price for Two Sided 500 or 1000",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
-      "ON" : { "commerce_product_calculate_sell_price" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_quantity" } },
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_two_sided" } },
-        { "data_is" : {
-            "data" : [ "commerce-line-item:field-quantity" ],
-            "op" : "IN",
-            "value" : { "value" : { "9" : "9", "10" : "10" } }
-          }
-        },
-        { "data_is" : { "data" : [ "commerce-line-item:field-two-sided" ], "value" : "16" } }
-      ],
-      "DO" : [
-        { "commerce_line_item_unit_price_add" : {
-            "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : [ "commerce-line-item:field-two-sided:field-price:amount" ],
-            "component_name" : "base_price",
-            "round_mode" : "0"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_calculate_price_of_company_card'] = entity_import('rules_config', '{ "rules_calculate_price_of_company_card" : {
-      "LABEL" : "Calculate Price of Company Card 500",
+  $items['rules_calculate_price_for_company_cards'] = entity_import('rules_config', '{ "rules_calculate_price_for_company_cards" : {
+      "LABEL" : "Calculate price for Company Cards",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
@@ -698,13 +904,52 @@ function rlc_business_cards_default_rules_configuration() {
             "data" : [ "commerce-line-item:type" ],
             "value" : "company_business_card"
           }
-        },
-        { "data_is" : { "data" : [ "commerce-line-item:field-quantity" ], "value" : "9" } }
+        }
       ],
       "DO" : [
+        { "component_rlc_rules_fetch_price_of_company_card" : {
+            "USING" : { "line_item" : [ "commerce-line-item" ] },
+            "PROVIDE" : { "calculated_price" : { "calculated_price" : "Calculated Price" } }
+          }
+        },
         { "commerce_line_item_unit_price_add" : {
             "commerce_line_item" : [ "commerce_line_item" ],
-            "amount" : "605",
+            "amount" : [ "calculated-price:amount" ],
+            "component_name" : "base_price",
+            "round_mode" : "1"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_calculate_price_for_two_sided_business_cards'] = entity_import('rules_config', '{ "rules_calculate_price_for_two_sided_business_cards" : {
+      "LABEL" : "Calculate price for Two Sided Business Cards",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
+      "ON" : { "commerce_product_calculate_sell_price" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "commerce-line-item" ],
+            "type" : "commerce_line_item",
+            "bundle" : { "value" : {
+                "business_card" : "business_card",
+                "camera_ready_business_card" : "camera_ready_business_card",
+                "company_business_card" : "company_business_card"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "component_rules_fetch_price_of_two_sided" : {
+            "USING" : { "line_item" : [ "commerce-line-item" ] },
+            "PROVIDE" : { "two_sided_price" : { "two_sided_price" : "Two Sided Price" } }
+          }
+        },
+        { "commerce_line_item_unit_price_add" : {
+            "commerce_line_item" : [ "commerce_line_item" ],
+            "amount" : [ "two-sided-price:amount" ],
             "component_name" : "base_price",
             "round_mode" : "0"
           }
@@ -922,6 +1167,1179 @@ function rlc_business_cards_default_rules_configuration() {
         }
       ],
       "PROVIDES VARIABLES" : [ "camera_ready_front", "camera_ready_back" ]
+    }
+  }');
+  $items['rules_fetch_price_of_business_card'] = entity_import('rules_config', '{ "rules_fetch_price_of_business_card" : {
+      "LABEL" : "Fetch Price of Business Card",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
+        "calculated_price" : {
+          "label" : "Calculated Price",
+          "type" : "commerce_price",
+          "parameter" : false
+        }
+      },
+      "RULES" : [
+        { "RULE" : {
+            "PROVIDE" : { "raised_price" : { "raised_price" : "Raised Price" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-print-type" ], "value" : "35" } }
+            ],
+            "DO" : [
+              { "component_rules_fetch_price_of_raised_letter" : {
+                  "USING" : { "line_item" : [ "line_item" ] },
+                  "PROVIDE" : { "raised_price" : { "raised_price" : "Raised Price" } }
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "calculated-price:amount" ],
+                  "value" : [ "raised-price:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "Raised Letter"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "full_color_price" : { "full_color_price" : "Full Color Price" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-print-type" ], "value" : "36" } }
+            ],
+            "DO" : [
+              { "component_rules_fetch_price_of_full_color" : {
+                  "USING" : { "line_item" : [ "line_item" ] },
+                  "PROVIDE" : { "full_color_price" : { "full_color_price" : "Full Color Price" } }
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "calculated-price:amount" ],
+                  "value" : [ "full-color-price:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "Full Color"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "magnetic_price" : { "magnetic_price" : "Magnetic Price" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-print-type" ], "value" : "37" } }
+            ],
+            "DO" : [
+              { "component_rules_fetch_price_of_magnetic" : {
+                  "USING" : { "line_item" : [ "line_item" ] },
+                  "PROVIDE" : { "magnetic_price" : { "magnetic_price" : "Magnetic Price" } }
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "calculated-price:amount" ],
+                  "value" : [ "magnetic-price:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "Magnetic"
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "calculated_price" ]
+    }
+  }');
+  $items['rules_fetch_price_of_full_color'] = entity_import('rules_config', '{ "rules_fetch_price_of_full_color" : {
+      "LABEL" : "Fetch Price of Full Color",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
+        "full_color_price" : {
+          "label" : "Full Color Price",
+          "type" : "commerce_price",
+          "parameter" : false
+        }
+      },
+      "RULES" : [
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "9" } }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "full-color-price:amount" ],
+                  "value" : [ "line-item:field-print-type:field-price-500:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "500"
+          }
+        },
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "10" } }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "full-color-price:amount" ],
+                  "value" : [ "line-item:field-print-type:field-price-1000:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "1000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "11" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "line-item:field-print-type:field-price-per-thousand:amount" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "full-color-price:amount" ], "value" : [ "price-2k" ] } }
+            ],
+            "LABEL" : "2000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_3k" : "Additional Cost",
+                "price_3k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "12" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "2"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_3k" : "Additional Cost" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-3k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_3k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "full-color-price:amount" ], "value" : [ "price-3k" ] } }
+            ],
+            "LABEL" : "3000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_4k" : "Additional Cost",
+                "price_4k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "13" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "3"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_4k" : "Additional Cost" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-4k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_4k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "full-color-price:amount" ], "value" : [ "price-4k" ] } }
+            ],
+            "LABEL" : "4000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_5k" : "Calculation result",
+                "price_5k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "14" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "4"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_5k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-5k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_5k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "full-color-price:amount" ], "value" : [ "price-5k" ] } }
+            ],
+            "LABEL" : "5000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_10k" : "Calculation result",
+                "price_10k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "15" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "9"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_10k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-company-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-10k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_10k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "full-color-price:amount" ], "value" : [ "price-10k" ] } }
+            ],
+            "LABEL" : "10000"
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "full_color_price" ]
+    }
+  }');
+  $items['rules_fetch_price_of_magnetic'] = entity_import('rules_config', '{ "rules_fetch_price_of_magnetic" : {
+      "LABEL" : "Fetch Price of Magnetic",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
+        "magnetic_price" : {
+          "label" : "Magnetic Price",
+          "type" : "commerce_price",
+          "parameter" : false
+        }
+      },
+      "RULES" : [
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "9" } }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "magnetic-price:amount" ],
+                  "value" : [ "line-item:field-print-type:field-price-500:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "500"
+          }
+        },
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "10" } }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "magnetic-price:amount" ],
+                  "value" : [ "line-item:field-print-type:field-price-1000:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "1000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "11" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "line-item:field-print-type:field-price-per-thousand:amount" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "magnetic-price:amount" ], "value" : [ "price-2k" ] } }
+            ],
+            "LABEL" : "2000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_3k" : "Additional Cost",
+                "price_3k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "12" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "2"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_3k" : "Additional Cost" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-3k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_3k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "magnetic-price:amount" ], "value" : [ "price-3k" ] } }
+            ],
+            "LABEL" : "3000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_4k" : "Additional Cost",
+                "price_4k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "13" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "3"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_4k" : "Additional Cost" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-4k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_4k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "magnetic-price:amount" ], "value" : [ "price-4k" ] } }
+            ],
+            "LABEL" : "4000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_5k" : "Calculation result",
+                "price_5k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "14" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "4"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_5k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-5k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_5k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "magnetic-price:amount" ], "value" : [ "price-5k" ] } }
+            ],
+            "LABEL" : "5000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_10k" : "Calculation result",
+                "price_10k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "15" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "9"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_10k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-print-type:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-10k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_10k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "magnetic-price:amount" ], "value" : [ "price-10k" ] } }
+            ],
+            "LABEL" : "10000"
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "magnetic_price" ]
+    }
+  }');
+  $items['rules_fetch_price_of_raised_letter'] = entity_import('rules_config', '{ "rules_fetch_price_of_raised_letter" : {
+      "LABEL" : "Fetch Price of Raised Letter",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
+        "raised_price" : {
+          "label" : "Raised Price",
+          "type" : "commerce_price",
+          "parameter" : false
+        }
+      },
+      "RULES" : [
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "9" } }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "raised-price:amount" ],
+                  "value" : [ "line-item:field-card-stocks:field-price-500:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "500"
+          }
+        },
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "10" } }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "raised-price:amount" ],
+                  "value" : [ "line-item:field-card-stocks:field-price-1000:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "1000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "11" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-card-stocks:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "line-item:field-card-stocks:field-price-per-thousand:amount" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "raised-price:amount" ], "value" : [ "price-2k" ] } }
+            ],
+            "LABEL" : "2000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_3k" : "Additional Cost",
+                "price_3k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "12" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-card-stocks:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "2"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_3k" : "Additional Cost" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-card-stocks:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-3k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_3k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "raised-price:amount" ], "value" : [ "price-3k" ] } }
+            ],
+            "LABEL" : "3000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_4k" : "Additional Cost",
+                "price_4k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "13" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-card-stocks:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "3"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_4k" : "Additional Cost" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-card-stocks:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-4k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_4k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "raised-price:amount" ], "value" : [ "price-4k" ] } }
+            ],
+            "LABEL" : "4000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_5k" : "Calculation result",
+                "price_5k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "14" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-card-stocks:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "4"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_5k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-card-stocks:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-5k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_5k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "raised-price:amount" ], "value" : [ "price-5k" ] } }
+            ],
+            "LABEL" : "5000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_10k" : "Calculation result",
+                "price_10k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "15" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-card-stocks:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "9"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_10k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-card-stocks:field-price-1000:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-10k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_10k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "raised-price:amount" ], "value" : [ "price-10k" ] } }
+            ],
+            "LABEL" : "10000"
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "raised_price" ]
+    }
+  }');
+  $items['rules_fetch_price_of_two_sided'] = entity_import('rules_config', '{ "rules_fetch_price_of_two_sided" : {
+      "LABEL" : "Fetch Price of Two Sided",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
+        "two_sided_price" : {
+          "label" : "Two Sided Price",
+          "type" : "commerce_price",
+          "parameter" : false
+        }
+      },
+      "RULES" : [
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card",
+                      "company_business_card" : "company_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-two-sided" ], "value" : "16" } },
+              { "data_is" : {
+                  "data" : [ "line-item:field-quantity" ],
+                  "op" : "IN",
+                  "value" : { "value" : { "9" : "9", "10" : "10" } }
+                }
+              }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "two-sided-price:amount" ],
+                  "value" : [ "line-item:field-two-sided:field-price:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "500 - 1000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card",
+                      "company_business_card" : "company_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-two-sided" ], "value" : "16" } },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "11" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "line-item:field-two-sided:field-price-per-thousand:amount" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "two-sided-price:amount" ], "value" : [ "price-2k" ] } }
+            ],
+            "LABEL" : "2000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_3k" : "Calculation result",
+                "price_3k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card",
+                      "company_business_card" : "company_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-two-sided" ], "value" : "16" } },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "12" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "2"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_3k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-3k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_3k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "two-sided-price:amount" ], "value" : [ "price-3k" ] } }
+            ],
+            "LABEL" : "3000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_4k" : "Calculation result",
+                "price_4k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card",
+                      "company_business_card" : "company_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-two-sided" ], "value" : "16" } },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "13" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "3"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_4k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-4k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_4k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "two-sided-price:amount" ], "value" : [ "price-4k" ] } }
+            ],
+            "LABEL" : "4000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_5k" : "Calculation result",
+                "price_5k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card",
+                      "company_business_card" : "company_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-two-sided" ], "value" : "16" } },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "14" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "4"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_5k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-5k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_5k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "two-sided-price:amount" ], "value" : [ "price-5k" ] } }
+            ],
+            "LABEL" : "5000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_10k" : "Calculation result",
+                "price_10k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card",
+                      "company_business_card" : "company_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-two-sided" ], "value" : "16" } },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "15" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "9"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_10k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-10k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_10k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "two-sided-price:amount" ], "value" : [ "price-10k" ] } }
+            ],
+            "LABEL" : "10000"
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "two_sided_price" ]
     }
   }');
   $items['rules_fetch_quantity'] = entity_import('rules_config', '{ "rules_fetch_quantity" : {
