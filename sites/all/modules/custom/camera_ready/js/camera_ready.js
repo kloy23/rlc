@@ -16,6 +16,7 @@
     var $twoColorOptions = $('#edit-line-item-fields-field-two-color-options');
     var $backColorOptions = $('#edit-line-item-fields-field-back-color-options');
     var $formFields = $('#edit-line-item-fields');
+    var $printType = $('#edit-line-item-fields-field-print-type-und');
 
     // Functions
     var removeBack = function() {
@@ -96,6 +97,11 @@
         errorString += 'You must select a color option for the back in order to continue.\n';
         formError($backColorOptions);
       }
+      // If the print type is not selected.
+      if ($printType.val() === '_none') {
+        errorString += 'You must select a Print Type before you can continue.\n';
+        formError($printType);
+      }
       // If this is a Two Sided card.
       if (fieldTwoSidedVal === '16') {
         // If Front is empty
@@ -161,6 +167,9 @@
     $oneColorSelection.change(function() {
       removeFormError($oneColorOptions);
     });
+    $printType.change(function() {
+      removeFormError($printType);
+    })
     $twoColorSelection.change(function() {
       removeFormError($twoColorOptions);
     });
