@@ -1,0 +1,12 @@
+name = RLC Features
+description = Sets all RLC Features as dependancies.
+core = 7.x
+package = Features
+dependencies[] = rlc_business_cards
+dependencies[] = rlc_commerce
+dependencies[] = rlc_greeting_cards
+dependencies[] = rlc_image_carousel
+dependencies[] = rlc_pages
+dependencies[] = rlc_spiritual_products
+features[features_api][] = api:2
+project path = sites/all/modules/features
