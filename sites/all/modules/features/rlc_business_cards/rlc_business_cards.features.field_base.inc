@@ -10,7 +10,7 @@
 function rlc_business_cards_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_address'
+  // Exported field_base: 'field_address'.
   $field_bases['field_address'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_back_color_options'
+  // Exported field_base: 'field_back_color_options'.
   $field_bases['field_back_color_options'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -57,7 +57,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_back_line_1'
+  // Exported field_base: 'field_back_line_1'.
   $field_bases['field_back_line_1'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -78,7 +78,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_back_line_2'
+  // Exported field_base: 'field_back_line_2'.
   $field_bases['field_back_line_2'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -99,7 +99,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_back_line_3'
+  // Exported field_base: 'field_back_line_3'.
   $field_bases['field_back_line_3'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -120,7 +120,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_back_line_4'
+  // Exported field_base: 'field_back_line_4'.
   $field_bases['field_back_line_4'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -141,7 +141,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_back_line_5'
+  // Exported field_base: 'field_back_line_5'.
   $field_bases['field_back_line_5'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -162,7 +162,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_back_line_6'
+  // Exported field_base: 'field_back_line_6'.
   $field_bases['field_back_line_6'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -183,7 +183,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_back_line_7'
+  // Exported field_base: 'field_back_line_7'.
   $field_bases['field_back_line_7'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -204,7 +204,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_back_line_8'
+  // Exported field_base: 'field_back_line_8'.
   $field_bases['field_back_line_8'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -225,7 +225,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_back_line_9'
+  // Exported field_base: 'field_back_line_9'.
   $field_bases['field_back_line_9'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -246,7 +246,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_business_card_image'
+  // Exported field_base: 'field_business_card_image'.
   $field_bases['field_business_card_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -268,7 +268,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_business_card_image_back'
+  // Exported field_base: 'field_business_card_image_back'.
   $field_bases['field_business_card_image_back'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -290,7 +290,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_camera_ready'
+  // Exported field_base: 'field_camera_ready'.
   $field_bases['field_camera_ready'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -313,7 +313,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_camera_ready_back'
+  // Exported field_base: 'field_camera_ready_back'.
   $field_bases['field_camera_ready_back'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -336,7 +336,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_card_stocks'
+  // Exported field_base: 'field_card_stocks'.
   $field_bases['field_card_stocks'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -362,7 +362,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_city_state_zip'
+  // Exported field_base: 'field_city_state_zip'.
   $field_bases['field_city_state_zip'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -383,7 +383,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_company_name'
+  // Exported field_base: 'field_company_name'.
   $field_bases['field_company_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -404,7 +404,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_company_price_1000'
+  // Exported field_base: 'field_company_price_1000'.
   $field_bases['field_company_price_1000'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -424,7 +424,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
-  // Exported field_base: 'field_company_price_500'
+  // Exported field_base: 'field_company_price_500'.
   $field_bases['field_company_price_500'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -444,7 +444,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
-  // Exported field_base: 'field_company_price_per_thousand'
+  // Exported field_base: 'field_company_price_per_thousand'.
   $field_bases['field_company_price_per_thousand'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -464,7 +464,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
-  // Exported field_base: 'field_email'
+  // Exported field_base: 'field_email'.
   $field_bases['field_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -485,7 +485,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_1'
+  // Exported field_base: 'field_line_1'.
   $field_bases['field_line_1'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -506,7 +506,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_10'
+  // Exported field_base: 'field_line_10'.
   $field_bases['field_line_10'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -527,7 +527,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_11'
+  // Exported field_base: 'field_line_11'.
   $field_bases['field_line_11'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -548,7 +548,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_12'
+  // Exported field_base: 'field_line_12'.
   $field_bases['field_line_12'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -569,7 +569,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_13'
+  // Exported field_base: 'field_line_13'.
   $field_bases['field_line_13'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -590,7 +590,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_14'
+  // Exported field_base: 'field_line_14'.
   $field_bases['field_line_14'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -611,7 +611,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_15'
+  // Exported field_base: 'field_line_15'.
   $field_bases['field_line_15'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -632,7 +632,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_2'
+  // Exported field_base: 'field_line_2'.
   $field_bases['field_line_2'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -653,7 +653,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_3'
+  // Exported field_base: 'field_line_3'.
   $field_bases['field_line_3'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -674,7 +674,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_4'
+  // Exported field_base: 'field_line_4'.
   $field_bases['field_line_4'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -695,7 +695,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_5'
+  // Exported field_base: 'field_line_5'.
   $field_bases['field_line_5'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -716,7 +716,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_6'
+  // Exported field_base: 'field_line_6'.
   $field_bases['field_line_6'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -737,7 +737,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_7'
+  // Exported field_base: 'field_line_7'.
   $field_bases['field_line_7'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -758,7 +758,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_8'
+  // Exported field_base: 'field_line_8'.
   $field_bases['field_line_8'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -779,7 +779,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_line_9'
+  // Exported field_base: 'field_line_9'.
   $field_bases['field_line_9'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -800,7 +800,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_name'
+  // Exported field_base: 'field_name'.
   $field_bases['field_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -821,7 +821,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_one_color_options'
+  // Exported field_base: 'field_one_color_options'.
   $field_bases['field_one_color_options'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -847,7 +847,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_one_or_two_color'
+  // Exported field_base: 'field_one_or_two_color'.
   $field_bases['field_one_or_two_color'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -873,7 +873,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_price'
+  // Exported field_base: 'field_price'.
   $field_bases['field_price'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -893,7 +893,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
-  // Exported field_base: 'field_price_1000'
+  // Exported field_base: 'field_price_1000'.
   $field_bases['field_price_1000'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -913,7 +913,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
-  // Exported field_base: 'field_price_500'
+  // Exported field_base: 'field_price_500'.
   $field_bases['field_price_500'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -933,7 +933,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
-  // Exported field_base: 'field_price_per_thousand'
+  // Exported field_base: 'field_price_per_thousand'.
   $field_bases['field_price_per_thousand'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -953,7 +953,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
-  // Exported field_base: 'field_print_ready_back'
+  // Exported field_base: 'field_print_ready_back'.
   $field_bases['field_print_ready_back'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -975,7 +975,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_print_ready_front'
+  // Exported field_base: 'field_print_ready_front'.
   $field_bases['field_print_ready_front'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -997,7 +997,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_print_type'
+  // Exported field_base: 'field_print_type'.
   $field_bases['field_print_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1023,7 +1023,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_product_reference'
+  // Exported field_base: 'field_product_reference'.
   $field_bases['field_product_reference'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1044,7 +1044,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'commerce_product_reference',
   );
 
-  // Exported field_base: 'field_quantity'
+  // Exported field_base: 'field_quantity'.
   $field_bases['field_quantity'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1070,7 +1070,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_svg_back'
+  // Exported field_base: 'field_svg_back'.
   $field_bases['field_svg_back'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1092,7 +1092,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_svg_front'
+  // Exported field_base: 'field_svg_front'.
   $field_bases['field_svg_front'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1114,7 +1114,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_title'
+  // Exported field_base: 'field_title'.
   $field_bases['field_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1135,7 +1135,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_two_color_options'
+  // Exported field_base: 'field_two_color_options'.
   $field_bases['field_two_color_options'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1161,7 +1161,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_two_sided'
+  // Exported field_base: 'field_two_sided'.
   $field_bases['field_two_sided'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1187,7 +1187,7 @@ function rlc_business_cards_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_website'
+  // Exported field_base: 'field_website'.
   $field_bases['field_website'] = array(
     'active' => 1,
     'cardinality' => 1,

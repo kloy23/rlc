@@ -10,7 +10,7 @@
 function rlc_spiritual_products_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_product_image'
+  // Exported field_base: 'field_product_image'.
   $field_bases['field_product_image'] = array(
     'active' => 1,
     'cardinality' => 1,

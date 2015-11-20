@@ -11,7 +11,7 @@ function rlc_spiritual_products_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'commerce_line_item-spiritual_book-commerce_display_path'
+  // 'commerce_line_item-spiritual_book-commerce_display_path'.
   $field_instances['commerce_line_item-spiritual_book-commerce_display_path'] = array(
     'bundle' => 'spiritual_book',
     'default_value' => NULL,
@@ -52,7 +52,7 @@ function rlc_spiritual_products_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-spiritual_book-commerce_product'
+  // 'commerce_line_item-spiritual_book-commerce_product'.
   $field_instances['commerce_line_item-spiritual_book-commerce_product'] = array(
     'bundle' => 'spiritual_book',
     'default_value' => NULL,
@@ -107,7 +107,8 @@ function rlc_spiritual_products_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-spiritual_book-commerce_total'
+  // Exported field_instance:
+  // 'commerce_line_item-spiritual_book-commerce_total'.
   $field_instances['commerce_line_item-spiritual_book-commerce_total'] = array(
     'bundle' => 'spiritual_book',
     'default_value' => NULL,
@@ -169,7 +170,7 @@ function rlc_spiritual_products_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-spiritual_book-commerce_unit_price'
+  // 'commerce_line_item-spiritual_book-commerce_unit_price'.
   $field_instances['commerce_line_item-spiritual_book-commerce_unit_price'] = array(
     'bundle' => 'spiritual_book',
     'default_value' => NULL,
@@ -231,7 +232,7 @@ function rlc_spiritual_products_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-spiritual_card-commerce_display_path'
+  // 'commerce_line_item-spiritual_card-commerce_display_path'.
   $field_instances['commerce_line_item-spiritual_card-commerce_display_path'] = array(
     'bundle' => 'spiritual_card',
     'default_value' => NULL,
@@ -272,7 +273,7 @@ function rlc_spiritual_products_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-spiritual_card-commerce_product'
+  // 'commerce_line_item-spiritual_card-commerce_product'.
   $field_instances['commerce_line_item-spiritual_card-commerce_product'] = array(
     'bundle' => 'spiritual_card',
     'default_value' => NULL,
@@ -327,7 +328,8 @@ function rlc_spiritual_products_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-spiritual_card-commerce_total'
+  // Exported field_instance:
+  // 'commerce_line_item-spiritual_card-commerce_total'.
   $field_instances['commerce_line_item-spiritual_card-commerce_total'] = array(
     'bundle' => 'spiritual_card',
     'default_value' => NULL,
@@ -389,7 +391,7 @@ function rlc_spiritual_products_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-spiritual_card-commerce_unit_price'
+  // 'commerce_line_item-spiritual_card-commerce_unit_price'.
   $field_instances['commerce_line_item-spiritual_card-commerce_unit_price'] = array(
     'bundle' => 'spiritual_card',
     'default_value' => NULL,
@@ -450,7 +452,7 @@ function rlc_spiritual_products_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-spiritual_book-commerce_price'
+  // Exported field_instance: 'commerce_product-spiritual_book-commerce_price'.
   $field_instances['commerce_product-spiritual_book-commerce_price'] = array(
     'bundle' => 'spiritual_book',
     'default_value' => NULL,
@@ -584,7 +586,7 @@ function rlc_spiritual_products_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_product-spiritual_book-field_product_image'
+  // 'commerce_product-spiritual_book-field_product_image'.
   $field_instances['commerce_product-spiritual_book-field_product_image'] = array(
     'bundle' => 'spiritual_book',
     'deleted' => 0,
@@ -640,7 +642,7 @@ function rlc_spiritual_products_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-spiritual_card-commerce_price'
+  // Exported field_instance: 'commerce_product-spiritual_card-commerce_price'.
   $field_instances['commerce_product-spiritual_card-commerce_price'] = array(
     'bundle' => 'spiritual_card',
     'default_value' => NULL,
@@ -774,7 +776,7 @@ function rlc_spiritual_products_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_product-spiritual_card-field_product_image'
+  // 'commerce_product-spiritual_card-field_product_image'.
   $field_instances['commerce_product-spiritual_card-field_product_image'] = array(
     'bundle' => 'spiritual_card',
     'deleted' => 0,

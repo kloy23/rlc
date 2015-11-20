@@ -162,6 +162,16 @@ function rlc_pages_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'front',
+          'settings' => NULL,
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -180,59 +190,11 @@ function rlc_pages_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'children' => array(
-          0 => 2,
-          1 => 1,
+          0 => 5,
+          1 => 4,
           2 => 3,
         ),
         'parent' => 'canvas',
-      ),
-      1 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'left',
-          1 => 'right',
-        ),
-        'parent' => 'main',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'left' => array(
-        'type' => 'region',
-        'title' => 'Left',
-        'width' => '25.261498335372718',
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'right' => array(
-        'type' => 'region',
-        'title' => 'Right',
-        'width' => 54.454033278857636,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      2 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'header',
-        ),
-        'parent' => 'main',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'header' => array(
-        'type' => 'region',
-        'title' => 'Header',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => '',
-        'hide_empty' => 0,
       ),
       3 => array(
         'type' => 'row',
@@ -253,6 +215,54 @@ function rlc_pages_default_page_manager_pages() {
         'class' => '',
         'hide_empty' => 0,
       ),
+      4 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'top_left',
+          1 => 'top_right',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'top_right' => array(
+        'type' => 'region',
+        'title' => 'top-right',
+        'width' => 50,
+        'width_type' => '%',
+        'parent' => '4',
+        'class' => 'rlc-header',
+        'hide_empty' => 0,
+      ),
+      'top_left' => array(
+        'type' => 'region',
+        'title' => 'top-left',
+        'width' => 50,
+        'width_type' => '%',
+        'parent' => '4',
+        'class' => 'rlc-header',
+        'hide_empty' => 0,
+      ),
+      5 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'header',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'header' => array(
+        'type' => 'region',
+        'title' => 'Header',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '5',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -266,6 +276,7 @@ function rlc_pages_default_page_manager_pages() {
       'log_in' => NULL,
       'company_selection' => NULL,
       'footer' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -274,8 +285,8 @@ function rlc_pages_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-ff003493-b20e-435b-9047-6365a7c4cf9f';
-    $pane->panel = 'footer';
+    $pane->pid = 'new-0d21f58b-051f-47c7-ac7a-db54063e7ef6';
+    $pane->panel = 'header';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -283,8 +294,9 @@ function rlc_pages_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '1000 High Quality Raised Letter Business Cards for just $16.95!
-<p id="disclaimer">*Price is based on White Smooth card stock, and the use of our Custom Business Card Creator.</p>',
+      'body' => '<div id="siteSlogan" class="rlc-header">
+We are one of the very few companies in the U.S. that has the capability to provide you with the Elegance and Professionalism of Raised Letter Printing.
+</div>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -292,27 +304,24 @@ function rlc_pages_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => 'panel-home-header',
-      'css_class' => 'rlc-header',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'ff003493-b20e-435b-9047-6365a7c4cf9f';
-    $display->content['new-ff003493-b20e-435b-9047-6365a7c4cf9f'] = $pane;
-    $display->panels['footer'][0] = 'new-ff003493-b20e-435b-9047-6365a7c4cf9f';
+    $pane->uuid = '0d21f58b-051f-47c7-ac7a-db54063e7ef6';
+    $display->content['new-0d21f58b-051f-47c7-ac7a-db54063e7ef6'] = $pane;
+    $display->panels['header'][0] = 'new-0d21f58b-051f-47c7-ac7a-db54063e7ef6';
     $pane = new stdClass();
-    $pane->pid = 'new-00b44c6d-5197-4a37-9b9c-cc33cb94b398';
-    $pane->panel = 'header';
+    $pane->pid = 'new-610088fd-a152-482d-955b-5ff128759d2c';
+    $pane->panel = 'top_left';
     $pane->type = 'views';
-    $pane->subtype = 'image_carousel';
+    $pane->subtype = 'business_card_image_carousel';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
       'use_pager' => 0,
-      'nodes_per_page' => '5',
+      'nodes_per_page' => '0',
       'pager_id' => '0',
       'offset' => '0',
       'more_link' => 0,
@@ -330,66 +339,34 @@ function rlc_pages_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '00b44c6d-5197-4a37-9b9c-cc33cb94b398';
-    $display->content['new-00b44c6d-5197-4a37-9b9c-cc33cb94b398'] = $pane;
-    $display->panels['header'][0] = 'new-00b44c6d-5197-4a37-9b9c-cc33cb94b398';
+    $pane->uuid = '610088fd-a152-482d-955b-5ff128759d2c';
+    $display->content['new-610088fd-a152-482d-955b-5ff128759d2c'] = $pane;
+    $display->panels['top_left'][0] = 'new-610088fd-a152-482d-955b-5ff128759d2c';
     $pane = new stdClass();
-    $pane->pid = 'new-3c231214-37ae-4c46-a20d-bcc3914fda89';
-    $pane->panel = 'left';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(),
-    );
-    $pane->configuration = array(
-      'admin_title' => 'Get Started',
-      'title' => '',
-      'body' => '<div class="buttons glossy">
-<a href="/card-creator/">Create Your Card</a>
-</div>
-<div class="buttons glossy">
-<a  href="/upload-artwork">Upload Custom Artwork</a>
-</div>
-<div class="buttons glossy">
-<a  href="/greeting-cards">Greeting Cards</a>
-</div>
-<div class="buttons glossy">
-<a  href="/spiritual-products">Spiritual Products</a>
-</div>',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'panel-home-left',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '3c231214-37ae-4c46-a20d-bcc3914fda89';
-    $display->content['new-3c231214-37ae-4c46-a20d-bcc3914fda89'] = $pane;
-    $display->panels['left'][0] = 'new-3c231214-37ae-4c46-a20d-bcc3914fda89';
-    $pane = new stdClass();
-    $pane->pid = 'new-a7dc9ea6-09d2-48a3-b45a-0e2a7ab1f5fd';
-    $pane->panel = 'left';
-    $pane->type = 'block';
-    $pane->subtype = 'company_card_creator-company_selection';
+    $pane->pid = 'new-68421b42-3972-44e3-9375-0a709190ebe9';
+    $pane->panel = 'top_right';
+    $pane->type = 'views';
+    $pane->subtype = 'greeting_card_image_carousel';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block',
+      'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -399,45 +376,11 @@ function rlc_pages_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'a7dc9ea6-09d2-48a3-b45a-0e2a7ab1f5fd';
-    $display->content['new-a7dc9ea6-09d2-48a3-b45a-0e2a7ab1f5fd'] = $pane;
-    $display->panels['left'][1] = 'new-a7dc9ea6-09d2-48a3-b45a-0e2a7ab1f5fd';
-    $pane = new stdClass();
-    $pane->pid = 'new-c2a5fc87-4bf1-4a4e-beea-2222af6c315b';
-    $pane->panel = 'right';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<ul>
-  <li>One or Two color printing available.</li>
-  <li>Choose from several proven business card templates.</li>
-  <li>Multiple high quality card stocks available.</li>
-  <li>Printed and Shipped within 48 hours.</li>
-  <li>Satisfaction guaranteed!</li>
-</ul>',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'panel-home-right',
-      'css_class' => '',
-    );
-    $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'c2a5fc87-4bf1-4a4e-beea-2222af6c315b';
-    $display->content['new-c2a5fc87-4bf1-4a4e-beea-2222af6c315b'] = $pane;
-    $display->panels['right'][0] = 'new-c2a5fc87-4bf1-4a4e-beea-2222af6c315b';
+    $pane->uuid = '68421b42-3972-44e3-9375-0a709190ebe9';
+    $display->content['new-68421b42-3972-44e3-9375-0a709190ebe9'] = $pane;
+    $display->panels['top_right'][0] = 'new-68421b42-3972-44e3-9375-0a709190ebe9';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

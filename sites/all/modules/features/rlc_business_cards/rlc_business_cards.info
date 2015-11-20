@@ -177,6 +177,7 @@ features[field_instance][] = taxonomy_term-print_type-field_price_per_thousand
 features[field_instance][] = taxonomy_term-two_sided-field_price
 features[field_instance][] = taxonomy_term-two_sided-field_price_per_thousand
 features[node][] = custom_artwork_product_display
+features[page_manager_pages][] = order_business_cards
 features[page_manager_pages][] = upload_artwork
 features[rules_config][] = rlc_rules_fetch_business_card_product_files_cloned_
 features[rules_config][] = rlc_rules_fetch_price_of_company_card

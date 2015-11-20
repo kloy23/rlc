@@ -37,7 +37,7 @@ function rlc_spiritual_products_commerce_product_default_types() {
       'name' => 'Spiritual Book',
       'description' => 'Uncustomizable spiritual books.',
       'help' => '',
-      'revision' => 1,
+      'revision' => 0,
     ),
     'spiritual_card' => array(
       'type' => 'spiritual_card',

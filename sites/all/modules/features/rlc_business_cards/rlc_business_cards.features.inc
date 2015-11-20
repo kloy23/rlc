@@ -44,7 +44,7 @@ function rlc_business_cards_commerce_product_default_types() {
       'name' => 'Business Card',
       'description' => 'A customized One Sided business card.',
       'help' => '',
-      'revision' => 1,
+      'revision' => 0,
     ),
     'camera_ready_business_card' => array(
       'type' => 'camera_ready_business_card',
@@ -65,7 +65,7 @@ function rlc_business_cards_commerce_product_default_types() {
       'name' => 'Two Sided Business Card',
       'description' => 'A customized Two Sided business card.',
       'help' => '',
-      'revision' => 1,
+      'revision' => 0,
     ),
   );
   return $items;

@@ -25,10 +25,17 @@ function rlc_greeting_cards_commerce_line_item_default_types() {
  */
 function rlc_greeting_cards_commerce_product_default_types() {
   $items = array(
-    'greeting_card' => array(
-      'type' => 'greeting_card',
-      'name' => 'Greeting Card',
-      'description' => 'Uncustomizable greeting cards.',
+    'black_tie_collection' => array(
+      'type' => 'black_tie_collection',
+      'name' => 'Black Tie Collection',
+      'description' => 'Greeting Cards that belong to the Black Tie Collection.',
+      'help' => '',
+      'revision' => 0,
+    ),
+    'pink_ribbon_collection' => array(
+      'type' => 'pink_ribbon_collection',
+      'name' => 'Pink Ribbon Collection',
+      'description' => 'Greeting Cards that belong to the Pink Ribbon Collection.',
       'help' => '',
       'revision' => 0,
     ),

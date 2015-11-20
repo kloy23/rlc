@@ -11,7 +11,7 @@ function rlc_business_cards_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-commerce_display_path'
+  // 'commerce_line_item-business_card-commerce_display_path'.
   $field_instances['commerce_line_item-business_card-commerce_display_path'] = array(
     'bundle' => 'business_card',
     'default_value' => NULL,
@@ -52,7 +52,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-commerce_product'
+  // 'commerce_line_item-business_card-commerce_product'.
   $field_instances['commerce_line_item-business_card-commerce_product'] = array(
     'bundle' => 'business_card',
     'default_value' => NULL,
@@ -107,7 +107,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-commerce_total'
+  // Exported field_instance: 'commerce_line_item-business_card-commerce_total'.
   $field_instances['commerce_line_item-business_card-commerce_total'] = array(
     'bundle' => 'business_card',
     'default_value' => NULL,
@@ -169,7 +169,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-commerce_unit_price'
+  // 'commerce_line_item-business_card-commerce_unit_price'.
   $field_instances['commerce_line_item-business_card-commerce_unit_price'] = array(
     'bundle' => 'business_card',
     'default_value' => NULL,
@@ -230,7 +230,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_address'
+  // Exported field_instance: 'commerce_line_item-business_card-field_address'.
   $field_instances['commerce_line_item-business_card-field_address'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -268,7 +268,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_back_color_options'
+  // 'commerce_line_item-business_card-field_back_color_options'.
   $field_instances['commerce_line_item-business_card-field_back_color_options'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -303,7 +303,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_back_line_1'
+  // 'commerce_line_item-business_card-field_back_line_1'.
   $field_instances['commerce_line_item-business_card-field_back_line_1'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -341,7 +341,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_back_line_2'
+  // 'commerce_line_item-business_card-field_back_line_2'.
   $field_instances['commerce_line_item-business_card-field_back_line_2'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -379,7 +379,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_back_line_3'
+  // 'commerce_line_item-business_card-field_back_line_3'.
   $field_instances['commerce_line_item-business_card-field_back_line_3'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -417,7 +417,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_back_line_4'
+  // 'commerce_line_item-business_card-field_back_line_4'.
   $field_instances['commerce_line_item-business_card-field_back_line_4'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -455,7 +455,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_back_line_5'
+  // 'commerce_line_item-business_card-field_back_line_5'.
   $field_instances['commerce_line_item-business_card-field_back_line_5'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -493,7 +493,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_back_line_6'
+  // 'commerce_line_item-business_card-field_back_line_6'.
   $field_instances['commerce_line_item-business_card-field_back_line_6'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -531,7 +531,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_back_line_7'
+  // 'commerce_line_item-business_card-field_back_line_7'.
   $field_instances['commerce_line_item-business_card-field_back_line_7'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -569,7 +569,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_back_line_8'
+  // 'commerce_line_item-business_card-field_back_line_8'.
   $field_instances['commerce_line_item-business_card-field_back_line_8'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -607,7 +607,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_back_line_9'
+  // 'commerce_line_item-business_card-field_back_line_9'.
   $field_instances['commerce_line_item-business_card-field_back_line_9'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -645,7 +645,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_business_card_image'
+  // 'commerce_line_item-business_card-field_business_card_image'.
   $field_instances['commerce_line_item-business_card-field_business_card_image'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -693,7 +693,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_business_card_image_back'
+  // 'commerce_line_item-business_card-field_business_card_image_back'.
   $field_instances['commerce_line_item-business_card-field_business_card_image_back'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -741,7 +741,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_card_stocks'
+  // 'commerce_line_item-business_card-field_card_stocks'.
   $field_instances['commerce_line_item-business_card-field_card_stocks'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -780,7 +780,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_city_state_zip'
+  // 'commerce_line_item-business_card-field_city_state_zip'.
   $field_instances['commerce_line_item-business_card-field_city_state_zip'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -818,7 +818,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_company_name'
+  // 'commerce_line_item-business_card-field_company_name'.
   $field_instances['commerce_line_item-business_card-field_company_name'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -855,7 +855,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_email'
+  // Exported field_instance: 'commerce_line_item-business_card-field_email'.
   $field_instances['commerce_line_item-business_card-field_email'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -892,7 +892,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_line_1'
+  // Exported field_instance: 'commerce_line_item-business_card-field_line_1'.
   $field_instances['commerce_line_item-business_card-field_line_1'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -929,7 +929,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_line_2'
+  // Exported field_instance: 'commerce_line_item-business_card-field_line_2'.
   $field_instances['commerce_line_item-business_card-field_line_2'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -966,7 +966,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_line_3'
+  // Exported field_instance: 'commerce_line_item-business_card-field_line_3'.
   $field_instances['commerce_line_item-business_card-field_line_3'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1003,7 +1003,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_line_4'
+  // Exported field_instance: 'commerce_line_item-business_card-field_line_4'.
   $field_instances['commerce_line_item-business_card-field_line_4'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1040,7 +1040,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_name'
+  // Exported field_instance: 'commerce_line_item-business_card-field_name'.
   $field_instances['commerce_line_item-business_card-field_name'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1078,7 +1078,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_one_color_options'
+  // 'commerce_line_item-business_card-field_one_color_options'.
   $field_instances['commerce_line_item-business_card-field_one_color_options'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1113,7 +1113,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_print_ready_back'
+  // 'commerce_line_item-business_card-field_print_ready_back'.
   $field_instances['commerce_line_item-business_card-field_print_ready_back'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1161,7 +1161,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_print_ready_front'
+  // 'commerce_line_item-business_card-field_print_ready_front'.
   $field_instances['commerce_line_item-business_card-field_print_ready_front'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1209,7 +1209,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_print_type'
+  // 'commerce_line_item-business_card-field_print_type'.
   $field_instances['commerce_line_item-business_card-field_print_type'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1243,7 +1243,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_quantity'
+  // Exported field_instance: 'commerce_line_item-business_card-field_quantity'.
   $field_instances['commerce_line_item-business_card-field_quantity'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1281,7 +1281,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_svg_back'
+  // Exported field_instance: 'commerce_line_item-business_card-field_svg_back'.
   $field_instances['commerce_line_item-business_card-field_svg_back'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1328,7 +1328,8 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_svg_front'
+  // Exported field_instance:
+  // 'commerce_line_item-business_card-field_svg_front'.
   $field_instances['commerce_line_item-business_card-field_svg_front'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1375,7 +1376,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_title'
+  // Exported field_instance: 'commerce_line_item-business_card-field_title'.
   $field_instances['commerce_line_item-business_card-field_title'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1413,7 +1414,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-business_card-field_two_color_options'
+  // 'commerce_line_item-business_card-field_two_color_options'.
   $field_instances['commerce_line_item-business_card-field_two_color_options'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1447,7 +1448,8 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_two_sided'
+  // Exported field_instance:
+  // 'commerce_line_item-business_card-field_two_sided'.
   $field_instances['commerce_line_item-business_card-field_two_sided'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1485,7 +1487,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-business_card-field_website'
+  // Exported field_instance: 'commerce_line_item-business_card-field_website'.
   $field_instances['commerce_line_item-business_card-field_website'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
@@ -1523,7 +1525,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-commerce_display_path'
+  // 'commerce_line_item-camera_ready_business_card-commerce_display_path'.
   $field_instances['commerce_line_item-camera_ready_business_card-commerce_display_path'] = array(
     'bundle' => 'camera_ready_business_card',
     'default_value' => NULL,
@@ -1564,7 +1566,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-commerce_product'
+  // 'commerce_line_item-camera_ready_business_card-commerce_product'.
   $field_instances['commerce_line_item-camera_ready_business_card-commerce_product'] = array(
     'bundle' => 'camera_ready_business_card',
     'default_value' => NULL,
@@ -1620,7 +1622,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-commerce_total'
+  // 'commerce_line_item-camera_ready_business_card-commerce_total'.
   $field_instances['commerce_line_item-camera_ready_business_card-commerce_total'] = array(
     'bundle' => 'camera_ready_business_card',
     'default_value' => NULL,
@@ -1682,7 +1684,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-commerce_unit_price'
+  // 'commerce_line_item-camera_ready_business_card-commerce_unit_price'.
   $field_instances['commerce_line_item-camera_ready_business_card-commerce_unit_price'] = array(
     'bundle' => 'camera_ready_business_card',
     'default_value' => NULL,
@@ -1744,7 +1746,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-field_back_color_options'
+  // 'commerce_line_item-camera_ready_business_card-field_back_color_options'.
   $field_instances['commerce_line_item-camera_ready_business_card-field_back_color_options'] = array(
     'bundle' => 'camera_ready_business_card',
     'commerce_cart_settings' => array(
@@ -1779,7 +1781,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-field_camera_ready'
+  // 'commerce_line_item-camera_ready_business_card-field_camera_ready'.
   $field_instances['commerce_line_item-camera_ready_business_card-field_camera_ready'] = array(
     'bundle' => 'camera_ready_business_card',
     'commerce_cart_settings' => array(
@@ -1819,7 +1821,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-field_camera_ready_back'
+  // 'commerce_line_item-camera_ready_business_card-field_camera_ready_back'.
   $field_instances['commerce_line_item-camera_ready_business_card-field_camera_ready_back'] = array(
     'bundle' => 'camera_ready_business_card',
     'commerce_cart_settings' => array(
@@ -1859,7 +1861,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-field_card_stocks'
+  // 'commerce_line_item-camera_ready_business_card-field_card_stocks'.
   $field_instances['commerce_line_item-camera_ready_business_card-field_card_stocks'] = array(
     'bundle' => 'camera_ready_business_card',
     'commerce_cart_settings' => array(
@@ -1898,7 +1900,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-field_one_color_options'
+  // 'commerce_line_item-camera_ready_business_card-field_one_color_options'.
   $field_instances['commerce_line_item-camera_ready_business_card-field_one_color_options'] = array(
     'bundle' => 'camera_ready_business_card',
     'commerce_cart_settings' => array(
@@ -1933,7 +1935,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-field_one_or_two_color'
+  // 'commerce_line_item-camera_ready_business_card-field_one_or_two_color'.
   $field_instances['commerce_line_item-camera_ready_business_card-field_one_or_two_color'] = array(
     'bundle' => 'camera_ready_business_card',
     'commerce_cart_settings' => array(
@@ -1972,7 +1974,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-field_print_type'
+  // 'commerce_line_item-camera_ready_business_card-field_print_type'.
   $field_instances['commerce_line_item-camera_ready_business_card-field_print_type'] = array(
     'bundle' => 'camera_ready_business_card',
     'commerce_cart_settings' => array(
@@ -2007,7 +2009,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-field_quantity'
+  // 'commerce_line_item-camera_ready_business_card-field_quantity'.
   $field_instances['commerce_line_item-camera_ready_business_card-field_quantity'] = array(
     'bundle' => 'camera_ready_business_card',
     'commerce_cart_settings' => array(
@@ -2046,7 +2048,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-field_two_color_options'
+  // 'commerce_line_item-camera_ready_business_card-field_two_color_options'.
   $field_instances['commerce_line_item-camera_ready_business_card-field_two_color_options'] = array(
     'bundle' => 'camera_ready_business_card',
     'commerce_cart_settings' => array(
@@ -2081,7 +2083,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-camera_ready_business_card-field_two_sided'
+  // 'commerce_line_item-camera_ready_business_card-field_two_sided'.
   $field_instances['commerce_line_item-camera_ready_business_card-field_two_sided'] = array(
     'bundle' => 'camera_ready_business_card',
     'commerce_cart_settings' => array(
@@ -2120,7 +2122,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-commerce_display_path'
+  // 'commerce_line_item-company_business_card-commerce_display_path'.
   $field_instances['commerce_line_item-company_business_card-commerce_display_path'] = array(
     'bundle' => 'company_business_card',
     'default_value' => NULL,
@@ -2161,7 +2163,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-commerce_product'
+  // 'commerce_line_item-company_business_card-commerce_product'.
   $field_instances['commerce_line_item-company_business_card-commerce_product'] = array(
     'bundle' => 'company_business_card',
     'default_value' => NULL,
@@ -2217,7 +2219,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-commerce_total'
+  // 'commerce_line_item-company_business_card-commerce_total'.
   $field_instances['commerce_line_item-company_business_card-commerce_total'] = array(
     'bundle' => 'company_business_card',
     'default_value' => NULL,
@@ -2279,7 +2281,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-commerce_unit_price'
+  // 'commerce_line_item-company_business_card-commerce_unit_price'.
   $field_instances['commerce_line_item-company_business_card-commerce_unit_price'] = array(
     'bundle' => 'company_business_card',
     'default_value' => NULL,
@@ -2341,7 +2343,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_business_card_image'
+  // 'commerce_line_item-company_business_card-field_business_card_image'.
   $field_instances['commerce_line_item-company_business_card-field_business_card_image'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2389,7 +2391,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_card_stocks'
+  // 'commerce_line_item-company_business_card-field_card_stocks'.
   $field_instances['commerce_line_item-company_business_card-field_card_stocks'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2424,7 +2426,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_1'
+  // 'commerce_line_item-company_business_card-field_line_1'.
   $field_instances['commerce_line_item-company_business_card-field_line_1'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2462,7 +2464,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_10'
+  // 'commerce_line_item-company_business_card-field_line_10'.
   $field_instances['commerce_line_item-company_business_card-field_line_10'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2500,7 +2502,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_11'
+  // 'commerce_line_item-company_business_card-field_line_11'.
   $field_instances['commerce_line_item-company_business_card-field_line_11'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2538,7 +2540,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_12'
+  // 'commerce_line_item-company_business_card-field_line_12'.
   $field_instances['commerce_line_item-company_business_card-field_line_12'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2576,7 +2578,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_13'
+  // 'commerce_line_item-company_business_card-field_line_13'.
   $field_instances['commerce_line_item-company_business_card-field_line_13'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2614,7 +2616,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_14'
+  // 'commerce_line_item-company_business_card-field_line_14'.
   $field_instances['commerce_line_item-company_business_card-field_line_14'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2652,7 +2654,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_15'
+  // 'commerce_line_item-company_business_card-field_line_15'.
   $field_instances['commerce_line_item-company_business_card-field_line_15'] = array(
     'bundle' => 'company_business_card',
     'default_value' => NULL,
@@ -2686,7 +2688,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_2'
+  // 'commerce_line_item-company_business_card-field_line_2'.
   $field_instances['commerce_line_item-company_business_card-field_line_2'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2724,7 +2726,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_3'
+  // 'commerce_line_item-company_business_card-field_line_3'.
   $field_instances['commerce_line_item-company_business_card-field_line_3'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2762,7 +2764,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_4'
+  // 'commerce_line_item-company_business_card-field_line_4'.
   $field_instances['commerce_line_item-company_business_card-field_line_4'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2800,7 +2802,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_5'
+  // 'commerce_line_item-company_business_card-field_line_5'.
   $field_instances['commerce_line_item-company_business_card-field_line_5'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2838,7 +2840,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_6'
+  // 'commerce_line_item-company_business_card-field_line_6'.
   $field_instances['commerce_line_item-company_business_card-field_line_6'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2876,7 +2878,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_7'
+  // 'commerce_line_item-company_business_card-field_line_7'.
   $field_instances['commerce_line_item-company_business_card-field_line_7'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2914,7 +2916,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_8'
+  // 'commerce_line_item-company_business_card-field_line_8'.
   $field_instances['commerce_line_item-company_business_card-field_line_8'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2952,7 +2954,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_line_9'
+  // 'commerce_line_item-company_business_card-field_line_9'.
   $field_instances['commerce_line_item-company_business_card-field_line_9'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -2990,7 +2992,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_print_ready_front'
+  // 'commerce_line_item-company_business_card-field_print_ready_front'.
   $field_instances['commerce_line_item-company_business_card-field_print_ready_front'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -3038,7 +3040,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_print_type'
+  // 'commerce_line_item-company_business_card-field_print_type'.
   $field_instances['commerce_line_item-company_business_card-field_print_type'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -3073,7 +3075,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_quantity'
+  // 'commerce_line_item-company_business_card-field_quantity'.
   $field_instances['commerce_line_item-company_business_card-field_quantity'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -3108,7 +3110,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_svg_front'
+  // 'commerce_line_item-company_business_card-field_svg_front'.
   $field_instances['commerce_line_item-company_business_card-field_svg_front'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -3156,7 +3158,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_line_item-company_business_card-field_two_sided'
+  // 'commerce_line_item-company_business_card-field_two_sided'.
   $field_instances['commerce_line_item-company_business_card-field_two_sided'] = array(
     'bundle' => 'company_business_card',
     'commerce_cart_settings' => array(
@@ -3194,7 +3196,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-business_card-commerce_price'
+  // Exported field_instance: 'commerce_product-business_card-commerce_price'.
   $field_instances['commerce_product-business_card-commerce_price'] = array(
     'bundle' => 'business_card',
     'default_value' => NULL,
@@ -3283,7 +3285,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_product-camera_ready_business_card-commerce_price'
+  // 'commerce_product-camera_ready_business_card-commerce_price'.
   $field_instances['commerce_product-camera_ready_business_card-commerce_price'] = array(
     'bundle' => 'camera_ready_business_card',
     'default_value' => NULL,
@@ -3417,7 +3419,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_product-company_business_card-commerce_price'
+  // 'commerce_product-company_business_card-commerce_price'.
   $field_instances['commerce_product-company_business_card-commerce_price'] = array(
     'bundle' => 'company_business_card',
     'default_value' => NULL,
@@ -3551,7 +3553,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'commerce_product-two_sided_business_card-commerce_price'
+  // 'commerce_product-two_sided_business_card-commerce_price'.
   $field_instances['commerce_product-two_sided_business_card-commerce_price'] = array(
     'bundle' => 'two_sided_business_card',
     'default_value' => NULL,
@@ -3639,7 +3641,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_artwork_product_display-body'
+  // Exported field_instance: 'node-custom_artwork_product_display-body'.
   $field_instances['node-custom_artwork_product_display-body'] = array(
     'bundle' => 'custom_artwork_product_display',
     'default_value' => NULL,
@@ -3684,7 +3686,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-custom_artwork_product_display-field_product_reference'
+  // 'node-custom_artwork_product_display-field_product_reference'.
   $field_instances['node-custom_artwork_product_display-field_product_reference'] = array(
     'bundle' => 'custom_artwork_product_display',
     'default_value' => array(
@@ -3740,7 +3742,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-card_stocks-field_price_1000'
+  // Exported field_instance: 'taxonomy_term-card_stocks-field_price_1000'.
   $field_instances['taxonomy_term-card_stocks-field_price_1000'] = array(
     'bundle' => 'card_stocks',
     'default_value' => NULL,
@@ -3775,7 +3777,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-card_stocks-field_price_500'
+  // Exported field_instance: 'taxonomy_term-card_stocks-field_price_500'.
   $field_instances['taxonomy_term-card_stocks-field_price_500'] = array(
     'bundle' => 'card_stocks',
     'default_value' => NULL,
@@ -3811,7 +3813,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-card_stocks-field_price_per_thousand'
+  // 'taxonomy_term-card_stocks-field_price_per_thousand'.
   $field_instances['taxonomy_term-card_stocks-field_price_per_thousand'] = array(
     'bundle' => 'card_stocks',
     'default_value' => NULL,
@@ -3847,7 +3849,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-print_type-field_company_price_1000'
+  // 'taxonomy_term-print_type-field_company_price_1000'.
   $field_instances['taxonomy_term-print_type-field_company_price_1000'] = array(
     'bundle' => 'print_type',
     'default_value' => NULL,
@@ -3882,7 +3884,8 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-print_type-field_company_price_500'
+  // Exported field_instance:
+  // 'taxonomy_term-print_type-field_company_price_500'.
   $field_instances['taxonomy_term-print_type-field_company_price_500'] = array(
     'bundle' => 'print_type',
     'default_value' => NULL,
@@ -3918,7 +3921,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-print_type-field_company_price_per_thousand'
+  // 'taxonomy_term-print_type-field_company_price_per_thousand'.
   $field_instances['taxonomy_term-print_type-field_company_price_per_thousand'] = array(
     'bundle' => 'print_type',
     'default_value' => NULL,
@@ -3953,7 +3956,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-print_type-field_price_1000'
+  // Exported field_instance: 'taxonomy_term-print_type-field_price_1000'.
   $field_instances['taxonomy_term-print_type-field_price_1000'] = array(
     'bundle' => 'print_type',
     'default_value' => NULL,
@@ -3988,7 +3991,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-print_type-field_price_500'
+  // Exported field_instance: 'taxonomy_term-print_type-field_price_500'.
   $field_instances['taxonomy_term-print_type-field_price_500'] = array(
     'bundle' => 'print_type',
     'default_value' => NULL,
@@ -4024,7 +4027,7 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-print_type-field_price_per_thousand'
+  // 'taxonomy_term-print_type-field_price_per_thousand'.
   $field_instances['taxonomy_term-print_type-field_price_per_thousand'] = array(
     'bundle' => 'print_type',
     'default_value' => NULL,
@@ -4059,7 +4062,7 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-two_sided-field_price'
+  // Exported field_instance: 'taxonomy_term-two_sided-field_price'.
   $field_instances['taxonomy_term-two_sided-field_price'] = array(
     'bundle' => 'two_sided',
     'default_value' => NULL,
@@ -4094,7 +4097,8 @@ function rlc_business_cards_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-two_sided-field_price_per_thousand'
+  // Exported field_instance:
+  // 'taxonomy_term-two_sided-field_price_per_thousand'.
   $field_instances['taxonomy_term-two_sided-field_price_per_thousand'] = array(
     'bundle' => 'two_sided',
     'default_value' => NULL,
