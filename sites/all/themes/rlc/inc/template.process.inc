@@ -389,6 +389,18 @@ function rlc_preprocess_page(&$vars) {
   if (arg(0) == 'user' && arg(1) == 'register') {
     drupal_set_title(t('Create new account'));
   }
+
+  // if this is a panel page, add template suggestions
+  if($panel_page = page_manager_get_current_page()) {
+    // add a generic suggestion for all panel pages
+    $variables['theme_hook_suggestions'][] = 'page__panel';
+
+    // add the panel page machine name to the template suggestions
+    $variables['theme_hook_suggestions'][] = 'page__' . $panel_page['name'];
+
+    //add a body class for good measure
+    $body_classes[] = 'page-panel';
+  }
 }
 
 /**
