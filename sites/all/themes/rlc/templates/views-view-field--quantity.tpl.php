@@ -31,7 +31,10 @@
     case 'spiritual_book':
       print $field->last_render;
       break;
-    case 'greeting_card':
+    case 'black_tie_collection':
+      print $field->last_render;
+      break;
+    case 'pink_ribbon_collection':
       print $field->last_render;
       break;
   }
