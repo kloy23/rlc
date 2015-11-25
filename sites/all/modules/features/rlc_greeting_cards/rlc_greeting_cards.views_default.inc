@@ -209,7 +209,7 @@ function rlc_greeting_cards_views_default_views() {
   $handler->display->display_options['fields']['add_to_cart_form']['default_quantity'] = '1';
   $handler->display->display_options['fields']['add_to_cart_form']['combine'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['display_path'] = 0;
-  $handler->display->display_options['fields']['add_to_cart_form']['line_item_type'] = 'silver_package_black_tie_collect';
+  $handler->display->display_options['fields']['add_to_cart_form']['line_item_type'] = 'black_tie_collection_sp';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Commerce Product: Type */
@@ -284,7 +284,7 @@ function rlc_greeting_cards_views_default_views() {
   $handler->display->display_options['fields']['add_to_cart_form']['default_quantity'] = '1';
   $handler->display->display_options['fields']['add_to_cart_form']['combine'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['display_path'] = 0;
-  $handler->display->display_options['fields']['add_to_cart_form']['line_item_type'] = 'silver_package_pink_ribbon_colle';
+  $handler->display->display_options['fields']['add_to_cart_form']['line_item_type'] = 'pink_ribbon_collection_sp';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Commerce Product: Type */
