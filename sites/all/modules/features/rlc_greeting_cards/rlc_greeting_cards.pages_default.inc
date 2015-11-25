@@ -444,8 +444,16 @@ function rlc_greeting_cards_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<h3 align="center">*** All Greeting Cards are sold in Quantities of 25 Per Pack ***</h3>
-<h4 style="text-align:center; padding:5px;">All Greeting Card Packs Include Envelopes</h4>',
+      'body' => '<p style="font-weight:bold;text-align:center;color:#ff69b4">It is very rare to find a family that has not been somehow affected by breast cancer. The only way we will defeat this
+dreaded disease is through research and early detection. And, the only way to continue this fight is by providing the funds
+needed for anyone to receive testing and researchers to keep searching for a cure. We are a printing company that
+specializes in raised letter printing and provides greeting cards to businesses and individuals. Our Pink Ribbon Collection
+is our way of keeping awareness at a level necessary to help the fight. Using our Pink Ribbon Collection will help this
+endeavor two ways. When someone receives one of our greeting cards it will be a reminder of the challenges ahead and
+our company also donates 10% of all sales proceeds of the Pink Ribbon Collection to Breast Cancer Research. </p>
+
+<h3 style="text-align:center;color:#ff69b4">*** All Greeting Cards are sold in Quantities of 25 Per Pack ***</h3>
+<h4 style="text-align:center; padding:5px;color:#ff69b4">All Greeting Card Packs Include Envelopes</h4>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
