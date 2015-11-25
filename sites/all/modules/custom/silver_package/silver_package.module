@@ -1,0 +1,121 @@
+<?php
+/**
+ * @file
+ * A module that allows users to upload custom business cards.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function silver_package_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#silver_package':{
+      $ret_val = '<h3>' . t('About') . '</h3>';
+      $ret_val .= '<p>' . t('Allows customers to select products as part of a Silver Package.') . '</p>';
+      return $ret_val;
+      break;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function silver_package_form_alter(&$form, &$form_state, $form_id) {
+  $quantity = array(
+    '0' => '0',
+    '1' => '1',
+    '2' => '2',
+    '3' => '3',
+    '4' => '4',
+    '5' => '5',
+    '6' => '6',
+    '7' => '7',
+    '8' => '8',
+    '9' => '9',
+    '10' => '10',
+  );
+  if (strpos($form_id, 'add_to_cart_form')) {
+    $bundle = $form['line_item_fields']['commerce_product']['und']['#bundle'];
+    if (strpos($bundle, 'silver_package') !== false) {
+      $form['#attached']['css'] = array(
+        drupal_get_path('module', 'silver_package') . '/css/silver_package.css',
+      );
+
+      $products = $form['line_item_fields']['field_products']['und']['#options'];
+      $i = -1;
+      foreach ($products as $product) {
+        $i++;
+        if ($product !== '- None -') {
+          $product_name = explode(': ', $product);
+          $product_name = $product_name[1];
+          $form['product_' . $i] = array(
+            '#type' => 'checkbox',
+            '#title' => t($product_name),
+            '#prefix' => '<div class="silver_package_product"><div class="silver_package_product_select">',
+            '#suffix' => '</div>',
+          );
+          $form['product_quantity_' . $i] = array(
+            '#type' => 'select',
+            '#options' => $quantity,
+            '#default_value' => '0',
+            '#prefix' => '<div class="silver_package_product_quantity">',
+            '#suffix' => '</div></div>',
+          );
+        };
+      };
+
+      $form['#attached']['js'][] = array(
+        'data' => drupal_get_path('module', 'silver_package') . '/js/silver_package.js',
+      );
+      return $form;
+    }
+  }
+}
+
+/**
+ * Validates Camera Ready Form.
+ */
+function silver_package_form_validate($form, &$form_state) {
+
+}
+
+/**
+ * Process a validated Camera Ready Form submission.
+ */
+function silver_package_form_submit($form, &$form_state) {
+  global $user;
+
+  // First, see if there is already a cart for this user.
+  if (module_exists('commerce_cart')) {
+    $order = commerce_cart_order_load($user->uid);
+  }
+  if (empty($order)) {
+    // Create the new order in checkout
+    $order = commerce_order_new($user->uid, 'checkout_checkout');
+    // Save the order to get its ID.
+    commerce_order_save($order);
+  }
+  // Link anonymous user session to the cart
+  if (!$user->uid) {
+    commerce_cart_order_session_save($order->order_id);
+  }
+
+  // Load whatever product represents the item the customer will be
+  // paying for and create a line item for it.
+  $product_id = $form_state['default_product']->product_id;
+  $product = commerce_product_load($product_id);
+  $line_item = commerce_product_line_item_new($product, 1, $order->order_id, array(), 'silver_package_black_tie_collect');
+  dpm($line_item);
+  // Add the custom values to the line_item fields
+  foreach ($line_item as $field_name => $value) {
+
+  }
+  // Save the line item to get its ID.
+  commerce_line_item_save($line_item);
+  // Add the line item to the order using the wrapper.
+  $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
+  $order_wrapper->commerce_line_items[] = $line_item;
+  // Save the order again to update its line item reference field.
+  commerce_order_save($order);
+}

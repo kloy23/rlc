@@ -1,0 +1,4 @@
+name = Silver Package
+description = Provides a way for customers to select the products they would like to order as a Silver Package.
+core = 7.x
+package = Custom
