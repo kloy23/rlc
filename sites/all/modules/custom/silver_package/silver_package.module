@@ -42,16 +42,16 @@ function silver_package_form_alter(&$form, &$form_state, $form_id) {
         drupal_get_path('module', 'silver_package') . '/css/silver_package.css',
       );
 
-      $products = $form['line_item_fields']['field_products']['und']['#options'];
-      $i = -1;
-      foreach ($products as $product) {
-        $i++;
-        if ($product !== '- None -') {
-          $product_name = explode(': ', $product);
+      $product_options = $form['line_item_fields']['field_product_1']['und']['#options'];
+      $i = 0;
+      foreach ($product_options as $option => $value) {
+        if ($value !== '- None -') {
+          $product_name = explode(': ', $value);
           $product_name = $product_name[1];
           $form['product_' . $i] = array(
             '#type' => 'checkbox',
             '#title' => t($product_name),
+            '#id' => $option, 
             '#prefix' => '<div class="silver_package_product"><div class="silver_package_product_select">',
             '#suffix' => '</div>',
           );
@@ -62,7 +62,8 @@ function silver_package_form_alter(&$form, &$form_state, $form_id) {
             '#prefix' => '<div class="silver_package_product_quantity">',
             '#suffix' => '</div></div>',
           );
-        };
+        };        
+        $i++;
       };
 
       $form['#submit'][0] = 'silver_package_form_submit';
@@ -87,24 +88,17 @@ function silver_package_form_validate($form, &$form_state) {
  */
 function silver_package_form_submit($form, &$form_state) {
   global $user;
-  // Store Selected Products
   $selected_products = array();
   $values = $form_state['values'];
+
   // Fetch Selected Products and Store in $selected_products array
   foreach ($values as $name => $value) {
     if (strpos($name, 'product_') !== false && $name !== 'product_id' && strpos($name, 'product_quantity') === false) {
       if ($value !== 0) {
-        $selected_products[] = $name;
+        $selected_products[] = $form[$name]['#id'];
       }
     }
   }
-  $i = 0;
-  foreach ($selected_products as $product) {
-
-  }
-  dpm(get_defined_vars());
-  // dpm($form_state);
-  // dpm($values);
 
   // First, see if there is already a cart for this user.
   if (module_exists('commerce_cart')) {
@@ -121,19 +115,29 @@ function silver_package_form_submit($form, &$form_state) {
     commerce_cart_order_session_save($order->order_id);
   }
 
-  // Load whatever product represents the item the customer will be
-  // paying for and create a line item for it.
-  $product_id = 1;
+  // Load Black Tie Collection Silver Package and create a line item for it.
+  $product_id = 84;
   $product = commerce_product_load($product_id);
-  $line_item = commerce_product_line_item_new($product, 1, $order->order_id, array(), 'company_business_card');
+  $line_item = commerce_product_line_item_new($product, 1, $order->order_id, array(), 'black_tie_collection_sp');
   // Add the custom values to the line_item fields
-  foreach ($line_item as $field_name => $value) {
+  foreach ($selected_products as $product => $value) {
+    $line_item->field_product_1['und'][0]['product_id'] = $selected_products[0];
+    $line_item->field_product_2['und'][0]['product_id'] = $selected_products[1];
+    $line_item->field_product_3['und'][0]['product_id'] = $selected_products[2];
+    $line_item->field_product_4['und'][0]['product_id'] = $selected_products[3];
+    $line_item->field_product_5['und'][0]['product_id'] = $selected_products[4];
+    $line_item->field_product_6['und'][0]['product_id'] = $selected_products[5];
+    $line_item->field_product_7['und'][0]['product_id'] = $selected_products[6];
+    $line_item->field_product_8['und'][0]['product_id'] = $selected_products[7];
+    $line_item->field_product_9['und'][0]['product_id'] = $selected_products[8];
+    $line_item->field_product_10['und'][0]['product_id'] = $selected_products[9];
   }
+  dpm(get_defined_vars());
   // Save the line item to get its ID.
   commerce_line_item_save($line_item);
   // Add the line item to the order using the wrapper.
   $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
   $order_wrapper->commerce_line_items[] = $line_item;
   // Save the order again to update its line item reference field.
-  // commerce_order_save($order);
+  commerce_order_save($order);
 }
