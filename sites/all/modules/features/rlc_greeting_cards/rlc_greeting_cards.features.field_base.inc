@@ -18,17 +18,17 @@ function rlc_greeting_cards_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_product_1',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'product_id' => array(
+        0 => 'product_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'commerce_product_reference',
     'settings' => array(
-      'max_length' => 255,
+      'options_list_limit' => '',
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_product_10'.
@@ -39,17 +39,17 @@ function rlc_greeting_cards_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_product_10',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'product_id' => array(
+        0 => 'product_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'commerce_product_reference',
     'settings' => array(
-      'max_length' => 255,
+      'options_list_limit' => '',
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_product_2'.
@@ -60,17 +60,17 @@ function rlc_greeting_cards_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_product_2',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'product_id' => array(
+        0 => 'product_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'commerce_product_reference',
     'settings' => array(
-      'max_length' => 255,
+      'options_list_limit' => '',
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_product_3'.
@@ -81,17 +81,17 @@ function rlc_greeting_cards_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_product_3',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'product_id' => array(
+        0 => 'product_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'commerce_product_reference',
     'settings' => array(
-      'max_length' => 255,
+      'options_list_limit' => '',
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_product_4'.
@@ -102,17 +102,17 @@ function rlc_greeting_cards_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_product_4',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'product_id' => array(
+        0 => 'product_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'commerce_product_reference',
     'settings' => array(
-      'max_length' => 255,
+      'options_list_limit' => '',
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_product_5'.
@@ -123,17 +123,17 @@ function rlc_greeting_cards_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_product_5',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'product_id' => array(
+        0 => 'product_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'commerce_product_reference',
     'settings' => array(
-      'max_length' => 255,
+      'options_list_limit' => '',
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_product_6'.
@@ -144,17 +144,17 @@ function rlc_greeting_cards_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_product_6',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'product_id' => array(
+        0 => 'product_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'commerce_product_reference',
     'settings' => array(
-      'max_length' => 255,
+      'options_list_limit' => '',
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_product_7'.
@@ -165,17 +165,17 @@ function rlc_greeting_cards_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_product_7',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'product_id' => array(
+        0 => 'product_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'commerce_product_reference',
     'settings' => array(
-      'max_length' => 255,
+      'options_list_limit' => '',
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_product_8'.
@@ -186,17 +186,17 @@ function rlc_greeting_cards_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_product_8',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'product_id' => array(
+        0 => 'product_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'commerce_product_reference',
     'settings' => array(
-      'max_length' => 255,
+      'options_list_limit' => '',
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_product_9'.
@@ -206,27 +206,6 @@ function rlc_greeting_cards_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_product_9',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_products'.
-  $field_bases['field_products'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_products',
     'indexes' => array(
       'product_id' => array(
         0 => 'product_id',

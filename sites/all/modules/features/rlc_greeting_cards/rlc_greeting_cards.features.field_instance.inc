@@ -244,386 +244,6 @@ function rlc_greeting_cards_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_1',
-    'label' => 'Product 1',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-black_tie_collection_sp-field_product_10'.
-  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_10'] = array(
-    'bundle' => 'black_tie_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 14,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_10',
-    'label' => 'Product 10',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 12,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-black_tie_collection_sp-field_product_2'.
-  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_2'] = array(
-    'bundle' => 'black_tie_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_2',
-    'label' => 'Product 2',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-black_tie_collection_sp-field_product_3'.
-  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_3'] = array(
-    'bundle' => 'black_tie_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_3',
-    'label' => 'Product 3',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-black_tie_collection_sp-field_product_4'.
-  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_4'] = array(
-    'bundle' => 'black_tie_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_4',
-    'label' => 'Product 4',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-black_tie_collection_sp-field_product_5'.
-  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_5'] = array(
-    'bundle' => 'black_tie_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_5',
-    'label' => 'Product 5',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-black_tie_collection_sp-field_product_6'.
-  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_6'] = array(
-    'bundle' => 'black_tie_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_6',
-    'label' => 'Product 6',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-black_tie_collection_sp-field_product_7'.
-  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_7'] = array(
-    'bundle' => 'black_tie_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_7',
-    'label' => 'Product 7',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-black_tie_collection_sp-field_product_8'.
-  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_8'] = array(
-    'bundle' => 'black_tie_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_8',
-    'label' => 'Product 8',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-black_tie_collection_sp-field_product_9'.
-  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_9'] = array(
-    'bundle' => 'black_tie_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_9',
-    'label' => 'Product 9',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-black_tie_collection_sp-field_products'.
-  $field_instances['commerce_line_item-black_tie_collection_sp-field_products'] = array(
-    'bundle' => 'black_tie_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
         'module' => 'commerce_cart',
         'settings' => array(
           'combine' => TRUE,
@@ -637,8 +257,8 @@ function rlc_greeting_cards_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_products',
-    'label' => 'Products',
+    'field_name' => 'field_product_1',
+    'label' => 'Product 1',
     'required' => 0,
     'settings' => array(
       'field_injection' => 1,
@@ -662,6 +282,492 @@ function rlc_greeting_cards_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-black_tie_collection_sp-field_product_10'.
+  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_10'] = array(
+    'bundle' => 'black_tie_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 13,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_10',
+    'label' => 'Product 10',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 'black_tie_collection',
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 0,
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-black_tie_collection_sp-field_product_2'.
+  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_2'] = array(
+    'bundle' => 'black_tie_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 1,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_2',
+    'label' => 'Product 2',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 'black_tie_collection',
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 0,
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-black_tie_collection_sp-field_product_3'.
+  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_3'] = array(
+    'bundle' => 'black_tie_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_3',
+    'label' => 'Product 3',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 'black_tie_collection',
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 0,
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-black_tie_collection_sp-field_product_4'.
+  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_4'] = array(
+    'bundle' => 'black_tie_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_4',
+    'label' => 'Product 4',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 'black_tie_collection',
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 0,
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-black_tie_collection_sp-field_product_5'.
+  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_5'] = array(
+    'bundle' => 'black_tie_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 8,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_5',
+    'label' => 'Product 5',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 'black_tie_collection',
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 0,
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-black_tie_collection_sp-field_product_6'.
+  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_6'] = array(
+    'bundle' => 'black_tie_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_6',
+    'label' => 'Product 6',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 'black_tie_collection',
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 0,
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-black_tie_collection_sp-field_product_7'.
+  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_7'] = array(
+    'bundle' => 'black_tie_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_7',
+    'label' => 'Product 7',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 'black_tie_collection',
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 0,
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-black_tie_collection_sp-field_product_8'.
+  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_8'] = array(
+    'bundle' => 'black_tie_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_8',
+    'label' => 'Product 8',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 'black_tie_collection',
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 0,
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-black_tie_collection_sp-field_product_9'.
+  $field_instances['commerce_line_item-black_tie_collection_sp-field_product_9'] = array(
+    'bundle' => 'black_tie_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_9',
+    'label' => 'Product 9',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 'black_tie_collection',
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 0,
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 10,
     ),
   );
 
@@ -1103,440 +1209,6 @@ function rlc_greeting_cards_field_default_field_instances() {
       ),
       'type' => 'commerce_price_full',
       'weight' => 0,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_1'.
-  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_1'] = array(
-    'bundle' => 'pink_ribbon_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_1',
-    'label' => 'Product 1',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_10'.
-  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_10'] = array(
-    'bundle' => 'pink_ribbon_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 14,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_10',
-    'label' => 'Product 10',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 23,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_2'.
-  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_2'] = array(
-    'bundle' => 'pink_ribbon_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_2',
-    'label' => 'Product 2',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_3'.
-  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_3'] = array(
-    'bundle' => 'pink_ribbon_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_3',
-    'label' => 'Product 3',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_4'.
-  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_4'] = array(
-    'bundle' => 'pink_ribbon_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_4',
-    'label' => 'Product 4',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_5'.
-  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_5'] = array(
-    'bundle' => 'pink_ribbon_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_5',
-    'label' => 'Product 5',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_6'.
-  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_6'] = array(
-    'bundle' => 'pink_ribbon_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_6',
-    'label' => 'Product 6',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 15,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_7'.
-  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_7'] = array(
-    'bundle' => 'pink_ribbon_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_7',
-    'label' => 'Product 7',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 17,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_8'.
-  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_8'] = array(
-    'bundle' => 'pink_ribbon_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_8',
-    'label' => 'Product 8',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 19,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_9'.
-  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_9'] = array(
-    'bundle' => 'pink_ribbon_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_product_9',
-    'label' => 'Product 9',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 21,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'commerce_line_item-pink_ribbon_collection_sp-field_products'.
-  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_products'] = array(
-    'bundle' => 'pink_ribbon_collection_sp',
-    'commerce_cart_settings' => array(
-      'field_access' => 0,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'commerce_cart',
-        'settings' => array(
-          'combine' => TRUE,
-          'default_quantity' => 1,
-          'line_item_type' => 'product',
-          'show_quantity' => FALSE,
-          'show_single_product_attributes' => FALSE,
-        ),
-        'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_products',
-    'label' => 'Products',
-    'required' => 0,
-    'settings' => array(
-      'field_injection' => 1,
-      'referenceable_types' => array(
-        'black_tie_collection' => 0,
-        'business_card' => 0,
-        'camera_ready_business_card' => 0,
-        'company_business_card' => 0,
-        'pink_ribbon_collection' => 'pink_ribbon_collection',
-        'product' => 0,
-        'silver_package' => 0,
-        'spiritual_book' => 0,
-        'spiritual_card' => 0,
-        'two_sided_business_card' => 0,
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 3,
     ),
   );
 
@@ -2128,7 +1800,6 @@ function rlc_greeting_cards_field_default_field_instances() {
   t('Product 8');
   t('Product 9');
   t('Product Image');
-  t('Products');
   t('Total');
   t('Unit price');
 

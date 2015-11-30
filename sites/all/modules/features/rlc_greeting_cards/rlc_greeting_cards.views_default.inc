@@ -72,10 +72,6 @@ function rlc_greeting_cards_views_default_views() {
   $handler->display->display_options['fields']['add_to_cart_form']['combine'] = 1;
   $handler->display->display_options['fields']['add_to_cart_form']['display_path'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['line_item_type'] = 'greeting_card';
-  /* Sort criterion: Commerce Product: Created date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'commerce_product';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
   /* Filter criterion: Commerce Product: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'commerce_product';
@@ -107,6 +103,11 @@ function rlc_greeting_cards_views_default_views() {
     'add_to_cart_form' => 'right',
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Commerce Product: SKU */
+  $handler->display->display_options['sorts']['sku']['id'] = 'sku';
+  $handler->display->display_options['sorts']['sku']['table'] = 'commerce_product';
+  $handler->display->display_options['sorts']['sku']['field'] = 'sku';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Commerce Product: Type */
@@ -140,6 +141,11 @@ function rlc_greeting_cards_views_default_views() {
     'add_to_cart_form' => 'right',
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Commerce Product: SKU */
+  $handler->display->display_options['sorts']['sku']['id'] = 'sku';
+  $handler->display->display_options['sorts']['sku']['table'] = 'commerce_product';
+  $handler->display->display_options['sorts']['sku']['field'] = 'sku';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Commerce Product: Type */
