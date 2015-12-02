@@ -129,9 +129,10 @@ function silver_package_form_submit($form, &$form_state) {
   }
 
   // Load Black Tie Collection Silver Package and create a line item for it.
-  $product_id = 84;
+  $product_id = $form_state['default_product_id'];
+  $bundle = $form['line_item_fields']['#bundle'];
   $product = commerce_product_load($product_id);
-  $line_item = commerce_product_line_item_new($product, 1, $order->order_id, array(), 'black_tie_collection_sp');
+  $line_item = commerce_product_line_item_new($product, 1, $order->order_id, array(), $bundle);
   // Add the custom values to the line_item fields
   $count2 = 1;
   foreach ($selected_products as $product => $value) {
