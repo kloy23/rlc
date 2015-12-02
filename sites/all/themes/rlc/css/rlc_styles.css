@@ -215,7 +215,7 @@ div.ctools-modal-content a.close img {
   Product Pages
  */
 
-#products-display .panel-display  {
+#products_display .panel-display  {
   border: 1px outset;
   border-radius: 10px;
   padding: 10px;
@@ -224,25 +224,24 @@ div.ctools-modal-content a.close img {
   color: #ffffff;
   background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#414042),color-stop(100%,#000000));
 }
-#products-display .pane-content {
+#products_display .pane-content {
   width: 100%;
 }
-#products-display .panel-col-first {
-  text-align: left;
-  width: 50%;
+#products_display .panel-col-first {
+  text-align: center;
 }
-#products-display img {
-  max-width: 100%;
+#products_display img {
   border: 1px solid #FFF;
-  margin: 15px;
-  margin-bottom: 0;
+  margin: 15px 15px 0px;
+  height: 135px;
+  width: auto;
 }
-#products-display .panel-col-last {
+#products_display .panel-col-last {
   position: relative;
   width: 50%;
-  top: 60px;
+  top: 20px;
 }
-#products-display .views-field-commerce-price {
+#products_display .views-field-commerce-price {
   font-size: 1.7em;
   font-weight: bold;
   color: red;
@@ -250,16 +249,17 @@ div.ctools-modal-content a.close img {
   padding-bottom: 5px;
   margin-right: 10px;
 }
-#products-display .form-item-quantity {
+#products_display .form-item-quantity {
   text-align: right;
   margin-right: 15px;
 }
-#products-display .form-item-quantity label {
+#products_display .form-item-quantity label {
   width: 90%;
 }
-#products-display .form-submit {
+#products_display .form-submit {
   width: 95%;
 }
+
 /*
   Black Tie Collection
  */
@@ -383,6 +383,7 @@ div.ctools-modal-content a.close img {
   position: relative;
   height: 0;
   top: 5px;
+  color: black;
 }
 .cart_sp_product_quantity {
   width: 25%;
