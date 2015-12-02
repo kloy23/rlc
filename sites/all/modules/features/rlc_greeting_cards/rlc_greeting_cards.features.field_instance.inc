@@ -1174,11 +1174,11 @@ function rlc_greeting_cards_field_default_field_instances() {
         'label' => 'above',
         'module' => 'commerce_cart',
         'settings' => array(
-          'combine' => TRUE,
+          'combine' => 0,
           'default_quantity' => 1,
-          'line_item_type' => 'product',
-          'show_quantity' => FALSE,
-          'show_single_product_attributes' => FALSE,
+          'line_item_type' => 'greeting_card',
+          'show_quantity' => 0,
+          'show_single_product_attributes' => 0,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
         'weight' => 2,
@@ -1378,7 +1378,7 @@ function rlc_greeting_cards_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 0,
+      'weight' => 4,
     ),
   );
 
@@ -1434,7 +1434,7 @@ function rlc_greeting_cards_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'commerce_product_reference_autocomplete',
-      'weight' => 0,
+      'weight' => 3,
     ),
   );
 
@@ -1496,7 +1496,7 @@ function rlc_greeting_cards_field_default_field_instances() {
         'currency_code' => 'default',
       ),
       'type' => 'commerce_price_full',
-      'weight' => 1,
+      'weight' => 5,
     ),
   );
 
@@ -1558,7 +1558,897 @@ function rlc_greeting_cards_field_default_field_instances() {
         'currency_code' => 'default',
       ),
       'type' => 'commerce_price_full',
-      'weight' => 0,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_1'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_1'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_1',
+    'label' => 'Product 1',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 0,
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 'pink_ribbon_collection',
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_10'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_10'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 22,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_10',
+    'label' => 'Product 10',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 0,
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 'pink_ribbon_collection',
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 24,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_10_quantity'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_10_quantity'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 23,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_10_quantity',
+    'label' => 'Product 10 Quantity',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 25,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_1_quantity'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_1_quantity'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_1_quantity',
+    'label' => 'Product 1 Quantity',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_2'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_2'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_2',
+    'label' => 'Product 2',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 0,
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 'pink_ribbon_collection',
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_2_quantity'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_2_quantity'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 8,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_2_quantity',
+    'label' => 'Product 2 Quantity',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_3'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_3'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_3',
+    'label' => 'Product 3',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 0,
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 'pink_ribbon_collection',
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_3_quantity'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_3_quantity'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_3_quantity',
+    'label' => 'Product 3 Quantity',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_4'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_4'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_4',
+    'label' => 'Product 4',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 0,
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 'pink_ribbon_collection',
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_4_quantity'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_4_quantity'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_4_quantity',
+    'label' => 'Product 4 Quantity',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_5'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_5'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 13,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_5',
+    'label' => 'Product 5',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 0,
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 'pink_ribbon_collection',
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_5_quantity'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_5_quantity'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_5_quantity',
+    'label' => 'Product 5 Quantity',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_6'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_6'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 14,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_6',
+    'label' => 'Product 6',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 0,
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 'pink_ribbon_collection',
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_6_quantity'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_6_quantity'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 15,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_6_quantity',
+    'label' => 'Product 6 Quantity',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_7'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_7'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 16,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_7',
+    'label' => 'Product 7',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 0,
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 'pink_ribbon_collection',
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_7_quantity'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_7_quantity'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_7_quantity',
+    'label' => 'Product 7 Quantity',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 19,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_8'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_8'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 18,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_8',
+    'label' => 'Product 8',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 0,
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 'pink_ribbon_collection',
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_8_quantity'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_8_quantity'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 20,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_8_quantity',
+    'label' => 'Product 8 Quantity',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_9'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_9'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 19,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_9',
+    'label' => 'Product 9',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'black_tie_collection' => 0,
+        'business_card' => 0,
+        'camera_ready_business_card' => 0,
+        'company_business_card' => 0,
+        'pink_ribbon_collection' => 'pink_ribbon_collection',
+        'product' => 0,
+        'silver_package' => 0,
+        'spiritual_book' => 0,
+        'spiritual_card' => 0,
+        'two_sided_business_card' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 22,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-pink_ribbon_collection_sp-field_product_9_quantity'.
+  $field_instances['commerce_line_item-pink_ribbon_collection_sp-field_product_9_quantity'] = array(
+    'bundle' => 'pink_ribbon_collection_sp',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 21,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_product_9_quantity',
+    'label' => 'Product 9 Quantity',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 23,
     ),
   );
 

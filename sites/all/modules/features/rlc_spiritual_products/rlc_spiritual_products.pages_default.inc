@@ -114,7 +114,7 @@ function rlc_spiritual_products_default_page_manager_pages() {
       'settings' => NULL,
     );
     $pane->css = array(
-      'css_id' => 'products-display',
+      'css_id' => 'products_display',
       'css_class' => '',
     );
     $pane->extras = array();
@@ -152,7 +152,7 @@ function rlc_spiritual_products_default_page_manager_pages() {
       'settings' => NULL,
     );
     $pane->css = array(
-      'css_id' => 'products-display',
+      'css_id' => 'products_display',
       'css_class' => '',
     );
     $pane->extras = array();

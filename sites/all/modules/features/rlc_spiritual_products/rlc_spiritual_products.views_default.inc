@@ -37,6 +37,14 @@ function rlc_spiritual_products_views_default_views() {
     'commerce_price' => 'right',
     'add_to_cart_form' => 'right',
   );
+  /* Field: Commerce Product: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'commerce_product';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['link_to_product'] = 0;
   /* Field: Commerce Product: Product Image */
   $handler->display->display_options['fields']['field_product_image']['id'] = 'field_product_image';
   $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';
@@ -112,6 +120,14 @@ function rlc_spiritual_products_views_default_views() {
     'commerce_price' => 'right',
     'add_to_cart_form' => 'right',
   );
+  /* Field: Commerce Product: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'commerce_product';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['link_to_product'] = 0;
   /* Field: Commerce Product: Product Image */
   $handler->display->display_options['fields']['field_product_image']['id'] = 'field_product_image';
   $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';

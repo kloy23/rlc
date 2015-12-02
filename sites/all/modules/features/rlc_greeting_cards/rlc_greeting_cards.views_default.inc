@@ -36,6 +36,14 @@ function rlc_greeting_cards_views_default_views() {
     'commerce_price' => 'left',
     'add_to_cart_form' => 'right',
   );
+  /* Field: Commerce Product: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'commerce_product';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['link_to_product'] = 0;
   /* Field: Commerce Product: Product Image */
   $handler->display->display_options['fields']['field_product_image']['id'] = 'field_product_image';
   $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';
@@ -45,7 +53,7 @@ function rlc_greeting_cards_views_default_views() {
   $handler->display->display_options['fields']['field_product_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_product_image']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_product_image']['settings'] = array(
-    'colorbox_node_style' => 'medium',
+    'colorbox_node_style' => 'large',
     'colorbox_node_style_first' => '',
     'colorbox_image_style' => '',
     'colorbox_gallery' => 'none',
@@ -57,10 +65,6 @@ function rlc_greeting_cards_views_default_views() {
   $handler->display->display_options['fields']['commerce_price']['id'] = 'commerce_price';
   $handler->display->display_options['fields']['commerce_price']['table'] = 'field_data_commerce_price';
   $handler->display->display_options['fields']['commerce_price']['field'] = 'commerce_price';
-  $handler->display->display_options['fields']['commerce_price']['label'] = '';
-  $handler->display->display_options['fields']['commerce_price']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['commerce_price']['alter']['text'] = 'Price: [commerce_price]';
-  $handler->display->display_options['fields']['commerce_price']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['commerce_price']['click_sort_column'] = 'amount';
   $handler->display->display_options['fields']['commerce_price']['settings'] = array(
     'calculation' => '0',
@@ -107,47 +111,6 @@ function rlc_greeting_cards_views_default_views() {
     'add_to_cart_form' => 'right',
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Commerce Product: Product Image */
-  $handler->display->display_options['fields']['field_product_image']['id'] = 'field_product_image';
-  $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';
-  $handler->display->display_options['fields']['field_product_image']['field'] = 'field_product_image';
-  $handler->display->display_options['fields']['field_product_image']['label'] = '';
-  $handler->display->display_options['fields']['field_product_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_product_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_product_image']['type'] = 'colorbox';
-  $handler->display->display_options['fields']['field_product_image']['settings'] = array(
-    'colorbox_node_style' => 'medium',
-    'colorbox_node_style_first' => '',
-    'colorbox_image_style' => '',
-    'colorbox_gallery' => 'none',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'none',
-    'colorbox_caption_custom' => '',
-  );
-  /* Field: Commerce Product: Price */
-  $handler->display->display_options['fields']['commerce_price']['id'] = 'commerce_price';
-  $handler->display->display_options['fields']['commerce_price']['table'] = 'field_data_commerce_price';
-  $handler->display->display_options['fields']['commerce_price']['field'] = 'commerce_price';
-  $handler->display->display_options['fields']['commerce_price']['label'] = '';
-  $handler->display->display_options['fields']['commerce_price']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['commerce_price']['alter']['text'] = 'Price: [commerce_price]';
-  $handler->display->display_options['fields']['commerce_price']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['commerce_price']['click_sort_column'] = 'amount';
-  $handler->display->display_options['fields']['commerce_price']['settings'] = array(
-    'calculation' => '0',
-  );
-  /* Field: Commerce Product: Add to Cart form */
-  $handler->display->display_options['fields']['add_to_cart_form']['id'] = 'add_to_cart_form';
-  $handler->display->display_options['fields']['add_to_cart_form']['table'] = 'views_entity_commerce_product';
-  $handler->display->display_options['fields']['add_to_cart_form']['field'] = 'add_to_cart_form';
-  $handler->display->display_options['fields']['add_to_cart_form']['label'] = '';
-  $handler->display->display_options['fields']['add_to_cart_form']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['add_to_cart_form']['show_quantity'] = 1;
-  $handler->display->display_options['fields']['add_to_cart_form']['default_quantity'] = '1';
-  $handler->display->display_options['fields']['add_to_cart_form']['combine'] = 0;
-  $handler->display->display_options['fields']['add_to_cart_form']['display_path'] = 0;
-  $handler->display->display_options['fields']['add_to_cart_form']['line_item_type'] = 'greeting_card';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Commerce Product: SKU */
   $handler->display->display_options['sorts']['sku']['id'] = 'sku';
@@ -186,47 +149,6 @@ function rlc_greeting_cards_views_default_views() {
     'add_to_cart_form' => 'right',
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Commerce Product: Product Image */
-  $handler->display->display_options['fields']['field_product_image']['id'] = 'field_product_image';
-  $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';
-  $handler->display->display_options['fields']['field_product_image']['field'] = 'field_product_image';
-  $handler->display->display_options['fields']['field_product_image']['label'] = '';
-  $handler->display->display_options['fields']['field_product_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_product_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_product_image']['type'] = 'colorbox';
-  $handler->display->display_options['fields']['field_product_image']['settings'] = array(
-    'colorbox_node_style' => 'medium',
-    'colorbox_node_style_first' => '',
-    'colorbox_image_style' => '',
-    'colorbox_gallery' => 'none',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'none',
-    'colorbox_caption_custom' => '',
-  );
-  /* Field: Commerce Product: Price */
-  $handler->display->display_options['fields']['commerce_price']['id'] = 'commerce_price';
-  $handler->display->display_options['fields']['commerce_price']['table'] = 'field_data_commerce_price';
-  $handler->display->display_options['fields']['commerce_price']['field'] = 'commerce_price';
-  $handler->display->display_options['fields']['commerce_price']['label'] = '';
-  $handler->display->display_options['fields']['commerce_price']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['commerce_price']['alter']['text'] = 'Price: [commerce_price]';
-  $handler->display->display_options['fields']['commerce_price']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['commerce_price']['click_sort_column'] = 'amount';
-  $handler->display->display_options['fields']['commerce_price']['settings'] = array(
-    'calculation' => '0',
-  );
-  /* Field: Commerce Product: Add to Cart form */
-  $handler->display->display_options['fields']['add_to_cart_form']['id'] = 'add_to_cart_form';
-  $handler->display->display_options['fields']['add_to_cart_form']['table'] = 'views_entity_commerce_product';
-  $handler->display->display_options['fields']['add_to_cart_form']['field'] = 'add_to_cart_form';
-  $handler->display->display_options['fields']['add_to_cart_form']['label'] = '';
-  $handler->display->display_options['fields']['add_to_cart_form']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['add_to_cart_form']['show_quantity'] = 1;
-  $handler->display->display_options['fields']['add_to_cart_form']['default_quantity'] = '1';
-  $handler->display->display_options['fields']['add_to_cart_form']['combine'] = 0;
-  $handler->display->display_options['fields']['add_to_cart_form']['display_path'] = 0;
-  $handler->display->display_options['fields']['add_to_cart_form']['line_item_type'] = 'greeting_card';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Commerce Product: SKU */
   $handler->display->display_options['sorts']['sku']['id'] = 'sku';
@@ -266,6 +188,14 @@ function rlc_greeting_cards_views_default_views() {
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Commerce Product: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'commerce_product';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['link_to_product'] = 0;
   /* Field: Commerce Product: Product Image */
   $handler->display->display_options['fields']['field_product_image']['id'] = 'field_product_image';
   $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';
@@ -287,10 +217,6 @@ function rlc_greeting_cards_views_default_views() {
   $handler->display->display_options['fields']['commerce_price']['id'] = 'commerce_price';
   $handler->display->display_options['fields']['commerce_price']['table'] = 'field_data_commerce_price';
   $handler->display->display_options['fields']['commerce_price']['field'] = 'commerce_price';
-  $handler->display->display_options['fields']['commerce_price']['label'] = '';
-  $handler->display->display_options['fields']['commerce_price']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['commerce_price']['alter']['text'] = 'Price: [commerce_price]';
-  $handler->display->display_options['fields']['commerce_price']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['commerce_price']['click_sort_column'] = 'amount';
   $handler->display->display_options['fields']['commerce_price']['settings'] = array(
     'calculation' => '0',
@@ -345,6 +271,14 @@ function rlc_greeting_cards_views_default_views() {
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Commerce Product: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'commerce_product';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['link_to_product'] = 0;
   /* Field: Commerce Product: Product Image */
   $handler->display->display_options['fields']['field_product_image']['id'] = 'field_product_image';
   $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';
@@ -366,10 +300,6 @@ function rlc_greeting_cards_views_default_views() {
   $handler->display->display_options['fields']['commerce_price']['id'] = 'commerce_price';
   $handler->display->display_options['fields']['commerce_price']['table'] = 'field_data_commerce_price';
   $handler->display->display_options['fields']['commerce_price']['field'] = 'commerce_price';
-  $handler->display->display_options['fields']['commerce_price']['label'] = '';
-  $handler->display->display_options['fields']['commerce_price']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['commerce_price']['alter']['text'] = 'Price: [commerce_price] ';
-  $handler->display->display_options['fields']['commerce_price']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['commerce_price']['click_sort_column'] = 'amount';
   $handler->display->display_options['fields']['commerce_price']['settings'] = array(
     'calculation' => '0',
