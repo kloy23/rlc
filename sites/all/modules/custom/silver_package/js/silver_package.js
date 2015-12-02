@@ -5,7 +5,6 @@
     var $productSelect = $('.silver_package_product_select input');
     var $productQuantity = $('.silver_package_product_quantity');
     var $quantitySelect = $('.silver_package_product_quantity select');
-    $productQuantity.hide();
 
     var toggleQuantity = function(e) {
       var $productDiv = $(e.target).parents().eq(2);

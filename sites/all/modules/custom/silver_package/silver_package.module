@@ -46,31 +46,41 @@ function silver_package_form_alter(&$form, &$form_state, $form_id) {
       $i = 0;
       foreach ($product_options as $option => $value) {
         if ($value !== '- None -') {
+          $option_name = 'product_' . $i;
           $product_name = explode(': ', $value);
           $product_name = $product_name[1];
-          $form['product_' . $i] = array(
+
+          $form[$option_name] = array(
             '#type' => 'checkbox',
             '#title' => t($product_name),
-            '#id' => $option, 
+            '#id' => $option,
             '#prefix' => '<div class="silver_package_product"><div class="silver_package_product_select">',
             '#suffix' => '</div>',
           );
-          $form['product_quantity_' . $i] = array(
+
+          $form[$option_name . '_quantity'] = array(
             '#type' => 'select',
             '#options' => $quantity,
             '#default_value' => '0',
+            '#states' => array(
+              'visible' => array(
+                ':input[id="' . $form[$option_name]['#id'] . '"]' => array('checked' => TRUE),
+              ),
+            ),
             '#prefix' => '<div class="silver_package_product_quantity">',
             '#suffix' => '</div></div>',
           );
-        };        
+        };
         $i++;
       };
 
+      // dpm(get_defined_vars());
+
       $form['#submit'][0] = 'silver_package_form_submit';
 
-      $form['#attached']['js'][] = array(
-        'data' => drupal_get_path('module', 'silver_package') . '/js/silver_package.js',
-      );
+      // $form['#attached']['js'][] = array(
+      //   'data' => drupal_get_path('module', 'silver_package') . '/js/silver_package.js',
+      // );
       return $form;
     }
   }
@@ -91,11 +101,14 @@ function silver_package_form_submit($form, &$form_state) {
   $selected_products = array();
   $values = $form_state['values'];
 
-  // Fetch Selected Products and Store in $selected_products array
+  $count1 = 0;
+  // Fetch Selected Products and thier quantities, and Store in $selected_products array
   foreach ($values as $name => $value) {
-    if (strpos($name, 'product_') !== false && $name !== 'product_id' && strpos($name, 'product_quantity') === false) {
+    if (strpos($name, 'product_') !== false && strpos($name, '_quantity') === false && $name !== 'product_id') {
       if ($value !== 0) {
-        $selected_products[] = $form[$name]['#id'];
+        $selected_products[$count1]['id'] = $form[$name]['#id'];
+        $selected_products[$count1]['quantity'] = $form[$name . '_quantity']['#value'];
+        $count1++;
       }
     }
   }
@@ -120,17 +133,11 @@ function silver_package_form_submit($form, &$form_state) {
   $product = commerce_product_load($product_id);
   $line_item = commerce_product_line_item_new($product, 1, $order->order_id, array(), 'black_tie_collection_sp');
   // Add the custom values to the line_item fields
+  $count2 = 1;
   foreach ($selected_products as $product => $value) {
-    $line_item->field_product_1['und'][0]['product_id'] = $selected_products[0];
-    $line_item->field_product_2['und'][0]['product_id'] = $selected_products[1];
-    $line_item->field_product_3['und'][0]['product_id'] = $selected_products[2];
-    $line_item->field_product_4['und'][0]['product_id'] = $selected_products[3];
-    $line_item->field_product_5['und'][0]['product_id'] = $selected_products[4];
-    $line_item->field_product_6['und'][0]['product_id'] = $selected_products[5];
-    $line_item->field_product_7['und'][0]['product_id'] = $selected_products[6];
-    $line_item->field_product_8['und'][0]['product_id'] = $selected_products[7];
-    $line_item->field_product_9['und'][0]['product_id'] = $selected_products[8];
-    $line_item->field_product_10['und'][0]['product_id'] = $selected_products[9];
+    $line_item->{'field_product_' . $count2}['und'][0]['product_id'] = $value['id'];
+    $line_item->{'field_product_' . $count2 . '_quantity'}['und'][0]['value'] = $value['quantity'];
+    $count2++;
   }
   dpm(get_defined_vars());
   // Save the line item to get its ID.
