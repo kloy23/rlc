@@ -38,5 +38,4 @@
       print $field->last_render;
       break;
   }
-
 ?>

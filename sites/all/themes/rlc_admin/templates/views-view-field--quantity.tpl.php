@@ -37,6 +37,9 @@
     case 'pink_ribbon_collection':
       print $field->last_render;
       break;
+    case 'silver_package':
+      $field->options['exclude'] = 1;
+      break;
   }
 
 ?>
