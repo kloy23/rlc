@@ -115,7 +115,7 @@ function rlc_greeting_cards_default_page_manager_pages() {
       'settings' => NULL,
     );
     $pane->css = array(
-      'css_id' => '',
+      'css_id' => 'silver_package',
       'css_class' => '',
     );
     $pane->extras = array();
@@ -538,7 +538,7 @@ our company also donates 10% of all sales proceeds of the Pink Ribbon Collection
       'settings' => NULL,
     );
     $pane->css = array(
-      'css_id' => '',
+      'css_id' => 'silver_package',
       'css_class' => '',
     );
     $pane->extras = array();

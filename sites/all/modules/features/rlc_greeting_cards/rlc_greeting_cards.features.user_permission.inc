@@ -96,7 +96,10 @@ function rlc_greeting_cards_user_default_permissions() {
   // Exported permission: 'view any commerce_product entity of bundle silver_package'.
   $permissions['view any commerce_product entity of bundle silver_package'] = array(
     'name' => 'view any commerce_product entity of bundle silver_package',
-    'roles' => array(),
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'commerce_product',
   );
 
