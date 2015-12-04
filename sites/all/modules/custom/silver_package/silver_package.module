@@ -22,34 +22,47 @@ function silver_package_help($path, $arg) {
  * Implements hook_form_alter().
  */
 function silver_package_form_alter(&$form, &$form_state, $form_id) {
-  $quantity = array(
-    '0' => '0',
-    '1' => '1',
-    '2' => '2',
-    '3' => '3',
-    '4' => '4',
-    '5' => '5',
-    '6' => '6',
-    '7' => '7',
-    '8' => '8',
-    '9' => '9',
-    '10' => '10',
-  );
   if (strpos($form_id, 'add_to_cart_form')) {
     $bundle = $form['line_item_fields']['commerce_product']['und']['#bundle'];
     if (strpos($bundle, '_sp') !== false) {
+      // Build Quantity's array that will be used as quantity select options.
+      $quantity = array(
+        '0' => '0',
+        '1' => '1',
+        '2' => '2',
+        '3' => '3',
+        '4' => '4',
+        '5' => '5',
+        '6' => '6',
+        '7' => '7',
+        '8' => '8',
+        '9' => '9',
+        '10' => '10',
+      );
+      // Attach CSS for Silver Package Add to Cart form.
       $form['#attached']['css'] = array(
         drupal_get_path('module', 'silver_package') . '/css/silver_package.css',
       );
-
+      // Build instructions
+      $form['instructions'] = array(
+        '#markup' => '<p>' . t('Select any combination of 10 packs') . '</p>',
+        '#prefix' => '<div class="instructions">',
+        '#suffix' => '</div>',
+      );
+      // Fetch the available options from the first product reference line item.
       $product_options = $form['line_item_fields']['field_product_1']['und']['#options'];
+      // Build the Silver Products Add to Cart Form Fields Dynamicly.
+      // Create variable for assiging selection field names.
       $i = 0;
       foreach ($product_options as $option => $value) {
         if ($value !== '- None -') {
+          // Create the dynamic name of the field.
           $option_name = 'product_' . $i;
+          // Seperate sku and title
           $product_name = explode(': ', $value);
+          // Set $product_name to be the referenced products 'title'.
           $product_name = $product_name[1];
-
+          // Create product selection field for the product.
           $form[$option_name] = array(
             '#type' => 'checkbox',
             '#title' => t($product_name),
@@ -57,11 +70,12 @@ function silver_package_form_alter(&$form, &$form_state, $form_id) {
             '#prefix' => '<div class="silver_package_product"><div class="silver_package_product_select">',
             '#suffix' => '</div>',
           );
-
+          // Create quantity field for the product
           $form[$option_name . '_quantity'] = array(
             '#type' => 'select',
             '#options' => $quantity,
             '#default_value' => '0',
+            // When Product is selected, show the quantity field.
             '#states' => array(
               'visible' => array(
                 ':input[id="' . $form[$option_name]['#id'] . '"]' => array('checked' => TRUE),
@@ -73,31 +87,75 @@ function silver_package_form_alter(&$form, &$form_state, $form_id) {
         };
         $i++;
       };
-
-      // dpm(get_defined_vars());
-
+      // Add custom form validation handler.
+      $form['#validate'][] = 'silver_package_form_validate';
+      // Replace form submit handler.
       $form['#submit'][0] = 'silver_package_form_submit';
 
-      // $form['#attached']['js'][] = array(
-      //   'data' => drupal_get_path('module', 'silver_package') . '/js/silver_package.js',
-      // );
+      // Attach js for Silver Package Add to Cart form.
+      $form['#attached']['js'] = array(
+        drupal_get_path('module', 'silver_package') . '/js/silver_package.js',
+      );
+
       return $form;
     }
   }
 }
 
 /**
- * Validates Camera Ready Form.
+ * Validates Silver Package Add to Cart Form.
  */
 function silver_package_form_validate($form, &$form_state) {
+  $values = $form_state['values'];
+  // Empty array used to store the quantity field of selected products.
+  $quantity_field = array();
+  $total_quantity = 0;
+  // Find the quantity fields that are not equal to 0.
+  foreach ($values as $field => $value) {
+    if (strpos($field, '_quantity') !== false) {
+      if ($value !== '0') {
+        // Add the quantity field to the $quantity_field array.
+        $quantity_field[] = $field;
+        // Convert the quantity string value of this field to a number.
+        $quantity = intval($value);
+        // Add the quantity of this field to $total_quantity.
+        $total_quantity = $total_quantity + $quantity;
+      }
+    }
+  }
+  // Display form errors if the total quanitty is not equal to 10.
+  if ($total_quantity !== 10) {
+    if ($total_quantity === 0) {
+      form_set_error(' ', t('You must select at least one greeting card and 10 packs to continue.'));
+    } else if ($total_quantity < 10) {
+      $missing_quantity = 10 - $total_quantity;
+      if ($missing_quantity === 1) {
+        form_set_error(' ', t('You must select ' . $missing_quantity . ' MORE pack to continue.'));
+      } else {
+        form_set_error(' ', t('You must select ' . $missing_quantity . ' MORE packs to continue.'));
+      }
+    } else if ($total_quantity > 10) {
+      $extra_quantity = $total_quantity - 10;
+      if ($extra_quantity === 1) {
+        form_set_error(' ', t('You must select ' . $extra_quantity . ' LESS pack to continue.'));
+      } else {
+        form_set_error(' ', t('You must select ' . $extra_quantity . ' LESS packs to continue.'));
+      }
+    }
+    // Highlight all of the selected quantity fields.
+    foreach ($quantity_field as $field) {
+      form_set_error($field, '');
+    }
+  }
 
 }
 
 /**
- * Process a validated Camera Ready Form submission.
+ * Process a validated Silver Package Add to Cart Form submission.
  */
 function silver_package_form_submit($form, &$form_state) {
   global $user;
+  // An Empty array that holds the products that are currently selected
   $selected_products = array();
   $values = $form_state['values'];
 
@@ -128,19 +186,20 @@ function silver_package_form_submit($form, &$form_state) {
     commerce_cart_order_session_save($order->order_id);
   }
 
-  // Load Black Tie Collection Silver Package and create a line item for it.
+  // Fetch the product id of the current silver package.
   $product_id = $form_state['default_product_id'];
+  // Fetch the line item bundle for the current silver package.
   $bundle = $form['line_item_fields']['#bundle'];
+  // Load Silver Package and create a line item for it.
   $product = commerce_product_load($product_id);
   $line_item = commerce_product_line_item_new($product, 1, $order->order_id, array(), $bundle);
-  // Add the custom values to the line_item fields
+  // Add all selected products and quantities values to the line_item_fields.
   $count2 = 1;
   foreach ($selected_products as $product => $value) {
     $line_item->{'field_product_' . $count2}['und'][0]['product_id'] = $value['id'];
     $line_item->{'field_product_' . $count2 . '_quantity'}['und'][0]['value'] = $value['quantity'];
     $count2++;
   }
-  dpm(get_defined_vars());
   // Save the line item to get its ID.
   commerce_line_item_save($line_item);
   // Add the line item to the order using the wrapper.
@@ -148,4 +207,6 @@ function silver_package_form_submit($form, &$form_state) {
   $order_wrapper->commerce_line_items[] = $line_item;
   // Save the order again to update its line item reference field.
   commerce_order_save($order);
+  // Redirect to the order's checkout form.
+  $form_state['redirect'] = 'cart';
 }
