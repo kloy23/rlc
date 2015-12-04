@@ -63,8 +63,8 @@
           <header class="clearfix">
 
             <?php if ($linked_site_logo): ?>
-              <div id="black-tie-secondary"><img src="/sites/all/themes/rlc/css/images/black_tie_collection-secondary.png"></div>
-              <div id="black-tie-main"><img src="/sites/all/themes/rlc/css/images/black_tie_collection-main.png"></div>
+              <div id="black-tie-secondary"><a href="/"><img src="/sites/all/themes/rlc/css/images/black_tie_collection-secondary.png"></a></div>
+              <div id="black-tie-main"><a href="/"><img src="/sites/all/themes/rlc/css/images/black_tie_collection-main.png"></a></div>
             <?php endif; ?>
 
             <?php if ($site_name || $site_slogan): ?>

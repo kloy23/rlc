@@ -30,6 +30,10 @@ div.ctools-modal-content a.close img {
   font-size: 20px;
   text-align: center;
 }
+.region-header #siteSlogan {
+    position: relative;
+    top: 10px;
+}
 .rlc-header {
   border: 1px outset;
   border-radius: 10px;
@@ -268,11 +272,11 @@ div.ctools-modal-content a.close img {
  */
 #black-tie-main {
   float: left;
-  margin: 30px 10px 0px 95px;
+  margin: 38px 10px 0px 95px;
 }
 #black-tie-secondary {
   position: absolute;
-  top: 15px;
+  top: 23px;
   left: -5px;
 }
 

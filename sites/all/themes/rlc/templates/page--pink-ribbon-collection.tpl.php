@@ -64,8 +64,8 @@
           <header class="clearfix">
 
             <?php if ($linked_site_logo): ?>
-              <div id="pink-ribbon-secondary"><img src="/sites/all/themes/rlc/css/images/pink_ribbon_collection-secondary.png"></div>
-              <div id="pink-ribbon-main"><img src="/sites/all/themes/rlc/css/images/pink_ribbon_collection-main.png"></div>
+                <div id="pink-ribbon-secondary"><a href="/"><img src="/sites/all/themes/rlc/css/images/pink_ribbon_collection-secondary.png"></a></div>
+                <div id="pink-ribbon-main"><a href="/"><img src="/sites/all/themes/rlc/css/images/pink_ribbon_collection-main.png"></a></div>
             <?php endif; ?>
 
             <?php if ($site_name || $site_slogan): ?>
