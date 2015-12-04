@@ -223,6 +223,7 @@ div.ctools-modal-content a.close img {
   background-image: -moz-linear-gradient(center top , #414042, #000);
   color: #ffffff;
   background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#414042),color-stop(100%,#000000));
+  margin-bottom: 15px;
 }
 #products_display .pane-content {
   width: 100%;
