@@ -89,6 +89,7 @@ div.ctools-modal-content a.close img {
   position: relative;
   z-index: 1;
 }
+
 .glossy:before {
   content: "";
   width: 95%;
@@ -109,6 +110,7 @@ div.ctools-modal-content a.close img {
 }
 .glossy:hover {
   border: 2px outset;
+  color: black;
 }
 .glossy:active {
   border: 1px inset;
@@ -278,14 +280,38 @@ div.ctools-modal-content a.close img {
   Pink Ribbon Collection Logos
  */
 #pink-ribbon-main {
-  float: left;
-  margin: 20px 0px -15px 85px;
+    float: left;
+    margin: 35px 0px -20px 80px;
 }
 #pink-ribbon-secondary {
   position: absolute;
-  top: 15px;
+  top: 25px;
 }
-
+#pink_ribbon_fb_link {
+  float: right;
+  width: 30%;
+  margin-bottom: -10px;
+}
+#pink_ribbon_fb_link img {
+  max-width: 90%;
+}
+#pink_ribbon_fb_link .buttons {
+  height: 45px;
+  width: 85%;
+}
+#pink_ribbon_fb_link .glossy {
+  background: none;
+}
+#pink_ribbon_fb_link .glossy::before {
+  content: "";
+  width: 98%;
+  height: 40px;
+  display: block;
+  position: absolute;
+  left: 2px;
+  border-radius: 25px;
+  background: none;
+}
 /*
   Pricing Page
  */
