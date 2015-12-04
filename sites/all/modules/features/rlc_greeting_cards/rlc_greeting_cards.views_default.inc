@@ -213,6 +213,13 @@ function rlc_greeting_cards_views_default_views() {
     'colorbox_caption' => 'none',
     'colorbox_caption_custom' => '',
   );
+  /* Field: Commerce Product: Product Description */
+  $handler->display->display_options['fields']['field_product_description']['id'] = 'field_product_description';
+  $handler->display->display_options['fields']['field_product_description']['table'] = 'field_data_field_product_description';
+  $handler->display->display_options['fields']['field_product_description']['field'] = 'field_product_description';
+  $handler->display->display_options['fields']['field_product_description']['label'] = '';
+  $handler->display->display_options['fields']['field_product_description']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_product_description']['element_label_colon'] = FALSE;
   /* Field: Commerce Product: Price */
   $handler->display->display_options['fields']['commerce_price']['id'] = 'commerce_price';
   $handler->display->display_options['fields']['commerce_price']['table'] = 'field_data_commerce_price';
@@ -221,6 +228,14 @@ function rlc_greeting_cards_views_default_views() {
   $handler->display->display_options['fields']['commerce_price']['settings'] = array(
     'calculation' => '0',
   );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<p>10 packs of 25 greeting cards, for a total of 250 greeting cards.</p>
+<p>Envelopes are Included.<p>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Commerce Product: Add to Cart form */
   $handler->display->display_options['fields']['add_to_cart_form']['id'] = 'add_to_cart_form';
   $handler->display->display_options['fields']['add_to_cart_form']['table'] = 'views_entity_commerce_product';
@@ -296,6 +311,13 @@ function rlc_greeting_cards_views_default_views() {
     'colorbox_caption' => 'none',
     'colorbox_caption_custom' => '',
   );
+  /* Field: Commerce Product: Product Description */
+  $handler->display->display_options['fields']['field_product_description']['id'] = 'field_product_description';
+  $handler->display->display_options['fields']['field_product_description']['table'] = 'field_data_field_product_description';
+  $handler->display->display_options['fields']['field_product_description']['field'] = 'field_product_description';
+  $handler->display->display_options['fields']['field_product_description']['label'] = '';
+  $handler->display->display_options['fields']['field_product_description']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_product_description']['element_label_colon'] = FALSE;
   /* Field: Commerce Product: Price */
   $handler->display->display_options['fields']['commerce_price']['id'] = 'commerce_price';
   $handler->display->display_options['fields']['commerce_price']['table'] = 'field_data_commerce_price';
@@ -304,6 +326,14 @@ function rlc_greeting_cards_views_default_views() {
   $handler->display->display_options['fields']['commerce_price']['settings'] = array(
     'calculation' => '0',
   );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<p>10 packs of 25 greeting cards, for a total of 250 greeting cards.</p>
+<p>Envelopes are Included.<p>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Commerce Product: Add to Cart form */
   $handler->display->display_options['fields']['add_to_cart_form']['id'] = 'add_to_cart_form';
   $handler->display->display_options['fields']['add_to_cart_form']['table'] = 'views_entity_commerce_product';

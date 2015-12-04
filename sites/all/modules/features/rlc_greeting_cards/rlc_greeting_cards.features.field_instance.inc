@@ -2968,6 +2968,58 @@ function rlc_greeting_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'commerce_product-silver_package-field_product_description'.
+  $field_instances['commerce_product-silver_package-field_product_description'] = array(
+    'bundle' => 'silver_package',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Why not have an All Occasion Pack of Greeting Cards right at your desk?  They will be there ready to send out at the moment the need arises.',
+        'format' => 'filtered_html',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_product_description',
+    'label' => 'Product Description',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 38,
+    ),
+  );
+
+  // Exported field_instance:
   // 'commerce_product-silver_package-field_product_image'.
   $field_instances['commerce_product-silver_package-field_product_image'] = array(
     'bundle' => 'silver_package',
@@ -3049,6 +3101,7 @@ function rlc_greeting_cards_field_default_field_instances() {
   t('Product 8 Quantity');
   t('Product 9');
   t('Product 9 Quantity');
+  t('Product Description');
   t('Product Image');
   t('Total');
   t('Unit price');
