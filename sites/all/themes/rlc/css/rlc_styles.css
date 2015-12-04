@@ -262,7 +262,7 @@ div.ctools-modal-content a.close img {
 }
 
 /*
-  Black Tie Collection
+  Black Tie Collection Logos
  */
 #black-tie-main {
   float: left;
@@ -272,6 +272,18 @@ div.ctools-modal-content a.close img {
   position: absolute;
   top: 15px;
   left: -5px;
+}
+
+/*
+  Pink Ribbon Collection Logos
+ */
+#pink-ribbon-main {
+  float: left;
+  margin: 20px 0px -15px 85px;
+}
+#pink-ribbon-secondary {
+  position: absolute;
+  top: 15px;
 }
 
 /*
