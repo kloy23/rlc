@@ -64,7 +64,7 @@
           <header class="clearfix">
 
             <?php if ($linked_site_logo): ?>
-              <div id="secondary_logo"><img src="/sites/all/themes/rlc/css/images/raisedlettercards-logo_2-secondary.png"></div>
+              <div id="secondary_logo"><a href="/"><img src="/sites/all/themes/rlc/css/images/raisedlettercards-logo_2-secondary.png"></a></div>
               <div id="logo"><?php print $linked_site_logo; ?></div>
             <?php endif; ?>
 
