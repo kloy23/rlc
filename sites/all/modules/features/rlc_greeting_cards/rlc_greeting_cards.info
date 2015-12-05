@@ -2,6 +2,7 @@ name = RLC Greeting Cards
 description = Stores configuration for Greeting Cards
 core = 7.x
 package = Features
+dependencies[] = colorbox
 dependencies[] = list
 dependencies[] = panels
 dependencies[] = rlc_commerce
