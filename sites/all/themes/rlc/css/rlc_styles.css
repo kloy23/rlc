@@ -401,14 +401,14 @@ div.ctools-modal-content a.close img {
 .cart-pane table td {
   padding: 3px 10px;
 }
-.views-field.views-field-field-product-image {
+.cart-pane .views-field.views-field-field-product-image {
     width: 30%;
 }
-.views-field.views-field-field-product-image img {
+.cart-pane .views-field.views-field-field-product-image img {
     width: 75%;
     height: auto;
 }
-.views-field.views-field-field-product-image h4 {
+.cart-pane .views-field.views-field-field-product-image h4 {
   margin-bottom: 10px;
 }
 .subOptionLabels {
