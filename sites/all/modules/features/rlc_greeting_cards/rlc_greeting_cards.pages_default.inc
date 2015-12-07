@@ -361,10 +361,14 @@ function rlc_greeting_cards_default_page_manager_pages() {
       'admin_title' => 'Get Started',
       'title' => '',
       'body' => '<div class="buttons glossy">
-<a href="/black-tie-collection/">Black Tie Collection</a>
+  <a href="/black-tie-collection/">
+  <img src="/sites/all/themes/rlc/css/images/black_tie_collection-main.png">
+  </a>
 </div>
 <div class="buttons glossy">
-<a href="/pink-ribbon-collection/">Pink Ribbon Collection</a>
+  <a href="/pink-ribbon-collection/">
+  <img src="/sites/all/themes/rlc/css/images/pink_ribbon_collection-main.png">
+  </a>
 </div>',
       'format' => 'full_html',
       'substitute' => TRUE,
@@ -374,7 +378,7 @@ function rlc_greeting_cards_default_page_manager_pages() {
       'settings' => NULL,
     );
     $pane->css = array(
-      'css_id' => '',
+      'css_id' => 'panel-greeting-cards-left',
       'css_class' => '',
     );
     $pane->extras = array();
@@ -408,7 +412,7 @@ function rlc_greeting_cards_default_page_manager_pages() {
       'settings' => NULL,
     );
     $pane->css = array(
-      'css_id' => '',
+      'css_id' => 'panel-greeting-cards-right',
       'css_class' => '',
     );
     $pane->extras = array();
