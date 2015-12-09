@@ -58,35 +58,6 @@ function rlc_greeting_cards_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-6602a20e-907d-4588-9cd9-b5689cfa925f';
-    $pane->panel = 'center';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h3 align="center">*** All Greeting Cards are sold in Quantities of 25 Per Pack ***</h3>
-<h4 style="text-align:center; padding:5px;">All Greeting Card Packs Include Envelopes</h4>',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'rlc-header',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '6602a20e-907d-4588-9cd9-b5689cfa925f';
-    $display->content['new-6602a20e-907d-4588-9cd9-b5689cfa925f'] = $pane;
-    $display->panels['center'][0] = 'new-6602a20e-907d-4588-9cd9-b5689cfa925f';
-    $pane = new stdClass();
     $pane->pid = 'new-da58250d-96ee-439a-9967-1fa567572a78';
     $pane->panel = 'center';
     $pane->type = 'views';
@@ -119,11 +90,11 @@ function rlc_greeting_cards_default_page_manager_pages() {
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'da58250d-96ee-439a-9967-1fa567572a78';
     $display->content['new-da58250d-96ee-439a-9967-1fa567572a78'] = $pane;
-    $display->panels['center'][1] = 'new-da58250d-96ee-439a-9967-1fa567572a78';
+    $display->panels['center'][0] = 'new-da58250d-96ee-439a-9967-1fa567572a78';
     $pane = new stdClass();
     $pane->pid = 'new-fc5e993e-8d02-421d-bb5c-b5e51b632ba9';
     $pane->panel = 'center';
@@ -157,11 +128,11 @@ function rlc_greeting_cards_default_page_manager_pages() {
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'fc5e993e-8d02-421d-bb5c-b5e51b632ba9';
     $display->content['new-fc5e993e-8d02-421d-bb5c-b5e51b632ba9'] = $pane;
-    $display->panels['center'][2] = 'new-fc5e993e-8d02-421d-bb5c-b5e51b632ba9';
+    $display->panels['center'][1] = 'new-fc5e993e-8d02-421d-bb5c-b5e51b632ba9';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

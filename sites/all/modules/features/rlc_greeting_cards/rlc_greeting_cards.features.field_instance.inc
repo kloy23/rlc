@@ -2584,6 +2584,57 @@ function rlc_greeting_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'commerce_product-black_tie_collection-field_product_description'.
+  $field_instances['commerce_product-black_tie_collection-field_product_description'] = array(
+    'bundle' => 'black_tie_collection',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Envelopes are Included.',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_product_description',
+    'label' => 'Product Description',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 39,
+    ),
+  );
+
+  // Exported field_instance:
   // 'commerce_product-black_tie_collection-field_product_image'.
   $field_instances['commerce_product-black_tie_collection-field_product_image'] = array(
     'bundle' => 'black_tie_collection',
@@ -2781,6 +2832,57 @@ function rlc_greeting_cards_field_default_field_instances() {
       ),
       'type' => 'commerce_price_full',
       'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_product-pink_ribbon_collection-field_product_description'.
+  $field_instances['commerce_product-pink_ribbon_collection-field_product_description'] = array(
+    'bundle' => 'pink_ribbon_collection',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Envelopes are Included.',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_product_description',
+    'label' => 'Product Description',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 39,
     ),
   );
 
