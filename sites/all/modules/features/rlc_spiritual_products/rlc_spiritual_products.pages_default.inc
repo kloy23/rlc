@@ -67,7 +67,7 @@ function rlc_spiritual_products_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<h4 align="center" style="padding-bottom:5px">*** Call for a quote if you would like to order large quantities with your churches logo and / or information. ***</h4>
+      'body' => '<h4 align="center" style="padding-bottom:5px">*** Contact Us for a quote if you would like to order large quantities with your churches logo and / or information. ***</h4>
 <h3 align="center">*** All Cards are Based on Quantities of 250 ***</h3>',
       'format' => 'full_html',
       'substitute' => TRUE,
