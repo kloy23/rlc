@@ -23,6 +23,13 @@ function rlc_spiritual_products_commerce_line_item_default_types() {
       'add_form_submit_value' => 'Add product',
       'base' => 'commerce_product_line_item',
     ),
+    'spiritual_notepad' => array(
+      'name' => 'Spiritual Notepad',
+      'description' => 'A customizable product line item type.',
+      'product' => TRUE,
+      'add_form_submit_value' => 'Add product',
+      'base' => 'commerce_product_line_item',
+    ),
   );
   return $items;
 }
@@ -43,6 +50,13 @@ function rlc_spiritual_products_commerce_product_default_types() {
       'type' => 'spiritual_card',
       'name' => 'Spiritual Card',
       'description' => 'Uncustomizable spiritual business cards.',
+      'help' => '',
+      'revision' => 0,
+    ),
+    'spiritual_notepads' => array(
+      'type' => 'spiritual_notepads',
+      'name' => 'Spiritual Notepads',
+      'description' => 'Uncustomizable spiritual Notepads',
       'help' => '',
       'revision' => 0,
     ),

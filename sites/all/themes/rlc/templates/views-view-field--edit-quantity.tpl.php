@@ -31,6 +31,9 @@
     case 'spiritual_book':
       print $field->last_render;
       break;
+    case 'spiritual_notepads':
+      print $field->last_render;
+      break;
     case 'black_tie_collection':
       print $field->last_render;
       break;
