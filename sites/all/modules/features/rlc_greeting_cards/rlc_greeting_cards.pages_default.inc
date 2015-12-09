@@ -332,14 +332,10 @@ function rlc_greeting_cards_default_page_manager_pages() {
       'admin_title' => 'Get Started',
       'title' => '',
       'body' => '<div class="buttons glossy">
-  <a href="/black-tie-collection/">
-  <img src="/sites/all/themes/rlc/css/images/black_tie_collection-main.png">
-  </a>
+<a href="/black-tie-collection/">Black Tie Collection</a>
 </div>
 <div class="buttons glossy">
-  <a href="/pink-ribbon-collection/">
-  <img src="/sites/all/themes/rlc/css/images/pink_ribbon_collection-btn.png">
-  </a>
+<a href="/pink-ribbon-collection/">Pink Ribbon Collection</a>
 </div>',
       'format' => 'full_html',
       'substitute' => TRUE,
