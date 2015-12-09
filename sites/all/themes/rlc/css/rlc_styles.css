@@ -281,6 +281,18 @@ div.ctools-modal-content a.close img {
 }
 
 /*
+  Greeting Cards Product Pages
+ */
+
+#products_display .num_of_cards {
+  float: right;
+  font-weight: bold;
+  color: #F00;
+  margin: 5px 0px 0px 15px;
+  font-size: 1.5em;
+}
+
+/*
   Black Tie Collection Logos
  */
 #black-tie-main {
