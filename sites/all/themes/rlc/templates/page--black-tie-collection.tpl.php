@@ -88,7 +88,7 @@
             <div id="black_tie_fb_link">
               <div class="buttons glossy">
                 <a href="https://www.facebook.com/TheRaisedCollection">
-                  <img src="/sites/all/themes/rlc/css/images/pink_ribbon_collection_fb-link.png">
+                  <img src="/sites/all/themes/rlc/css/images/black_tie_collection_fb-link.png">
                 </a>
               </div>
             </div>
