@@ -338,7 +338,7 @@ function rlc_greeting_cards_default_page_manager_pages() {
 </div>
 <div class="buttons glossy">
   <a href="/pink-ribbon-collection/">
-  <img src="/sites/all/themes/rlc/css/images/pink_ribbon_collection-main.png">
+  <img src="/sites/all/themes/rlc/css/images/pink_ribbon_collection-btn.png">
   </a>
 </div>',
       'format' => 'full_html',
