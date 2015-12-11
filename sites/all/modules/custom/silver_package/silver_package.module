@@ -163,7 +163,8 @@ function silver_package_form_submit($form, &$form_state) {
   // Fetch Selected Products and thier quantities, and Store in $selected_products array
   foreach ($values as $name => $value) {
     if (strpos($name, 'product_') !== false && strpos($name, '_quantity') === false && $name !== 'product_id') {
-      if ($value !== 0) {
+      // If the product is selected and quantity is not 0
+      if ($value !== 0 && $form[$name . '_quantity']['#value'] !== '0') {
         $selected_products[$count1]['id'] = $form[$name]['#id'];
         $selected_products[$count1]['quantity'] = $form[$name . '_quantity']['#value'];
         $count1++;
