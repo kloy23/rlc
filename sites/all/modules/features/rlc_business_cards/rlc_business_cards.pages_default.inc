@@ -164,7 +164,7 @@ function rlc_business_cards_default_page_manager_pages() {
       'admin_title' => '',
       'title' => '',
       'body' => '500 One Color Raised Letter Business Cards for just $14.95!
-<p id="disclaimer">*Price is based on White Smooth card stock, and the use of our Custom Business Card Creator.</p>',
+<p id="disclaimer">*Price is based on a One Color Card printed on White Smooth card stock, and the use of our Custom Business Card Creator.</p>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -230,9 +230,6 @@ function rlc_business_cards_default_page_manager_pages() {
       'admin_title' => 'Get Started',
       'title' => '',
       'body' => '<div class="buttons glossy">
-<a href="/pricing/">Pricing & Card Stock Options</a>
-</div>
-<div class="buttons glossy">
 <a href="/card-creator/">Create Your Card</a>
 </div>
 <div class="buttons glossy">
@@ -292,10 +289,10 @@ function rlc_business_cards_default_page_manager_pages() {
       'admin_title' => '',
       'title' => '',
       'body' => '<ul>
-  <li>One or Two color printing available.</li>
+  <li>One or Two Color Thermography, Full Color, and Magnetics available.</li>
   <li>Choose from several proven business card templates.</li>
   <li>Multiple high quality card stocks available.</li>
-  <li>Printed and Shipped within 48 hours.</li>
+  <li>Printed and Shipped within 3 - 5 Business Days.</li>
   <li>Satisfaction guaranteed!</li>
 </ul>',
       'format' => 'full_html',

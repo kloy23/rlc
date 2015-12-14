@@ -137,10 +137,7 @@ function rlc_business_cards_user_default_permissions() {
   // Exported permission: 'view any commerce_product entity of bundle company_business_card'.
   $permissions['view any commerce_product entity of bundle company_business_card'] = array(
     'name' => 'view any commerce_product entity of bundle company_business_card',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'commerce_product',
   );
 

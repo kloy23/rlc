@@ -210,11 +210,11 @@ div.ctools-modal-content a.close img {
 }
 #panel-business-cards-right {
   float: left;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: bold;
   line-height: 30px;
   position: relative;
-  top: 45px;
+  top: 25px;
 }
 
 /*
