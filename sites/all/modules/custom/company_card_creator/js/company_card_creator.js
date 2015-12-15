@@ -249,9 +249,9 @@
           price = calculateCost(quantity, price500, price1000, pricePerThousand);
         }
       } else if (printType === 'magnetic') {
-        price500 = 119.00;
-        price1000 = 119.00;
-        pricePerThousand = 119.00;
+        price500 = 129.00;
+        price1000 = 129.00;
+        pricePerThousand = 129.00;
         price = calculateCost(quantity, price500, price1000, pricePerThousand);
       }
       var convertedTotal = price.toFixed(2);
