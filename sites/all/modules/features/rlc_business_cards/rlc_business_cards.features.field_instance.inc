@@ -1113,6 +1113,45 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'commerce_line_item-business_card-field_one_or_two_color'.
+  $field_instances['commerce_line_item-business_card-field_one_or_two_color'] = array(
+    'bundle' => 'business_card',
+    'commerce_cart_settings' => array(
+      'field_access' => 0,
+    ),
+    'default_value' => array(
+      0 => array(
+        'tid' => 24,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 39,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_one_or_two_color',
+    'label' => 'Color Selection',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
   // 'commerce_line_item-business_card-field_print_ready_back'.
   $field_instances['commerce_line_item-business_card-field_print_ready_back'] = array(
     'bundle' => 'business_card',
@@ -1453,7 +1492,7 @@ function rlc_business_cards_field_default_field_instances() {
   $field_instances['commerce_line_item-business_card-field_two_sided'] = array(
     'bundle' => 'business_card',
     'commerce_cart_settings' => array(
-      'field_access' => 1,
+      'field_access' => 0,
     ),
     'default_value' => array(
       0 => array(
@@ -3849,6 +3888,42 @@ function rlc_business_cards_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'taxonomy_term-one_or_two_color-field_additional_cost'.
+  $field_instances['taxonomy_term-one_or_two_color-field_additional_cost'] = array(
+    'bundle' => 'one_or_two_color',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_additional_cost',
+    'label' => 'Additional Cost',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'commerce_price',
+      'settings' => array(
+        'currency_code' => 'default',
+      ),
+      'type' => 'commerce_price_simple',
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance:
   // 'taxonomy_term-print_type-field_company_price_1000'.
   $field_instances['taxonomy_term-print_type-field_company_price_1000'] = array(
     'bundle' => 'print_type',
@@ -4135,6 +4210,7 @@ function rlc_business_cards_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Additional Cost');
   t('Address');
   t('Back');
   t('Back Color');

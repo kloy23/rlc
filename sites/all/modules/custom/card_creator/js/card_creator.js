@@ -8,7 +8,7 @@
     var selectedLogo;
 
     // Hide selected divs on pageload
-    $('#clipartColor, #selectTwoSided, #removeBack, #frontBack, #cardInfoBack, #previewBack, #oneColorSelection, #twoColorSelection, #backColorSelection, #backColor, #templatesBackDisplay, #proof').hide();
+    $('#clipartColor, #selectTwoSided, #removeBack, #frontBack, #cardInfoBack, #previewBack, #selectTwoColor, #oneColorSelection, #twoColorSelection, #backColorSelection, #backColor, #templatesBackDisplay, #proof').hide();
 
     // *** CREATE COLOR OPTIONS ***
 
@@ -193,7 +193,7 @@
       } else {
         $('#addBack').show();
       }
-    }
+    };
     var quantity500;
     var changeQuantityOptions = function(e) {
       var quantity = $('#edit-select-quantity');
@@ -396,12 +396,12 @@
           // get current element
           var currentEl = elements[i];
           // if the elements fill is not white, and it is not none
-          if (currentEl.attr('fill') != 'rgb(255, 255, 255)' && currentEl.attr('fill') != 'none' && currentEl.attr('fill') != '') {
+          if (currentEl.attr('fill') != 'rgb(255, 255, 255)' && currentEl.attr('fill') != 'none' && currentEl.attr('fill') !== '') {
             // set the fill color to match the selected color
             currentEl.attr('fill', color);
           }
           // if the elements stroke is not white, and it is not none
-          if (currentEl.attr('stroke') != 'rgb(255, 255, 255)' && currentEl.attr('stroke') != 'none' && currentEl.attr('stroke') != '') {
+          if (currentEl.attr('stroke') != 'rgb(255, 255, 255)' && currentEl.attr('stroke') != 'none' && currentEl.attr('stroke') !== '') {
             // set the stroke color to match the selected color
             currentEl.attr('stroke', color);
           }
@@ -979,6 +979,7 @@
     };
     // when a one color option is selected
     var loadOneColor = function() {
+      var selectTwoColor = document.getElementById('edit-two-color');
       var color = $(this).text().toLowerCase();
       var tid = this.id;
       // target the loaded svg document
@@ -995,6 +996,10 @@
       // Populate oneColorSelection textfield with the tid of the color selected
       // This information will be passed on during order creation, so the order will display the colors used.
       $('#oneColorSelection').val(tid);
+      // Uncheck edit-two-color
+      selectTwoColor.checked = false;
+      // set value of edit-two-color to 0
+      selectTwoColor.value = 0;
       // Empty twoColorSelection, if a value exist
       $('#twoColorSelection').val('0');
       clearColorSelection();
@@ -1002,9 +1007,11 @@
       colorPath();
       clearTwoColorOptions();
       changeLogoColor();
+      updatePrice();
     };
     // when a two color option is selected, create the color options for each field
-    var loadTwoColors = function() {
+    var loadTwoColors = function() {      
+      var selectTwoColor = document.getElementById('edit-two-color');
       var tid = this.id;
       var $clipartColor = $('#clipartColor');
       for (var i = 0; i < $frontInputFields.length; i++) {
@@ -1018,11 +1025,16 @@
       colorPath();
       changeLogoColor();
       updateFillColor();
+      // Check edit-two-color
+      selectTwoColor.checked = true;
+      // set value of edit-two-color to 1
+      selectTwoColor.value = 1;
       // Populate twoColorSelection textfield with the tid of the color selected
       // This information will be passed on during order creation, so the order will display the colors used.
       $('#twoColorSelection').val(tid);
       // Empty twoColorSelection, if a value exist
       $('#oneColorSelection').val('0');
+      updatePrice();
     };
     // when a one color option is selected
     var loadBackColor = function() {
@@ -1125,9 +1137,14 @@
       $('#back').removeClass('selected');
       $('#front').addClass('selected');
     };
-    var calculateCost = function(isTwoSided, quantity, price500, price1000, pricePerThousand) {
+    var calculateCost = function(printType, quantity, price500, price1000, pricePerThousand) {      
+      var isTwoSided = $('#edit-two-sided').val();
+      var isTwoColor = $('#edit-two-color').val();
       // Store two sided price
       var twoSidedPrice = 0;
+      // Store two color price
+      var twoColorPrice = 0;
+      var multiple;
       var price;
       // If this is a Two Sided card
       if (isTwoSided == 1) {
@@ -1137,20 +1154,24 @@
           twoSidedPrice = 10.00;
         }
       }
+      // If this is a raisedLetter Two Color card
+      if (printType === 'raisedLetter' && isTwoColor === '1') {
+        twoColorPrice = 7.00;
+      }
       // If the quantity is 500
       if (quantity === '9') {
-        price = price500 + twoSidedPrice;
+        price = price500 + twoSidedPrice + twoColorPrice;
         return price;
       } else if (quantity === '10') { // If the quantity is 1000
-        price = price1000 + twoSidedPrice;
+        price = price1000 + twoSidedPrice + twoColorPrice;
         return price;
       } else if (quantity > '10' && quantity < '15') { // If the quantity is 2000 or higher
-        var multiple = quantity - 10;
-        price = price1000 + (pricePerThousand * multiple) + (twoSidedPrice * (multiple));
+        multiple = quantity - 10;
+        price = price1000 + (pricePerThousand * multiple) + (twoSidedPrice * (multiple) + twoColorPrice);
         return price;
       } else if (quantity === '15') { // If the quantity is 10,000
-        var multiple = 9;
-        price = price1000 + (pricePerThousand * multiple) + (twoSidedPrice * (multiple));
+        multiple = 9;
+        price = price1000 + (pricePerThousand * multiple) + (twoSidedPrice * (multiple) + twoColorPrice);
         return price;
       }
     };
@@ -1160,7 +1181,6 @@
           price1000,
           pricePerThousand;
       var $currentPrice = $('#currentPrice');
-      var isTwoSided = $('#edit-two-sided').val();
       var cardStock = $('#edit-card-stock-options').children().children('input');
       var quantity = $('#edit-select-quantity').val();
       var printType = fetchPrintType();
@@ -1171,38 +1191,38 @@
           price500 = 14.95;
           price1000 = 16.95;
           pricePerThousand = 14.95;
-          price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+          price = calculateCost(printType, quantity, price500, price1000, pricePerThousand);
         } else if (cardStock[1].checked === true) { // White Linen
           price500 = 23.95;
           price1000 = 26.95;
           pricePerThousand = 22.50;
-          price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+          price = calculateCost(printType, quantity, price500, price1000, pricePerThousand);
         } else if (cardStock[2].checked === true || cardStock[3].checked === true || cardStock[4].checked === true) { // Linens => Soft White, Tan, and Gray
           price500 = 24.95;
           price1000 = 28.95;
           pricePerThousand = 23.50;
-          price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+          price = calculateCost(printType, quantity, price500, price1000, pricePerThousand);
         } else if (cardStock[5].checked === true || cardStock[6].checked === true) { // Yellow and Kromekote
           price500 = 32.95;
           price1000 = 36.95;
           pricePerThousand = 31.50;
-          price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+          price = calculateCost(printType, quantity, price500, price1000, pricePerThousand);
         } else if (cardStock[7].checked === true) { // Woodgrain
           price500 = 47.50;
           price1000 = 53.50;
           pricePerThousand = 46.00;
-          price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+          price = calculateCost(printType, quantity, price500, price1000, pricePerThousand);
         }
       } else if (printType === 'fullColor') {
         price500 = 20.00;
         price1000 = 23.50;
         pricePerThousand = 22.50;
-        price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+        price = calculateCost(printType, quantity, price500, price1000, pricePerThousand);
       } else if (printType === 'magnetic') {
         price500 = 129.00;
         price1000 = 129.00;
         pricePerThousand = 129.00;
-        price = calculateCost(isTwoSided, quantity, price500, price1000, pricePerThousand);
+        price = calculateCost(printType, quantity, price500, price1000, pricePerThousand);
       }
       var convertedTotal = price.toFixed(2);
       // display price to customer
@@ -1255,7 +1275,7 @@
     };
     var endloading = function() {
       $('#loading').remove();
-    }
+    };
     // Allows users to view the card before adding it to their cart
     var loadProof = function(filepathFront, filepathBack) {
       var companyName,
@@ -1274,7 +1294,7 @@
         // Set the image src to show the user the file that was created
         $('#proofImageFront').attr('src', filepathFront);
         $('#proofImageBack').attr('src', filepathBack);
-      } else if (isTwoSided == 0) { // card is not two sided
+      } else if (isTwoSided === '0') { // card is not two sided
         // Set the image src to show the user the file that was created
         $('#proofImageFront').attr('src', filepathFront);
         $('#proofImageBack').hide();
@@ -1348,7 +1368,7 @@
             });
           }
         });
-      } else if (isTwoSided == 0) { // card is not two sided
+      } else if (isTwoSided === '0') { // card is not two sided
         svgFront.toDataURL("image/svg+xml", {
           callback: function(data) {
             $.ajax({
@@ -1585,6 +1605,10 @@
     // *** SET DEFAULTS ***
     $(function setDefaults() {
       var selectTwoSided = document.getElementById('edit-two-sided');
+      var selectTwoColor = document.getElementById('edit-two-color');
+      // uncheck edit-two-color
+      selectTwoColor.checked = false;
+      selectTwoColor.value = 0;
       // uncheck two_sided form field
       selectTwoSided.checked = false;
       selectTwoSided.value = 0;

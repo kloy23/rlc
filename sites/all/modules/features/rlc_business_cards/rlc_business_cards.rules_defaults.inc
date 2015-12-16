@@ -939,7 +939,8 @@ function rlc_business_cards_default_rules_configuration() {
               }
             }
           }
-        }
+        },
+        { "data_is" : { "data" : [ "commerce-line-item:field-two-sided" ], "value" : "16" } }
       ],
       "DO" : [
         { "component_rules_fetch_price_of_two_sided" : {
@@ -1074,7 +1075,12 @@ function rlc_business_cards_default_rules_configuration() {
       "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
       "ON" : { "commerce_product_calculate_sell_price" : [] },
       "IF" : [
-        { "entity_has_field" : { "entity" : [ "commerce-line-item" ], "field" : "field_camera_ready" } }
+        { "entity_is_of_bundle" : {
+            "entity" : [ "commerce-line-item" ],
+            "type" : "commerce_line_item",
+            "bundle" : { "value" : { "camera_ready_business_card" : "camera_ready_business_card" } }
+          }
+        }
       ],
       "DO" : [
         { "commerce_line_item_unit_price_add" : {
@@ -1817,7 +1823,7 @@ function rlc_business_cards_default_rules_configuration() {
       "LABEL" : "Fetch Price of Raised Letter",
       "PLUGIN" : "rule set",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
+      "REQUIRES" : [ "rules", "commerce_line_item" ],
       "USES VARIABLES" : {
         "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
         "raised_price" : {
@@ -2075,6 +2081,33 @@ function rlc_business_cards_default_rules_configuration() {
               { "data_set" : { "data" : [ "raised-price:amount" ], "value" : [ "price-10k" ] } }
             ],
             "LABEL" : "10000"
+          }
+        },
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card"
+                    }
+                  }
+                }
+              },
+              { "entity_has_field" : { "entity" : [ "line-item" ], "field" : "field_one_or_two_color" } },
+              { "data_is" : { "data" : [ "line-item:field-one-or-two-color" ], "value" : "25" } }
+            ],
+            "DO" : [
+              { "commerce_line_item_unit_price_add" : {
+                  "commerce_line_item" : [ "line-item" ],
+                  "amount" : [ "line-item:field-one-or-two-color:field-additional-cost:amount" ],
+                  "component_name" : "base_price",
+                  "round_mode" : "1"
+                }
+              }
+            ],
+            "LABEL" : "Two Color"
           }
         }
       ],
