@@ -186,12 +186,34 @@
 
     // *** FUNCTIONS ***
 
-    var disableTwoSided = function() {
+    var limitOptions = function() {
+      var selectTwoSided = document.getElementById('edit-two-sided');
+      var $cardStockOptions = $('#bottomColThree');
       var printType = fetchPrintType();
+      var $printTypeOptions = $('#bottomColFour');
+      var $optionsTitle = $('#bottomColFourUpper h4');
       if (printType === 'magnetic') {
-        $('#addBack').hide();
-      } else {
-        $('#addBack').show();
+        $cardStockOptions.hide();
+        $optionsTitle.text('5) Print Type & Quantity');
+        $printTypeOptions.css('float', 'right');
+        $('#addBack, #removeBack, #frontBack').hide();
+        switchToFront();
+      } else if (printType === 'fullColor') {
+        $cardStockOptions.hide();
+        $optionsTitle.text('5) Print Type & Quantity');    
+        $printTypeOptions.css('float', 'right');
+      } else if (printType === 'raisedLetter') {
+        $cardStockOptions.show();
+        $optionsTitle.text('6) Print Type & Quantity');
+        $printTypeOptions.css('float', 'left');
+      }
+      if (printType !== 'magnetic') { // Not a magnetic card
+        // Is two sided
+        if (selectTwoSided.value === '1') {
+          twoSided();
+        } else if (selectTwoSided.value === '0') {// Is NOT two sided
+          oneSided();
+        }
       }
     };
     var quantity500;
@@ -1112,6 +1134,7 @@
       $('#removeBack, #frontBack').show();
       // Set color selection tid to black;
       $('#backColorSelection').val('32');
+      switchToBack();
     };
     // Switch to one sided
     var oneSided = function() {
@@ -1122,6 +1145,7 @@
       selectTwoSided.value = 0;
       $('#removeBack, #frontBack').hide();
       $('#addBack').show();
+      switchToFront();
     };
     // Switch to Back
     var switchToBack = function() {
@@ -1146,8 +1170,8 @@
       var twoColorPrice = 0;
       var multiple;
       var price;
-      // If this is a Two Sided card
-      if (isTwoSided == 1) {
+      // If this is NOT magnetic, and is a Two Sided card
+      if (printType !== 'magnetic' && isTwoSided == 1) {
         if (quantity === '9' || quantity === '10') {
           twoSidedPrice = 14.00;
         } else {
@@ -1278,6 +1302,7 @@
     };
     // Allows users to view the card before adding it to their cart
     var loadProof = function(filepathFront, filepathBack) {
+      var printType = fetchPrintType();
       var companyName,
           name;
       filepathFront = '../' + filepathFront + '?' + Math.floor(Math.random() * 500000);
@@ -1287,14 +1312,14 @@
       // Show Proof Div
       $('#proof').show();
       var isTwoSided = $('#edit-two-sided').val();
-      // if card is two sided
-      if (isTwoSided == 1) {
+      // if card is two sided and is not magnetic
+      if (isTwoSided == 1 && printType !== 'magnetic') {
         // Make sure back is visible
         $('#proofImageBack').show();
         // Set the image src to show the user the file that was created
         $('#proofImageFront').attr('src', filepathFront);
         $('#proofImageBack').attr('src', filepathBack);
-      } else if (isTwoSided === '0') { // card is not two sided
+      } else if (isTwoSided === '0' || printType === 'magnetic') { // card is not two sided or is magnetic
         // Set the image src to show the user the file that was created
         $('#proofImageFront').attr('src', filepathFront);
         $('#proofImageBack').hide();
@@ -1323,6 +1348,7 @@
       var svgFront = document.getElementById("previewFront");
       var svgBack = document.getElementById("previewBack");
       var isTwoSided = $('#edit-two-sided').val();
+      var printType = fetchPrintType();
       // Show loading gif when ajax starts
       $(document).ajaxStart(function() {
         startLoading();
@@ -1331,8 +1357,8 @@
         // Remove loading gif when ajax stops
         endloading();
       });
-      // if card is two sided
-      if (isTwoSided == 1) {
+      // if card is two sided, and is not magnetic
+      if (isTwoSided == 1 && printType !== 'magnetic') {
         // Temporarily show front and back in order for img to save correctly
         $('#previewFront').show();
         $('#previewBack').show();
@@ -1368,7 +1394,7 @@
             });
           }
         });
-      } else if (isTwoSided === '0') { // card is not two sided
+      } else if (isTwoSided === '0' || printType === 'magnetic') { // card is not two sided, or it is magnetic
         svgFront.toDataURL("image/svg+xml", {
           callback: function(data) {
             $.ajax({
@@ -1525,13 +1551,11 @@
     $('#addBack').click(function() {
       twoSided();
       updatePrice();
-      switchToBack();
     });
     // When removeBack is clicked, execute oneSided and switch to front
     $('#removeBack').click(function() {
       oneSided();
       updatePrice();
-      switchToFront();
     });
     // When "back" is clicked, switch to back
     $('#back').click(switchToBack);
@@ -1564,7 +1588,7 @@
     // Change quantity options based on the print type selected
     $('#edit-select-print-type').on('change', 'input', function(e) {
       changeQuantityOptions(e);
-      disableTwoSided();
+      limitOptions();
       changeCardStock();
     });
     // When a quantity is selected, change the price
@@ -1617,6 +1641,7 @@
       $('#backColorSelection').val('0');
       loadClipartCategory();
       changeCardStock();
+      limitOptions();
       // update price on page refresh
       updatePrice();
       // Change all fonts to match docFontFamily

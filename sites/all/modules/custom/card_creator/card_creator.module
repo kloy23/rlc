@@ -739,13 +739,11 @@ function card_creator_form_submit($form, &$form_state) {
       'display' => 1,
       'description' => '',
     );
-
-    // Save Front
     $file_front_display = file_move($file_front_display, $private_file_path, FILE_EXISTS_RENAME);
 
-    // If this is two a two sided card, save files for back
+    // If this is two a two sided card, and not Magnetic save files for back
 
-    if ($two_sided_card == 1) {
+    if ($selected_print_type !== '37' && $two_sided_card == 1) {
       // Set the product id for two sided card
       $product_id = 2;
       // Save SVG Image for Back
@@ -791,8 +789,6 @@ function card_creator_form_submit($form, &$form_state) {
         'display' => 1,
         'description' => '',
       );
-
-      // Save Back
       $file_back_display = file_move($file_back_display, $private_file_path, FILE_EXISTS_RENAME);
     }
 
@@ -804,7 +800,6 @@ function card_creator_form_submit($form, &$form_state) {
     foreach ($line_item as $field_name => $value) {
       $line_item->field_quantity['und'][0]['tid'] = $selected_quantity;
       $line_item->field_print_type['und'][0]['tid'] = $selected_print_type;
-      $line_item->field_card_stocks['und'][0]['tid'] = $selected_card_stock;
       $line_item->field_one_color_options['und'][0]['tid'] = $color_selected;
       $line_item->field_two_color_options['und'][0]['tid'] = $colors_selected;
       $line_item->field_company_name[LANGUAGE_NONE][0]['value'] = $company_name;
@@ -825,8 +820,20 @@ function card_creator_form_submit($form, &$form_state) {
       if ($two_color_card == 1) {
         $line_item->field_one_or_two_color['und'][0]['tid'] = 25; // 25 is the tid for Two Color taxonomy term
       }
-      // If this is a two sided card
-      if ($two_sided_card == 1) {
+      // If this is a magnetic card
+      if ($selected_print_type === '37') {
+        $line_item->field_two_sided['und'][0]['tid'] = 15; // 15 is the tid for NO two sided taxonomy term
+      } 
+      // If print type is NOT Raised Letter
+      if ($selected_print_type !== '35') {
+        // Set the cardstock to 'White Smooth' 
+        $line_item->field_card_stocks['und'][0]['tid'] = 1;
+      } else { // Print type is Raised Letter
+        // Set the cardstock to match selected
+        $line_item->field_card_stocks['und'][0]['tid'] = $selected_card_stock;
+      }
+      // If this product is not Magnetic, and is a two sided card
+      if ($selected_print_type !== '37' && $two_sided_card == 1) {
         $line_item->field_two_sided['und'][0]['tid'] = 16; // 16 is the tid for YES two sided taxonomy term        
         $line_item->field_back_color_options['und'][0]['tid'] = $back_color_selected;
         $line_item->field_back_line_1[LANGUAGE_NONE][0]['value'] = $back_line1;
@@ -843,6 +850,7 @@ function card_creator_form_submit($form, &$form_state) {
         $line_item->field_svg_back['und'][0]['fid'] = $file_back_svg->fid;
       }
     }
+    dpm(get_defined_vars());
     // Save the line item to get its ID.
     commerce_line_item_save($line_item);
     // Add the line item to the order using the wrapper.
