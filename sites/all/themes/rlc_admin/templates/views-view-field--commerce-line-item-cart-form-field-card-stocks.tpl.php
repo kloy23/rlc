@@ -23,20 +23,14 @@
  */
   
   $product_type = $row->_field_data['commerce_product_field_data_commerce_product_product_id']['entity']->type;
+  $print_type = $row->_field_data['commerce_line_item_field_data_commerce_line_items_line_item_']['entity']->field_print_type['und'][0]['tid'];
 
-  switch ($product_type) {
-
-    case 'business_card':
-	print $field->last_render;
-	break;
-
-	case 'two_sided_business_card':
-	print $field->last_render;
-	break;
-
-	case 'camera_ready_business_card':
-	print $field->last_render;
-	break;
+  // If the Product Type is Business Card, Two Sided Business Card, or Camera Ready Business Card
+  if ($product_type === 'business_card' || $product_type === 'two_sided_business_card' ||$product_type === 'camera_ready_business_card') {
+  	// If  the print type is Raised Letter
+  	if ($print_type === '35') {
+  	  print $field->last_render;  
+  	}
   }
   
 ?>

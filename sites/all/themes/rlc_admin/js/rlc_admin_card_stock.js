@@ -3,11 +3,20 @@
   $(document).ready(function() { // Begin $(document).ready()
     $(function setCardstockDisplay() {
       var el;
-      var id;
       var cardStockSelection = $('.card-stocks');
-      for (var i=0; i<cardStockSelection.length; i++) {
-        el = cardStockSelection[i];
-        setCardStockBackground(el);
+      var printType = $('.print-type');
+      for (var i=0; i<printType.length; i++) {
+        if ($(printType[i]).text().replace(/\s+/g, '') === 'RaisedLetter') {
+          if (cardStockSelection.length !== 0) {
+            for (var x=0; x<cardStockSelection.length; x++) {
+              el = cardStockSelection[x];
+              setCardStockBackground(el);
+            }
+          }
+        } else {
+          el = printType[i];
+          setWhiteBackground(el);
+        }
       }
     });
   }); // End $(document).ready()
@@ -53,6 +62,11 @@
     var selectedCardStock = $(el).text().toLowerCase();
     selectedCardStock = $.trim(selectedCardStock).replace(/\s+/g, '');
     var className = fetchClassName(selectedCardStock);
+    changeImageBackground(el, className);
+  };
+
+  var setWhiteBackground = function(el) {
+    var className = 'whiteSmooth';
     changeImageBackground(el, className);
   };
 

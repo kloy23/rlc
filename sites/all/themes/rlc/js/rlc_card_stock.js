@@ -3,24 +3,35 @@
   $(document).ready(function() { // Begin $(document).ready()
     $(function setCardstockDisplay() {
       var el;
-      var id;
+      var printType = $('select[id*="print-type"]');
       var cardStockDropdown = $('select[id*="card-stock"]');
       var cardStockSelection = $('.card-stocks');
-      if (cardStockDropdown.length !== 0) {
-        for (var i=0; i<cardStockDropdown.length; i++) {
-          el = cardStockDropdown[i];
-          (function (el) {
-            $(el).change(function() {
-              updateCardStockBackground(el);
-            });
-          })(el);
-        }
-        $(cardStockDropdown).change();
+      if (printType.length === 0) {
+        printType = $('.print-type');
       }
-      if (cardStockSelection.length !== 0) {
-        for (var x=0; x<cardStockSelection.length; x++) {
-          el = cardStockSelection[x];
-          setCardStockBackground(el);
+      for (var i=0; i<printType.length; i++) {
+        // if the print type is Raised Letter
+        if (printType[i].value === '35' || $(printType[i]).text().replace(/\s+/g, '') === 'RaisedLetter') {
+          if (cardStockDropdown.length !== 0) {
+            for (var x=0; x<cardStockDropdown.length; x++) {
+              el = cardStockDropdown[x];
+              (function (el) {
+                $(el).change(function() {
+                  updateCardStockBackground(el);
+                });
+              })(el);
+              $(cardStockDropdown[x]).change();
+            }          
+          }
+          if (cardStockSelection.length !== 0) {
+            for (var y=0; y<cardStockSelection.length; y++) {
+              el = cardStockSelection[y];
+              setCardStockBackground(el);
+            }              
+          }
+        } else {
+          el = printType[i];
+          setWhiteBackground(el);
         }
       }
     });
@@ -74,6 +85,11 @@
     var selectedCardStock = $(el).text().toLowerCase();
     selectedCardStock = $.trim(selectedCardStock).replace(/\s+/g, '');
     var className = fetchClassName(selectedCardStock);
+    changeImageBackground(el, className);
+  };
+
+  var setWhiteBackground = function(el) {
+    var className = 'whiteSmooth';
     changeImageBackground(el, className);
   };
 
