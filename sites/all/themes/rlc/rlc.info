@@ -11,6 +11,7 @@ stylesheets[all][] = css/rlc_styles.css
 
 ;----------// Scripts
 scripts[] = js/rlc_card_stock.js
+scripts[] = js/rlc_magnetic_quantity.js
 
 ;----------// Modernizr
 modernizr[tests][] = svg
