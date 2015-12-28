@@ -50,11 +50,7 @@ function rlc_business_cards_default_rules_configuration() {
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
         "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
-        "calculated_price" : {
-          "label" : "Calculated Price",
-          "type" : "commerce_price",
-          "parameter" : false
-        }
+        "calculated_price" : { "label" : "Calculated Price", "type" : "commerce_price" }
       },
       "RULES" : [
         { "RULE" : {
@@ -70,7 +66,10 @@ function rlc_business_cards_default_rules_configuration() {
             ],
             "DO" : [
               { "component_rlc_rules_fetch_price_of_company_raised_letter" : {
-                  "USING" : { "line_item" : [ "line_item" ] },
+                  "USING" : {
+                    "line_item" : [ "line_item" ],
+                    "raised_price" : { "value" : { "amount" : 0, "currency_code" : "USD" } }
+                  },
                   "PROVIDE" : { "raised_price" : { "raised_price" : "Raised Price" } }
                 }
               },
@@ -96,7 +95,10 @@ function rlc_business_cards_default_rules_configuration() {
             ],
             "DO" : [
               { "component_rlc_rules_fetch_price_of_company_full_color" : {
-                  "USING" : { "line_item" : [ "line_item" ] },
+                  "USING" : {
+                    "line_item" : [ "line_item" ],
+                    "full_color_price" : { "value" : { "amount" : 0, "currency_code" : "USD" } }
+                  },
                   "PROVIDE" : { "full_color_price" : { "full_color_price" : "Full Color Price" } }
                 }
               },
@@ -122,7 +124,10 @@ function rlc_business_cards_default_rules_configuration() {
             ],
             "DO" : [
               { "component_rlc_rules_fetch_price_of_company_magnetic" : {
-                  "USING" : { "line_item" : [ "line_item" ] },
+                  "USING" : {
+                    "line_item" : [ "line_item" ],
+                    "magnetic_price" : { "value" : { "amount" : 0, "currency_code" : "USD" } }
+                  },
                   "PROVIDE" : { "magnetic_price" : { "magnetic_price" : "Magnetic Price" } }
                 }
               },
@@ -146,11 +151,7 @@ function rlc_business_cards_default_rules_configuration() {
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
         "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
-        "full_color_price" : {
-          "label" : "Full Color Price",
-          "type" : "commerce_price",
-          "parameter" : false
-        }
+        "full_color_price" : { "label" : "Full Color Price", "type" : "commerce_price" }
       },
       "RULES" : [
         { "RULE" : {
@@ -386,11 +387,7 @@ function rlc_business_cards_default_rules_configuration() {
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
         "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
-        "magnetic_price" : {
-          "label" : "Magnetic Price",
-          "type" : "commerce_price",
-          "parameter" : false
-        }
+        "magnetic_price" : { "label" : "Magnetic Price", "type" : "commerce_price" }
       },
       "RULES" : [
         { "RULE" : {
@@ -626,11 +623,7 @@ function rlc_business_cards_default_rules_configuration() {
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
         "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
-        "raised_price" : {
-          "label" : "Raised Price",
-          "type" : "commerce_price",
-          "parameter" : false
-        }
+        "raised_price" : { "label" : "Raised Price", "type" : "commerce_price" }
       },
       "RULES" : [
         { "RULE" : {
@@ -879,7 +872,10 @@ function rlc_business_cards_default_rules_configuration() {
       ],
       "DO" : [
         { "component_rules_fetch_price_of_business_card" : {
-            "USING" : { "line_item" : [ "commerce-line-item" ] },
+            "USING" : {
+              "line_item" : [ "commerce-line-item" ],
+              "calculated_price" : { "value" : { "amount" : 0, "currency_code" : "USD" } }
+            },
             "PROVIDE" : { "calculated_price" : { "calculated_price" : "Calculated Price" } }
           }
         },
@@ -908,7 +904,10 @@ function rlc_business_cards_default_rules_configuration() {
       ],
       "DO" : [
         { "component_rlc_rules_fetch_price_of_company_card" : {
-            "USING" : { "line_item" : [ "commerce-line-item" ] },
+            "USING" : {
+              "line_item" : [ "commerce-line-item" ],
+              "calculated_price" : { "value" : { "amount" : 0, "currency_code" : "USD" } }
+            },
             "PROVIDE" : { "calculated_price" : { "calculated_price" : "Calculated Price" } }
           }
         },
@@ -1072,11 +1071,7 @@ function rlc_business_cards_default_rules_configuration() {
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
         "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
-        "calculated_price" : {
-          "label" : "Calculated Price",
-          "type" : "commerce_price",
-          "parameter" : false
-        }
+        "calculated_price" : { "label" : "Calculated Price", "type" : "commerce_price" }
       },
       "RULES" : [
         { "RULE" : {
@@ -1096,7 +1091,10 @@ function rlc_business_cards_default_rules_configuration() {
             ],
             "DO" : [
               { "component_rules_fetch_price_of_raised_letter" : {
-                  "USING" : { "line_item" : [ "line_item" ] },
+                  "USING" : {
+                    "line_item" : [ "line_item" ],
+                    "raised_price" : { "value" : { "amount" : 0, "currency_code" : "USD" } }
+                  },
                   "PROVIDE" : { "raised_price" : { "raised_price" : "Raised Price" } }
                 }
               },
@@ -1126,7 +1124,10 @@ function rlc_business_cards_default_rules_configuration() {
             ],
             "DO" : [
               { "component_rules_fetch_price_of_full_color" : {
-                  "USING" : { "line_item" : [ "line_item" ] },
+                  "USING" : {
+                    "line_item" : [ "line_item" ],
+                    "full_color_price" : { "value" : { "amount" : 0, "currency_code" : "USD" } }
+                  },
                   "PROVIDE" : { "full_color_price" : { "full_color_price" : "Full Color Price" } }
                 }
               },
@@ -1156,7 +1157,10 @@ function rlc_business_cards_default_rules_configuration() {
             ],
             "DO" : [
               { "component_rules_fetch_price_of_magnetic" : {
-                  "USING" : { "line_item" : [ "line_item" ] },
+                  "USING" : {
+                    "line_item" : [ "line_item" ],
+                    "magnetic_price" : { "value" : { "amount" : 0, "currency_code" : "USD" } }
+                  },
                   "PROVIDE" : { "magnetic_price" : { "magnetic_price" : "Magnetic Price" } }
                 }
               },
@@ -1180,11 +1184,7 @@ function rlc_business_cards_default_rules_configuration() {
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
         "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
-        "full_color_price" : {
-          "label" : "Full Color Price",
-          "type" : "commerce_price",
-          "parameter" : false
-        }
+        "full_color_price" : { "label" : "Full Color Price", "type" : "commerce_price" }
       },
       "RULES" : [
         { "RULE" : {
@@ -1448,11 +1448,7 @@ function rlc_business_cards_default_rules_configuration() {
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
         "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
-        "magnetic_price" : {
-          "label" : "Magnetic Price",
-          "type" : "commerce_price",
-          "parameter" : false
-        }
+        "magnetic_price" : { "label" : "Magnetic Price", "type" : "commerce_price" }
       },
       "RULES" : [
         { "RULE" : {
@@ -1716,11 +1712,7 @@ function rlc_business_cards_default_rules_configuration() {
       "REQUIRES" : [ "rules", "commerce_line_item" ],
       "USES VARIABLES" : {
         "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
-        "raised_price" : {
-          "label" : "Raised Price",
-          "type" : "commerce_price",
-          "parameter" : false
-        }
+        "raised_price" : { "label" : "Raised Price", "type" : "commerce_price" }
       },
       "RULES" : [
         { "RULE" : {
