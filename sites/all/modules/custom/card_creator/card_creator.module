@@ -86,6 +86,7 @@ function card_creator_ajax_front() {
   $img = str_replace('data:image/svg+xml;base64,', '', $img);
   $img = str_replace(' ', '+', $img);
   $data = base64_decode($img);
+  $data = iconv("ISO-8859-1", "UTF-8", $data);
 
   $filename = $company_name . '-' . $name;
 
@@ -128,6 +129,7 @@ function card_creator_ajax_back() {
   $img = str_replace('data:image/svg+xml;base64,', '', $img);
   $img = str_replace(' ', '+', $img);
   $data = base64_decode($img);
+  $data = iconv("ISO-8859-1", "UTF-8", $data);
 
   $filename = $company_name . '-' . $name . '-back';
 
