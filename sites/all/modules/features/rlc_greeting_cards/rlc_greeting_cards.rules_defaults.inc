@@ -197,6 +197,110 @@ function rlc_greeting_cards_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_calculate_shipping_for_small_variety_pack'] = entity_import('rules_config', '{ "rules_calculate_shipping_for_small_variety_pack" : {
+      "LABEL" : "Calculate Shipping for Small Variety Pack",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_shipping" ],
+      "ON" : { "commerce_shipping_calculate_rate" : [] },
+      "DO" : [
+        { "variable_add" : {
+            "USING" : { "type" : "integer", "value" : "0" },
+            "PROVIDE" : { "variable_added" : { "total_quantity" : "Total Quantity" } }
+          }
+        },
+        { "LOOP" : {
+            "USING" : { "list" : [ "commerce-line-item:order:commerce-line-items" ] },
+            "ITEM" : { "list_item" : "Current list item" },
+            "DO" : [
+              { "component_rules_fetch_quantity_of_small_variety_pack" : {
+                  "USING" : { "product_line_item" : [ "list-item" ], "product_quantity" : "0" },
+                  "PROVIDE" : { "product_quantity" : { "product_quantity" : "Quantity" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "total-quantity" ],
+                    "op" : "+",
+                    "input_2" : [ "product-quantity" ]
+                  },
+                  "PROVIDE" : { "result" : { "result" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "total-quantity" ], "value" : [ "result" ] } }
+            ]
+          }
+        },
+        { "component_rules_calculate_shipping_price_for_small_variety_pack" : {
+            "USING" : {
+              "quantity" : [ "total-quantity" ],
+              "price" : { "value" : { "amount" : 0, "currency_code" : "USD" } }
+            },
+            "PROVIDE" : { "price" : { "price" : "Price" } }
+          }
+        },
+        { "commerce_line_item_unit_price_add" : {
+            "commerce_line_item" : [ "commerce_line_item" ],
+            "amount" : [ "price:amount" ],
+            "component_name" : "flat_rate_flat_rate_shipping",
+            "round_mode" : "0"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_calculate_shipping_for_variety_packs'] = entity_import('rules_config', '{ "rules_calculate_shipping_for_variety_packs" : {
+      "LABEL" : "Calculate Shipping for Variety Packs",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_shipping" ],
+      "ON" : { "commerce_shipping_calculate_rate" : [] },
+      "DO" : [
+        { "variable_add" : {
+            "USING" : { "type" : "integer", "value" : "0" },
+            "PROVIDE" : { "variable_added" : { "total_quantity" : "Total Quantity" } }
+          }
+        },
+        { "LOOP" : {
+            "USING" : { "list" : [ "commerce-line-item:order:commerce-line-items" ] },
+            "ITEM" : { "list_item" : "Current list item" },
+            "DO" : [
+              { "component_rules_fetch_quantity_of_variety_packs" : {
+                  "USING" : { "product_line_item" : [ "list-item" ], "product_quantity" : "0" },
+                  "PROVIDE" : { "product_quantity" : { "product_quantity" : "Quantity" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "total-quantity" ],
+                    "op" : "+",
+                    "input_2" : [ "product-quantity" ]
+                  },
+                  "PROVIDE" : { "result" : { "result" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "total-quantity" ], "value" : [ "result" ] } }
+            ]
+          }
+        },
+        { "component_rules_calculate_shipping_price_for_variety_packs" : {
+            "USING" : {
+              "quantity" : [ "total-quantity" ],
+              "price" : { "value" : { "amount" : 0, "currency_code" : "USD" } }
+            },
+            "PROVIDE" : { "price" : { "price" : "Price" } }
+          }
+        },
+        { "commerce_line_item_unit_price_add" : {
+            "commerce_line_item" : [ "commerce_line_item" ],
+            "amount" : [ "price:amount" ],
+            "component_name" : "flat_rate_flat_rate_shipping",
+            "round_mode" : "0"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_calculate_shipping_price_for_silver_packages'] = entity_import('rules_config', '{ "rules_calculate_shipping_price_for_silver_packages" : {
       "LABEL" : "Calculate Shipping Price for Silver Packages",
       "PLUGIN" : "rule set",
@@ -224,6 +328,46 @@ function rlc_greeting_cards_default_rules_configuration() {
       "PROVIDES VARIABLES" : [ "price" ]
     }
   }');
+  $items['rules_calculate_shipping_price_for_small_variety_pack'] = entity_import('rules_config', '{ "rules_calculate_shipping_price_for_small_variety_pack" : {
+      "LABEL" : "Calculate Shipping Price for Small Variety Pack",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "quantity" : { "label" : "Quantity", "type" : "integer" },
+        "price" : { "label" : "Price", "type" : "commerce_price" }
+      },
+      "DO" : [
+        { "data_calc" : {
+            "USING" : { "input_1" : [ "quantity" ], "op" : "*", "input_2" : "700" },
+            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
+          }
+        },
+        { "data_set" : { "data" : [ "price:amount" ], "value" : [ "result" ] } }
+      ],
+      "PROVIDES VARIABLES" : [ "price" ]
+    }
+  }');
+  $items['rules_calculate_shipping_price_for_variety_packs'] = entity_import('rules_config', '{ "rules_calculate_shipping_price_for_variety_packs" : {
+      "LABEL" : "Calculate Shipping Price for Variety Packs",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "quantity" : { "label" : "Quantity", "type" : "integer" },
+        "price" : { "label" : "Price", "type" : "commerce_price" }
+      },
+      "DO" : [
+        { "data_calc" : {
+            "USING" : { "input_1" : [ "quantity" ], "op" : "*", "input_2" : "750" },
+            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
+          }
+        },
+        { "data_set" : { "data" : [ "price:amount" ], "value" : [ "result" ] } }
+      ],
+      "PROVIDES VARIABLES" : [ "price" ]
+    }
+  }');
   $items['rules_fetch_quantity_of_silver_packages'] = entity_import('rules_config', '{ "rules_fetch_quantity_of_silver_packages" : {
       "LABEL" : "Fetch Quantity of Silver Packages",
       "PLUGIN" : "rule",
@@ -242,6 +386,91 @@ function rlc_greeting_cards_default_rules_configuration() {
                 "pink_ribbon_collection_sp" : "pink_ribbon_collection_sp"
               }
             }
+          }
+        }
+      ],
+      "DO" : [
+        { "variable_add" : {
+            "USING" : { "type" : "text", "value" : [ "product-line-item:quantity" ] },
+            "PROVIDE" : { "variable_added" : { "quantity_text" : "Quantity Text" } }
+          }
+        },
+        { "data_convert" : {
+            "USING" : { "type" : "integer", "value" : [ "quantity-text" ] },
+            "PROVIDE" : { "conversion_result" : { "conversion_result" : "Conversion result" } }
+          }
+        },
+        { "data_set" : { "data" : [ "product-quantity" ], "value" : [ "conversion-result" ] } }
+      ],
+      "PROVIDES VARIABLES" : [ "product_quantity" ]
+    }
+  }');
+  $items['rules_fetch_quantity_of_small_variety_pack'] = entity_import('rules_config', '{ "rules_fetch_quantity_of_small_variety_pack" : {
+      "LABEL" : "Fetch Quantity of Small Variety Pack",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "product_line_item" : { "label" : "Product Line Item", "type" : "commerce_line_item" },
+        "product_quantity" : { "label" : "Quantity", "type" : "integer" }
+      },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "product-line-item" ],
+            "type" : "commerce_line_item",
+            "bundle" : { "value" : {
+                "pink_ribbon_collection_vp" : "pink_ribbon_collection_vp",
+                "black_tie_collection_vp" : "black_tie_collection_vp"
+              }
+            }
+          }
+        },
+        { "data_is" : {
+            "data" : [ "product-line-item:commerce-product:title" ],
+            "value" : "Small Sample Pack"
+          }
+        }
+      ],
+      "DO" : [
+        { "variable_add" : {
+            "USING" : { "type" : "text", "value" : [ "product-line-item:quantity" ] },
+            "PROVIDE" : { "variable_added" : { "quantity_text" : "Quantity Text" } }
+          }
+        },
+        { "data_convert" : {
+            "USING" : { "type" : "integer", "value" : [ "quantity-text" ] },
+            "PROVIDE" : { "conversion_result" : { "conversion_result" : "Conversion result" } }
+          }
+        },
+        { "data_set" : { "data" : [ "product-quantity" ], "value" : [ "conversion-result" ] } }
+      ],
+      "PROVIDES VARIABLES" : [ "product_quantity" ]
+    }
+  }');
+  $items['rules_fetch_quantity_of_variety_packs'] = entity_import('rules_config', '{ "rules_fetch_quantity_of_variety_packs" : {
+      "LABEL" : "Fetch Quantity of Variety Packs",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "product_line_item" : { "label" : "Product Line Item", "type" : "commerce_line_item" },
+        "product_quantity" : { "label" : "Quantity", "type" : "integer" }
+      },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "product-line-item" ],
+            "type" : "commerce_line_item",
+            "bundle" : { "value" : {
+                "pink_ribbon_collection_vp" : "pink_ribbon_collection_vp",
+                "black_tie_collection_vp" : "black_tie_collection_vp"
+              }
+            }
+          }
+        },
+        { "data_is" : {
+            "data" : [ "product-line-item:commerce-product:title" ],
+            "op" : "IN",
+            "value" : { "value" : [ "Medium Variety Pack", "Large Variety Pack" ] }
           }
         }
       ],

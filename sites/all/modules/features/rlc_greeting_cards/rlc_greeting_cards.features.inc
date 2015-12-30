@@ -16,6 +16,13 @@ function rlc_greeting_cards_commerce_line_item_default_types() {
       'add_form_submit_value' => 'Add product',
       'base' => 'commerce_product_line_item',
     ),
+    'black_tie_collection_vp' => array(
+      'name' => 'Black Tie Collection - VP',
+      'description' => 'A customizable product line item type.',
+      'product' => TRUE,
+      'add_form_submit_value' => 'Add product',
+      'base' => 'commerce_product_line_item',
+    ),
     'greeting_card' => array(
       'name' => 'Greeting Card',
       'description' => 'A customizable product line item type.',
@@ -25,6 +32,13 @@ function rlc_greeting_cards_commerce_line_item_default_types() {
     ),
     'pink_ribbon_collection_sp' => array(
       'name' => 'Pink Ribbon Collection - SP',
+      'description' => 'A customizable product line item type.',
+      'product' => TRUE,
+      'add_form_submit_value' => 'Add product',
+      'base' => 'commerce_product_line_item',
+    ),
+    'pink_ribbon_collection_vp' => array(
+      'name' => 'Pink Ribbon Collection - VP',
       'description' => 'A customizable product line item type.',
       'product' => TRUE,
       'add_form_submit_value' => 'Add product',
@@ -57,6 +71,13 @@ function rlc_greeting_cards_commerce_product_default_types() {
       'type' => 'silver_package',
       'name' => 'Silver Package',
       'description' => 'Allows users to select a total of 10 packs to order at a discounted price.',
+      'help' => '',
+      'revision' => 0,
+    ),
+    'variety_pack' => array(
+      'type' => 'variety_pack',
+      'name' => 'Variety Pack',
+      'description' => 'A Pre-defined Variety Pack of Greeting Cards',
       'help' => '',
       'revision' => 0,
     ),
