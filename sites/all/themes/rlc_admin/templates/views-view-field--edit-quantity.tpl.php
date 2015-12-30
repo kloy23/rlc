@@ -40,6 +40,9 @@
     case 'pink_ribbon_collection':
       print $field->last_render;
       break;
+    case 'variety_pack':
+      print $field->last_render;
+      break;
   }
 
 ?>

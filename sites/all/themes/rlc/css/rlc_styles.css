@@ -272,11 +272,11 @@ div.ctools-modal-content a.close img {
  */
 
 #products_display .num_of_cards {
-  float: right;
   font-weight: bold;
   color: #F00;
-  margin: 5px 0px 0px 15px;
+  margin-right: 5px;
   font-size: 1.5em;
+  text-align: right;
 }
 
 /*
