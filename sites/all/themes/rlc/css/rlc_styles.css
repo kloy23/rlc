@@ -222,6 +222,7 @@ div.ctools-modal-content a.close img {
  */
 
 #products_display .panel-display  {
+  position: relative;
   border: 1px outset;
   border-radius: 10px;
   padding: 10px;
@@ -237,6 +238,16 @@ div.ctools-modal-content a.close img {
 #products_display .panel-col-first {
   text-align: center;
 }
+#products_display .panel-col-first li:before {
+  content: '';
+  display: list-item;
+  position: absolute;
+}
+#products_display .panel-col-first li {
+  display: inline-block;
+  margin: 0 10px;
+  line-height: 1.5em;
+}
 #products_display img {
   border: 1px solid #FFF;
   margin: 15px 15px 0px;
@@ -244,9 +255,10 @@ div.ctools-modal-content a.close img {
   width: auto;
 }
 #products_display .panel-col-last {
-  position: relative;
+  position: absolute;
   width: 50%;
-  top: 20px;
+  bottom: 0;
+  left: 49%;
 }
 #products_display .views-field-commerce-price {
   font-size: 1.7em;
