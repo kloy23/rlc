@@ -921,6 +921,45 @@ function rlc_business_cards_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_calculate_price_for_two_sided_business_cards'] = entity_import('rules_config', '{ "rules_calculate_price_for_two_sided_business_cards" : {
+      "LABEL" : "Calculate price for Two Sided Business Cards",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "commerce_line_item", "commerce_product_reference" ],
+      "ON" : { "commerce_product_calculate_sell_price" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "commerce-line-item" ],
+            "type" : "commerce_line_item",
+            "bundle" : { "value" : {
+                "business_card" : "business_card",
+                "camera_ready_business_card" : "camera_ready_business_card",
+                "company_business_card" : "company_business_card"
+              }
+            }
+          }
+        },
+        { "data_is" : { "data" : [ "commerce-line-item:field-two-sided" ], "value" : "16" } }
+      ],
+      "DO" : [
+        { "component_rules_fetch_price_of_two_sided" : {
+            "USING" : {
+              "line_item" : [ "commerce-line-item" ],
+              "two_sided_price" : { "value" : { "amount" : 0, "currency_code" : "USD" } }
+            },
+            "PROVIDE" : { "two_sided_price" : { "two_sided_price" : "Two Sided Price" } }
+          }
+        },
+        { "commerce_line_item_unit_price_add" : {
+            "commerce_line_item" : [ "commerce_line_item" ],
+            "amount" : [ "two-sided-price:amount" ],
+            "component_name" : "base_price",
+            "round_mode" : "0"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_calculate_shipping_based_on_products'] = entity_import('rules_config', '{ "rules_calculate_shipping_based_on_products" : {
       "LABEL" : "Calculate Shipping for Custom Business Cards",
       "PLUGIN" : "reaction rule",
@@ -2071,6 +2110,263 @@ function rlc_business_cards_default_rules_configuration() {
         }
       ],
       "PROVIDES VARIABLES" : [ "raised_price" ]
+    }
+  }');
+  $items['rules_fetch_price_of_two_sided'] = entity_import('rules_config', '{ "rules_fetch_price_of_two_sided" : {
+      "LABEL" : "Fetch Price of Two Sided",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" },
+        "two_sided_price" : { "label" : "Two Sided Price", "type" : "commerce_price" }
+      },
+      "RULES" : [
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card",
+                      "company_business_card" : "company_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-two-sided" ], "value" : "16" } },
+              { "data_is" : {
+                  "data" : [ "line-item:field-quantity" ],
+                  "op" : "IN",
+                  "value" : { "value" : { "9" : "9", "10" : "10" } }
+                }
+              }
+            ],
+            "DO" : [
+              { "data_set" : {
+                  "data" : [ "two-sided-price:amount" ],
+                  "value" : [ "line-item:field-two-sided:field-price:amount" ]
+                }
+              }
+            ],
+            "LABEL" : "500 - 1000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card",
+                      "company_business_card" : "company_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-two-sided" ], "value" : "16" } },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "11" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "line-item:field-two-sided:field-price-per-thousand:amount" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_2k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "two-sided-price:amount" ], "value" : [ "price-2k" ] } }
+            ],
+            "LABEL" : "2000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_3k" : "Calculation result",
+                "price_3k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card",
+                      "company_business_card" : "company_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-two-sided" ], "value" : "16" } },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "12" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "2"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_3k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-3k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_3k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "two-sided-price:amount" ], "value" : [ "price-3k" ] } }
+            ],
+            "LABEL" : "3000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_4k" : "Calculation result",
+                "price_4k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card",
+                      "company_business_card" : "company_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-two-sided" ], "value" : "16" } },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "13" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "3"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_4k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-4k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_4k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "two-sided-price:amount" ], "value" : [ "price-4k" ] } }
+            ],
+            "LABEL" : "4000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_5k" : "Calculation result",
+                "price_5k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card",
+                      "company_business_card" : "company_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-two-sided" ], "value" : "16" } },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "14" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "4"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_5k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-5k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_5k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "two-sided-price:amount" ], "value" : [ "price-5k" ] } }
+            ],
+            "LABEL" : "5000"
+          }
+        },
+        { "RULE" : {
+            "PROVIDE" : { "result" : {
+                "additional_cost_10k" : "Calculation result",
+                "price_10k" : "Calculation result"
+              }
+            },
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "line-item" ],
+                  "type" : "commerce_line_item",
+                  "bundle" : { "value" : {
+                      "business_card" : "business_card",
+                      "camera_ready_business_card" : "camera_ready_business_card",
+                      "company_business_card" : "company_business_card"
+                    }
+                  }
+                }
+              },
+              { "data_is" : { "data" : [ "line-item:field-two-sided" ], "value" : "16" } },
+              { "data_is" : { "data" : [ "line-item:field-quantity" ], "value" : "15" } }
+            ],
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price-per-thousand:amount" ],
+                    "op" : "*",
+                    "input_2" : "9"
+                  },
+                  "PROVIDE" : { "result" : { "additional_cost_10k" : "Calculation result" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : {
+                    "input_1" : [ "line-item:field-two-sided:field-price:amount" ],
+                    "op" : "+",
+                    "input_2" : [ "additional-cost-10k" ]
+                  },
+                  "PROVIDE" : { "result" : { "price_10k" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "two-sided-price:amount" ], "value" : [ "price-10k" ] } }
+            ],
+            "LABEL" : "10000"
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "two_sided_price" ]
     }
   }');
   $items['rules_fetch_quantity'] = entity_import('rules_config', '{ "rules_fetch_quantity" : {
