@@ -31,6 +31,13 @@ function rlc_greeting_cards_user_default_permissions() {
     'module' => 'commerce_product',
   );
 
+  // Exported permission: 'create commerce_product entities of bundle variety_pack'.
+  $permissions['create commerce_product entities of bundle variety_pack'] = array(
+    'name' => 'create commerce_product entities of bundle variety_pack',
+    'roles' => array(),
+    'module' => 'commerce_product',
+  );
+
   // Exported permission: 'edit any commerce_product entity of bundle black_tie_collection'.
   $permissions['edit any commerce_product entity of bundle black_tie_collection'] = array(
     'name' => 'edit any commerce_product entity of bundle black_tie_collection',
@@ -52,6 +59,13 @@ function rlc_greeting_cards_user_default_permissions() {
     'module' => 'commerce_product',
   );
 
+  // Exported permission: 'edit any commerce_product entity of bundle variety_pack'.
+  $permissions['edit any commerce_product entity of bundle variety_pack'] = array(
+    'name' => 'edit any commerce_product entity of bundle variety_pack',
+    'roles' => array(),
+    'module' => 'commerce_product',
+  );
+
   // Exported permission: 'edit own commerce_product entities of bundle black_tie_collection'.
   $permissions['edit own commerce_product entities of bundle black_tie_collection'] = array(
     'name' => 'edit own commerce_product entities of bundle black_tie_collection',
@@ -69,6 +83,13 @@ function rlc_greeting_cards_user_default_permissions() {
   // Exported permission: 'edit own commerce_product entities of bundle silver_package'.
   $permissions['edit own commerce_product entities of bundle silver_package'] = array(
     'name' => 'edit own commerce_product entities of bundle silver_package',
+    'roles' => array(),
+    'module' => 'commerce_product',
+  );
+
+  // Exported permission: 'edit own commerce_product entities of bundle variety_pack'.
+  $permissions['edit own commerce_product entities of bundle variety_pack'] = array(
+    'name' => 'edit own commerce_product entities of bundle variety_pack',
     'roles' => array(),
     'module' => 'commerce_product',
   );
@@ -103,6 +124,16 @@ function rlc_greeting_cards_user_default_permissions() {
     'module' => 'commerce_product',
   );
 
+  // Exported permission: 'view any commerce_product entity of bundle variety_pack'.
+  $permissions['view any commerce_product entity of bundle variety_pack'] = array(
+    'name' => 'view any commerce_product entity of bundle variety_pack',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'commerce_product',
+  );
+
   // Exported permission: 'view own commerce_product entities of bundle black_tie_collection'.
   $permissions['view own commerce_product entities of bundle black_tie_collection'] = array(
     'name' => 'view own commerce_product entities of bundle black_tie_collection',
@@ -120,6 +151,13 @@ function rlc_greeting_cards_user_default_permissions() {
   // Exported permission: 'view own commerce_product entities of bundle silver_package'.
   $permissions['view own commerce_product entities of bundle silver_package'] = array(
     'name' => 'view own commerce_product entities of bundle silver_package',
+    'roles' => array(),
+    'module' => 'commerce_product',
+  );
+
+  // Exported permission: 'view own commerce_product entities of bundle variety_pack'.
+  $permissions['view own commerce_product entities of bundle variety_pack'] = array(
+    'name' => 'view own commerce_product entities of bundle variety_pack',
     'roles' => array(),
     'module' => 'commerce_product',
   );
