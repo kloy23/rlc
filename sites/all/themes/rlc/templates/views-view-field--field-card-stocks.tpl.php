@@ -25,9 +25,13 @@
   $product_type = $row->_field_data['commerce_product_field_data_commerce_product_product_id']['entity']->type;
   
   if ($view->name === 'commerce_line_item_table') {
-  	$print_type = $row->_field_data['line_item_id']['entity']->field_print_type['und'][0]['tid'];
+    if (!empty($row->_field_data['line_item_id']['entity']->field_print_type['und'][0]['tid'])) {
+      $print_type = $row->_field_data['line_item_id']['entity']->field_print_type['und'][0]['tid'];
+    }
   } else {
-  	$print_type = $row->_field_data['commerce_line_item_field_data_commerce_line_items_line_item_']['entity']->field_print_type['und'][0]['tid'];
+    if (!empty($row->_field_data['commerce_line_item_field_data_commerce_line_items_line_item_']['entity']->field_print_type['und'][0]['tid'])) {
+  	  $print_type = $row->_field_data['commerce_line_item_field_data_commerce_line_items_line_item_']['entity']->field_print_type['und'][0]['tid'];
+    }
   }
 
   // If the Product Type is Company Business Card
